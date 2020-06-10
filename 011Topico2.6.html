@@ -1,0 +1,55 @@
+<script>
+alert('Topico 2.6 continuacao');
+document.write('<strong>1- Exercicio Alcool ou Gasolina</strong>');
+document.write('<p>');
+var tanque = 40;
+document.write('2- Calculo de consumo Gasolina :' + '<br>');
+var caminho_comgasolina = 480;
+document.write('>KM por litro Gasolina = ');
+document.write((caminho_comgasolina / tanque) + '<br>');
+document.write('Significa 480 km com tanque de 40 litros');
+document.write('<p>');
+var consumo_degasolina = ((caminho_comgasolina / tanque));
+
+document.write(' > KM precorrido com Gasolina: ' + '<br>')
+document.write('Que é tanque x Consumo de gasolina :' + '<br>');
+document.write((tanque * consumo_degasolina) + ' KM <br>');
+document.write('Significa 40 Litros x 12 km por litro' + '<p>');
+
+document.write('3- Calculo de consumo Alcool :' + '<br>');
+var caminho_comalcool = 300;
+document.write(' > KM por litro alcool : ');
+document.write((caminho_comalcool / tanque ) + '<br>');
+document.write('Significa 300 km dividido por 40 litros');
+document.write('<p>');
+var consumo_dealcool = ((caminho_comalcool / tanque));
+
+document.write(' > KM precorrido com alcool' + '<br>');
+document.write('Que é : tanque x Com alcool' + '<br>');
+document.write((tanque * consumo_dealcool));
+document.write('<p>')
+
+document.write('4- Utilizando o Math.round fica :' + Math.round(caminho_comalcool / tanque));
+document.write('<p>');
+document.write('O Math.round pega o valor que está dentro dos parenteses' + '<br>');
+document.write('E o Arredonda, utilizando esse novo valor para juntar(concatenar)');
+document.write('<br>');
+document.write('Com o restante da frase que queremos mostrar.');
+document.write('<p>');
+document.write('5- Arredondando para duas casas decimais <br>');
+document.write('com o : <strong>.toFixed(2):</strong>');
+document.write('<br>');
+document.write('Nome da função fica com o: + caminho_comalcool/tanque.toFixed(2)');
+document.write('<br>');
+document.write('Com duas Casas decimais :' + (caminho_comalcool / tanque).toFixed(2));
+document.write('<p>');
+document.write('6- Desafio : Gasol:R$2.90 e Alc: R$2.40 ' +  '<br>');
+var preço_dagasolina = 2.90;
+var preço_doalcool = 2.40;
+document.write('Preço por KM Gasolina : ' + '<br>');
+document.write((preço_dagasolina / consumo_degasolina).toFixed(2) + '<br>');
+document.write('Significa 2.90 dividido por 12 km/L <p>');
+document.write('Preço por KM Alcool : ' + '<br>');
+document.write(preço_doalcool / consumo_dealcool + '<br>'); 
+document.write('Significa 2.40 dividido por 8');
+</script>

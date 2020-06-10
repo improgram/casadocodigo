@@ -1,0 +1,36 @@
+<html>
+    <title>Topico 6.3 - Exercicio 2</title>
+    <h3>Exercicio sem o return na Funcao</h3>
+<input type='text' id='numero' />
+<input type='submit' id='adivinhar' value='Comparar'/>
+
+	<script>
+function mostra(frase) {
+    document.write(frase + '<br>')
+}
+
+var segredo = [10, 20, 30, 40, 50, 60]
+mostra('<br>Numeros : ' + segredo)
+var caixaDoNumero = document.getElementById('numero')   
+var achou = false
+
+function semReturn() {
+    for(var i=0, valor; valor=segredo[i], i<segredo.length; i++) {
+        if(segredo[i] == caixaDoNumero.value ) {
+            alert('Acertou um dos Numeros : ' + segredo[i])
+            caixaDoNumero.value = ""
+            achou = true
+            break
+            }
+        } 
+        if(achou != true) {
+            alert('Voce errou')
+            caixaDoNumero.value = ""
+    } 
+}
+       
+var botao2 = document.getElementById('adivinhar')
+botao2.onclick = semReturn
+
+    </script>
+</html>

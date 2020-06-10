@@ -1,0 +1,32 @@
+<html>
+    <body>
+        <title>Topico 6.2</title>
+        <h2>Topico 6.2</h2>
+        <h3>Exercicio 1 :</h3>
+<input type='text' id='numero' />
+<input type='submit' id='adivinhar' 
+        value='Digite um numero até 10' />
+    <script>
+function mostra (frase) {
+    document.write(frase + '<br>')
+}
+var segredo = Math.round(Math.random() * 10)
+var caixaDoNumero = document.getElementById('numero')
+var botaoClicado = function() {
+    if(segredo == caixaDoNumero.value) {
+        alert('Voce acertou o numero : ' + segredo)
+    }
+    else {
+        alert('Voce nao acertou o numero foi : ' + segredo)
+    }
+    caixaDoNumero.value = ""
+}
+var botaoAdivinhar = document.getElementById('adivinhar')
+botaoAdivinhar.onclick = botaoClicado    
+mostra('<br><strong>Exercicio 2 : </strong>')
+mostra('Foi adicionada a variavel:caixaDoNumero.value=""> ')
+mostra('teste')
+
+    </script>
+    </body>
+</html>

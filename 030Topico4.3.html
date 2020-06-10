@@ -1,0 +1,52 @@
+<title>Topico4.3</title>
+<script>
+function mostra (frase) {
+	document.write(frase)
+}
+function pulalinha() {
+	document.write('<br>')
+}
+mostra('<strong>Topico 4.3 </strong><br>')
+var vitoria1 = parseInt(prompt('Quantas vitorias o time1 ?'))
+mostra('Time1 teve : ' + vitoria1 + ' vitorias.<br>')
+var empate1 = parseInt(prompt('Quantos empates teve o time1 ?'))
+mostra('Time1 teve : ' + empate1 + ' empates <br>')
+var pontos1 = (vitoria1 * 3) + empate1
+mostra('Time1 total : ' + pontos1 + ' pontos. <br>')
+pulalinha()
+mostra('Exercicio 1 : <br>')
+var vitoria2 = parseInt(prompt('Quantas vitorias o time2 ?'))
+mostra('Time2 teve : ' + vitoria2 + ' vitorias.<br>')
+var empate2 = parseInt(prompt('Quantos empates teve o time2 ?'))
+mostra('Time2 teve : ' + empate2 + ' empates.<br>')
+var pontos2 = (vitoria2 * 3) + empate2
+mostra('Time2 total : ' + pontos2 + ' pontos. <br>')
+pulalinha()
+if (pontos1 > pontos2) {
+	mostra('Time 1 tem mais pontos que Time 2 <br>')
+}	
+else {
+	mostra('Time 2 tem mais pontos que Time 1 <br>')	
+}
+pulalinha()
+mostra('Exercicio 2 : <br>')
+var calculapontos1 = function(vitoria1, empate1) {
+		return (vitoria1 * 3 + empate1)
+}
+var calculapontos2 = function(vitoria2, empate2) {
+		return (vitoria2 * 3 + empate2)
+}
+var calculatime1 = calculapontos1(vitoria1, empate1)
+var calculatime2 = calculapontos2(vitoria2, empate2)
+mostra('Time 1 tem : ' + calculatime1 + ' pontos.<br>')
+mostra('Time 2 tem : ' + calculatime2 + ' pontos.<br>')
+pulalinha()
+mostra('Exercicio 3 : Com as derrotas valendo -1 ponto.<br>')
+mostra('Time 1 tem : ' + calculatime1 + ' pontos.<br>')
+var derrota1 = parseInt(prompt('Quantas derrotas time 1 ?'))
+var totaltime1 = calculatime1 - derrota1
+mostra('Time 1 tem : ' + derrota1 + ' derrotas.<br>')
+mostra('Time 1 : ' + calculatime1 + ' menos ' + derrota1 + '.<br>')
+mostra('Time 1 total : ' + totaltime1 + ' pontos.<br>')
+
+</script>

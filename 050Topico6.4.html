@@ -1,0 +1,43 @@
+<html>
+    <body>
+    <title>Topico6.4</title>
+    <h3>Topico 6.4</h3>
+    <input type="text" id="numero" />
+<input type="submit" value="Adicione e verifique" 
+                    id="verificar" />
+    
+    <script>
+function mostra(frase) {
+    document.write(frase + '<br>')
+};
+
+var arrayTeste = [1]
+arrayTeste[0] = 5
+arrayTeste.push(5)
+mostra('<br>' + arrayTeste);
+mostra('Tamanho da Array : ' + arrayTeste.length)
+
+var sorteados = []
+var repetido = 0
+var adicionarSorteado = function() {
+    var num = document.getElementById("numero").value
+        for(var i = 0; i < sorteados.length; i++) {
+            if(sorteados[i] == num) {
+            alert('Numero repetido : ' + num)
+            repetido = 1
+            return
+        }
+    }
+    if(repetido !=1) {
+        sorteados.push(num)
+        console.log(sorteados)
+    }
+numero.value = "";     
+}   
+
+var botao = document.getElementById('verificar')
+botao.onclick = adicionarSorteado
+
+    </script>
+    </body>
+</html>

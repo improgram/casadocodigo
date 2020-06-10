@@ -1,0 +1,29 @@
+<title>Topico 5.4</title>
+<script>
+function mostra (frase) {
+    document.write(frase + '<br>')
+}
+mostra('<h2>Topico 5.4</h2>')
+var anolimite = prompt('Qual o ano limite ?')
+var anocomotexto = prompt('Informe o ano inicial.')
+var anodecopa = parseInt(anocomotexto)
+
+while(anodecopa <= anolimite) {
+    mostra(anodecopa + ' teve copa.')
+    anodecopa = anodecopa + 4
+    mostra(anodecopa + ' Esse é o valor apos a soma.')
+}
+mostra('Esses foram os anos de copa até : ' + anolimite)
+
+if (anocomotexto < 1930) {
+    mostra('A primeira Copa foi em 1930.')
+    alert('Primeira Copa foi em 1930.')
+   
+}
+
+if (anolimite > 2020) {
+    mostra('Ultima Copa foi em 2018.')
+}
+
+
+</script>

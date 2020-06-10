@@ -1,0 +1,21 @@
+<title>Topico 4.5</title>
+<script>
+function mostra (frase) {
+    document.write(frase)
+}
+function pulalinha () {
+    document.write('<br>')
+}
+mostra('<h2>Topico 4.5 - Jogo de adivinhar </h2><br>')
+var numeropensado = Math.round(Math.random() * 10);
+var chute1 = prompt('Digite um numero de 1 a 10')
+if(chute1 == numeropensado) {
+    mostra('Voce acertou.')
+} else {
+    mostra('Voce errou o numero.')
+}
+pulalinha()
+mostra('Seu chute foi : ' + chute1 + '<br>')
+mostra('Numero correto é : ' + numeropensado)
+
+</script>

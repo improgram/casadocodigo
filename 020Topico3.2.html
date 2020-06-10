@@ -1,0 +1,82 @@
+<script>
+alert('Topico3.2');
+document.write('<big>Topico 3.2 com a Tag BIG</big>');
+document.write('<hr>Tag HR cria uma linha acima</hr>');
+//Frase ocultada no navegador
+/*Tambem oculta no navegador*/
+console.log('oculta no navegador');
+var pulalinha = function() {
+	document.write('<br>');
+};
+var mostra = function (frase) {
+	document.write(frase);
+	pulalinha();
+};
+var pesodoprimo = 83;
+var alturadoprimo = 1.76;
+pulalinha();
+pulalinha();
+mostra('Pesoprimo: ' + pesodoprimo + ' e Alturaprimo: ' + alturadoprimo);
+
+
+//Primeira forma de calculo do IMC.
+var imcdoprimo = pesodoprimo / (alturadoprimo * alturadoprimo);
+mostra('O IMC do primo é : ' + imcdoprimo );
+
+pulalinha();
+document.write('Quando tem codigo repetido devemos criar funçao' + '<br>');
+pulalinha();
+var pesoirmao = 70;
+mostra('Peso do irmao é : ' + pesoirmao + ' ' + 'KG');
+var alturairmao = 1.71;
+mostra('Altura do irmao é : ' + alturairmao);
+
+
+//Abaixo esta a segunda forma de calcular o IMC.
+var calculaimcirmao = function(alturairmao, pesoirmao) {
+	var imcirmao = pesoirmao / (alturairmao * alturairmao);
+	mostra('IMC do irmao é: ' + imcirmao);
+};
+
+//Abaixo como mostrar o resultado da função.
+calculaimcirmao(alturairmao, pesoirmao);
+
+
+//Abaixo é a terceira alternativa para calcular o IMC.
+//Função abaixo só calcula o valor nao mostra o valor.
+var calculaimc = function(alturairmao, pesoirmao) {
+	var imc = pesoirmao / (alturairmao * alturairmao);
+	return imc;
+};
+var calcula3irmao = calculaimc(alturairmao, pesoirmao);
+mostra('Terceiro forma de calculo de IMC : <br>' + calcula3irmao);
+pulalinha();
+
+document.write('<strong>Agora vai mostrar o limite de magreza</strong>');
+pulalinha();
+mostra('Primo está ' + (imcdoprimo - 18.5)
+	+ ' acima do limite da magreza.');
+
+mostra('Irmao está ' + (calcula3irmao - 18.5)
+	+ ' acima do limite da magreza.');
+
+pulalinha();
+document.write('A variavel imcdoprimo vai receber o valor que foi retornado');
+pulalinha();
+document.write('pela funçao calculaIMC atraves da palavra-chave return.');
+pulalinha();
+document.write('Temos muitas funçoes que trabalham dessa forma');
+pulalinha();
+document.write('recebendo alguns parametros');
+pulalinha();
+document.write('realizando uma tarefa');
+pulalinha();
+document.write('e depois retornando um resultado');
+pulalinha();
+document.write('que sera util para quem a chamou');
+pulalinha();
+document.write('Esse valor que volta para quem chamou');
+pulalinha();
+document.write('a função é conhecido como retorno da função');
+pulalinha();
+</script>

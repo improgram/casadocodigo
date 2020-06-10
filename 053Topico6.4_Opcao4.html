@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+	<body>
+	<title>Topico6.4-Opcao4</title>
+	<h2>Topico 6.4 - Opcao4</h2>
+
+	<input type="text" id="numero">
+	<input type="submit" value="Adicione e verifique no bingo" id="verificar">
+	<p>
+	<input type="submit" id="resultado" value="Confira o resultado!">
+	</p>
+
+	<script type="text/javascript">
+	// Funcão Limpa campo
+	var limpaNumero = function(){
+		document.getElementById("numero").value = "";
+	}
+
+	// Array sorteados inicia vazio
+	var sorteados = [];
+
+	// Array sorteados recebe 6 valores aleatórios
+	for (var i = 0; i < 6; i++) {
+		sorteados.push(Math.round(Math.random() * 60));
+	};
+
+	console.log(sorteados);
+
+	// Array escolhidos inicia vazio
+	var escolhidos = [];
+	
+	// Função responsável por preencher o array escolhidos com 6 números informados pelo usuário
+	var botaoClicado = function(){
+		for (var i = 0; (escolhidos.length) < 6; i++) {
+			var informado = parseInt((document.getElementById("numero").value));
+			if (informado > 60 || informado <= 0) {
+				alert("Número inválido! Permitidos somente números de 1 a 60!");
+				i--;
+				return;
+			} else {
+				for (var i = 0; i < (escolhidos.length); i++) {
+					if ((escolhidos.indexOf(informado) +1) > 0){
+						alert("Este número já foi informado. Tente novamente!");
+						limpaNumero();
+						return;
+					};
+				};
+			}
+			escolhidos.push(informado); //adiciona o valor informado no array	
+			console.log(escolhidos);
+			limpaNumero();
+			return;
+		} 
+		alert("Só é permitido informar 6 números!");
+		limpaNumero();
+	};
+
+	var botaoVerificar = document.getElementById("verificar");
+	botaoVerificar.onclick = botaoClicado;
+
+	var resultadoFinal = function(){
+		document.write("Números escolhidos :"+ escolhidos + "<br>");
+		document.write("Números sorteados :" + sorteados);
+		compara();
+		if ((acertos.length) > 0){
+			document.write("<br> Você acertou os números :" + acertos);	
+		} else {
+			document.write("<br>Nenhum acerto");
+		}
+		
+	}
+
+	var botaoResultado =  document.getElementById("resultado");
+	botaoResultado.onclick = resultadoFinal;
+
+	var acertos = [];
+
+	var compara = function() {
+		for(var s = 0; s < sorteados.length; s++) {
+			for (var i = 0; i < escolhidos.length; i++) {
+				if(escolhidos[i] == sorteados[s]) {
+					acertos.push(sorteados[s]);
+				}
+			}
+		};
+	};
+
+</script>
+
+
+	</body>
+</html>

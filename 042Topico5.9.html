@@ -1,0 +1,28 @@
+<title>Topico 5.9</title>
+<a href='https://developer.mozilla.org/pt-BR/docs/Aprender/
+Getting_started_with_the_web/JavaScript_basico' target="_blank">
+Site Mozilla - Topico 5.9 </p>
+<a href="E:/Util/estudos/JS_casadocodigo" target="_blank">PASTA JS</a>
+
+<script>
+function mostra (frase) {
+	document.write(frase + '<br>')
+}
+mostra('<br><h3><font color="red">Media de idades</font></h3>')
+
+var total = prompt('Quantos familiares ?')
+mostra('Familiares digitado : ' + total + '<br>')
+
+var somaridades = 0
+var numero = 1
+
+while(numero <= total) {
+	var idade = parseInt(prompt('Qual a idade ? '))
+	mostra('Idade digitada : ' + idade + '<br>')
+	somaridades = somaridades + idade
+	numero++
+}
+var media = somaridades / total
+mostra('Calculo da media : ' + media)
+
+</script>

@@ -1,0 +1,62 @@
+<title>Topico 5.12</title>
+<a href='https://developer.mozilla.org/pt-BR/docs/Aprender/
+Getting_started_with_the_web/JavaScript_basico' target="_blank">
+Site Mozilla - Topico 5.12 </p>
+<a href="E:/Util/estudos/JS_casadocodigo" target="_blank">PASTA JS</a>
+<script>
+function mostra (frase) {
+	document.write(frase + '<br>')
+}
+mostra('<br><font color="red">Topico 5.12</font>')
+for(var linha = 0; linha < 3; linha = linha + 1) {
+    for(var coluna = 0; coluna < 3; coluna = coluna + 1) {
+        document.write(' C ');
+    }
+    document.write('VAR Linha<br>')
+}
+mostra('<br><font color="blue">Exercicio 1: 10 linhas e Colunas</font>')
+
+for(var linha1 = 0; linha1 < 5; linha1 = linha1 + 1) {
+    for(var coluna1 = 0; coluna1 < 5; coluna1 = coluna1 + 1) {
+        document.write(' X ');
+    }
+    document.write('<br>')
+}
+
+mostra('<br><font color="purple">Exercicio 2:')
+var tamanho = prompt('Qual tamanho do Quadrado? ')
+if (isNaN(tamanho)) {
+    alert('ERRO : Digite apenas numeros.')
+    mostra('Nao foi digitado um Numero.')  
+}
+mostra('Quantidade de Linhas e Colunas: ' + tamanho + '</font><br>')
+for(var linha2 = 0; linha2 < tamanho; linha2 = linha2 + 1) {
+    for(var coluna2 = 0; coluna2 < tamanho; coluna2 = coluna2 + 1) {
+        document.write(' O ');
+    }
+    document.write('<br>')
+}
+mostra('<br><font color="teal">Exercicio 3:</font>')
+for (var linha3 = 0; linha3 < 6; linha3 = linha3 + 1) {
+	for (var coluna3 = 0; coluna3 < linha3; coluna3 = coluna3 + 1) {
+        document.write( ' * ');
+    }
+    document.write('<br>')    
+}
+mostra('Quando mudamos de coluna < 10 para coluna < linha, a variavel')
+mostra('...coluna so vai andar de 0 ate o valor da linha atual.')
+mostra('..isso e, na linha 3, ele vai de 0 a 2,quando for a linha 4...')
+mostra('...ele vai de 0 a 3,assim por diante. dessa forma, voce cria...')
+mostra('...uma relacao entre quantas colunas devem ser percorridas...') 
+mostra('...e a linha atual')
+mostra('<br><font color="cerulean">Exercicio 4:</font>')
+for (var linha = 1; linha <= 5; linha++) {
+  for (var coluna = 1; coluna < 10; coluna++) {
+    if(linha == coluna || linha == 10 - coluna)
+    document.write("*");
+    else document.write("_");
+  }
+  document.write("<br>");
+}
+
+</script>

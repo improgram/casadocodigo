@@ -1,0 +1,33 @@
+<script>
+alert('Topico3.1');
+var pulalinha = function() {
+	document.write('<br>');
+};
+document.write('<big>Topico3.1</big>');
+pulalinha();
+document.write('<hr>Tag HR cria uma linha acima</hr>');
+pulalinha();
+document.write('<big>Tag html BIG</big>');
+pulalinha();
+document.write('<strong>Tag html Strong</strong>');
+document.write('<h3>Tag html H3</h3>');
+//Frase ocultada no navegador
+/*tambem oculta no navegador*/
+console.log('oculta do navegador');
+var mostra = function(frase) {
+	document.write(frase);
+	pulalinha();
+};
+var peso = 73;
+var altura = 1.73;
+var imc = peso / (altura * altura);
+mostra('peso dividido por altura X altura <br>');
+mostra('meu IMC é : ' + Math.round(imc));
+pulalinha();
+document.write('a VAR mostra  é : <br>');
+mostra('function(frase) { ')
+mostra('document.write(frase)');
+document.write('pulalinha();');
+pulalinha();
+document.write('};');
+</script>

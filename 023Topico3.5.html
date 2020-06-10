@@ -1,0 +1,40 @@
+<html>
+<head>
+<title>Topico 3.5</title>
+</head>
+<body>
+<script>
+var pulalinha = function () {
+    document.write('<br>');
+};
+var mostra = function (frase) {
+    document.write(frase);
+};
+mostra('<strong>Topico 3.5</strong>');
+var calculaIMC = function (altura, peso) {
+    var imc = peso / (altura * altura);
+    return imc;
+};
+mostra('<hr>EXERCICIO 1 : </hr>');
+var altura = prompt('Qual sua altura ? ');
+mostra('<br> Sua altura é : ' + altura);
+pulalinha();
+var peso = prompt('Qual seu peso ? ');
+mostra('Seu peso é : ' + peso);
+pulalinha();
+pulalinha();
+mostra('EXERCICIO 2 : <br>')
+var imcdousuario = calculaIMC(altura, peso);
+    mostra('Seu IMC é : ' + Math.round(imcdousuario));
+pulalinha();
+pulalinha();
+mostra('EXERCICIO 3 : <br>');
+var peso1 = prompt('Clandestino Qual seu peso ?');
+mostra('Peso digitado : ' + peso1 + '<br>');
+pulalinha();
+mostra('EXERCICIO 4 : <br>');
+mostra('Se digitar letra nao vai calcular o IMC <p>');
+mostra('Se digitar a altura com virgula nao faz calculo do IMC.');
+</script>
+</body>
+</html>

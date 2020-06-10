@@ -1,0 +1,79 @@
+<html>
+    <body>
+    <title>Topico 6.4_Opcao3</title>
+    <h3>Exercicio 2-Topico 6.4_Opcao3</h3>
+<div>
+    <ul>
+<li><input type='submit' id='sortear' value="Clique para sortear os numeros"/></li>
+<li><input type='text' id='chute' /></li>
+<li><input type='submit' id='addChute' value='Clique para enviar os numeros'/></li>
+<li><input type='submit' id='resultado' value='Clique para ver o Resultado'/></li>
+    </ul>
+</div>
+
+    <script>
+        
+function mostra(frase) {
+    document.write(frase + '<br>')
+}
+mostra('<hr><strong>Acerte 6 numeros da Mega-Sena de 1 a 60</strong></hr>')
+
+var sorteados = []
+var palpites = []
+var resultado = []
+
+//sortear numeros:
+function adicionarSorteado(){
+    for(var sort = 0; sorteados.length < 6; sort++){
+        var numero = Math.round(Math.random()*60)
+        for(limite = 0; limite < sorteados.length; limite++){
+            if(numero == sorteados[limite]){
+                sort = -1
+                break
+            }
+        }
+        if(sort != -1){
+            sorteados.push(numero)
+        }
+    }
+    console.log(sorteados)
+    alert(sorteados)
+}
+//enviar numeros escolhidos
+function numeroChute(){
+    var chute = document.getElementById('chute').value
+    for(var i = 0; i < palpites.length; i+=1){
+        if(palpites[i] == chute){
+            alert('Numero ja sorteado')
+            return
+        }
+    }
+    palpites.push(chute)
+    console.log(palpites)
+}
+//Resultado
+function comparar(){
+    for(var calc = 0; calc < sorteados.length; calc++){
+        for(var comp = 0; comp < palpites.length; comp++){
+            if(palpites[comp] == sorteados[calc]){
+                resultado.push(palpites[comp])   
+            }  
+        }
+    }
+    alert('Voce acertou ' + resultado.length + ' numeros ' + resultado)
+}
+//botoes
+var botao = document.getElementById('sortear')
+botao.onclick = adicionarSorteado
+var botaoChute = document.getElementById('addChute')
+botaoChute.onclick = numeroChute
+var botaoResultado = document.getElementById('resultado')
+botaoResultado.onclick = comparar
+
+mostra('<hr>https://groups.google.com/forum/#!topic/comece-a-programar/2g6LO8WvWWs<br>')
+mostra('https://groups.google.com/forum/#!topic/comece-a-programar/5YZjhHXb8C8</hr>')
+
+
+        </script>
+    </body>
+</html>

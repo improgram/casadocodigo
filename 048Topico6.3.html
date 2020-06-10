@@ -1,0 +1,31 @@
+<html>
+    <title>Topico 6.3</title>
+    <h3>Topico 6.3</h3>
+<input type='text' id='numero' />
+<input type='submit' id='adivinhar' value='Comparativo'/>
+
+    <script>
+function mostra(frase) {
+    document.write(frase + '<br>')
+}
+var segredo = [16, 34, 37, 42, 50, 58]
+mostra('<br>' + segredo)
+mostra('Posicao 0 = ' + segredo[0])
+mostra('Tamanho da array = ' + segredo.length + '<br>')
+var caixaDoNumero = document.getElementById('numero')
+var botaoClicado = function() {
+    for(var i = 0; i < segredo.length; i = i + 1) {
+        if(segredo[i] == caixaDoNumero.value) {
+            alert('Acertou os numeros secretos.')
+            return
+        }
+    }
+    alert('Errou os numeros')
+    caixaDoNumero.value = ""
+}
+
+var botaoAdivinhar = document.getElementById('adivinhar')
+botaoAdivinhar.onclick = botaoClicado
+
+    </script>
+</html>

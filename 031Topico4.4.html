@@ -1,0 +1,31 @@
+<title>Topico 4.4</title>
+<script>
+function mostra (frase) {
+    document.write(frase)
+}
+function pulalinha () {
+    document.write('<br>')
+}
+mostra('<strong>Topico 4.4</strong> <br>')
+var alturadousuario = prompt('Qual a sua altura ? ')
+mostra('Altura digitado  : ' + alturadousuario + ' m.<br>')
+var pesodousuario = prompt('Qual seu peso ? ')
+mostra('Peso digitado : ' + pesodousuario + ' kg.<br>')
+
+var calculaIMC = function(alturadousuario, pesodousuario) {
+    var imc = pesodousuario / (alturadousuario * alturadousuario)
+    return imc
+}
+var imcdousuario = (calculaIMC(alturadousuario, pesodousuario))
+mostra('O IMC do usuario é : ' + imcdousuario + '.<br>')
+if(imcdousuario > 18.5) {
+    if(imcdousuario < 35) {    
+    mostra('Seu IMC está entre o indice min: 18.5 e o indice max: 35')
+}
+}
+mostra('<h3>Com a condiçao && (E)</h3>')
+if(imcdousuario >= 18.5 && imcdousuario <= 35) {
+    mostra('Está dentro dos limites: maior que 18.5 e menor que: 35. <br>');
+}
+
+</script>
