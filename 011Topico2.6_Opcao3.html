@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+    <html lang="en">
+        <head>
+            <meta charset="UTF-8" />
+            <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+            <title>Atividade2</title>
+            <link rel="stylesheet" href="./style.css">
+        </head>
+    <body>
+// <script src="AtividadeGti.js"></script>
+
+<style>
+body {
+    padding: 20px;
+    background-color: rgb(192, 169, 161);
+    
+}
+
+h2 {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: bold;
+}
+</style>
+
+<script>
+
+function mostra(frase) {
+    document.write(frase + '<br>')
+}
+mostra('<h2>Comparativo Alcool ou Gasolina</h2>');
+    const tanqueDoCarro = 40;
+mostra('Tanque do Carro possui : ' + tanqueDoCarro + ' litros.');
+    const caminhoComGas = 480;
+mostra('Se o Veiculo rodou 480 km com 40 Litros. <br>')
+mostra('Então : 480 / 40 :');
+mostra((caminhoComGas / tanqueDoCarro) + ' Km por Litro de Gasolina.<br>');
+    const consumoGas = ((caminhoComGas / tanqueDoCarro));
+mostra('Calculo invertido: tanque de 40 L X 12 km por Litro : ' + (tanqueDoCarro * consumoGas) + ' Km.');
+mostra('<hr>Calculo de consumo Alcool :</hr>');
+const caminhoAlcool = 300;
+mostra('Veiculo com Alcool rodou : ' + caminhoAlcool + ' Km.<br>')
+mostra('KM por litro alcool : ' + (caminhoAlcool / tanqueDoCarro) + ' Km/L.');
+mostra('Significa 300 km dividido por 40 litros. <br>');
+const consumoAlcool = ((caminhoAlcool / tanqueDoCarro));
+mostra('Utilizando o Math.round ficaria : ' + Math.round(caminhoAlcool / tanqueDoCarro) + ' Km/Litro.');
+mostra('Com duas Casas decimais <b>fica</b>: ' + (caminhoAlcool / tanqueDoCarro).toFixed(2) + ' Km/Litro.');
+mostra('Tanque de 40L x 7.5 Km/L : ' + (tanqueDoCarro * consumoAlcool) + ' Km rodados.<br>');
+mostra('<h3>Comparativo : Gasolina e Alcool:</h3>');
+const precoGas = 2.90;
+mostra('Valor por Litro da Gasolina : R$ ' + precoGas + '0.');
+mostra('Preco por KM Gasolina : R$ ' + (precoGas / consumoGas).toFixed(2) + ' centavos.');
+mostra('Significa R$ 2.90 dividido por 12 km/Litro.<br>');
+const precoAlcool = 2.10;
+mostra('Valor por Litro do Alcool : R$ ' + precoAlcool + '0.');
+mostra('Preco por KM Alcool : R$ ' + (precoAlcool / consumoAlcool) + ' centavos.'); 
+mostra('Significa R$ 2.40 dividido por 7.5 Km/L.');
+                
+
+        </script>
+    </body>
+</html> 
