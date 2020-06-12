@@ -1,4 +1,10 @@
-<title>Topico4.3</title>
+<!DOCTYPE html>
+	<html lang="EN">
+		<head>
+			<title>Topico4.3</title>
+		</head>
+	<body>
+
 <script>
 function mostra (frase) {
 	document.write(frase)
@@ -6,21 +12,20 @@ function mostra (frase) {
 function pulalinha() {
 	document.write('<br>')
 }
-mostra('<strong>Topico 4.3 </strong><br>')
+mostra('<h2>Topico 4.3 </h2>')
 var vitoria1 = parseInt(prompt('Quantas vitorias o time1 ?'))
 mostra('Time1 teve : ' + vitoria1 + ' vitorias.<br>')
 var empate1 = parseInt(prompt('Quantos empates teve o time1 ?'))
 mostra('Time1 teve : ' + empate1 + ' empates <br>')
 var pontos1 = (vitoria1 * 3) + empate1
-mostra('Time1 total : ' + pontos1 + ' pontos. <br>')
-pulalinha()
-mostra('Exercicio 1 : <br>')
+mostra('<strong>Time1 total : ' + pontos1 + ' pontos. </strong><br>')
+mostra('<h3>Exercicio 1 : </h3>')
 var vitoria2 = parseInt(prompt('Quantas vitorias o time2 ?'))
 mostra('Time2 teve : ' + vitoria2 + ' vitorias.<br>')
 var empate2 = parseInt(prompt('Quantos empates teve o time2 ?'))
 mostra('Time2 teve : ' + empate2 + ' empates.<br>')
 var pontos2 = (vitoria2 * 3) + empate2
-mostra('Time2 total : ' + pontos2 + ' pontos. <br>')
+mostra('<strong>Time2 total : ' + pontos2 + ' pontos. </strong><br>')
 pulalinha()
 if (pontos1 > pontos2) {
 	mostra('Time 1 tem mais pontos que Time 2 <br>')
@@ -28,25 +33,32 @@ if (pontos1 > pontos2) {
 else {
 	mostra('Time 2 tem mais pontos que Time 1 <br>')	
 }
-pulalinha()
-mostra('Exercicio 2 : <br>')
-var calculapontos1 = function(vitoria1, empate1) {
+mostra('<h3>Exercicio 2 : Outro Codigo : </h3>')
+var calculaPontos1 = function(vitoria1, empate1) {
 		return (vitoria1 * 3 + empate1)
 }
-var calculapontos2 = function(vitoria2, empate2) {
+var calculaPontos2 = function(vitoria2, empate2) {
 		return (vitoria2 * 3 + empate2)
 }
-var calculatime1 = calculapontos1(vitoria1, empate1)
-var calculatime2 = calculapontos2(vitoria2, empate2)
-mostra('Time 1 tem : ' + calculatime1 + ' pontos.<br>')
-mostra('Time 2 tem : ' + calculatime2 + ' pontos.<br>')
-pulalinha()
-mostra('Exercicio 3 : Com as derrotas valendo -1 ponto.<br>')
-mostra('Time 1 tem : ' + calculatime1 + ' pontos.<br>')
-var derrota1 = parseInt(prompt('Quantas derrotas time 1 ?'))
-var totaltime1 = calculatime1 - derrota1
-mostra('Time 1 tem : ' + derrota1 + ' derrotas.<br>')
-mostra('Time 1 : ' + calculatime1 + ' menos ' + derrota1 + '.<br>')
-mostra('Time 1 total : ' + totaltime1 + ' pontos.<br>')
+var calculaTime1 = calculaPontos1(vitoria1, empate1)
+var calculaTime2 = calculaPontos2(vitoria2, empate2)
+mostra('Time 1 tem : ' + calculaTime1 + ' pontos.<br>')
+mostra('Time 2 tem : ' + calculaTime2 + ' pontos.<br>')
+mostra('<hr><h3>Exercicio 3 : Com as derrotas valendo -1 ponto.</h3></hr><br>')
 
-</script>
+var derrotaTime1 = parseInt(prompt('Quantas derrotas time 1 ?'))
+var totalTime1 = calculaTime1 - derrotaTime1
+mostra('Time 1 tem : ' + derrotaTime1 + ' derrotas.<br>')
+mostra('Time 1 : ' + calculaTime1 + ' pontos menos ' + derrotaTime1 + '. <br>')
+mostra('<strong>Time 1 total : ' + totalTime1 + ' pontos.</strong></p>')
+
+var derrotaTime2 = parseInt(prompt('Quantas derrotas teve o Time 2 ?'))
+var totalTime2 = calculaTime2 - derrotaTime2
+mostra('Time 2 tem : ' + derrotaTime2 + ' derrotas.<br>')
+mostra('Time 2 : ' + calculaTime2 + ' pontos menos ' + derrotaTime2 + ' .<br>')
+mostra('<strong>Time 2 total : ' + totalTime2 + ' pontos.</strong>')
+
+
+		</script>
+	</body>	
+</html>
