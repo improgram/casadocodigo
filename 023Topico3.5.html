@@ -1,8 +1,10 @@
-<html>
-<head>
-<title>Topico 3.5</title>
-</head>
-<body>
+<!DOCTYPE html>
+    <html lang="EN">
+        <head>
+            <title>Topico 3.5</title>
+        </head>
+    <body>
+
 <script>
 var pulalinha = function () {
     document.write('<br>');
@@ -10,31 +12,38 @@ var pulalinha = function () {
 var mostra = function (frase) {
     document.write(frase);
 };
-mostra('<strong>Topico 3.5</strong>');
-var calculaIMC = function (altura, peso) {
+mostra('<h2>Topico 3.5</h2>');
+var calculaImc = function (altura, peso) {
     var imc = peso / (altura * altura);
     return imc;
 };
-mostra('<hr>EXERCICIO 1 : </hr>');
-var altura = prompt('Qual sua altura ? ');
+mostra('<h3><hr>EXERCICIO 1 : </hr></h3>');
+var altura = prompt('Digite sua altura com o . ponto.');
 mostra('<br> Sua altura é : ' + altura);
 pulalinha();
 var peso = prompt('Qual seu peso ? ');
 mostra('Seu peso é : ' + peso);
 pulalinha();
+mostra('<h4>EXERCICIO 2 : </h4>')
+
+var imcDoUsuario = calculaImc(altura, peso);
+mostra('Imc do Usuario : ' + imcDoUsuario + '<p>')
+mostra('Usuario seu IMC arredondado : ' + Math.round(imcDoUsuario));
 pulalinha();
-mostra('EXERCICIO 2 : <br>')
-var imcdousuario = calculaIMC(altura, peso);
-    mostra('Seu IMC é : ' + Math.round(imcdousuario));
+mostra('<h4>EXERCICIO 3 : </h4>');
+var altura2 = prompt('Digite sua altura com o .ponto.')
+mostra('Clandestino sua altura digitada : ' + altura2 + '<br>')
+var peso2 = prompt('Clandestino Qual seu peso.');
+mostra('Clandestino seu Peso digitado : ' + peso2 + '<br>');
+var imcDoClandestino = calculaImc(altura2, peso2)
+mostra('Imc do Clandestino : ' + imcDoClandestino)
 pulalinha();
-pulalinha();
-mostra('EXERCICIO 3 : <br>');
-var peso1 = prompt('Clandestino Qual seu peso ?');
-mostra('Peso digitado : ' + peso1 + '<br>');
-pulalinha();
-mostra('EXERCICIO 4 : <br>');
-mostra('Se digitar letra nao vai calcular o IMC <p>');
-mostra('Se digitar a altura com virgula nao faz calculo do IMC.');
-</script>
-</body>
+mostra('IMC Clandestino arredondado : ' + Math.round(imcDoClandestino))
+mostra('<h4>EXERCICIO 4 : </h4>');
+mostra('Se digitar letra nao vai calcular o IMC <br>');
+mostra('Se digitar a altura com virgula nao faz calculo do IMC.<br>');
+mostra('Se digitar a altura sem o ponto nao vai calcular.')
+
+        </script>
+    </body>
 </html>
