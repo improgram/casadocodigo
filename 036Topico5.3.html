@@ -1,18 +1,26 @@
-<title>Topico 5.3</title>
+<!DOCTYPE html>
+    <html lang="EN">
+        <head>
+            <title>Topico 5.3</title> 
+        </head>
+    <body>
+
 <script>
 function mostra (frase) {
     document.write(frase + '<br>')
 }
-mostra('<strong>Topico 5.3</strong>')
+mostra('<h2>Topico 5.3</h2>')
 mostra('Exercicios 1 e 2 inuteis.')
-mostra('<strong>Exercicio 3</strong>')
-var anodecopa = 1930
-var anolimite = prompt('Qual ano limite ?')
-while (anodecopa <= anolimite) {
-    mostra(anodecopa + ' Teve copa.')
-    anodecopa = anodecopa + 4
+mostra('<h3>Exercicio 3</h3>')
+var anodeCopa = 1930
+var anoLimite = parseInt(prompt('Qual ano limite ?'))
+while (anodeCopa <= anoLimite) {
+    mostra(anodeCopa + ' Teve copa.')
+    anodeCopa = anodeCopa + 4
 }
-mostra('<strong>Exercicio 4 e 5 :</strong>')
+
+mostra('<h3>Exercicio 4 e 5 :</h3>')
+mostra(anodecopa)
 if (anolimite < anodecopa ) {
     mostra('Voce digitou ano incorreto a primeira copa foi em 1930.')
     alert('Primeira copa foi em 1930.')
@@ -21,4 +29,6 @@ if (anolimite > 2020) {
     mostra('Ultima copa foi em 2018.')
 }
 
-</script>
+        </script>
+    </body>    
+</html>
