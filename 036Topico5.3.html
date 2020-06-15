@@ -11,22 +11,21 @@ function mostra (frase) {
 }
 mostra('<h2>Topico 5.3</h2>')
 mostra('Exercicios 1 e 2 inuteis.')
-mostra('<h3>Exercicio 3</h3>')
+mostra('<h3>Exercicio 3 : Anos de Copa</h3>')
 var anodeCopa = 1930
 var anoLimite = parseInt(prompt('Qual ano limite ?'))
-while (anodeCopa <= anoLimite) {
+while (anodeCopa <= anoLimite && anodeCopa <= 2018) {
     mostra(anodeCopa + ' Teve copa.')
     anodeCopa = anodeCopa + 4
 }
-
 mostra('<h3>Exercicio 4 e 5 :</h3>')
-mostra(anodecopa)
-if (anolimite < anodecopa ) {
-    mostra('Voce digitou ano incorreto a primeira copa foi em 1930.')
+mostra('Ano Limite digitado : ' + anoLimite)
+if (anoLimite < 1930) {
+    mostra('A primeira copa foi em 1930.')
     alert('Primeira copa foi em 1930.')
-}
-if (anolimite > 2020) {
-    mostra('Ultima copa foi em 2018.')
+} 
+if (anoLimite > 2020) {
+    mostra('Ultima copa foi em 2018.') 
 }
 
         </script>

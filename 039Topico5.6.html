@@ -1,23 +1,37 @@
-<title>Topico 5.6</title>
+<!DOCTYPE html>
+    <html lang="EN">
+        <head>
+            <title>Topico 5.6</title>
+        </head>
+    <body>
+
 <script>
 function mostra (frase) {
     document.write(frase + '<br>')
 }
 mostra('<strong>Topico 5.6</strong>')
 var multi1 = 1
-
+mostra('<strong>Tabuada do 1:</strong>')
 while(multi1 <= 10) {
     mostra('1 Vezes ' + multi1 + " = " + 1 * multi1)
     multi1 = multi1 + 1
 }
 
-mostra('<hr><strong>Exercicio 2 :</strong></hr>')
-var multi = parseInt(prompt('Digite um numero.'))
-mostra('Numero digitado : ' + multi)
+mostra('<hr>Exercicio 2 :</hr>')
+var numero = parseInt(prompt('Digite um numero.'))
+mostra('Numero digitado : ' + numero)
+for(i = 1 ; i <= 10; i++) {
+mostra(numero + ' vezes ' + i + " = " + 1 * numero)
+}
 
-for(multi = 1 ; multi <= 10; multi = multi + 1) {
-mostra(multi + ' vezes ' + multi + " = " + 1 * multi)
+var numero2 = parseInt(prompt('Digite outro numero'))
+mostra('<hr>Outro numero : </hr>' + numero2)
+while(numero <= 10){
+    mostra(numero + ' vezes' + 1 + 1 + ' = ' + 1 * numero)
+    numero = numero + 1
 }
 
 
-</script>
+        </script>
+    </body>    
+</html>
