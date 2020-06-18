@@ -15,37 +15,37 @@ function mostra (frase) {
 }
 
 mostra('<h3><font color="carmine">EXERCICIO 4 : Ate acertar.</font></h3>');
-mostra('<font color="green">SEM o BREAK</font>');
-mostra('Necessario Utilizar : && significa: E.<br>');
+mostra('<font color="green">Sem o Break</font>');
+mostra('<strong>Necessario Utilizar : && que significa: E.</strong>');
 
+var sorteio = Math.round(Math.random() * 5);
+var tentativa = 1;
 
-var numero3 = Math.round(Math.random() * 5);
-var tentativa3 = 1;
-var chute3 = prompt('Ultimo sorteio-Chute numero ate 5.');
-mostra('Numero digitado : ' + chute3);
-    if (isNaN(chute3)) {
-        alert('Digite apenas numeros.')
-        mostra('Voce digitou : ' + chute3)   
+while(tentativa <= 5 && chute != sorteio) {
+	// utilizado && (e) com != diferente de.
+	var chute = prompt('Sorteio de Numero ate o 5.');
+	mostra('Numero digitado : ' + chute);
+    	if (isNaN(chute)) {
+        	alert('Digite apenas numeros.')
+        	mostra('Voce digitou : ' + chute + '<br>')   
     }
-while(tentativa3 <= 5 && chute3 != numero3) {
-        if(chute3 == numero3) {
+        if(chute == sorteio) {
 	        alert('Parabens ACERTOU');
-	        mostra('<h3>Acertou o numero : ' + numero3 + ': FIM</h3>');
+	    mostra('<h3>Acertou o Numero do sorteio: ' + sorteio + '</h3>');
+			//Sem o Break
 	    }
-    else {
-	    if(chute3 > numero3) {
-	        alert('Chute foi maior que o numero pensado ');
-	        mostra('Chute foi maior que o numero pensado' + '<br>');
-	    }
-	    if(chute3 < numero3) {
-	        alert('Chute foi menor que o numero pensado ' );
-	        mostra('Chute foi menor que o numero pensado' + '<br>');
-	    }
+	else {
+		if(chute > sorteio) {
+			alert('Chute foi maior que o numero pensado ');
+			mostra('Chute foi maior que o numero pensado' + '<br>');
+		}
+
+		if(chute < sorteio) {
+			alert('Chute foi menor que o numero pensado ' );
+			mostra('Chute foi menor que o numero pensado' + '<br>');
+		}
 	}
-	tentativa3++;
-    if(chute3 == numero3) {
-        mostra('Voce acertou.')
-    }
+	tentativa++;
 }
 
 		</script>
