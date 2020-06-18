@@ -1,6 +1,11 @@
-<html>
-    <title>Topico 6.3</title>
-    <h3>Topico 6.3</h3>
+<!DOCTYPE html>
+    <html lang="EN">
+        <head>
+            <title>Topico 6.3</title>
+        </head>
+    <body>
+
+        <h3><font color="blue">Topico 6.3</font></h3>
 <input type='text' id='numero' />
 <input type='submit' id='adivinhar' value='Comparativo'/>
 
@@ -9,14 +14,17 @@ function mostra(frase) {
     document.write(frase + '<br>')
 }
 var segredo = [16, 34, 37, 42, 50, 58]
-mostra('<br>' + segredo)
+mostra('<hr><b>Array segredo : ' + segredo + '</b></hr>')
 mostra('Posicao 0 = ' + segredo[0])
-mostra('Tamanho da array = ' + segredo.length + '<br>')
+mostra('Posicao 1 = ' + segredo[1])
+mostra('Posicao 2 = ' + segredo[2])
+mostra('<hr>Tamanho da array = ' + segredo.length + '</hr><br>')
 var caixaDoNumero = document.getElementById('numero')
 var botaoClicado = function() {
     for(var i = 0; i < segredo.length; i = i + 1) {
         if(segredo[i] == caixaDoNumero.value) {
-            alert('Acertou os numeros secretos.')
+            alert('Acertou numero secreto.')
+            caixaDoNumero.value = ""
             return
         }
     }
@@ -27,5 +35,6 @@ var botaoClicado = function() {
 var botaoAdivinhar = document.getElementById('adivinhar')
 botaoAdivinhar.onclick = botaoClicado
 
-    </script>
+        </script>
+    </body>  
 </html>

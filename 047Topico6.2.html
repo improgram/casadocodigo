@@ -1,11 +1,15 @@
-<html>
+<!DOCTYPE html>
+    <html lang="EN">
+        <head>
+            <title>Topico 6.2</title>
+        </head>
     <body>
-        <title>Topico 6.2</title>
-        <h2>Topico 6.2</h2>
-        <h3>Exercicio 1 :</h3>
+<h2>Topico 6.2</h2>
+<h3>Exercicio 1 :</h3>
 <input type='text' id='numero' />
 <input type='submit' id='adivinhar' 
         value='Digite um numero até 10' />
+        
     <script>
 function mostra (frase) {
     document.write(frase + '<br>')
@@ -23,10 +27,11 @@ var botaoClicado = function() {
 }
 var botaoAdivinhar = document.getElementById('adivinhar')
 botaoAdivinhar.onclick = botaoClicado    
-mostra('<br><strong>Exercicio 2 : </strong>')
+mostra('<h3><font color="green">Exercicio 2 :</font> </h3>')
 mostra('Foi adicionada a variavel:caixaDoNumero.value=""> ')
-mostra('teste')
+    //Com isso apos executar o campo sera zerado.
+mostra('<h4>Teste Console Navegador OK.</h4>')
 
-    </script>
+        </script>
     </body>
 </html>

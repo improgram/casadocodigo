@@ -1,8 +1,11 @@
-<html>
+<!DOCTYPE html>
+    <html lang="EN">
+        <head>
+            <title>Topico 6.1</title>
+        </head>
+    
+    <h2>Topico 6.1</h2>
     <body>
-    <title>Topico 6.1</title>
-    <h3>Topico 6.1</h3>
-
 <input type="text" id="numero" />
 <input type="submit" id="adivinhar" value="Digite 1"/>
     
@@ -19,10 +22,11 @@ var botaoClicado = function() {
      else {
          alert("voce nao digitou 1")
      }
+     caixaDoNumero.value = ""
 }
 var botaoAdivinhar = document.getElementById("adivinhar")
 botaoAdivinhar.onclick = botaoClicado
 
-    </script>
+     </script>
     </body>
 </html>

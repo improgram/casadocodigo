@@ -1,7 +1,11 @@
-<html>
+<!DOCTYPE html>
+    <html lang="EN">
+        <head>
+            <title>Topico6.4</title>
+        </head>
     <body>
-    <title>Topico6.4</title>
-    <h3>Topico 6.4</h3>
+    
+<h3>Topico 6.4</h3>
     <input type="text" id="numero" />
 <input type="submit" value="Adicione e verifique" 
                     id="verificar" />
@@ -24,6 +28,7 @@ var adicionarSorteado = function() {
         for(var i = 0; i < sorteados.length; i++) {
             if(sorteados[i] == num) {
             alert('Numero repetido : ' + num)
+            console.log(sorteados)
             repetido = 1
             return
         }
@@ -38,6 +43,6 @@ numero.value = "";
 var botao = document.getElementById('verificar')
 botao.onclick = adicionarSorteado
 
-    </script>
+        </script>
     </body>
 </html>
