@@ -1,8 +1,10 @@
 <!DOCTYPE html>
-<html>
-    <body>
-        <title>Topico6.4_Opçao2</title>
-        <h2>Exercicio 2-Topico 6.4-Opçao2</h2>
+    <html lang="EN">
+        <head>
+            <title>Topico6.4_Opçao2</title>
+        </head>
+    <body> 
+<h2>Exercicio 2-Topico 6.4-Opçao2</h2>
    
 <script>
 function mostra(frase){
@@ -24,7 +26,7 @@ mostra('Sorteados Ordenados : ' + sorteio)
 //usuario digita numeros
 var array = []
     for(var i = 0; i < 6; i++){
-    var num = prompt('Digite o numero')
+    var num = prompt('Digite 6 numeros ate 60.')
     array.push(num)
 }
 mostra('<hr>Numeros digitados: ' + array + '</hr>')
@@ -32,7 +34,7 @@ array.sort(function(a, b){
     return a - b;
 })
 mostra('Digitados ordenados : ' + array)
-mostra('<h4>Resultado</h4>')
+mostra('<font color="blue"><h3>Resultado:</h3></font>')
 
 //comparativo
 var acerto = 0
