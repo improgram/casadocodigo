@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+    <html lang="EN">
+        <head>
+            <title>Topico7.3</title>
+        </head>
+    <body>
+<h2>Topico 7.3</h2>
+    <p>
+<a href="https://developer.mozilla.org/en-US/docs/DOM/CanvasRenderingContext2D"
+ target="blank">Canvas Mozilla</a>
+        </p>
+    <p>
+ <a href="http://docs.webplatform.org/wiki/javascript" target="blank">Documentacao</a>
+        </p>
+    <img src="../CSS_Coordenadas.PNG" width="200" height="160" alt="Coordenadas">
+<h3><font color="brown">Canvas</font></h3>    
+<canvas id="tela" width="400" height="300"></canvas>    
+
+<script>
+    function mostra(frase){
+        document.write(frase + '<br>')
+    }
+mostra('<hr>Canvas figura</hr>')   
+
+var tela = document.getElementById("tela");
+var c = tela.getContext("2d");
+
+c.fillStyle = "red";
+c.fillRect(200, 0, 150, 150);
+
+
+        </script>
+    </body>
+</html>
+
