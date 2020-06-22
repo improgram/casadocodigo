@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+    <html Lang="EN">
+        <head>
+            <title>Topico7.4</title>
+        </head>
+    <body>
+<h3><font color="red">Canvas : 6 Bandeiras</font></h3>
+<canvas id = "tela" width="680" height="700"></canvas>
+
+<script>
+function mostra(frase) {
+    document.write(frase + '<br>')
+}
+var tela = document.getElementById("tela")
+var c = tela.getContext("2d")
+//Bandeira Colombia
+c.fillStyle = "yellow"
+c.fillRect(0, 0, 180, 50)
+c.fillStyle = "blue"
+c.fillRect(0, 50, 180, 25)
+c.fillStyle = "crimson";
+c.fillRect(0, 75, 180, 25)
+
+//Bandeira Madagascar
+c.fillStyle = "#F7E7EE";
+c.fillRect(0, 120, 180, 100)
+c.fillStyle = "#E52B50";
+c.fillRect(60, 120, 120, 50)
+c.fillStyle = "green";
+c.fillRect(60, 170, 120, 50)
+
+//Bandeira de Laos
+c.fillStyle = "red";
+c.fillRect(0, 235, 180, 100)
+c.fillStyle = "#1C39BB";
+c.fillRect(0, 260, 180, 50);
+
+c.fillStyle = "white";
+c.beginPath();
+c.arc(90, 285, 22, 38, 2*3.14)
+c.fill();
+//90 margem esquerda
+//284 altura do circulo
+//22 tamanho do ciruclo
+
+//Bandeira de Niger
+c.fillStyle = "#F7E7EE";
+c.fillRect(0, 350, 180, 100);
+c.fillStyle = "green";
+c.fillRect(0, 420, 180, 30);
+c.fillStyle = "#FF6600";
+c.fillRect(0, 350, 180, 30);
+//Circulo Laranja:
+c.fillStyle = "#FF6600";
+c.beginPath();
+c.arc(90, 400, 18, 38, 2*3.14);
+c.fill();
+
+
+//Bandeira da Noruega
+c.fillStyle = "#FF3333";
+c.fillRect(0, 470, 180, 100);
+
+c.fillStyle = "white";
+c.fillRect(0, 505, 180, 30);
+
+c.fillStyle = "white";
+c.fillRect(50, 470, 30, 100);
+
+c.fillStyle = "#000069";
+c.fillRect(0, 512, 180, 15);
+
+c.fillStyle = "#000069";
+c.fillRect(60, 470, 15, 100);
+
+
+
+
+mostra('<hr>Bandeiras</hr>')
+        </script>
+    </body>
+</html>        
