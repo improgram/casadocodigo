@@ -5,7 +5,7 @@
         </head>
     <body>
 <h3><font color="red">Canvas : 6 Bandeiras</font></h3>
-<canvas id = "tela" width="680" height="700"></canvas>
+<canvas id = "tela" width="600" height="600"></canvas>
 
 <script>
 function mostra(frase) {
@@ -71,12 +71,36 @@ c.fillStyle = "#000069";
 c.fillRect(0, 512, 180, 15);
 
 c.fillStyle = "#000069";
-c.fillRect(60, 470, 15, 100);
+c.fillRect(58, 470, 15, 100);
+
+//Bandeira do Brasil
+c.fillStyle = "green";
+c.fillRect(200, 0, 400, 240)
+
+c.fillStyle = "yellow";
+c.beginPath();
+c.moveTo(400, 0);
+c.lineTo(600, 120);
+c.lineTo(400, 240);
+c.lineTo(200, 120);
+c.fill();
+
+c.fillStyle = "#0033CC";
+c.beginPath();
+c.arc(400, 120, 84, 38, 2*3.14)
+c.fill();
+
+c.fillStyle = "white";
+c.beginPath();
+c.moveTo(322, 88);
+c.lineTo(334, 70);
+c.lineTo(402, 100);
+c.lineTo(482, 130);
+c.lineTo(478, 150);
+c.fill();
 
 
 
-
-mostra('<hr>Bandeiras</hr>')
         </script>
     </body>
 </html>        

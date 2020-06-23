@@ -1,0 +1,80 @@
+<html>
+    <body>
+        <h3>Titulo</h3>
+
+        <script>
+function mostra(frase){
+    document.write(frase + '<br>')
+}
+console.log(480)
+console.log(40)
+console.log(240)
+
+function processarLinha(linha) {
+  return linha;
+}
+const clientes = 12;
+const itens = 5;
+const entrada = 100;
+const principal = 240;
+const sobremesa = 30;
+
+const bebidas = 60;
+const reserva = 50;
+const conta = (principal + sobremesa + entrada)
+const contaTotal = (conta + reserva + bebidas)
+
+mostra(contaTotal);
+mostra(contaTotal / clientes)
+mostra()
+
+
+
+
+//Esta funcao geralmente nao sera alterada.
+function main(entradas) {
+  const linhas = entradas.trim().split("\n"); 
+  //separa as entradas por linha 
+  //e converte em um ARRAY de STRINGS.
+
+  for (let i=0; i < linhas.length; i++) {
+    let linha_entrada;
+    try {
+      linha_entrada = eval(linhas[i]); 
+      //tenta converter a string pra inteiro 
+      //ou array se falhar, cai no catch.
+    } catch {
+      linha_entrada = linhas[i]; 
+      //mantem como string porque o eval falhou
+      // em converter pra inteiro ou array.
+    }
+    if (!linha_entrada || linha_entrada !== "") {
+      const resultado_processado = processarLinha(linha_entrada);
+      if (resultado_processado) {
+        console.log(resultado_processado);
+      }
+    }
+  }
+}
+//o codigo abaixo nao deve ser alterado, só serve pra processar os inputs.
+process.stdin.resume();
+process.stdin.setEncoding("utf-8");
+var stdin_input = "";
+process.stdin.on("data", function (input) {
+    stdin_input += input;
+});
+process.stdin.on("end", function () {
+   main(stdin_input);
+});
+
+
+
+
+
+
+
+
+
+        </script>
+    </body>
+</html>
