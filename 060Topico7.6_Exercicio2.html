@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+    <html lang="EN">
+        <head>
+            <title>Topico7.6_Exercicios 1 e 2</title>
+        </head>
+<body>
+    <h2>Topico7.6_Exercicios:1 e 2</h2>
+    <canvas id="tela" width="500" height="500"></canvas>
+
+<script>
+function desenhoVerde(x, y) {
+    var tela = document.getElementById("tela");
+    var c= tela.getContext("2d");
+
+    c.fillStyle="green";
+    c.fillRect(x, y, 50, 50);
+
+    c.strokeStyle="black";
+    c.strokeRect(x, y, 50, 50);
+};
+
+function bolaAzul(x, y){
+    var tela = document.getElementById("tela");
+    var c= tela.getContext("2d");
+
+    c.fillStyle="blue";
+    c.beginPath();
+    c.arc(x, y, 20, 0, 2*3.14);
+    //20 tamanho do circulo.
+    c.fill();
+}
+
+
+for(var x = 0; x < 500; x = x + 50) {
+    desenhoVerde(x, 0);
+    bolaAzul(x + 25, 50);
+    //+ 25 para alinhar com os quadrados verdes.
+    //linha 50
+}
+
+        </script>
+    </body>
+</html>    

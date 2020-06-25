@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+    <html lang="EN">
+        <head>
+            <title>Topico7.6_Exercicio3</title>
+        </head>
+    <body>
+<h3>Topico7.6_Exercicio3</h3>
+
+        <canvas id="tela" width="500" height="400"></canvas>
+<script>
+
+function desenhaQuadrado(x, y, cor) {
+    var tela = document.getElementById("tela");
+    var c = tela.getContext("2d");
+    c.fillStyle = cor;
+    c.fillRect(x, y, 50, 50);
+    c.strokeStyle="black";
+    c.strokeRect(x, y, 50, 50);
+};
+
+function verde(x, y) {
+    desenhaQuadrado(x, y, ("green"));
+};
+
+function vermelho(x, y) {
+    desenhaQuadrado(x, y, ("red"));
+};
+
+function bolaAzul(x, y){
+    var tela = document.getElementById("tela");
+    var c= tela.getContext("2d");
+
+    c.fillStyle = "blue";
+    c.beginPath();
+    c.arc(x, y, 25, 0, 2*3.14);
+    c.fill();
+};
+
+for(var x = 0; x < 600; x = x + 50) {
+    verde(x, 0);
+    vermelho(x, 60);
+    //Y = Linha 60
+    bolaAzul(x + 25, 150);
+    //Y = Linha 150
+}
+
+
+        </script>        
+    </body>  
+</html>
