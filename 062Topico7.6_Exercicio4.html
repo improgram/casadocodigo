@@ -5,28 +5,37 @@
        </head>
 <body>
 <h2>Topico7.6_Exercicio4</h2>    
-<canvas id="tela" width="500" height="500"></canvas>
+<canvas id="tela" width="450" height="400"></canvas>
 
 <script>
 
 function bolaAzul (x, y) {
     var tela = document.getElementById("tela");
     var d = tela.getContext("2d");
-
     d.fillStyle = "blue";
     d.beginPath();
-    d.arc(x, 20, 20, 0, 2*3.14)
+    d.arc(x, 20, 20, 0, 2*3.14);
 // X, Y , raio, Angulo inicial, Angulo final.
 // De 0 ate duas vezes 3.14(Valor de PI=Circuferencia inteira)   
     d.fill();
 };
 
-for(var x = 0; x < 500; x = x + 50) {
+function bolaVerde(x, y) {
+    var tela = document.getElementById("tela");
+    var c = tela.getContext("2d");
+    c.fillStyle = "green";
+    c.beginPath();
+    c.arc(x, 75, 20, 20, 0, 2*3.14);
+    c.fill();
+}
+
+for(var y = 0; y < 400; y = y + 50){
+    for(var x = 25; x < y; x = x + 45) {
     bolaAzul(x + 20, 40);
+    bolaVerde(x + 20, 50)
+    };
 };
-//for(var x = 0; x < 100; x = x + 40){
-//bolaAzul(x, 100)
-//}
+
 
 
         </script>
