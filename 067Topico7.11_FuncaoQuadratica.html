@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+    <html lang="EN">
+        <head>
+            <title>Topico7.11_FuncaoQuadratica</title>
+        </head>
+<h3>Topico7.11_FuncaoQuadratica</h3>
+<canvas id = "tela"	width = "600"	height = "400" ></canvas>
+
+<script>
+function mostra(frase){
+    document.write(frase + '<br>')
+}
+
+    var tela = document.getElementById("tela");
+    var c = tela.getContext("2d");
+        
+    c.fillStyle = "salmon";
+
+//Quebrar o Codigo em duas Partes:
+//Removendo o 0.01 * x * x da variavel desenhaParabola:
+    var funcaoQuadratica = function(x) {
+        return 0.01 * x * x;
+    };
+
+    var desenhaParabola = function(x, y) {
+        for(x = 0; x < 600; x = x + 1) {
+            var y = funcaoQuadratica(x);
+            mostra("Para x = " + x + ", o y vale " + y);
+                
+        c. beginPath();
+        c.arc(x, 400 - y, 2, 0, 2 * Math.PI);
+//Calcular o seno de um Angulo(em radianos): Math.sin(x).
+        c.fill();
+    }
+};
+
+        desenhaParabola();
+
+        
+    </script>
+</html>

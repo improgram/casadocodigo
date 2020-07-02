@@ -1,59 +1,30 @@
 <!DOCTYPE html>
     <html lang="EN">
        <head>
-           <title>Topico7.8_Paint_Canvas</title>
+           <title>Topico7.8</title>
        </head>
 <body>
-<h2>Topico7.6_Paint_Canvas</h2> 
+<h2>Topico7.8</h2>
+<h4>Parabola deveria ser crescente.</h4> 
+<canvas id="tela" width="600" height="400"></canvas>
 
-<canvas id="tela" width = "600" height = "400"></canvas>
 <script>
-var tela = document.getElementById("tela");
+function mostra(frase){
+    document.write(frase + '<br>')
+}
+
+var tela = document.getElementById('tela');
 var c = tela.getContext("2d");
 
-c.fillStyle = "gray";
-c.fillRect(0, 50, 600, 350);
-
-function desenhaQuadrado(x, y, cor) {
-	c.fillStyle = cor;
-	c.fillRect(x, y, 150, 50);
-	c.strokeStyle = "black";
-	c.strokeRect = (x, y, 150, 50);
+for(var x = 0; x < 600; x = x + 1){
+    var y = x * x;
+    mostra('Para X = ' + x + ', o Y vale ' + y);
+    c.beginPath();
+    c.arc(x, y, 2, 0, 2 * Math.PI);
+    c.fill();
 }
 
-desenhaQuadrado(0, 0, "purple");
-desenhaQuadrado(150, 0, "red");
-desenhaQuadrado(300, 0, "blue");
-desenhaQuadrado(450, 0, "yellow");	
-
-function clicouNoCanvas(evento) {
-	var x = evento.pageX - tela.offsetLeft;
-	var y = evento.pageY - tela.offsetTop;
-	
-	c.fillStyle = corEscolhida;
-	
-		if(y > 50) {
-	c.beginPath();
-	c.arc(x, y, 10, 0, 2*Math.PI);
-	c.fill();
-	}
-
-	console.log("posição do clique: " + x + ", " + y);
-		if(x < 150 && y < 50) {
-			var corEscolhida = c.fillStyle = "purple";
-	}
-		if(x > 150 && y < 50) {
-			var corEscolhida = c.fillStyle = "red";
-	}
-		if(x > 300 && y < 50) {
-			var corEscolhida = c.fillStyle = "blue";
-	}
-		if(x > 450 && y < 50) {
-			var corEscolhida = c.fillStyle = "yellow";
-	}
-}
-tela.onclick = clicouNoCanvas;
 
         </script>
-   </body>       
+    </body>       
 </html> 

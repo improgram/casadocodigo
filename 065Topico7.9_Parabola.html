@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+    <html lang="EN">
+       <head>
+           <title>Topico7.9_Parabola</title>
+       </head>
+<body>
+<h2>Topico7.9_Parabola</h2>
+
+<canvas id ="tela"	width ="600" height ="400"></canvas>
+
+<script>
+function mostra(frase){
+    document.write(frase + '<br>')
+}
+
+var tela = document.getElementById("tela");
+var c = tela.getContext("2d");
+
+c.fillStyle = "orange";
+        
+for(var x = 0; x < 400; x++) {
+    var y = 0.01 * x * x;
+    mostra("Para x = " + x + ", o y vale " + y);
+            
+            
+    c.beginPath();
+    c.arc(x, 400 - y, 2, 0, 2 * Math.PI);
+    c.fill();
+}
+        
+        </script>
+    </body>
+</html>
+
+Creditos:
+https://js.do/marcosr
