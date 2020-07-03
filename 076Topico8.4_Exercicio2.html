@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+    <html lang="EN">
+        <head>
+            <title>Topico8.4_Exercicio2</title>
+        </head>
+    <body>
+<h3>Topico 8.4 Exercicio 2</h3>
+<canvas id="tela" width="600" height="400"></canvas>
+
+<script>
+var tela = document.getElementById("tela");
+var c = tela.getContext("2d");
+
+var imagem = new Image();
+    imagem.src = "CSS_Coordenadas.PNG";
+
+var limpaTela = function() {
+    c.clearRect(0, 0, 600, 400);
+}
+
+var desenhaImagem = function(x, y){
+    c.drawImage(imagem, x, y)
+};
+
+desenhaImagem(x, 100);
+
+
+        </script>    
+    </body>
+</html>    

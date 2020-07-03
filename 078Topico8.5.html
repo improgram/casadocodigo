@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+    <html lang="EN">
+        <head>
+            <title>Topico8.5</title>
+        </head>
+    <body>
+<h3>Topico8.5 Desafio Jogo do Tiro ao Alvo.</h3>
+<canvas id="tela" width="600" height="400"></canvas>
+
+<script>
+var tela = document.getElementById("tela");
+var c = tela.getContext("2d");
+
+
+var desenhaAlvo = function(x, y){
+    var raio = 40;
+    cor("white");
+    circulo(x, y, raio);
+    cor("red");
+    circulo(x, y, raio-10);
+    cor("white");
+    circulo(x, y, raio-20);
+    cor("red");
+    circulo(x, y, raio-30);
+};
+
+//function sorteia...
+
+//function limpa...
+
+var alvoX;
+var alvoY;
+
+var desenha = function() {
+    limpa();
+    alvoX = sorteia(600);
+    alvoY = sorteia(400);
+    desenhaAlvo(alvoX, alvoY);
+};
+
+
+//setInterval(desenha, 1000);                                        
+
+
+        </script>        
+    </body>    
+</html>

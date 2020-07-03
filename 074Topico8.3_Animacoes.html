@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+    <html Lang="EN">
+        <head>
+            <title>Topico8.3_Animacoes</title>
+        </head>
+    <body>
+<h3>Topico8.3_Animacoes</h3>
+<canvas id="tela" width="600" height="400"></canvas>
+<script>
+
+var tela = document.getElementById("tela");
+var c = tela.getContext("2d");
+c.fillStyle="green";
+c.fillRect(0, 0, 200, 400);
+
+function circulo(x, y, raio){
+    c.fillStyle = "blue";
+    c.beginPath();
+    c.arc(x, y, raio, 0, 2*Math.PI);
+    c.fill();
+};
+
+var limpaTela = function() {
+    c.clearRect(0, 0, 600, 400);
+};
+
+//Contador X fora da  funcao.
+//Caso contrario toda vez ele iria voltar a valer 1.
+var x = 1;
+//Nao temos mais um laco, a Funcao desenha realmente apaga a tela.
+//E Desenha o circulo apenas uma vez.
+var desenha = function(){
+    limpaTela();
+    circulo(x, 100, 10)
+    x = x + 1;
+};
+
+setInterval(desenha, 30);
+
+//Topico avancado : double buffer.
+
+        </script>
+    </body>
+</html>

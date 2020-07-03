@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+    <html lang="EN">
+        <head>
+            <title>Topico8.5_Exercicio3</title>
+        </head>
+    <body>
+<h3>Topico8.5 Exercicio 3</h3>
+<a href="http://buildnewsgames.com/sprite-animation/" 
+target="_blank">Animacoes JavaScript Link</a>
+
+<canvas id="tela" width="600" height="400"></canvas>
+
+<script>
+var tela = document.getElementById("tela");
+var c = tela.getContext("2d");
+
+var circulo = function(x, y, raio){
+    c.strokeStyle = "red";
+    c.beginPath();
+    c.arc(x, y, raio, 0, 2*Math.PI);
+    c.stroke();
+};
+
+var x = 1;
+var desenha = function(){
+    circulo(x, x, 10);
+    x = x + 1;
+}
+
+setInterval(desenha, 30)
+
+
+        </script>
+    </body>    
+</html>    

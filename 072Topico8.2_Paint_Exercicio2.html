@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+    <html Lang="EN">
+        <head>
+            <title>Topico8.2_Exercicio2</title>
+        </head>
+    <body>
+<h3>Topico8.2_Exercicio 2</h3>
+<canvas id="tela" width="600" height="400"></canvas>
+
+<script>
+var tela = document.getElementById("tela");
+var c = tela.getContext("2d");
+c.fillStyle = "silver";
+c.fillRect(0, 50, 600, 350);
+
+function desenhaCirculo(evento){
+    var x = evento.pageX;
+    var y = evento.pageY;
+    c.fillStyle = "red";
+    c.beginPath();
+    c.arc(x, y, 10, 0, 2*3.14);
+    c.fill();
+    alert('Posicao do Clique : ' + x + " , " + y);
+};
+
+tela.onmousemove = desenhaCirculo;
+
+        </script>
+    </body>
+</html>
