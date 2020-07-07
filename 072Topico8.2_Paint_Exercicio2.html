@@ -4,14 +4,15 @@
             <title>Topico8.2_Exercicio2</title>
         </head>
     <body>
-<h3>Topico8.2_Exercicio 2</h3>
+<h2>Topico8.2_Exercicio 2</h2>
+<h3><font color="green">Desenhe no Paint sem clicar.</font></h3>
 <canvas id="tela" width="600" height="400"></canvas>
 
 <script>
 var tela = document.getElementById("tela");
 var c = tela.getContext("2d");
 c.fillStyle = "silver";
-c.fillRect(0, 50, 600, 350);
+c.fillRect(0, 20, 600, 350);
 
 function desenhaCirculo(evento){
     var x = evento.pageX;

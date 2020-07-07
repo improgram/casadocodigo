@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+    <html lang="EN">
+        <head>
+            <title>Topico 8.5_Opcao2</title>
+            <meta charset="UTF-8">
+        </head>  
+<h3>Topico8.5_Opcao2</h3>    
+<canvas id="tela" width="600" height="400"></canvas>
+
+<script>
+var tela = document.getElementById("tela");
+var c = tela.getContext("2d");
+
+var cor = function(color) {
+	c.fillStyle = color;
+	c.fill();
+}
+
+var circulo = function (x, y, raio) {
+	c.fillStyle= "blue";
+	c.beginPath();
+	c.arc(x, y, raio, 0, 2*Math.PI);
+	c.fill();
+}
+
+var desenhaAlvo = function(x, y) {
+	var raio = 40;
+		cor("white");
+		circulo(x, y, raio);
+		cor("red");
+		circulo(x, y, raio-10);
+		cor("white");
+		circulo(x, y, raio-20);
+		cor("red");
+		circulo(x, y, raio-30);
+}
+
+var limpa = function() {
+	c.clearRect(0, 0, 600, 400);
+}
+
+var sorteia = function(numero) {
+	Math.round(Math.random() * numero);
+}
+var alvoX;
+var alvoY;
+
+var desenha = function() {
+	limpa();
+	alvoX = sorteia(600);
+	alvoY = sorteia(400);
+	desenhaAlvo(alvoX, alvoY);
+}
+
+setInterval(desenha, 1000);
+        
+        </script>
+    </body>
+</html>        

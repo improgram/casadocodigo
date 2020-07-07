@@ -10,37 +10,68 @@
 <script>
 var tela = document.getElementById("tela");
 var c = tela.getContext("2d");
+var pontos = 0;
+var intervalo = 1000;
 
+function clicouCanvas(evento){
+	var x = evento.pageX - tela.offsetLeft;
+	var y = evento.pageY - tela.offsetTop;
+	
+	var distH = x - alvoX;
+	var distV = y - alvoY;
+	var raiz = distH * distH + distV * distV;
+	
+	console.log(x + "," + y + "," + distH + "," + distV + "raiz:" + raiz);
+	
+	if(raiz <= 40 * 40){
+		console.log("Acertou");
+		pontos++
+	}else{
+		console.log("Errou");
+	}
+	
+}
 
-var desenhaAlvo = function(x, y){
-    var raio = 40;
-    cor("white");
-    circulo(x, y, raio);
-    cor("red");
-    circulo(x, y, raio-10);
-    cor("white");
-    circulo(x, y, raio-20);
-    cor("red");
-    circulo(x, y, raio-30);
-};
+function circulo(x, y, raio, cor){
+	c.fillStyle=cor;
+	c.beginPath();
+	c.arc(x, y, raio, 0, 2*Math.PI);
+	c.fill();
+}
 
-//function sorteia...
+function desenhaAlvo(x, y){
+	var raio = 40;
+	
+	circulo(x, y, raio, "gray");
+	circulo(x, y, raio-10, "red");
+	circulo(x, y, raio-30, "gray");
+	circulo(x, y, raio-40, "red");
+}
 
-//function limpa...
+function limpa(){
+	c.clearRect(0, 0, 600, 400);
+}
+	
+function sorteia(n){
+	return Math.round(Math.random() * n);
+}
 
 var alvoX;
 var alvoY;
 
-var desenha = function() {
-    limpa();
-    alvoX = sorteia(600);
-    alvoY = sorteia(400);
-    desenhaAlvo(alvoX, alvoY);
-};
+function desenha(){
+	limpa();
+	alvoX = sorteia(600);
+	alvoY = sorteia(400);
+	desenhaAlvo(alvoX, alvoY);
+	c.fillStyle="black";
+	c.font="20px Georgia";
+	c.fillText("Pontuação: " + pontos,10,50);
+}
 
+setInterval(desenha,1000);
 
-//setInterval(desenha, 1000);                                        
-
+tela.onclick = clicouCanvas;
 
         </script>        
     </body>    
