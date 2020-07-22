@@ -1,59 +1,128 @@
 <!DOCTYPE html>
-    <html lang="EN">
-        <head>
-            <title>Topico 8.5_Opcao2</title>
-            <meta charset="UTF-8">
-        </head>  
-<h3>Topico8.5_Opcao2</h3>    
-<canvas id="tela" width="600" height="400"></canvas>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Tiro ao Alvo</title>
+</head>
+<style media="screen">
+  #pontos {
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 50px;
+    color: red;
+  }
+  canvas {
+    margin: 0 auto;
+    display: block;
+  }
+  @media (max-width:400px) {
+    canvas {
 
-<script>
-var tela = document.getElementById("tela");
-var c = tela.getContext("2d");
+    }
+  }
+</style>
+<body>
+  <h3><font color="blue">Tiro ao Alvo com Canvas</font></h3>
+  <canvas id="canvas" width="600" height="400"></canvas>
+  <div id="pontos"></div>
+  <audio src="tink.wav" id="som"></audio>
 
-var cor = function(color) {
-	c.fillStyle = color;
-	c.fill();
-}
+  <script type="text/javascript">
+    var tela = document.getElementById("canvas");
+    var c = tela.getContext("2d");
 
-var circulo = function (x, y, raio) {
-	c.fillStyle= "blue";
-	c.beginPath();
-	c.arc(x, y, raio, 0, 2*Math.PI);
-	c.fill();
-}
+    // Function para definir cor do alvo
+    var cor = function (cor) {
+      c.fillStyle = cor;
+    };
 
-var desenhaAlvo = function(x, y) {
-	var raio = 40;
-		cor("white");
-		circulo(x, y, raio);
-		cor("red");
-		circulo(x, y, raio-10);
-		cor("white");
-		circulo(x, y, raio-20);
-		cor("red");
-		circulo(x, y, raio-30);
-}
+    // Function para desenhar os circulos do alvo
+    var circulo = function (x, y, raio) {
+      c.beginPath();
+      c.arc(x, y, raio, 0, Math.PI*2);
+      c.fill();
+    };
 
-var limpa = function() {
-	c.clearRect(0, 0, 600, 400);
-}
+    // Function para limpar a tela redesenhar o fundo cinza
+    var limpaTela = function () {
+      c.clearRect(0, 0, 600, 400);
+      c.fillStyle = "grey";
+      c.fillRect(0, 0, 600, 400);
+    };
 
-var sorteia = function(numero) {
-	Math.round(Math.random() * numero);
-}
-var alvoX;
-var alvoY;
+    // Function para desenhar circulos simulando o alvo
+    var desenhaAlvo = function (x, y) {
+      var raio = 40;
+      cor("white");
+      circulo(x, y, raio);
+      cor("red");
+      circulo(x, y, raio-10);
+      cor("white");
+      circulo(x, y, raio-20);
+      cor("red");
+      circulo(x, y, raio-30);
+    };
+    // Function para sortear valor para posição de x e y de desenhar o circulo
+    var sorteia = function (valor) {
+      return Math.round(Math.random()*valor);
+    };
 
-var desenha = function() {
-	limpa();
-	alvoX = sorteia(600);
-	alvoY = sorteia(400);
-	desenhaAlvo(alvoX, alvoY);
-}
+    //Variáveis para receber numeros sorteados em escopo global para verificação de acerto
+    var alvoX;
+    var alvoY;
 
-setInterval(desenha, 1000);
-        
-        </script>
-    </body>
-</html>        
+    // Function para desenhar circulo em posição aleatoria
+    var desenhaNaTela = function () {
+      limpaTela();
+      alvoX = sorteia(600);
+      alvoY = sorteia(400);
+      desenhaAlvo(alvoX, alvoY);
+      console.log(alvoX, alvoY);
+    };
+
+    // Variavel para somar os pontos e exibir na tela
+    var ponto = 0;
+    var mostraPontos = document.getElementById("pontos");
+
+    // Variavel para chamada do audio ao click certo no alvo
+    var audio;
+    audio = document.createElement('audio');
+
+    // function para checar se acertou o alvo verificando a distancia do click com o centro do desenho do alvo
+    var checarAcerto = function (e) {
+      var clickX = e.pageX - tela.offsetLeft;
+      var clickY = e.pageY - tela.offsetTop;
+      var ladoX = clickX - alvoX;
+      var ladoY = clickY - alvoY;
+      var quadradoCatetoX = ladoX**2;
+      var quadradoCatetoY = ladoY**2;
+      var hipotenusa = (quadradoCatetoX + quadradoCatetoY)/2;
+
+      console.log(ladoX, ladoY, quadradoCatetoX, quadradoCatetoY, hipotenusa);
+
+      if (hipotenusa < 800) {
+        var audio = document.getElementById("som");
+        audio.currentTime = 0;
+        audio.play();
+        console.log("acertou " + ponto);
+        ponto++;
+      } else {
+        console.log("Errou");
+      }
+
+      mostraPontos.innerHTML = "Pontos "+ ponto;
+      // console.log("X = "+clickX+" Y = "+clickY+ " Diferenca ");
+
+    }
+
+    // Callback para click do mouse
+    tela.onclick = checarAcerto;
+    // Function para dar intervalo de tempo chamando a function de desenhar na tela e setado o time
+    setInterval(desenhaNaTela, 1000);
+
+  </script>
+
+</body>
+</html>
