@@ -1,36 +1,82 @@
-.formulario{
-    width: 400px;
-    padding: 30px;
-    border: 1px solid #ccc;
-}
-.field{
-    width: 100%;
-    margin: 15px 0;
-}
-input[type=text],
-input[type=email],
-textarea{
-    width: 100%;
-    padding-left: 10px;
-    height: 30px;
-    line-height: 30px;
-    border-radius: 15px;
-    border: 1px solid #ccc;
-    outline: none;
+*{ margin: 0; padding: 0;}
+
+body{
+    font: 100% normal Arial, Helvetica, sans-serif;
+    background: #5d614d;
 }
 
-input[type=submit]{
-    display: block;
-    background-color: #ccc;
-    height: 35px;
-    border: none;
-    outline: 0;
-    cursor: pointer;
-    width: 100px;
+.meuForm,input {
+    margin: 0;
+    padding: 0;
+    color: #020f27;
+}
+
+div.box {
     margin: 0 auto;
+    width: 500px;
+    background: #222222;
+    border: 1px solid #262626;
+}
+
+.box h2 {
+    color: #ffffff;
+    font-size: 18px;
+    text-transform: uppercase;
+    padding: 40px 0 40px 120px;
+    border-bottom: 1px solid #161712;
+    border-top: 1px solid #161712;
+}
+
+.box label {
+    width: 100%;
+    display: block;
+    background: #1C1C1C;
+    border-top: 1px solid #262626;
+    border-bottom: 1px solid #161712;
+    padding: 20px 0 10px 0;
+}
+
+.box label span {
+    display : block;
+    color: #bbbbbb;
+    font-size: 16px;
+    float: left;
+    width: 140px;
     text-align: center;
-    border-radius: 15px;
+    padding: 5px 20px 0 0;
 }
-.footer {
-    background-color: "silver";
+
+.box .button {
+    margin: 0 0 0 0;
+    padding: 16px 15px;
+    background: #966767;
+    border: 1px;
+    position: relative;
+    top: 2px;
+    left: 160px;
+    width: 150px;
+    border-bottom: 1px double #660000;
+    border-top: 1px duble #660000;
+    border-left: 1px double #FF0033;
+    border-right: 1px double #FF0033;
 }
+
+a:link {
+    color: #DDD;
+  }
+  
+  a:visited {
+    color: rgb(26, 61, 56);
+  }
+  
+  a:hover {
+    color: #960017;
+  }
+
+  #copyright {
+    margin-top: 2rem;
+    text-align: center;
+    align-items: center;
+    border-top: 1px double #bbbbbb;
+  }
+  

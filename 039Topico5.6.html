@@ -5,15 +5,16 @@
         </head>
     <body>
 Tabuada do Numero: <input id="numero" type="number"> <br />
-<button onclick="tabuada()">Exibir</button><br />
-tabuada: <br />
+
+<button onclick="tabuada()">Exibir Tabuada</button><br />
+Tabuada: <br />
 <div id='resposta' style='display:inline'></div>
 
 <script>
 function mostra (frase) {
     document.write(frase + '<br>')
 }
-mostra('<hr>Topico 5.6</hr>')
+mostra('<hr>Topico 5.6: </hr>')
 var multi1 = 1
 mostra('<strong>Tabuada do 1:</strong>')
 while(multi1 <= 10) {
@@ -21,8 +22,6 @@ while(multi1 <= 10) {
     multi1 = multi1 + 1
 }
 
-mostra('<hr>Exercicio 2 :</hr>')
-mostra('Digite qualquer numero na linha inicial.')
 function tabuada(){
     var numero = parseInt(document.getElementById("numero").value);
     var resposta = document.getElementById("resposta");

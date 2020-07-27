@@ -5,54 +5,58 @@
             <meta charset="utf-8"/>
             <link rel="stylesheet" type="text/css" href="080estilo.css">
         </head>
-    <body>        
-<h3><font color="red">Topico 9.1: Criar formulario</font></h3>
+    <body>
+       
+<section id="top">              
+    <h2><font color="#660000">Topico 9.1: Formulario</font></h2>
+</section>
 
-<form class="formulario" method="post">
-    <div class="field">
-        <input type="text" id="nome" placeholder="Digite seu Nome"></div>
-    <div class="field">
-        <input type="email" id="email" placeholder="Digite seu e-mail"></div>
-    <div class="field">
-        <input type="number" id="idade" placeholder="Digite sua idade"></div>
-    <div class="field">
-        <input type="search" id="q" placeholder="Digite para Pesquisar"></div>
-    <div class="field">
-        <input type="submit" id="enviar" value="Enviar Dados" onclick="msg()"></div>
-    <div class="field">
-        <input type="reset"></div>
-</form>
+        <form class="meuForm" method="post" id="formulario">
+    <div class="box">
+<h2>Formulario de Cadastro</h2>
+    
+            <label>
+        <span>Nome: </span>
+<input type="text" class="input_text" name="nome" id="name" placeholder="Digite seu Nome" required autofocus />
+</label>
+            <label>
+        <span>Email: </span>
+    <input type="email" id="email" placeholder="Digite seu e-mail" />
+</label>
 
-<script>
-function mostra(frase){
-    document.write(frase + "<br>")
-}
+        <label>
+    <span>Idade: </span>
+<input type="number" id="idade" placeholder="Digite sua idade" min="1" max="100" />
+</label>
 
-var dados = [];
-    dados.sort(function(a,b){
-        return a - b;
-})
+            <label>
+    <span>Pesquisar: </span> 
+<input type="search" id="q" placeholder="Digite para Pesquisar" />
+</label>
 
-function msg(){
-    alert('Adicionado');
-}
-mostra('<h3>Criar array de contatos.</h3>')
+            <label>
+    <span>Assunto: </span> 
+<input type="text" id="assunto" placeholder="Digite o assunto" />
+</label>
 
-var botaoClicado = function(){
-    var idadeDigitada = document.getElementById("enviar").value;
-        if (idadeDigitada >= 100 || idadeDigitada <= 0 ){
-            alert("Numero Invalido : Idade deve ser maior que 0 e menor que 100.")
-        }
-}
+        <label>       
+<button class="button" value="Enviar Dados" onclick="botaoClicado()">Enviar Dados</button>
+</label>
+        <label>
+    <span>Limpar Formulario: </span><input type="reset">
+</label>
 
-dados.push(idadeDigitada); //Adiciona os dados digitados na Array.
+    </div>
+</form> 
 
-var adicionarDados = document.getElementById("enviar");
-    adicionarDados.onclick = botaoClicado;
+                <footer>
+            <section id="copyright">Coded by:<a target="_blank"
+href="http://freecodecamp.org/isaac-in-the-near-future-developer"> Isaac</a>
+     <h6><a href="#top">Go to Top of the Page</a></h6>
+        </section>
+    </footer>
 
+<script type="text/javascript" src="080Topico9.1.js"></script>
 
-</script>
-<footer class="footer"><p>Fim da Pagina</p>
-    <p><a href="Linkedin :"></a></p></footer>
     </body>
 </html>    
