@@ -55,9 +55,9 @@ div.box {
     top: 2px;
     left: 160px;
     width: 150px;
-    border-bottom: 1px double #660000;
-    border-top: 1px duble #660000;
-    border-left: 1px double #FF0033;
+    border-bottom: 2px double #FF0033;
+    border-top: 1px double #660000;
+    border-left: 2px double #FF0033;
     border-right: 1px double #FF0033;
 }
 
