@@ -2,7 +2,11 @@
 
 body{
     font: 100% normal Arial, Helvetica, sans-serif;
-    background: #5d614d;
+    background: #8e9184;
+}
+
+#top {
+    background: #7e9630;
 }
 
 .meuForm,input {
@@ -20,9 +24,9 @@ div.box {
 
 .box h2 {
     color: #ffffff;
-    font-size: 18px;
+    font-size: 16px;
     text-transform: uppercase;
-    padding: 40px 0 40px 120px;
+    padding: 20px 0 20px 120px;
     border-bottom: 1px solid #161712;
     border-top: 1px solid #161712;
 }
@@ -33,7 +37,7 @@ div.box {
     background: #1C1C1C;
     border-top: 1px solid #262626;
     border-bottom: 1px solid #161712;
-    padding: 20px 0 10px 0;
+    padding: 8px 0 8px 0;
 }
 
 .box label span {
@@ -50,13 +54,13 @@ div.box {
     margin: 0 0 0 0;
     padding: 16px 15px;
     background: #966767;
-    border: 1px;
+    border: 4px;
     position: relative;
-    top: 2px;
+    top: 1px;
     left: 160px;
     width: 150px;
     border-bottom: 2px double #FF0033;
-    border-top: 1px double #660000;
+    border-top: 2px double #660000;
     border-left: 2px double #FF0033;
     border-right: 1px double #FF0033;
 }

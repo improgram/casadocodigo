@@ -1,34 +1,42 @@
-
 function mostra(frase){
     document.write(frase + "<br>")
 }
+mostra("<h4>Javascript carregou.</h4>")
+var contatos = [];
 
-mostra("pagina carregou")
+function capturar() {
+    var data = new Date();
+    console.log(data.toString())
 
-var dados = [];
-    dados.sort(function(a,b){
-        return a - b;
-})
+    contatos = document.getElementById('nome').value;
+    document.getElementById('dadosDigitados').innerText = contatos;
 
-function msg(){
-    mostra('Adicionado');
-}
-mostra('<h3>Criar array de contatos.</h3>')
+    //contatos = document.getElementsByTagName("input").value;
+    //document.getElementById('dadosDigitados').innerText = contatos;
 
-var idadeDigitada = document.getElementsByClassName("enviar").value;
+    var nome = document.getElementById('nome').value;
+    var idade = document.getElementById('idade').value;
+    var email = document.getElementById('email').value;
+    var assunto = document.getElementById('assunto').value;
+    console.log(assunto);
+}    
 
-function botaoClicado (){
-    if (idadeDigitada >= 100 || idadeDigitada <= 0 ){
-    alert("Numero Invalido : Idade deve ser maior que 0 e menor que 100.")
-    }
-}
 
-var resposta = document.getElementById("resposta");
-//resposta.innerHTML = botaoClicado;   
+    console.log(
+        //document.querySelector('#formulario').innerText
+        //document.querySelector('input[name="nome"]').innerText
+        //document.getElementsByClassName("meuForm")
+        //document.getElementsByTagName("input")['nome'].textContent
+        //document.getElementsByTagName('#input').innerText;
+        //document.getElementById("formulario").getElementsByTagName("#input").innerText
+    )    
 
-dados.push(idadeDigitada); //Adiciona os dados digitados na Array.
+//test
+//https://js.do/marcosr
 
-var adicionarDados = document.getElementById("enviar");
-//    adicionarDados.onclick = botaoClicado;
 
-mostra('Dados Digitados : ' + dados)
+contatos.push("Joao" , " 22" , "email@email.com" , "Vote Nulo");
+mostra('<strong>Nome: </strong>' + contatos[0])
+mostra('<strong>Idade : </strong>' + contatos[1] + ' anos')
+mostra('<strong>Email : </strong>' + contatos[2])
+mostra('<strong>Assunto : </strong>' + contatos[3])
