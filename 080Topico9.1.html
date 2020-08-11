@@ -8,61 +8,71 @@
     <body>         
         
 <section id="top">              
-    <h2 onclick="this.innerHTML='Topico 9.1 - Formulario'">
+    <h2 onclick = "this.innerHTML = 'Topico 9.1 - Formulario' ">
         <font color="#660000">Clique para ver o titulo</font></h2>
-</section>
+            </section>
 
-    <form class="meuForm" method="post" id="formulario">
-        <fieldset id="cadastro">
-            <div class="box">
-                <h2>Formulario de Cadastro</h2>
+<form class="meuForm" method="post">
+    <fieldset id="cadastro">
+        <div class="box">
+            <h2>Formulario de Cadastro</h2>
                            
-    <label>
-        <span>Nome: </span>
-<input type="text" id='nome' name="nome" placeholder="Digite seu Nome" required autofocus />
+<label>
+    <span>Nome: </span>
+    <input type="text" id='nome' size="40" placeholder="Digite seu Nome" required autofocus />
+        </label>
+
+<label>
+    <span>Idade: </span>
+        <input type="number" id="idade" placeholder="Idade" min="1" max="100" />
             </label>
 
-    <label>
-        <span>Idade: </span>
-<input type="number" id="idade" placeholder="Idade" min="1" max="100" />
-            </label>
-
-    <label>
-        <span>Email: </span>
-<input type="email" id="email" placeholder="Digite seu e-mail" />
+<label>
+    <span>Email: </span>
+        <input type="email" id="email" size="40" placeholder="Digite seu e-mail" />
             </label>    
 
-    <label>
-        <span>Assunto: </span> 
-<input type="text" id='assunto' placeholder="Digite o assunto" />
+<label>
+    <span>Assunto: </span> 
+        <textarea id='assunto' rows="10" cols="35" placeholder="Digite o assunto"></textarea>
             </label>
 
-    <label>       
-<button class="button" type="button" id=botao onClick="capturar()">Salvar Dados</button>
+<label>       
+    <button class="button" type="button" id=botao onClick="capturar()">Exibir Informacoes</button>
         </label>
-<!--return false para nao enviar formulario-->
-    <label>
-        <span>Limpar Formulario: </span>
-        <button type="reset">Clique <i>para </i><b> limpar o formulario</b></button>
+
+<label>
+    <span>Limpar Formulario: </span>
+        <button type="reset"><i>Limpar </i><b> Formulario</b></button>
             </label>
 
         </div>
     </fieldset>    
 </form>
+<!--return false para nao enviar formulario-->
 
-<script type="text/javascript" src="080Topico9.1.js"></script>
-<hr>
+<script src="080Topico9.1.js"></script>
 
-<h3 id="dadosDigitados"></h3>
+<section id = "dados">
+    <h2><font color="#660000">Dados Digitados :</font></h2>
+        <h3>Nome : </h3>
+            <p id="nomeDigitado"></p>
+                <h3>Idade :</h3>
+                    <p id="idadeDigitado"></p>
+                        <h3>Email :</h3>
+                            <p id="emailDigitado"></p>
+                                <h3>Assunto :</h3>
+                                    <p id="assuntoDigitado"></p>
+                                        </section>  
+
 <footer>
-<section id="copyright">Coded by:<a target="_blank" href="http://freecodecamp.org/isaac-in-the-near-future-developer"> Isaac</a>
+<section id="copyright">Coded by : <a target="_blank" href="http://freecodecamp.org/isaac-in-the-near-future-developer"> 
+    Isaac Macedo</a>
     <h6><a href="#top">Go to Top of the Page</a></h6>
         </section>
             </footer>  
 
-<noscript>
-    Esta página utiliza scripts e seu navegador não é capaz de interpretá-los.
-</noscript>
+<noscript>Esta página utiliza scripts e seu navegador não é capaz de interpretá-los.</noscript>
 
     </body>
 </html>    
