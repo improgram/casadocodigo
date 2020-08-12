@@ -2,24 +2,39 @@ function mostra(frase){
     document.write(frase + '<br>')
 }
 
-var contatos = new Array(4);
-    for (let i = 0; i < 3; i++) {
-        console.log(contatos[i] = i);
-    }
+var contatos = [];
 
-var teste = ['nome', 'idade', 'email'];
-console.log('Array com Join : ' + teste.join(' '));
-console.log('Array com Sort : ' + teste.sort());
+var adicionar = function(nome, idade, email) {
+    var id = (contatos.length + 1);
+    contatos.push({
+        'id': id,
+        'nome': nome.value,
+        'idade': idade.value,
+        'email': email.value 
+    });
+    load(id, nome.value, idade.value, email.value);
+    nome.value = '';
+    idade.value = '';
+    email.value = '';
+    console.log("cadastrado ! ");
+    document.getElementById("nome").focus();
+}
 
-var contatos = [
-    {nome: ""},
-    {idade: "" },
-    {email: "" }
-];
-
-contatos.nome = "joao";
-console.log(contatos.nome)
-
-function adicionar () {
-
+var load = function(id, nome, idade, email) {
+    var tbody = document.getElementsByTagName('tbody')[0];
+     var tr = document.createElement('tr');
+    var td0 = document.createElement('td');
+    var td1 = document.createElement('td');
+    var td2 = document.createElement('td');
+    var td3 = document.createElement('td');
+    tr.appendChild(td0);
+    tr.appendChild(td1);
+    tr.appendChild(td2);
+    tr.appendChild(td3);
+    tbody.appendChild(tr);
+    td0.innerHTML = id;
+    td1.innerHTML = nome;
+    td2.innerHTML = idade;
+    td3.innerHTML = email;
+    console.log(contatos.nome)
 }
