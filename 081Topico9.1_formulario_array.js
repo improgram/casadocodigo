@@ -16,8 +16,6 @@ var adicionar = function(nome, idade, email) {
     nome.value = '';
     idade.value = '';
     email.value = '';
-    console.log("cadastrado ! ");
-    document.getElementById("nome").focus();
 }
 
 var load = function(id, nome, idade, email) {
@@ -36,5 +34,7 @@ var load = function(id, nome, idade, email) {
     td1.innerHTML = nome;
     td2.innerHTML = idade;
     td3.innerHTML = email;
-    console.log(contatos.nome)
+    console.log('Nome Cadastrado: ' + nome)
+    console.log('Idade : ' + idade)
+    console.log('Email : ' + email)
 }

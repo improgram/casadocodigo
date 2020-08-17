@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Pegar valor digitado utilizando JS.</title>  
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <h2>Pegar dados digitados utilizando JavaScript.</h2>
+        
+            <input type="text" id=nome>
+            <input type="submit" onClick= "captura()" value="Digite o Nome">
+            <p>Nome Digitado : </p> <p id="nomeDigitado" > </p>
+
+            <input type="number" id=idade>
+            <input type="submit" onClick= "captura()" value="Digite a Idade">
+            <p>Idade Digitada : </p> <p id="idadeDigitada" > </p>
+
+            <input type="email" id=email>
+            <input type="submit" onClick= "captura()" value="Digite o Email">
+            <p>Email Digitado : </p> <p id="emailDigitado" > </p>
+           
+<script>
+var pessoa = { "nome": 'Jose', "idade": ' 44', "email": ' aaa@email.com' };
+console.log('Array Pessoa: ' + Object.values (pessoa))
+var coletarNome = "";
+var coletarIdade = "";
+var coletarEmail = "";
+
+var captura = function () {
+    coletarNome = document.getElementById('nome').value;
+    document.getElementById('nomeDigitado').innerHTML = coletarNome;
+    pessoa.nome = coletarNome
+
+    coletarIdade = document.getElementById('idade').value;
+    document.getElementById('idadeDigitada').innerHTML = coletarIdade;
+    pessoa.idade = coletarIdade
+
+    coletarEmail = document.getElementById('email').value;
+    document.getElementById('emailDigitado').innerHTML = coletarEmail;
+    pessoa.email = coletarEmail
+    console.log('Array Pessoa alterada : ' + Object.values (pessoa))
+    }
+
+        </script>
+   </body>
+</html>
