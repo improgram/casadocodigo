@@ -1,9 +1,3 @@
-function mostra(frase){
-    document.write(frase + '<br>')
-}
-
-var contatos = [];
-
 var adicionar = function(nome, idade, email) {
     var id = (contatos.length + 1);
     contatos.push({
