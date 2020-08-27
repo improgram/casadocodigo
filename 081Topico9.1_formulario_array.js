@@ -1,3 +1,5 @@
+var contatos = []
+
 var adicionar = function(nome, idade, email) {
     var id = (contatos.length + 1);
     contatos.push({
@@ -13,7 +15,7 @@ var adicionar = function(nome, idade, email) {
 }
 
 var load = function(id, nome, idade, email) {
-    var tbody = document.getElementsByTagName('tbody')[0];
+var tbody = document.getElementsByTagName('tbody')[0];
      var tr = document.createElement('tr');
     var td0 = document.createElement('td');
     var td1 = document.createElement('td');

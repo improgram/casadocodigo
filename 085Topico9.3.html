@@ -5,22 +5,26 @@
         </head>
 <h1>Cadastro Academia</h1>
 <form>
-    <pre> <input type="text"    id=nome placeholder="Nome" />   </pre>
-    <pre> <input type="number"  id=idade placeholder="Idade" /> </pre>
-    <pre> <input type="number"  id=peso placeholder="Peso" />   </pre>
-    <pre> <input type="number"  id=altura placeholder="Altura" /></pre>
-    <pre> <input type="button" value="Gerar Relatorio" onClick = "cadastro()" /> </pre>
-    <pre> <input type="reset"   value="Limpar Formulario" />  </pre>
+<pre><input type="text"    id="nome" placeholder="Nome" />   </pre>
+<pre><input type="number"  id="idade" placeholder="Idade" /> </pre>
+<pre><input type="number"  id="peso" placeholder="Peso" />   </pre>
+<pre><input type="number"  id="altura" placeholder="Altura"/></pre>
+<pre><input type="button" value="Gerar Relatorio" onClick = "cadastrar (document.getElementById('nome'),
+document.getElementById('idade'), document.getElementById('peso'), document.getElementById('altura') )"/> </pre>
+<pre><input type="reset"   value="Limpar Formulario" />  </pre>
 </form>
+<hr>
+    Nome : <p id="nomeDigitado">   </p>
+    Idade : <p id="idadeDigitado"> </p>
+    Peso : <p id="pesoDigitado">   </p>
+    Altura :<p id="alturaDigitado"></p>
 
-<p id="nome">Nome : </p>
-
-<h3>Calculo de IMC</h3>
+<h3>Calculo de IMC --> <input type="button" value="Calcular IMC" onClick="calculoimc()" /> </h3>
+Seu IMC é : <p id = " "> </p>
 
 <h3>IMC Ideal:</h3>
 
-
-<script src="085Topico9.3.js" >
+<script src="085Topico9.3.js"></script>
 
     </body>
 </html>

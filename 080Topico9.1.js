@@ -1,6 +1,4 @@
-function mostra(frase){
-    document.write(frase + "<br>")
-}
+
 function capturar() {
     var data = new Date();
     console.log(data.toString())

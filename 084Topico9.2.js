@@ -5,7 +5,7 @@ function calculadora() {
 	var numero2 = document.getElementById("numero2").value;
 	console.log(numero2)
 	total = numero1 * numero2;
-	document.getElementById("resultado").value = total;
+	document.getElementById('resultado').innerText = total;
 	console.log(total)
 }
 
