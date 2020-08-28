@@ -1,3 +1,5 @@
+
+
 function calculadora() {
 	var total = 0;
 	var numero1 = document.getElementById("numero1").value;
@@ -5,9 +7,11 @@ function calculadora() {
 	var numero2 = document.getElementById("numero2").value;
 	console.log(numero2)
 	total = numero1 * numero2;
-	document.getElementById('resultado').innerText = total;
+	document.getElementById("resultado").value = total;	
 	console.log(total)
 }
+
+//console.log(total)
 
 
 //usuario sera redirecionado para a pagina informada :
