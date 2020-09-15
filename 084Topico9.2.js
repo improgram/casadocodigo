@@ -1,18 +1,24 @@
 
-
-function calculadora() {
-	var total = 0;
+function calcular() {
 	var numero1 = document.getElementById("numero1").value;
-	console.log(numero1)
 	var numero2 = document.getElementById("numero2").value;
-	console.log(numero2)
-	total = numero1 * numero2;
-	document.getElementById("resultado").value = total;	
-	console.log(total)
+	var total = parseInt(numero1) * parseInt(numero2);
+	document.getElementById("resultado").innerHTML = total;
+	console.log(typeof total + ' = ' + total);
+	return total;
 }
 
-//console.log(total)
+//window.onload = function() {
+//console.log('Onload disparado');
+//}
 
+//calcular();
+//var resultado = calcular();
+//console.log(resultado)
+
+//window.onload = function(){
+//	console.log('Onload disparado');
+//  }
 
 //usuario sera redirecionado para a pagina informada :
 function redirecionar() {

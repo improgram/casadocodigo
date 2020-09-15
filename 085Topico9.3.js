@@ -1,15 +1,12 @@
-var clientes = []
-
+var clientes = [];
 var cadastrar = function(nome, idade, peso, altura) {
-    var id = (clientes.length + 1);
     clientes.push({
-        'id' : id.value,
         'nome' : nome.value,
         'idade' : idade.value,
         'peso' : peso.value,
         'altura' : altura.value
     });
-        mostrar(nome.value, idade.value, peso.value, altura.value);
+    mostrar(nome.value, idade.value, peso.value, altura.value);
         nome.value = '';
         idade.value = '';
         peso.value = '';
@@ -22,19 +19,15 @@ var mostrar = function (nome, idade, peso, altura) {
     document.getElementById('idadeDigitado').innerText = idade;
     console.log('Idade : ' + idade)
     document.getElementById('pesoDigitado').innerText = peso;
-    console.log('Peso : ' + peso)
+    var kilo = Number(peso);
+    console.log('Peso digitado : ' + kilo)
     document.getElementById('alturaDigitado').innerText = altura;
-    console.log('Altura : ' + altura)
-    }
-
-var peso = '';
-console.log('Peso Digitado : ' + peso)
-var altura = '';
-
-var calculoimc = function (peso, altura) {
-    var imc = peso / (altura * altura);
-    return imc;
+    var tamanho = Number(altura);
+    console.log('Altura digitado : ' + tamanho)
+    var calcularIMC = peso / (altura * altura);
+    imc = Math.round(calcularIMC);
+    console.log(imc)
+    document.getElementById('imc').innerText = calcularIMC;
 }
 
-//console.log('Nome: ' + clientes + 'digitado.')
-//console.log(calculoimc)
+console.log(clientes)

@@ -1,0 +1,37 @@
+<html>
+    <head>
+<script type="text/javascript">
+	function enviar( el ){
+		return document.getElementById( el );
+    }
+    
+	function soma() {
+		var inputs = enviar('campos').getElementsByTagName('input');
+        var soma = 0;
+        
+		for( var i=0; i<inputs.length; i++ ) {
+			soma += parseInt( inputs[i].value );
+        } 
+        enviar('resultado').value = soma;
+    }
+    
+	window.onload = function(){
+		enviar('somar').onclick = function(){
+			soma();
+        }
+    }
+	
+	</script>
+</head>
+<body>
+    <h2>Calculadora com Javascript</h2>
+	<form action="" method="post">
+		<fieldset id="campos">
+<pre><label><input type="text" onchange="soma()" placeholder="Digite numero" /></label></pre>
+<pre><label><input type="text" onchange="soma()" placeholder="Digite numero" /></label></pre>
+		</fieldset>
+		<pre><input type="button" name="somar" id="somar" value="Somar" /></pre>
+		<label>Total : <input type="text" name="resultado" id="resultado" /></label>
+	</form>
+</body>
+</html>

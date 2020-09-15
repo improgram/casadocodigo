@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+        <head>
+            <title>Calculadora 099</title>
+        </head>
+    <body>    
+        <h2>Calculadora</h2>
+<pre><input type=number id="valor1" onkeyup="somarValores(this.value)" /> </pre>
+<pre><input type=number id="valor2" onkeyup="somarValores(this.value)" /> </pre>
+
+<pre>Numero <input type=number id="totalSoma" /> </pre>
+
+<script>
+var total;
+function somarValores(valor) {
+    total += valor;
+    document.getElementById("totalSoma").value = total;
+    console.log( total )
+}
+
+//console.log(somarValores() )
+
+
+        </script>
+    </body>
+</html>
