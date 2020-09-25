@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>086_Numero_ao_quadrado_cubo</title>
+  <meta charset="utf-8">
+  <style>
+    input {
+      font-size: 2em;
+      margin: 10px 1px 0;
+    }
+  </style>
+</head>
+<body>
+<h2>Numero ao quadrado e Cubo</h2>
+<pre><input class="numberInput" type="text"></pre>
+Resultado : <p></p>
+
+  <script>
+    const input = document.querySelector('.numberInput');
+    const result = document.querySelector('p');
+
+    function quadrado(num) {
+      return num * num;
+    }
+    function cubo(num) {
+      return num * num * num;
+    }
+
+    input.onchange = function() {
+      const num = input.value;
+      if(isNaN(num)) {
+        result.textContent = 'Não Digitou um numero.';
+      } else {
+        result.textContent = num + ' ao Quadrado é : ' + quadrado(num) + '. ' + " \\ " +
+      ' E ao Cubo é : ' + cubo(num) + '. '
+        }
+    }
+    console.clear();
+
+function numero(param1, param2, callback) {
+  console.log('Numero escolhido : ' + param1 + ', ' + param2);
+  callback();
+}
+numero('1' , '2', function() {
+  console.log('Fim de programa : ' + input.value);
+});
+
+  </script>
+</body>
+</html>

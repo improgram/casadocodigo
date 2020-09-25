@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+        <head>
+            <title>Calculadora 099</title>
+        </head>
+    <body>    
+        <h2>Calculadora de Soma</h2>
+<pre><input type="number" id="valor1" onkeyup="somarValores()" /> </pre>
+<pre><input type="number" id="valor2" onkeyup="somarValores()" /> </pre>
+
+<pre><h3>Numero : </h3> <span id="totalSoma"> </span> </pre>
+
+<script>
+let valor1;
+let valor2;
+let total;
+
+
+function somarValores() {
+    valor1 = Number(document.getElementById("valor1").value);
+    valor2 = Number(document.getElementById("valor2").value);
+    total = valor1 + valor2;
+    document.getElementById("totalSoma").innerText = total;
+    console.clear();
+    console.log(typeof total + ' = ' + total)
+    return total;
+}
+
+function mostrar(){
+    console.trace();
+    console.log('Teste Return da Funcao : ' + somarValores() )
+}
+
+        </script>
+    </body>
+</html>

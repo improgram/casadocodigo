@@ -17,17 +17,22 @@ var mostrar = function (nome, idade, peso, altura) {
     document.getElementById('nomeDigitado').innerText = nome;
     console.log('Nome : ' + nome)    
     document.getElementById('idadeDigitado').innerText = idade;
-    console.log('Idade : ' + idade)
-    document.getElementById('pesoDigitado').innerText = peso;
-    var kilo = Number(peso);
-    console.log('Peso digitado : ' + kilo)
-    document.getElementById('alturaDigitado').innerText = altura;
-    var tamanho = Number(altura);
-    console.log('Altura digitado : ' + tamanho)
-    var calcularIMC = peso / (altura * altura);
-    imc = Math.round(calcularIMC);
-    console.log(imc)
+    console.log('Idade : ' + idade, typeof(idade))
+document.getElementById('pesoDigitado').innerText = peso;
+    var kilo = parseFloat(peso);
+    console.log('Peso : ' + kilo, typeof(kilo))
+document.getElementById('alturaDigitado').innerText = altura;
+
+    var tamanho = parseFloat(altura);
+    console.log('Altura : ' + tamanho, typeof(tamanho))
+    var calcularIMC = kilo / (tamanho * tamanho);
     document.getElementById('imc').innerText = calcularIMC;
+    console.log(calcularIMC)
+    //console.log(Math.round(calcularIMC) + " - " + typeof(calcularIMC))
+    return Math.round(calcularIMC)
 }
 
 console.log(clientes)
+
+//var kilo = Number(peso);
+//console.log('Peso digitado : ' + kilo)
