@@ -3,6 +3,10 @@
 <head>
     <title>086_Numero_ao_quadrado_cubo</title>
   <meta charset="utf-8">
+  <meta name="description" content="Calculo">
+  <meta name="keywords" content="HTML e JS">
+  <meta name="author" content="Isaac Macedo">
+  <meta http-equiv="refresh" content="10">
   <style>
     input {
       font-size: 2em;
@@ -13,11 +17,14 @@
 <body>
 <h2>Numero ao quadrado e Cubo</h2>
 <pre><input class="numberInput" type="text"></pre>
-Resultado : <p></p>
-
+<h2><font color="#C113">Refreh na Pagina a cada 10 segundos.</font></h2>
+Resultado ao Quadrado : <p></p>
+<hr>
+Resultado ao Cubo : <h4></h4>
   <script>
     const input = document.querySelector('.numberInput');
     const result = document.querySelector('p');
+    const resultCubo = document.querySelector('h4')
 
     function quadrado(num) {
       return num * num;
@@ -30,9 +37,10 @@ Resultado : <p></p>
       const num = input.value;
       if(isNaN(num)) {
         result.textContent = 'Não Digitou um numero.';
+        resultCubo.textContent = 'Não Digitou um numero.';
       } else {
-        result.textContent = num + ' ao Quadrado é : ' + quadrado(num) + '. ' + " \\ " +
-      ' E ao Cubo é : ' + cubo(num) + '. '
+        result.textContent = num + ' ao Quadrado é : ' + quadrado(num) + '. '
+        resultCubo.textContent = num + ' ao Cubo é : ' +  cubo(num) + '. '
         }
     }
     console.clear();

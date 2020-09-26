@@ -1,19 +1,23 @@
 <!DOCTYPE html>
         <head>
-            <title>Calculadora 099</title>
+            <title>Calculadora 087</title>
+            <meta charset="utf-8">
+            <meta name="description" content="Calculadora">
+            <meta name="keywords" content="HTML e JS">
+            <meta name="author" content="Isaac Macedo">
+            <meta http-equiv="refresh" content="99">
         </head>
     <body>    
         <h2>Calculadora de Soma</h2>
 <pre><input type="number" id="valor1" onkeyup="somarValores()" /> </pre>
 <pre><input type="number" id="valor2" onkeyup="somarValores()" /> </pre>
 
-<pre><h3>Numero : </h3> <span id="totalSoma"> </span> </pre>
+<pre><h3>Resultado : </h3> <span id="totalSoma"> </span> </pre>
 
 <script>
 let valor1;
 let valor2;
 let total;
-
 
 function somarValores() {
     valor1 = Number(document.getElementById("valor1").value);
@@ -25,9 +29,10 @@ function somarValores() {
     return total;
 }
 
-function mostrar(){
-    console.trace();
-    console.log('Teste Return da Funcao : ' + somarValores() )
+function mostrar(total){
+    if(total > 10){
+        console.log("teste do Return : " + somarValores() )
+    }
 }
 
         </script>
