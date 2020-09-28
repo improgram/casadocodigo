@@ -8,11 +8,14 @@
             <meta http-equiv="refresh" content="99">
         </head>
     <body>    
-        <h2>Calculadora de Soma</h2>
-<pre><input type="number" id="valor1" onkeyup="somarValores()" /> </pre>
-<pre><input type="number" id="valor2" onkeyup="somarValores()" /> </pre>
-
+<h2>Calculadora de Soma</h2>
+<pre><input type="number" id="valor1" onkeyup="somarValores()"/></pre>
+<pre><input type="number" id="valor2" onkeyup="somarValores()"/></pre>
 <pre><h3>Resultado : </h3> <span id="totalSoma"> </span> </pre>
+<hr>
+<pre><h3>Teste do Return da FUNCAO : </h3>
+<input type="submit" onkeyup="retornar()" />
+<p id="retorno" > </p></pre>
 
 <script>
 let valor1;
@@ -29,10 +32,9 @@ function somarValores() {
     return total;
 }
 
-function mostrar(total){
-    if(total > 10){
-        console.log("teste do Return : " + somarValores() )
-    }
+function retornar (){
+    document.getElementById("retorno").innerText = somarValores()
+    console.log('Teste do Retorno da FUNCAO :' + somarValores())
 }
 
         </script>
