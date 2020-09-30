@@ -1,0 +1,46 @@
+<html>
+    <head><title>Topico 9.3</title>
+    <meta charset="utf-8" />
+    <style>
+body {font-size: 18; background-image: linear-gradient(to bottom, silver, rgb(98, 108, 151))}
+#barra { width: 655px; height: 25px;
+background-image: linear-gradient(to right, red, rgb(21, 216, 37)); }
+    </style>
+    </head>
+<body>
+        <head><title>085 Topico 9.3</title></head>
+<h1> <font color="#00008B"> Cadastro Academia</font> </h1>
+
+<form>
+Nome : <input type="text"    id="nome" placeholder="Nome" />
+Idade : <input type="number" id="idade" placeholder="Idade" />
+Peso : <input type="number"  id="peso" placeholder="Peso" />
+Altura : <input type="number" id="altura" placeholder="Altura com . ponto"/>
+<input type="button" value="Gravar" onclick="cadastrar (document.getElementById('nome'),
+document.getElementById('idade'), document.getElementById('peso'), document.getElementById('altura') )"/>
+
+<input type="reset"   value="Limpar Formulario" />
+</form>
+<hr>
+    <strong>Nome : </strong> <span id="nomeDigitado"> . </span>
+    <strong>Idade : </strong> <span id="idadeDigitado"> </span> anos.
+    <strong>Peso : </strong> <span id="pesoDigitado">  </span> kg.
+    <strong>Altura : </strong> <span id="alturaDigitado"> </span> cm.
+
+<h3><font color="#00008C">Seu IMC é : </font><span id = "imc"> </span></h3>
+<h5>Morbida: 40-30(Obesidade) - 29.99-25(Acima do Peso) - 24.99-18.50(Normal) - 18.49-17(Abaixo) - 17(Muito abaixo)
+<div id="barra"> </div>  </h5>
+
+<h4><font color="#000080">Resultado :
+<input type="submit" onkeyup="retorno()"/>
+<p id="resultado"> </p> </font></h4>
+
+
+
+
+
+Wikipedia : <a href="http://pt.wikipedia.org/wiki/índice_de_massa_corporal#Tabela_de_IMC" target="_blank">IMC Ideal:</a>
+<script src="089Topico9.3_Academia.js"></script>
+
+    </body>
+</html>
