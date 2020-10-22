@@ -1,20 +1,23 @@
 <!DOCTYPE html>
         <head>
-            <title>Calculadora 087</title>
+            <title>Calculadora de Soma</title>
             <meta charset="utf-8">
             <meta name="description" content="Calculadora">
             <meta name="keywords" content="HTML e JS">
             <meta name="author" content="Isaac Macedo">
             <meta http-equiv="refresh" content="99">
-        </head>
+            <style>
+                body{ background-image: linear-gradient(to bottom, red, (rgb(177, 71, 71) ) }
+            </style>
+        </head>        
     <body>    
 <h2>Calculadora de Soma</h2>
-<pre><input type="number" id="valor1" onkeyup="somarValores()"/></pre>
-<pre><input type="number" id="valor2" onkeyup="somarValores()"/></pre>
-<pre><h3>Resultado : </h3> <span id="totalSoma"> </span> </pre>
+<pre> <input type="number" id="valor1" /> </pre>
+<pre> <input type="number" id="valor2" /> </pre>
+<pre><h3>Resultado : </h3> <span id="totalSoma" onkeyup="somarValores()"> </span> </pre>
 <hr>
 <pre><h3>Teste do Return da FUNCAO : </h3>
-<input type="submit" onkeyup="retornar()"/>
+<input type="button" value="Teste" onkeyup="retornar()"/>
 <p id="retorno" > </p></pre>
 
 <script>
@@ -34,7 +37,7 @@ function somarValores() {
 
 function retornar (){
     document.getElementById("retorno").innerText = somarValores()
-    console.log('Teste do Retorno da FUNCAO :' + somarValores())
+    console.log('Teste do Retorno da FUNCAO : ' + somarValores())
 }
 
         </script>

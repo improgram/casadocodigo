@@ -1,0 +1,29 @@
+
+body { 
+    font-size:16px;
+    text-align: center;
+background-image: linear-gradient(to right, silver, rgb(89, 123, 128))
+}
+        
+#barra {
+    width: 660px;
+    height: 30px;
+background-image: linear-gradient(to right, red, green, yellow);
+border-radius: 8px;
+}
+
+#imcVermelho {
+    color: red;
+}
+
+#imcLaranja {
+    color: orange;
+}
+
+#imcVerde {
+    color: green;
+}
+
+#imcAmarelo {
+    color: yellow;
+}

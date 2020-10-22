@@ -24,11 +24,8 @@ var myFunction = function(evento){
         c.beginPath();
         c.arc(x, y, 10, 0, 2*Math.PI);
         c.fill();
-             
-        
     console.log("posição do Clique: " + x + " , " +y);
     //alert("A Posição do Clique foi: " + x + " , " +y);
-    
     }
      
     var myFunction2 = function(evento){
@@ -39,10 +36,8 @@ var myFunction = function(evento){
         c.beginPath();
         c.arc(x, y, 10, 0, 2*Math.PI);
         c.fill();
-       
         console.log("posição do Clique: " + x + " , " +y);
         //alert("A Posição do Clique foi: " + x + " , " +y);
-    
     }
     
     tela.addEventListener("mousedown", function(evento){
@@ -52,7 +47,6 @@ var myFunction = function(evento){
         }else if(3 == evento.which){
             console.log("Botão Esquerdo");
             myFunction2(evento);
-        
         } 
     }, false);
                           
