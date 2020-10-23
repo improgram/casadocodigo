@@ -1,16 +1,30 @@
 
 body { 
-    font-size:16px;
-    text-align: center;
-background-image: linear-gradient(to right, silver, rgb(89, 123, 128))
+    font-size: 16px;
+    font-family: sans-serif;
+background-image: linear-gradient(to right, silver, rgb(89, 123, 128));
 }
-        
-#barra {
-    width: 660px;
+
+h1 {color: white;
+    text-align: center;
+    background-color: black;
+    position: sticky;
+    top: 0;
+}
+
+h2 { color: rgb(18, 21, 243);
+    font-family: Helvetica;
+}
+
+.barra {
+    width: 800px;
     height: 30px;
 background-image: linear-gradient(to right, red, green, yellow);
-border-radius: 8px;
+    border-radius: 8px;
+    transition-duration: 2s;   
 }
+
+.barra:hover { height: 60px; }
 
 #imcVermelho {
     color: red;

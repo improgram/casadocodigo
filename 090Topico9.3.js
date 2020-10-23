@@ -29,8 +29,8 @@ function resultado() {
     } else {
         console.log("Abaixo do Peso: " + imc);
         let abaixo = document.createElement("h2");
-        abaixo.innerText = "Abaixo do Peso";
-        document.body.appendChild(abaixo)
+        //abaixo.innerHTML = "Abaixo do Peso";
+        document.body.appendChild(abaixo).innerHTML = "Abaixo do Peso";
     document.getElementById("imcAmarelo").innerText = calcularIMC();    
     }
 }

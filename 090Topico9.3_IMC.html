@@ -11,7 +11,7 @@
     </head>
   
 <body>
-    <h1><font color="#C12333">Calcular IMC com Javascript</h1></font>
+    <h1>Calcular IMC com Javascript</h1>
 
     Altura (cm): <input type="number" id="altura" min="10" max="250">
     Peso (kg):   <input type="number" id="peso" min="1" max="250"> 
@@ -19,8 +19,10 @@
     <button onclick="calcularIMC()"> Calcular o IMC </button>
           <h2>IMC: <div id="resultadoIMC"> </h2></div>
     
-    <h5>Morbida: 40-30(Obesidade) - 29.99-25(Acima do Peso) - 24.99-18.50(Normal) - 18.49-17(Abaixo) - 17(Muito abaixo)
-      <div id="barra"> </div>  </h5>
+    <h4>
+      <div class="barra"> Morbida: 40-30(Obesidade) - 29.99-25(Acima) - 24.99-18.50(Normal) - 18.49-17(Abaixo) - 17(Muito abaixo)
+        </div>
+          </h4>
    
     <input type="button" value="Ver o Retorno da Funcao" onclick="resultado()" />
       <p id="imcVermelho"></p>
