@@ -1,5 +1,5 @@
 var clientes = [];
-
+    
 function cadastrar (nome, idade, peso, altura) {
     clientes.push({
         'nome' : nome.value,
@@ -7,16 +7,14 @@ function cadastrar (nome, idade, peso, altura) {
         'peso' : peso.value,
         'altura' : altura.value,
     });
-    //console.dir(clientes.object);
+    console.log(clientes);
 
     mostrar(nome.value, idade.value, peso.value, altura.value);
         nome.value = '';
         idade.value = '';
         peso.value = '';
         altura.value = '';
-//document.getElementById('clientes').innerText = clientes;
 }
-
 
     function mostrar (nome, idade, peso, altura) {
 document.getElementById('nomeDigitado').innerText = nome;
@@ -35,3 +33,4 @@ document.getElementById('imc').innerText = (calcularIMC.toFixed(2));
 console.log(Math.round(calcularIMC) + " - " + typeof(calcularIMC))
         return Number(calcularIMC);
 }
+

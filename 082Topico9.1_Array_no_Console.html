@@ -18,10 +18,12 @@
             <input type="email" id=email>
             <input type="submit" onClick= "captura()" value="Digite o Email">
             <p>Email Digitado : </p> <p id="emailDigitado" > </p>
-           
-<script>
+        <hr>   
+        <script>
 var pessoa = { "nome": 'Jose', "idade": ' 44', "email": ' aaa@email.com' };
-console.log('Array Pessoa: ' + Object.values (pessoa))
+
+    console.log('Array Pessoa: ' + Object.values (pessoa))
+
 var coletarNome = "";
 var coletarIdade = "";
 var coletarEmail = "";
@@ -40,6 +42,7 @@ var captura = function () {
     pessoa.email = coletarEmail
     console.log('Array Pessoa alterada : ' + Object.values (pessoa))
     }
+
 
         </script>
    </body>
