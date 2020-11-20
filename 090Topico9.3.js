@@ -5,34 +5,25 @@ function calcularIMC() {
     imc = (peso / (altura * altura)).toFixed(2);
     document.getElementById("resultadoIMC").innerHTML = imc ;
     return Number(imc);
-}  
+}
 
 function resultado() {
     if (imc > 30) {
-        console.log('Considerado Obeso: ' + imc);
-        let obeso = document.createElement("h3");
-        document.body.appendChild(obeso).innerHTML = "<font color='red'>IMC Obeso!</font>";
-        document.getElementById("imcVermelho").innerHTML = calcularIMC();
+        console.log('Considerado Obeso:' + imc);
+    document.getElementById("red").innerHTML = calcularIMC() + ' Considerado Obeso.';
+        //https://javascript.info/modifying-document
     } else if (imc > 25 && imc < 30 ){
-        console.log('Está acima do Peso: ' + imc);
-        let acima = document.createElement("h3");
-        document.body.appendChild(acima).innerHTML = "<font color='orange'>IMC acima do peso</font>";
-        document.getElementById("imcLaranja").innerHTML = calcularIMC();
+        console.log('Acima do Peso: ' + imc);
+    document.getElementById("orange").innerHTML = calcularIMC() + ' Acima do Peso.';
     } else if (imc > 18.50) {
         console.log("Peso Normal: " + imc);
-        let normal = document.createElement("h3");
-        document.body.appendChild(normal).innerHTML = "<font color='green'>Peso Normal</font>";
-        document.getElementById("imcVerde").innerHTML = calcularIMC();        
+    document.getElementById("green").innerHTML = calcularIMC() + ' Peso Normal.';
     } else if (imc > 17) {
-        console.log("Abaixo do Peso: " + imc);
-        let abaixo = document.createElement("h3");
-        document.body.appendChild(abaixo).innerHTML = "<font color='#99FF00'>Abaixo do Peso</font>";
-    document.getElementById("imcAmarelo").innerHTML = calcularIMC(); 
+        console.log("Abaixo do Peso." + imc);
+    document.getElementById("yellow").innerHTML = calcularIMC() + ' Abaixo do Peso.'; 
     } else {
         console.log("IMC Muito abaixo de 17: " + imc);
-        let muitoAbaixo = document.createElement("h3");
-        document.body.appendChild(muitoAbaixo).innerHTML = "<font color='yellow'>Muito Abaixo</font>";
-    document.getElementById('imcVermelho').innerHTML = calcularIMC(); 
+    document.getElementById("red").innerHTML = calcularIMC() + ' Muito abaixo do Peso.'; 
     }
 }
 
@@ -48,3 +39,8 @@ c.fillStyle = "yellow";
 c.fillRect(480, 0, 160, 50)
 c.fillStyle = "red";
 c.fillRect(640, 0 , 160, 50);
+
+function clientes (nome) {
+    document.getElementById("nome").innerText = nome;
+    console.log('nome : ' + nome);
+}

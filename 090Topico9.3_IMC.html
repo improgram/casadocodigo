@@ -6,35 +6,55 @@
         <meta name="description" content="Calculo IMC">
         <meta name="keywords" content="Javascript e HTML">
         <meta name="author" content="Isaac">
-        <meta http-equiv="refresh" content="99"> <!--Refresh em 99 segundos-->
+        <meta http-equiv="refresh" content="999"> <!--Refresh em 999 segundos-->
         <link rel="stylesheet" type="text/css" href="090Topico9.3.css">
     </head>
   
 <body>
     <h1>Calcular IMC com Javascript</h1>
 
-        <div id="form">
-    Altura (cm): <input type="number" id="altura" min="10" max="250">
-    Peso (kg):   <input type="number" id="peso" min="1" max="250"> 
-        </div>
-
-    <button onclick="calcularIMC()"> Calcular o IMC </button>
-          <h2>IMC: <div id="resultadoIMC"></h2> </div>
+    <div id="form">
+        Nome:        <input type="text" id="nome"> 
+        Idade:       <input type="number" id="idade" min="1" max="120">
+        Altura (cm): <input type="number" id="altura" min="10" max="250">
+        Peso (kg):   <input type="number" id="peso" min="1" max="250">
+        <input type="number" onchange="calcularIMC(this.value)" value="Calcular IMC"> Calcular IMC
+    
+        <h3>IMC: <div id="resultadoIMC"></h3> </div>
     
     <h4>Desenho com CSS:<br>
-      <div class="barra"> Morbida: 40-30(Obesidade) - 29.99-25(Acima) - 24.99-18.50(Normal) - 18.49-17(Abaixo) - 17(Muito abaixo)<br> </div>
-          </h4>
+<div class="barra"> Morbida: 40-30(Obesidade) - 29.99-25(Acima) - 24.99-18.50(Normal) - 18.49-17(Abaixo) - 17(Muito abaixo)<br> </div>
+    </h4>
 
-        <div class="canvas">Desenho com Canvas JavaScript<br></div>
-    <canvas id="telaCanvas" width="800" height="30"></canvas>
-       
-    <div> 
-    <input type="button" value="Ver o Retorno da Funcao" onclick="resultado()" />
-      <p id="imcVermelho"></p>
-      <p id="imcLaranja"></p>
-      <p id="imcVerde"></p>
-      <p id="imcAmarelo"></p>
-    </div>  
+    <div class="canvas">Desenho com Canvas JavaScript<br></div>
+        <canvas id="telaCanvas" width="800" height="30"></canvas>     
+    <div>   
+<input type="button" value="Ver o Retorno da Funcao" onclick="resultado()"/>
+    </div>
+
+    <div class = "campos">
+            <div id = "red"> </div>
+            <div id = "orange"> </div>
+            <div id = "green"> </div>
+            <div id = "yellow"> </div>
+    </div>
+
+        <h2>Frequencia cardiaca maxima de acordo com idade:</h2>
+    <div id = 'table'>
+        <table border="1">
+            <tr> <th>Idade:</th> <th>Frequencia Cardiaca(bpm) Normal</th> </tr>
+            <tr> <td>20</td> <td>100 - 170</td> </tr>
+            <tr> <td>30</td> <td>95 - 162</td>  </tr>
+            <tr> <td>40</td> <td>90 - 153</td>  </tr>
+            <tr> <td>50</td> <td>85 - 145</td>  </tr>
+            <tr> <td>60</td> <td>80 - 136</td>  </tr>
+        </table>
+    </div>
+
+    <div id="clientes">
+
+
+    </div>
 
       <script src="090Topico9.3.js">
   </body>

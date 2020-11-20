@@ -1,4 +1,4 @@
-var clientes = [];
+let clientes = [];
     
 function cadastrar (nome, idade, peso, altura) {
     clientes.push({

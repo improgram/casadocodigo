@@ -6,7 +6,9 @@
 body { 
     font-size: 16px;
     font-family: sans-serif;
-    background-image: linear-gradient(to right, rgba(192, 192, 192, 0.774), rgb(89, 123, 128) );
+    background-image: linear-gradient(to right,  rgba(255, 0, 0, 0.575) , rgb(151, 151, 39), rgb(80, 192, 80), rgba(151, 151, 29, 0.705), rgba(255, 0, 0, 0.548) );
+    text-align: center; 
+    position: relative; 
 }
 
 h1 {
@@ -18,22 +20,26 @@ h1 {
 }
 
 #form {
-    padding:10px;
+    padding: 10px;
 }
 
 h2 {
     color: rgb(19, 19, 206);
+    text-align: center;
+    padding: 10px;
+}
 
+h3 {
+    color: MediumBlue;
+    padding: 10px;
 }
 
 .barra {
-    position: relative;
-    width: 800px;
-    height: 30px;
+    width: 100%;
+    height: 40px;
 background-image: linear-gradient(to right, red, yellow, green, yellow, red);
     border-radius: 8px;
-    transition-duration: 2s; 
-    padding:10px;  
+    transition-duration: 2s;   
 }
 
 .barra:hover { height: 60px; }
@@ -42,18 +48,36 @@ background-image: linear-gradient(to right, red, yellow, green, yellow, red);
     padding: 10px;  
 }
 
-#imcVermelho {
+#red {
     color: red;
 }
 
-#imcLaranja {
+#orange {
     color: orange;
 }
 
-#imcVerde {
+#green {
     color: green;
 }
 
-#imcAmarelo {
+#yellow {
     color: yellow;
+    background-color: #363636;
+}
+
+.campos {
+    background-color: white;
+    border-radius: 8px;
+    border: 1px solid linen;  
+    width: 50%;
+    position: relative;
+    margin: auto;
+    top: 10px;
+    padding: 10px;
+}
+
+#table {
+    margin: auto;
+    top: 20px;
+    width: 20%;
 }

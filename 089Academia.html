@@ -8,25 +8,26 @@
     </head>
 
     <body>
-<h1>Cadastro Academia </h1>
+        <h1>Cadastro Academia </h1>
 
-    <form>
+        <form>
 Nome:   <input type="text"   id="nome" placeholder="Nome" />
 Idade:  <input type="number" id="idade" placeholder="Idade" /><br>
 Peso :  <input type="number" id="peso" placeholder="Peso" />
 Altura: <input type="number" id="altura" placeholder="Altura"/>
-<pre><input type="button" value="Gravar" onclick="cadastrar(document.getElementById('nome'),
-document.getElementById('idade'), document.getElementById('peso'),
-document.getElementById('altura') )"/> </pre>
-<!-- <input type="reset" value="Limpar Formulario" /> -->
-    </form>
-<hr>
+<br>
+<input type="button" value="Gravar" onclick="cadastrar (document.getElementById('nome'),
+    document.getElementById('idade'), document.getElementById('peso'),
+        document.getElementById('altura') )" />
+    <!-- <input type="reset" value="Limpar Formulario" /> -->
+        <h3>Seu IMC é :  <span id = "imc"> </span></h3>
+        </form>
+
     <strong>Nome : </strong> <span id="nomeDigitado"> . </span>
     <strong>Idade : </strong> <span id="idadeDigitado"> </span> anos.
     <strong>Peso : </strong> <span id="pesoDigitado">  </span> kg.
     <strong>Altura : </strong> <span id="alturaDigitado"> </span> cm.
 
-<h3>Seu IMC é :  <span id = "imc"> </span></h3>
     <pre>
         _______________________________________________________________
         |    IMC          |          CATEGORIA                        |
