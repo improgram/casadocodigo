@@ -14,13 +14,13 @@
     <h1>Calcular IMC com Javascript</h1>
 
     <div id="form">
-        Nome:        <input type="text" id="nome"> 
-        Idade:       <input type="number" id="idade" min="1" max="120">
-        Altura (cm): <input type="number" id="altura" min="10" max="250">
-        Peso (kg):   <input type="number" id="peso" min="1" max="250">
-        <input type="number" onchange="calcularIMC(this.value)" value="Calcular IMC"> Calcular IMC
-    
-        <h3>IMC: <div id="resultadoIMC"></h3> </div>
+        Nome:<input type="text" id="nome"> 
+        Idade:<input type="number" id="idade" min="1" max="120">
+        Altura (cm):<input type="number" id="altura" min="10" max="300">
+        Peso (kg):<input type="number" id="peso" min="10" max="300" onchange="calcularIMC()">
+            
+        <h2>IMC: <div id="resultadoIMC"></h2></div> 
+    </div>
     
     <h4>Desenho com CSS:<br>
 <div class="barra"> Morbida: 40-30(Obesidade) - 29.99-25(Acima) - 24.99-18.50(Normal) - 18.49-17(Abaixo) - 17(Muito abaixo)<br> </div>
@@ -29,7 +29,7 @@
     <div class="canvas">Desenho com Canvas JavaScript<br></div>
         <canvas id="telaCanvas" width="800" height="30"></canvas>     
     <div>   
-<input type="button" value="Ver o Retorno da Funcao" onclick="resultado()"/>
+<input type="button" value="Ver novamente Retorno da Funcao" onclick="resultado()"/>
     </div>
 
     <div class = "campos">
@@ -50,10 +50,13 @@
             <tr> <td>60</td> <td>80 - 136</td>  </tr>
         </table>
     </div>
-
+<hr>
     <div id="clientes">
-
-
+        <pre><input type="button" onclick="clientes()" value="Clientes"></pre>
+        <strong>Nome: </strong> <span id='nomeDigitado'> </span>
+        <strong>Idade: </strong> <span id='idadeDigitado'> </span>
+        <strong>Altura:</strong> <span id="alturaDigitado"></span>
+        <strong>Peso: </strong> <span id="pesoDigitado"></span>
     </div>
 
       <script src="090Topico9.3.js">

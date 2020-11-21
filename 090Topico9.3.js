@@ -40,7 +40,28 @@ c.fillRect(480, 0, 160, 50)
 c.fillStyle = "red";
 c.fillRect(640, 0 , 160, 50);
 
-function clientes (nome) {
-    document.getElementById("nome").innerText = nome;
-    console.log('nome : ' + nome);
+let pessoa = new Object(); 
+    pessoa.nome;
+    pessoa.idade;
+    pessoa.altura;
+    pessoa.peso;
+    pessoa.info = function() {
+        return "Nome: " + this.nome + " Idade: " + this.idade + " Altura: " + this.altura + " Peso: " + this.peso;
+    };
+
+function clientes () {
+    pessoa.nome = document.getElementById("nome").value;
+    document.getElementById('nomeDigitado').innerText = pessoa.nome;
+    
+    pessoa.idade = document.getElementById("idade").value;
+    document.getElementById('idadeDigitado').innerText = pessoa.idade;
+    //console.log('Idade: ' + pessoa["idade"] ); //outra forma de acesso a propriedade
+    
+    pessoa.altura = document.getElementById('altura').value;
+    document.getElementById('alturaDigitado').innerText = pessoa.altura;
+
+    pessoa.peso = document.getElementById('peso').value;
+    document.getElementById('pesoDigitado').innerText = pessoa.peso;
+
+    console.log(pessoa.info());
 }
