@@ -5,7 +5,7 @@
         </head>
     <body>
 
-        <h3><font color="blue">Topico 6.3</font></h3>
+        <h1><font color="blue">Topico 6.3</font></h1>
 <input type='text' id='numero' />
 <input type='submit' id='adivinhar' value='Comparativo'/>
 
@@ -14,11 +14,11 @@ function mostra(frase) {
     document.write(frase + '<br>')
 }
 var segredo = [16, 34, 37, 42, 50, 58]
-mostra('<hr><b>Array segredo : ' + segredo + '</b></hr>')
+mostra('<hr><b>Array segredo : ' + segredo + '</b>')
 mostra('Posicao 0 = ' + segredo[0])
 mostra('Posicao 1 = ' + segredo[1])
 mostra('Posicao 2 = ' + segredo[2])
-mostra('<hr>Tamanho da array = ' + segredo.length + '</hr><br>')
+mostra('<hr>Tamanho da array = ' + segredo.length + '<br>')
 var caixaDoNumero = document.getElementById('numero')
 var botaoClicado = function() {
     for(var i = 0; i < segredo.length; i = i + 1) {
