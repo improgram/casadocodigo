@@ -23,6 +23,7 @@ ehthumbs_vista.db
 *.txt
 *.png
 *.jpg
+*.gif
 
 # Dump file
 *.stackdump
