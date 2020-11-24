@@ -1,8 +1,5 @@
 
 function capturar() {
-    var data = new Date();
-    console.log(data.toString())
-
     var nome = document.getElementById('nome').value;
         document.getElementById('nomeDigitado').innerText = nome
 
@@ -14,4 +11,8 @@ function capturar() {
 
     var assunto = document.getElementById('assunto').value;
         document.getElementById('assuntoDigitado').innerText = assunto;
-}
+
+    var data = new Date();
+        document.getElementById('data').innerText = data.toString();    
+
+    }

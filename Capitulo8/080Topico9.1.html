@@ -8,8 +8,8 @@
     <body>         
         
 <section id="top">              
-    <h2 onclick = "this.innerHTML = 'Topico 9.1 - Formulario' ">
-        <font color="#660000">Clique para ver o titulo</font></h2>
+    <h1 onclick = "this.innerHTML = 'Topico 9.1 - Formulario' ">
+        Clique para ver o titulo</h1>
             </section>
 
 <form class="meuForm" method="post" id="formulario">
@@ -34,7 +34,7 @@
 
 <label>
     <span>Assunto: </span> 
-        <textarea id='assunto' rows="10" cols="35" placeholder="Digite o assunto"></textarea>
+        <textarea id='assunto' rows="4" cols="35" placeholder="Digite o assunto"></textarea>
             </label>
 
 <label>       
@@ -51,23 +51,26 @@
 </form>
 <!--return false para nao enviar formulario-->
 
-<script src="080Topico9.1.js"></script>
-
 <section id = "dados">
-    <h2><font color="#660000">Dados Digitados :</font></h2>
-        <h3>Nome : </h3> <p id="nomeDigitado"></p>
-                <h3>Idade :</h3> <p id="idadeDigitado"></p>
-                        <h3>Email :</h3> <p id="emailDigitado"></p>
-                                <h3>Assunto :</h3> <p id="assuntoDigitado"></p>
-                                        </section>  
+    <h2>Dados Digitados :</h2>
+        <strong>Nome : </strong> <span id="nomeDigitado"> </span> <br>
+            <strong>Idade :</strong> <span id="idadeDigitado"> </span> <br>
+                <strong>Email :</strong> <span id="emailDigitado"> </span> <br>
+                    <strong>Assunto :</strong> <span id="assuntoDigitado"> </span><br>
+                        <strong>Data e Hora:</strong> <span id="data"> </span>
+                            </section>  
 
-            <footer>
-<section id="copyright">Coded by : <a target="_blank" href="http://freecodecamp.org/isaac-in-the-near-future-developer"> 
-    Isaac Macedo</a>
+    <footer>
+        <section id="copyright">Coded by : 
+            <a target="_blank" href="http://freecodecamp.org/isaac-in-the-near-future-developer"> 
+                Isaac Macedo</a>
+
     <h6><a href="#top">Go to Top of the Page</a></h6>
         </section>
-            </footer>  
 
+    </footer>  
+
+        <script src="080Topico9.1.js"></script>
 <noscript>Esta página utiliza scripts e seu navegador não é capaz de interpretá-los.</noscript>
 
     </body>

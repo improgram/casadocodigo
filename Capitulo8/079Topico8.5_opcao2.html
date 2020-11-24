@@ -1,11 +1,12 @@
 <!DOCTYPE html>
   <html lang="pt-br">
       <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Tiro ao Alvo</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Tiro ao Alvo</title>
       </head>
+
         <style media="screen">
   #pontos {
     text-align: center;
@@ -17,17 +18,14 @@
     margin: 0 auto;
     display: block;
   }
-  @media (max-width:400px) {
-    canvas {
+ 
+       </style>
 
-    }
-  }
-      </style>
     <body>
   <h3><font color="blue">Tiro ao Alvo com Canvas</font></h3>
-  <canvas id="canvas" width="600" height="400"></canvas>
-  <div id="pontos"></div>
-  <audio src="tink.wav" id="som"></audio>
+    <canvas id="canvas" width="600" height="400"></canvas>
+      <div id="pontos"></div>
+        <audio src="tink.wav" id="som"> </audio>
 
   <script type="text/javascript">
     var tela = document.getElementById("canvas");
@@ -108,14 +106,12 @@
         audio.play();
         console.log("acertou " + ponto);
         ponto++;
-      } else {
-        console.log("Errou");
-      }
-
+        } else {
+        console.log("ERROU - ERROU");
+        }
       mostraPontos.innerHTML = "Pontos "+ ponto;
       // console.log("X = "+clickX+" Y = "+clickY+ " Diferenca ");
-
-    }
+      }
 
     // Callback para click do mouse
     tela.onclick = checarAcerto;

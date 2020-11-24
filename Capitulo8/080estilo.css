@@ -2,13 +2,13 @@
 
 body{
     font: 100% normal Arial, Helvetica, sans-serif;
-    background: #8e9184;
+    background: #a4a79c;
 }
 
 #top {
     color: #0a0099;
-    padding-top: 20px;
-    background: #32332b41;
+    padding-top: 18px;
+    background: #17180d41;
     text-transform: uppercase;
     text-align: center;
 }
@@ -19,27 +19,25 @@ body{
 
 .box h2 {
     color: #ffffff;
-    font-size: 16px;
+    font-size: 20px;
     text-transform: uppercase;
-    padding: 20px 0 20px 120px;
-    border-bottom: 1px solid #161712;
-    border-top: 1px solid #161712;
+    padding: 10px 0 10px 120px;
+    border: 2px solid rgb(190, 190, 131);
 }
 
 div.box {
-    margin: 40px auto 40px auto;
+    margin: 14px auto 14px auto;
     width: 500px;
     background: #5a2525;
-    border: 1px solid #262626;
+    border: 1px solid #b30c0c;
 }
 
 .box label {
     width: 100%;
     display: block;
     background: #1C1C1C;
-    border-top: 1px solid #262626;
-    border-bottom: 1px solid #161712;
     padding: 8px 0 8px 0;
+    border: 1px solid rgb(59, 59, 56);
 }
 
 .box label span {
@@ -62,7 +60,7 @@ div.box {
     left: 160px;
     width: 150px;
     border-bottom: 2px double #FF0033;
-    border-top: 2px double #660000;
+    border-top: 2px double #FF0030;
     border-left: 2px double #FF0033;
     border-right: 1px double #FF0033;
 }
@@ -71,7 +69,14 @@ div.box {
     line-height: 30px;
     font: Tahoma;
     text-align: center;
+    background-color: rgb(64, 72, 75);
 }
+
+#copyright {
+    margin-top: 1rem;
+    text-align: center;
+    align-items: center;
+  }
 
 a:link {
     color: #DDD;
@@ -84,11 +89,3 @@ a:link {
   a:hover {
     color: #960017;
   }
-
-  #copyright {
-    margin-top: 5rem;
-    text-align: center;
-    align-items: center;
-    border-top: 1px double #bbbbbb;
-  }
-  
