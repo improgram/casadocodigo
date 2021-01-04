@@ -8,16 +8,17 @@ body {
     font-size: 16px;
     font-family: sans-serif;
     text-align: center;
-    
+    justify-content: center;  
+    align-items: center;
+    height: 100vh;
 }
 
 .titulo {
     color: rgba(87, 15, 15, 0.774);
-    position: sticky;
     
 }
 
-ul {
+.menu {
     list-style: none;
     padding: 0;
     width: 100%;
@@ -25,7 +26,7 @@ ul {
     background-color: rgb(34, 31, 31);
     display: flex;
     align-items: center;
-    
+    position: fixed;
 }
 
 li {
