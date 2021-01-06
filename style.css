@@ -7,9 +7,8 @@
 body {
     background: radial-gradient(#4e84ad, #314250);
     font-size: 18px;
-    font-family: sans-serif;
+    font-family: 'Poppins', sans-serif;
     text-decoration: none;
-    
 }
 
 .menu {
@@ -22,13 +21,26 @@ body {
     background: #1f333b85;
     text-transform: uppercase;
     justify-content: center;
-    
 }
 
 .menu a {
     color:rgba(211, 174, 127, 0.911);
     padding: 20px; /*espaço entre as palavras*/
 }
+/*
+.mobile{
+    display: none;
+    background-image: url('../imagens/menu-icon.svg');
+    background-repeat: no-repeat;
+    width: 40px;
+	height: 40px;
+	margin-right: 25px;
+	background-size: 100% 100%;
+    float: right;
+    margin-top:15px;
+    cursor: pointer;
+}
+*/
 
 .title {
     color: rgba(243, 237, 237, 0.774);
