@@ -1,6 +1,6 @@
-let cores=["#4e84ad", "#5E610B", "#314250", "#FE642E","#0B3B0B","#0174DF", "#0B3B39"];
+let cores=["#4e84ad", "#5E610B", "#314250", "#FE642E","#0B3B0B","#0A122A", "#0B3B39"];
 let i=0;
-let timer=setInterval(mudaCorFundo,2000);
+let timer=setInterval(mudaCorFundo,3000);
 	function mudaCorFundo(){
 		document.body.style.backgroundColor=cores[i];
 		i++;
@@ -18,30 +18,22 @@ function batimentos () {
     let batimentos = 'Seu coração bateu: ' + diasdevida * 24 * 60 * 80;
     console.log(batimentos);
     document.getElementById("result").innerHTML = batimentos;
+    document.getElementById("result").style="background-color: #0004"
 }
 
 // Anos de Copa
-function copas(){
+function copas() {
     let anoCopa = 1930;
     let anoLimite = parseInt(prompt('Qual o ano limite na consulta?'))
-    //result = document.getElementById("result");
-    while(anoCopa <= anoLimite && anoCopa <= 2018){
+    let result = document.getElementById("result");
+    while(anoCopa <= anoLimite && anoCopa <= 2018){ 
         console.log(anoCopa);
-        anoCopa = "Anos de Copa: " + anoCopa + 4;
-    result = document.getElementById("result").innerHTML = "Anos: " + anoCopa;
+        var para = document.createElement('p');
+        para.textContent = "Em: " + anoCopa + " teve Copa do Mundo.";
+        anoCopa = anoCopa + 4;
+        result.appendChild(para);
     }
 }
-
-
-/*
-result = document.getElementById("result");
-        while(anoCopa <= anoLimite && anoCopa <= 2018){
-            console.log(anoCopa);
-            anoCopa = "Anos de Copa: " + anoCopa + 4;
-            
-        }
-        result.innerHTML = "Anos de Copa: " + anoCopa;
-*/
 
 //Anos de Olimpiada
 function olimpiadas(){

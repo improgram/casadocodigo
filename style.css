@@ -19,7 +19,7 @@ header {
 
 .menu {
     list-style: none;
-    font-size: 110%;
+    font-size: 100%;
     display: flex; /*menu lado a lado */
     width: 100%;
     height: 10vh;
@@ -50,6 +50,7 @@ header {
 .main {
     color: rgba(243, 237, 237, 0.774);
     white-space: pre-line;
+    line-height: 1.3;
 }
 
 .title {
@@ -58,22 +59,30 @@ header {
 
 .button {
     background-color: black;
-    color: rgb(161, 137, 59);
-    font-size: 18px;
-    border: 2px solid rgb(172, 157, 238);
+    color: rgb(224, 207, 149);
+    font-size: 16px;
+    border: 1px solid rgb(196, 186, 241);
 }
 
 #scripts {
     float: left;
     color: rgba(255, 217, 0, 0.76);
-    white-space: pre-line;
+    padding-left: 5%;
     line-height: 1.5;
-    padding-left: 7%;
+}
+
+#resposta {
+    float: center;
+    padding-left: 30%;
+}
+
+#result {
+    color: silver;
+    font-size: 20px;
+    font-weight: bold;
 }
 
 .projects {
-    white-space: pre-line;
-    line-height: 1.3;
     float: right;
     padding-right: 7%;
 }
@@ -81,6 +90,8 @@ header {
 .footer {
     clear: both; /*Limpa o float*/
     text-align: center;
+    position: relative;
+    top: 3rem;
 }
 
 a {
