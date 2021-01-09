@@ -4,11 +4,13 @@
             <title>Topico 5.6</title>
         </head>
     <body>
+        <h1>Tabuada</h1>
+
 Tabuada do Numero: <input id="numero" type="number"> <br />
 
 <button onclick="tabuada()">Exibir Tabuada</button><br />
 Tabuada: <br />
-<div id='resposta' style='display:inline'></div>
+<div id='resposta'></div>
 
 <script>
 function mostra (frase) {
@@ -23,13 +25,13 @@ while(multi1 <= 10) {
 }
 
 function tabuada(){
-    var numero = parseInt(document.getElementById("numero").value);
+    var numero = parseInt(document.getElementById("numero").value);//Coletou numero digitado
     var resposta = document.getElementById("resposta");
     var tabuada = " ";
 
     for(var count=1; count<=10; count++)
-    tabuada += numero + " X " + count+ " = " + numero*count + "<br />";
-
+    tabuada += numero + " X " + count + " = " + numero*count + "<br />";
+//1°Linha:tabuada=tabuada+NUM7+"X"+count=1 inicial+"="+ (NUM7+count:1inicial)+br
     resposta.innerHTML = tabuada;
 }
 
