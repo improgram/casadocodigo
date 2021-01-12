@@ -6,21 +6,26 @@
 
 html, body {
     /*background-image: linear-gradient(left, #4ECDC4, #556270);*/
-    font-size: 20px;
+    font-size: 1.125em;  /* 18px/16px = 1.125em */
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Verdana, sans-serif;
     width: 100%;
     height: 100%;
+    text-align: left;
+    text-shadow: 1px 1px 0px #fff;/*sombreamento das fontes*/
 }
 
 header {
     position: sticky;
     top: 0;
     background-color: rgba(250, 128, 114, 0.651);
+    width: 99,9%;
+    border: 1px solid #E0E0E0;
+    text-indent: -9999;
 }
 
 .menu {
     list-style: none;
-    font-size: 26px;
+    font-size: 1.3em;
     display: flex; /*menu lado a lado */
     width: 100%;
     height: 10vh;
@@ -30,7 +35,7 @@ header {
 }
 
 .menu a {
-    color: black;
+    color: rgb(255, 254, 254);
     padding: 20px; /*espaço entre as palavras*/
 }
 /*
@@ -52,15 +57,17 @@ header {
     color: rgba(243, 237, 237, 0.774);
     white-space: pre-line;
     line-height: 1.3;
+    max-width: 1200px;
+    width: 100%;
 }
 
 .title {
-    color: rgba(255, 217, 0, 0.76);
+    color: rgba(240, 234, 202, 0.76);
 }
 
 .button {
     background-color: black;
-    color: rgb(224, 207, 149);
+    color: rgb(248, 247, 242);
     font-size: 16px;
     border: 1px solid rgb(196, 186, 241);
 }
@@ -70,11 +77,6 @@ header {
     color: rgba(255, 217, 0, 0.76);
     padding-left: 5%;
     line-height: 1.5;
-}
-
-#resposta {
-    float: center;
-    padding-left: 30%;
 }
 
 .projects {
@@ -97,3 +99,18 @@ a:hover, a.active {
     background-color: rgb(40, 73, 121);
     color: rgb(134, 136, 36);
 }
+
+/*.clearfix usado para adicionar um espaço vazio antes e depois dos elementos
+  evitando que os floats se aglomerem.
+*/
+.clearfix:before, .clearfix:after {
+    content: &quot; &quot;; 
+    display: table; 
+}
+.clearfix:after {
+    clear: both;
+}
+.clearfix {
+    *zoom: 1;
+}
+/*fim do clearfix*/
