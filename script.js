@@ -1,5 +1,7 @@
-let cores=["##01A9DB", "#086A87", "##0489B1", "#0B3B39", "#4e84bc", "#314250", "#0B3861"];
-let i=0;
+let cores=["linear-gradient(left, #01A9DB, #03D0FF, #04E0FF)",
+            "#086A87", "##0489B1", "#0B3B39", "#4e84bc", "#314250", "#0B3861"];
+
+ let i=0;
 let timer=setInterval(mudaCorFundo,5000);
 	function mudaCorFundo(){
 		document.body.style.backgroundColor=cores[i];
@@ -41,11 +43,10 @@ function todasCopas() {
     
     while(anoCopa <= anoLimite){
         console.log(anoCopa);
-        //copas.textContent = "Em: " + anoCopa + " teve Copa do Mundo.";
+        copas.textContent = "Em: " + anoCopa + " teve Copa do Mundo.";
         //copas.insertAdjacentHTML("afterend", anoCopa)
         anoCopa = anoCopa + 4;
     }
-    
 }
 
 
