@@ -1,33 +1,56 @@
 <!DOCTYPE html>
-    <html lang="EN">
+    <html lang="pt-br">
         <head>
             <title>Topico 5.4</title>
+            <meta charset="utf-8"/>
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <META NAME="author" CONTENT="Isaac">
+            <META HTTP-EQUIV="Refresh" Content="6000">
+            <!--<link rel="icon" href="logo.png"> -->
         </head>
     <body>
+        <h2>Topico 5.4 - Anos de Copa do Mundo de Futebol</h2>
+    
+        <input type="button" value="Consulte Novamente" onClick="window.location.reload()" />
+        <hr>
 
 <script>
-function mostra (frase) {
-    document.write(frase + '<br>')
-}
-mostra('<h2>Topico 5.4</h2>')
-var anoLimite = parseInt(prompt('Qual o ano limite ?'))
-var anodeCopa = 1930
 
-while(anodeCopa <= anoLimite && anodeCopa <= 2018) {
-    mostra(anodeCopa + ' teve copa.')
-    anodeCopa = anodeCopa + 4
-    mostra(anodeCopa + ' Esse é o valor apos a soma.')
-}
-mostra('<hr>Esses foram os anos de copa até :</hr> ' + anoLimite)
+    function mostra (frase) {
+        document.write(frase + '<br>')
+    }
 
-if (anoLimite < 1930) {
-    mostra('A primeira Copa foi em 1930.')
-    alert('Primeira Copa foi em 1930.')
-}
+    var anoInicial = 1930;
+    var anoLimite = parseInt(prompt('Qual o ano limite para consultar os anos de Copa ?'));
 
-if (anoLimite > 2020) {
-    mostra('<strong>Ultima Copa foi em 2018.</strong>')
-}
+    var checkWar = function(ano){
+        var houveGuerra = false;
+            if (ano >= 1942 && ano <= 1946){                    
+                houveGuerra = true;
+                console.log('Sem Copa.')
+                mostra(ano + ': Não teve Copa')
+            };
+        return houveGuerra;
+    };
+
+    function anodeCopa (ano) {
+        
+        if (ano == anoInicial){
+            mostra("<h3>Anos de Copa entre " + anoInicial + " e " + anoLimite + " :</h3>");
+            for (ano = anoInicial; ano <= anoLimite; ano = ano + 4) {
+                if (checkWar(ano) == true)
+                continue;
+                mostra(ano);
+                console.log(ano)
+            };
+        }
+    };
+
+    anodeCopa(anoInicial);
+      
+    mostra("<hr> <strong>Anos de copa até o ano digitado: </strong>" + anoLimite);
+    mostra('<strong>Em 1942 e 1946: Não teve Copa devido a Guerra</strong>')
+
 
         </script>
     </body>    
