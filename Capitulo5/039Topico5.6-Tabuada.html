@@ -5,33 +5,33 @@
         </head>
     <body>
         <h1>Tabuada</h1>
-
-Tabuada do Numero: <input id="numero" type="number"> <br />
-
-<button onclick="tabuada()">Exibir Tabuada</button><br />
-Tabuada: <br />
-<div id='resposta'></div>
+            <h3>Tabuada do Numero: <input id="numero" type="number" /> </h3>
+                <button onclick="tabuada()">Exibir Tabuada</button>
+                    <h4>Tabuada solicitada: <div id='resposta'></div> </h4>
+                
 
 <script>
-function mostra (frase) {
-    document.write(frase + '<br>')
-}
-mostra('<hr>Topico 5.6: </hr>')
-var multi1 = 1
-mostra('<strong>Tabuada do 1:</strong>')
-while(multi1 <= 10) {
-    mostra('1 Vezes ' + multi1 + " = " + 1 * multi1)
-    multi1 = multi1 + 1
-}
+    function mostra (frase) {
+        document.write(frase + '<br>')
+    }
+
+    mostra('<hr>Topico 5.6: </hr>')
+
+    var multi1 = 1
+    mostra('<strong>Tabuada do 1:</strong>')
+    while(multi1 <= 10) {
+        mostra('1 Vezes ' + multi1 + " = " + 1 * multi1)
+        multi1 = multi1 + 1
+    }
 
 function tabuada(){
-    var numero = parseInt(document.getElementById("numero").value);//Coletou numero digitado
+    var numero = parseInt(document.getElementById("numero").value); //Coletou numero digitado
     var resposta = document.getElementById("resposta");
     var tabuada = " ";
 
     for(var count=1; count<=10; count++)
-    tabuada += numero + " X " + count + " = " + numero*count + "<br />";
-//1°Linha:tabuada=tabuada+NUM7+"X"+count=1 inicial+"="+ (NUM7+count:1inicial)+br
+    tabuada += numero + " X " + count + " = " + numero*count + "<br>";
+//1°Linha:tabuada=tabuada +numero_digitado +"X"+count=1 inicial+"="+ (NUM+count:1inicial)+br
     resposta.innerHTML = tabuada;
 }
 
