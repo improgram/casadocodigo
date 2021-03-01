@@ -11,47 +11,46 @@
     <body>
         <h2>Topico 5.4 - Anos de Copa do Mundo de Futebol</h2>
     
-        <input type="button" value="Consulte Novamente" onClick="window.location.reload()" />
+    <input type="button" value="Consultar Anos de Copa" onClick="anodeCopa(anoInicial)" />
         <hr>
-
+            <strong>Copas: <p id="copas"> </p> </strong>        
+                                    
 <script>
-
     function mostra (frase) {
         document.write(frase + '<br>')
     }
-
+    
     var anoInicial = 1930;
-    var anoLimite = parseInt(prompt('Qual o ano limite para consultar os anos de Copa ?'));
-
     var checkWar = function(ano){
         var houveGuerra = false;
             if (ano >= 1942 && ano <= 1946){                    
                 houveGuerra = true;
                 console.log('Sem Copa.')
-                mostra(ano + ': Não teve Copa')
+                mostra(ano + ' : Não teve Copa')
             };
         return houveGuerra;
     };
 
-    function anodeCopa (ano) {
-        
-        if (ano == anoInicial){
-            mostra("<h3>Anos de Copa entre " + anoInicial + " e " + anoLimite + " :</h3>");
-            for (ano = anoInicial; ano <= anoLimite; ano = ano + 4) {
-                if (checkWar(ano) == true)
-                continue;
-                mostra(ano);
-                console.log(ano)
+    function anodeCopa (ano) {    
+        var ano;
+        var copas;
+        var anoLimite = parseInt(prompt ('Qual o ano limite para consultar os anos de Copa ?') );
+            if (ano == anoInicial){
+                mostra("<h3>Anos de Copa entre " + anoInicial + " e " + anoLimite + " :</h3>");
+                for (ano = anoInicial; ano <= anoLimite; ano = ano + 4) {
+                    if (checkWar(ano) == true)
+                    continue;
+                    mostra(ano + ' : Teve Copa.');
+                    console.log(ano)
+                };
             };
-        }
+    mostra('<hr> <strong>Anos de copa até o ano digitado: </strong>' + anoLimite);
+    mostra('<input type="button" value="Consulte Novamente" onClick="anodeCopa(anoInicial)" />');    
+    mostra('<h4>Em 1942 e 1946: Não teve Copa devido a Guerra Mundial</h4>');
+    //return ano + ' : Teve Copa.'
+    document.getElementById("copas").textContent += copas;
     };
 
-    anodeCopa(anoInicial);
-      
-    mostra("<hr> <strong>Anos de copa até o ano digitado: </strong>" + anoLimite);
-    mostra('<strong>Em 1942 e 1946: Não teve Copa devido a Guerra</strong>')
-
-
-        </script>
+        </script>     
     </body>    
 </html>
