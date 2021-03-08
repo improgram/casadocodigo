@@ -5,15 +5,23 @@
 }
 
 html, body {
-    /*background-image: linear-gradient(left, #4ECDC4, #556270);*/
     font-size: 1.125em;  /* 18px/16px = 1.125em */
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Verdana, sans-serif;
     width: 100%;
     height: 100%;
     text-align: left;
-    text-shadow: 1px 1px 0px #fff;/*sombreamento das fontes*/
+    text-shadow: 1px 1px 0px #fff; /*sombreamento das fontes*/
+/*    background-image: url("https://upload.wikimedia.org/wikipedia/commons/4/4b/Milky_Way_3.jpg") */
 }
 
+/*
+.newBG {
+    background-image: url("https://upload.wikimedia.org/wikipedia/commons/4/4b/Milky_Way_3.jpg"),
+    url ("https://upload.wikimedia.org/wikipedia/commons/6/68/5_billion_stars_hotel.jpg");
+
+    /*background-image: linear-gradient(left, #4ECDC4, #556270);
+}
+*/
 header {
     position: sticky;
     top: 0;
