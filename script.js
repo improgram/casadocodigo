@@ -1,3 +1,4 @@
+/*
 let cores= 
     document.body.style["background-image"] = "url(https://upload.wikimedia.org/wikipedia/commons/4/4b/Milky_Way_3.jpg)";
 
@@ -11,6 +12,7 @@ function mudaCorFundo(){
 		i=0;
 	}
 }
+*/
 
 // Calculo Batimentos
 let buttonBatimentos = document.getElementById("batimentos")
@@ -21,7 +23,7 @@ function batimentos () {
     console.log('Anos de vida: ' + idade);
     let diasdevida = idade * 365;
     console.log('Dias de vida: ' + diasdevida);
-    let calcBatimentos = 'Idade: ' + idade + '<br>' + 'Seu coração bateu: ' + diasdevida * 24 * 60 * 80 + " vezes em toda sua vida.";
+    let calcBatimentos = 'Idade: ' + idade + '<br>' + 'Seu coração bateu: ' + diasdevida * 24 * 60 * 80 + ' vezes ' + 'em toda sua vida.';
     console.log(calcBatimentos);
     let batimentos = document.getElementById("batimentos");
 
@@ -31,7 +33,6 @@ function batimentos () {
     //batimentos.insertAdjacentElement("afterend", imgBatimentos); =igual= a linha acima
     imgBatimentos.height = "180";
     batimentos.insertAdjacentHTML("afterend", calcBatimentos);
-    document.getElementById("batimentos").style="background-color: #000";
 }
 
 // Anos de Copa
@@ -64,9 +65,9 @@ let buttonCopa = document.getElementById('copas')
             }
         let imgCopa = document.createElement("img");
         imgCopa.src = "https://static.mundoeducacao.uol.com.br/mundoeducacao/conteudo_legenda/ad7523a3d1a139039d9a33bdd76a9ddf.jpg";
-        copas.insertAdjacentElement("afterend", imgCopa); // insere element IMG apos o fim do id=copas.
-        //document.getElementById("copas").appendChild(imgCopa); // mesma coisa q a linha acima
-        imgCopa.height = "200";        
+        buttonCopa.insertAdjacentElement("afterend", imgCopa); // insere element IMG apos o fim do id=copas.
+        //document.getElementById("copas").appendChild(imgCopa); IGUAL a mesma coisa que a linha acima.
+        imgCopa.height = "280";        
     document.getElementById("copas").innerText += copa;
     //Com innerText usar \n para pular a linha. textContent e innerHTML nao pula a linha
     } 
@@ -74,12 +75,17 @@ let buttonCopa = document.getElementById('copas')
 //Anos de Olimpiada
 let buttonOlimpiadas = document.getElementById('olimpiadas');
     buttonOlimpiadas.addEventListener("click", olimpiadas);
+
 function olimpiadas(){
     let element = document.createElement('div');
         element.innerText = "Teste OLIMPIADAS";
     let olimpiada = document.getElementById("olimpiadas");
         olimpiada.insertAdjacentText("afterend", element.innerText);
         console.log(element.innerText);
+    let imgOlimpiadas = document.createElement('img');
+    imgOlimpiadas.src = "https://onlympics.com.br/wp-content/uploads/2019/01/Onlympics-jogos-olimpicos-1200x554.png";
+    imgOlimpiadas.height = "260";
+    olimpiada.insertAdjacentElement("afterend", imgOlimpiadas);
 }
 
 //Comparativo combustiveis

@@ -11,17 +11,9 @@ html, body {
     height: 100%;
     text-align: left;
     text-shadow: 1px 1px 0px #fff; /*sombreamento das fontes*/
-/*    background-image: url("https://upload.wikimedia.org/wikipedia/commons/4/4b/Milky_Way_3.jpg") */
+    background: url("https://upload.wikimedia.org/wikipedia/commons/4/4b/Milky_Way_3.jpg");
 }
 
-/*
-.newBG {
-    background-image: url("https://upload.wikimedia.org/wikipedia/commons/4/4b/Milky_Way_3.jpg"),
-    url ("https://upload.wikimedia.org/wikipedia/commons/6/68/5_billion_stars_hotel.jpg");
-
-    /*background-image: linear-gradient(left, #4ECDC4, #556270);
-}
-*/
 header {
     position: sticky;
     top: 0;
@@ -45,6 +37,9 @@ header {
 .menu a {
     color: rgb(255, 254, 254);
     padding: 20px; /*espaço entre as palavras*/
+    -moz-box-shadow: 3px 3px 3px 3px #f00;
+    -webkit-box-shadow: 3px 3px 3px #f00;
+    box-shadow: 3px 3px 1px 3px rgba(158, 30, 30, 0.795);
 }
 /*
 .mobile{
@@ -76,6 +71,9 @@ header {
     color: rgb(248, 247, 242);
     font-size: 16px;
     border: 1px solid rgb(166, 150, 238);
+    border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
 }
 
 #scripts {
@@ -111,8 +109,8 @@ a:hover, a.active {
 }
 
 /*.clearfix usado para adicionar um espaço vazio antes e depois dos elementos
-  evitando que os floats se aglomerem.
-*/
+  evitando que os floats se aglomerem. */
+  
 .clearfix:before, .clearfix:after {
     content: &quot; &quot;; 
     display: table; 
