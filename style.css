@@ -18,28 +18,28 @@ header {
     position: sticky;
     top: 0;
     background-color: rgba(250, 128, 114, 0.651);
-    width: 99,9%;
-    border: 1px solid #E0E0E0;
-    text-indent: -9999;
+    width: 100%;
+    /*text-indent: -9999; /*indentação ou tabulação da primeira linha do texto*/
 }
 
 .menu {
     list-style: none;
-    font-size: 1.3em;
+    /*font-size: 1.3em;*/
     display: flex; /*menu lado a lado */
     width: 100%;
-    height: 10vh;
+    /*height: 10vh;*/
     align-items: center;
     text-transform: uppercase;
     justify-content: space-between;
+    border: 1px solid #E0E0E0;
+    box-shadow: 3px 3px 1px 3px rgba(158, 30, 30, 0.795);
+    -moz-box-shadow: 3px 3px 3px 3px #f00;
+    -webkit-box-shadow: 3px 3px 3px #f00;
 }
 
 .menu a {
     color: rgb(255, 254, 254);
-    padding: 20px; /*espaço entre as palavras*/
-    -moz-box-shadow: 3px 3px 3px 3px #f00;
-    -webkit-box-shadow: 3px 3px 3px #f00;
-    box-shadow: 3px 3px 1px 3px rgba(158, 30, 30, 0.795);
+    padding: 20px;  /* espaço entre as palavras*/
 }
 /*
 .mobile{

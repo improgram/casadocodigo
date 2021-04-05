@@ -1,18 +1,3 @@
-/*
-let cores= 
-    document.body.style["background-image"] = "url(https://upload.wikimedia.org/wikipedia/commons/4/4b/Milky_Way_3.jpg)";
-
-let i=0;
-let timer=setInterval(mudaCorFundo,10000);
-
-function mudaCorFundo(){
-	document.body.style.backgroundImage=cores[i]; //ou backgroundColor
-	i++;
-    if(i >= cores.length){
-		i=0;
-	}
-}
-*/
 
 // Calculo Batimentos
 let buttonBatimentos = document.getElementById("batimentos")
@@ -20,19 +5,17 @@ let buttonBatimentos = document.getElementById("batimentos")
 
 function batimentos () {
     let idade = prompt('Quantos anos voce tem ?');
-    console.log('Anos de vida: ' + idade);
     let diasdevida = idade * 365;
-    console.log('Dias de vida: ' + diasdevida);
-    let calcBatimentos = 'Idade: ' + idade + '<br>' + 'Seu coração bateu: ' + diasdevida * 24 * 60 * 80 + ' vezes ' + 'em toda sua vida.';
+    let calcBatimentos = 'Idade: ' + idade + '\n' + 'Coração bateu: ' + diasdevida * 24 * 60 * 80 + ' vezes ' + 'em toda vida.';
     console.log(calcBatimentos);
-    let batimentos = document.getElementById("batimentos");
 
     let imgBatimentos = document.createElement("img");
     imgBatimentos.src = "https://cdn.pixabay.com/photo/2018/04/12/04/26/blood-pressure-3312513_960_720.png";
-    document.getElementById("batimentos").appendChild(imgBatimentos); //Adiciona imagem como filha do id=batimentos.
-    //batimentos.insertAdjacentElement("afterend", imgBatimentos); =igual= a linha acima
     imgBatimentos.height = "180";
-    batimentos.insertAdjacentHTML("afterend", calcBatimentos);
+
+    buttonBatimentos.insertAdjacentElement("beforeEnd", imgBatimentos);  //Adiciona imagem como filha do id=batimentos.
+    //document.getElementById("batimentos").appendChild(imgBatimentos); //Igual a linha acima
+    buttonBatimentos.insertAdjacentHTML("beforeEnd", calcBatimentos);
 }
 
 // Anos de Copa
@@ -57,19 +40,22 @@ let buttonCopa = document.getElementById('copas')
             if (checkWar(ano) == true)
                 continue
                 console.log('Em: ' + ano + ': Teve Copa.')
-                copa += 'Em ' + ano + ': Teve Copa. \n'; 
+                copa += 'Em ' + ano + ': Teve Copa. \n';
         }
             if (ano > 2020) {
                     console.log('Em: ' + ano + ' : vai ter copa.')
                     copa += 'Em ' + ano + ': vai ter Copa.';        
             }
+
         let imgCopa = document.createElement("img");
         imgCopa.src = "https://static.mundoeducacao.uol.com.br/mundoeducacao/conteudo_legenda/ad7523a3d1a139039d9a33bdd76a9ddf.jpg";
-        buttonCopa.insertAdjacentElement("afterend", imgCopa); // insere element IMG apos o fim do id=copas.
+        imgCopa.height = "260";
+
+        buttonCopa.insertAdjacentElement("beforeEnd", imgCopa); // insere element IMG apos o fim do id=copas.
         //document.getElementById("copas").appendChild(imgCopa); IGUAL a mesma coisa que a linha acima.
-        imgCopa.height = "280";        
-    document.getElementById("copas").innerText += copa;
-    //Com innerText usar \n para pular a linha. textContent e innerHTML nao pula a linha
+        buttonCopa.insertAdjacentHTML("beforeEnd", copa);
+        //.innerText += copa;
+        //Com innerText usar \n para pular a linha. textContent e innerHTML nao pula a linha
     } 
     
 //Anos de Olimpiada
@@ -77,15 +63,14 @@ let buttonOlimpiadas = document.getElementById('olimpiadas');
     buttonOlimpiadas.addEventListener("click", olimpiadas);
 
 function olimpiadas(){
-    let element = document.createElement('div');
-        element.innerText = "Teste OLIMPIADAS";
-    let olimpiada = document.getElementById("olimpiadas");
-        olimpiada.insertAdjacentText("afterend", element.innerText);
-        console.log(element.innerText);
     let imgOlimpiadas = document.createElement('img');
-    imgOlimpiadas.src = "https://onlympics.com.br/wp-content/uploads/2019/01/Onlympics-jogos-olimpicos-1200x554.png";
-    imgOlimpiadas.height = "260";
-    olimpiada.insertAdjacentElement("afterend", imgOlimpiadas);
+        imgOlimpiadas.src = "https://onlympics.com.br/wp-content/uploads/2019/01/Onlympics-jogos-olimpicos-1200x554.png";
+        imgOlimpiadas.height = "220";
+
+        buttonOlimpiadas.insertAdjacentElement("afterend", imgOlimpiadas);
+        document.getElementById('olimpiadas').innerText;
+        console.log('teste olimpiadas');
+
 }
 
 //Comparativo combustiveis
