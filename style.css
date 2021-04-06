@@ -11,7 +11,8 @@ html, body {
     height: 100%;
     text-align: left;
     text-shadow: 1px 1px 0px #fff; /*sombreamento das fontes*/
-    background: url("https://upload.wikimedia.org/wikipedia/commons/4/4b/Milky_Way_3.jpg");
+    background: url("https://cdn.pixabay.com/photo/2016/10/20/18/35/earth-1756274_960_720.jpg");
+    background-size: 100%;
 }
 
 header {
@@ -19,12 +20,11 @@ header {
     top: 0;
     background-color: rgba(250, 128, 114, 0.651);
     width: 100%;
-    /*text-indent: -9999; /*indentação ou tabulação da primeira linha do texto*/
 }
 
 .menu {
     list-style: none;
-    /*font-size: 1.3em;*/
+    font-size: 1.3em;
     display: flex; /*menu lado a lado */
     width: 100%;
     /*height: 10vh;*/
@@ -41,20 +41,6 @@ header {
     color: rgb(255, 254, 254);
     padding: 20px;  /* espaço entre as palavras*/
 }
-/*
-.mobile{
-    display: none;
-    background-image: url('../imagens/menu-icon.svg');
-    background-repeat: no-repeat;
-    width: 40px;
-	height: 40px;
-	margin-right: 25px;
-	background-size: 100% 100%;
-    float: right;
-    margin-top:15px;
-    cursor: pointer;
-}
-*/
 
 .main {
     color: rgba(243, 237, 237, 0.774);
@@ -84,6 +70,7 @@ header {
 
 .title {
     color: rgba(240, 234, 202, 0.76);
+    text-transform: uppercase;
 }
 
 .projects {

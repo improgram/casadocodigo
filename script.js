@@ -19,8 +19,7 @@ function batimentos () {
 }
 
 // Anos de Copa
-let copa;
-let anoInicial = 1930;
+let copa = 'Todas as Copas \n';
 let anoLimite = 2018;
 let buttonCopa = document.getElementById('copas')
     buttonCopa.addEventListener("click", anodeCopa)
@@ -36,11 +35,11 @@ let buttonCopa = document.getElementById('copas')
     };
 
     function anodeCopa () {
-        for (ano = anoInicial; ano <= anoLimite; ano += 4) {
-            if (checkWar(ano) == true)
+        for (ano = 1930; ano <= anoLimite; ano += 4) {
+            if (checkWar(ano) == true)  
                 continue
-                console.log('Em: ' + ano + ': Teve Copa.')
                 copa += 'Em ' + ano + ': Teve Copa. \n';
+                console.log('Em: ' + ano + ': Teve Copa.')
         }
             if (ano > 2020) {
                     console.log('Em: ' + ano + ' : vai ter copa.')
@@ -50,11 +49,10 @@ let buttonCopa = document.getElementById('copas')
         let imgCopa = document.createElement("img");
         imgCopa.src = "https://static.mundoeducacao.uol.com.br/mundoeducacao/conteudo_legenda/ad7523a3d1a139039d9a33bdd76a9ddf.jpg";
         imgCopa.height = "260";
-
+        imgCopa.width = "520";
         buttonCopa.insertAdjacentElement("beforeEnd", imgCopa); // insere element IMG apos o fim do id=copas.
         //document.getElementById("copas").appendChild(imgCopa); IGUAL a mesma coisa que a linha acima.
         buttonCopa.insertAdjacentHTML("beforeEnd", copa);
-        //.innerText += copa;
         //Com innerText usar \n para pular a linha. textContent e innerHTML nao pula a linha
     } 
     
@@ -64,12 +62,12 @@ let buttonOlimpiadas = document.getElementById('olimpiadas');
 
 function olimpiadas(){
     let imgOlimpiadas = document.createElement('img');
-        imgOlimpiadas.src = "https://onlympics.com.br/wp-content/uploads/2019/01/Onlympics-jogos-olimpicos-1200x554.png";
-        imgOlimpiadas.height = "220";
+    imgOlimpiadas.src = "https://onlympics.com.br/wp-content/uploads/2019/01/Onlympics-jogos-olimpicos-1200x554.png";
+    imgOlimpiadas.height = "220";
 
-        buttonOlimpiadas.insertAdjacentElement("afterend", imgOlimpiadas);
-        document.getElementById('olimpiadas').innerText;
-        console.log('teste olimpiadas');
+    buttonOlimpiadas.insertAdjacentElement("afterend", imgOlimpiadas);
+    document.getElementById('olimpiadas').innerText;
+    console.log('teste olimpiadas');
 
 }
 
