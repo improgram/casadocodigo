@@ -10,9 +10,7 @@ html, body {
     width: 100%;
     height: 100%;
     text-align: left;
-    text-shadow: 1px 1px 0px #fff; /*sombreamento das fontes*/
-    background: url("https://cdn.pixabay.com/photo/2016/10/20/18/35/earth-1756274_960_720.jpg");
-    background-size: 100%;
+    text-shadow: 1px 1px 0px #fff; /*sombreamento das fontes*/ 
 }
 
 header {
@@ -20,36 +18,35 @@ header {
     top: 0;
     background-color: rgba(250, 128, 114, 0.651);
     width: 100%;
+    height: 10%;
+    background: url("https://cdn.pixabay.com/photo/2015/11/04/20/59/milky-way-1023340_960_720.jpg") no-repeat center;
+    background-size: cover;
 }
 
 .menu {
     list-style: none;
-    font-size: 1.3em;
     display: flex; /*menu lado a lado */
-    width: 100%;
-    /*height: 10vh;*/
+    justify-content: space-between; /*Utiliza todo espaço disponivel */
     align-items: center;
     text-transform: uppercase;
-    justify-content: space-between;
-    border: 1px solid #E0E0E0;
-    box-shadow: 3px 3px 1px 3px rgba(158, 30, 30, 0.795);
-    -moz-box-shadow: 3px 3px 3px 3px #f00;
-    -webkit-box-shadow: 3px 3px 3px #f00;
+    /*width: 100%; */
+    /*height: 10vh;*/
 }
 
 .menu a {
     color: rgb(255, 254, 254);
-    padding: 20px;  /* espaço entre as palavras*/
+    /* font-size: 1.5em; */
 }
 
 .main {
     color: rgba(243, 237, 237, 0.774);
     white-space: pre-line;
     line-height: 1.3;
-    max-width: 1200px;
     width: 100%;
     display: flex;
     flex-direction: row;
+    background: url("https://cdn.pixabay.com/photo/2016/10/20/18/35/earth-1756274_960_720.jpg") no-repeat center;
+    background-size: cover;
 }
 
 .button {
@@ -74,16 +71,18 @@ header {
 }
 
 .projects {
-    float: left;
+    float: right;
     padding-left: 20%;
     justify-content: space-between;
+    font-size: 20px;
 }
 
 .footer {
     clear: both; /*Limpa o float*/
     text-align: center;
-    position: relative;
     top: 3rem;
+    background: url("https://cdn.pixabay.com/photo/2012/01/09/09/10/sun-11582_960_720.jpg") no-repeat center;
+    background-size: cover;
 }
 
 a {
@@ -91,12 +90,12 @@ a {
 }
 
 a:hover, a.active {
-    background-color: rgb(40, 73, 121);
+    background-color: rgb(53, 91, 151);
     color: rgb(134, 136, 36);
 }
 
 /*.clearfix usado para adicionar um espaço vazio antes e depois dos elementos
-  evitando que os floats se aglomerem. */
+  evitando que os floats se aglomerem.
   
 .clearfix:before, .clearfix:after {
     content: &quot; &quot;; 
