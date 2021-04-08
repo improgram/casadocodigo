@@ -63,6 +63,7 @@ header {
     float: left;
     color: rgba(255, 217, 0, 0.76);
     padding-left: 5%;
+    max-width: 340px;
 }
 
 .title {
