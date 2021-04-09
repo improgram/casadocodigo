@@ -89,38 +89,49 @@ function anodeOlimpiadas(){
     imgOlimpiadas.src = "https://onlympics.com.br/wp-content/uploads/2019/01/Onlympics-jogos-olimpicos-1200x554.png";
     imgOlimpiadas.width = "340";
 
-    buttonOlimpiadas.insertAdjacentElement("beforeEnd", imgOlimpiadas);//insere elemento
+    buttonOlimpiadas.insertAdjacentElement("beforeEnd", imgOlimpiadas); //insere elemento
     buttonOlimpiadas.insertAdjacentHTML("beforeEnd", olimpiadas);
 }
 
 //Tabuada
 let buttonTabuada = document.getElementById('tabuada');
     buttonTabuada.addEventListener("click", tabuada);
-
-    let multi = 1;
-    while(multi <= 10){
-        console.log('1 Vezes ' + multi + " = " + 1 * multi)
-        multi = multi + 1
-    }
+let buttonTabuada2 = document.createElement('button');
+    buttonTabuada2.innerText = 'Escolha outro Numero';
 
     function tabuada (){
-        let numero = parseInt(document.getElementById('numero').value);
-        let resposta = document.getElementById('resposta');
-        let resultado = " ";
-        console.log('teste Tabuada')
+        let numero = parseInt(prompt('Tabuada de qual numero ?' ));
+        let resposta = 'Numero escolhido: ' + numero + '\n';
+        
+            for(let count = 1; count <= 10; count++) {
+                resposta += numero + " X " + count + " = " + numero*count + '\n';
+            }
 
-        for(let count = 1; count <= 10; count++)
-        resultado += numero + " X " + count + " = " + numero*count + "<br />";
-        resposta.innerHTML = resultado;
+        let imgTabuada = document.createElement('img');
+        imgTabuada.src = "https://geniodamatematica.com.br/wp-content/uploads/2019/04/multiplicacao-tabela-de-pitagoras.png"
+        imgTabuada.width = "340";       
+
+        buttonTabuada.insertAdjacentElement("beforeEnd", imgTabuada);
+        buttonTabuada.insertAdjacentHTML("beforeEnd", resposta);
+        buttonTabuada.insertAdjacentElement("beforeEnd", buttonTabuada2);
     }
-
-
 
 //Comparativo combustiveis
 let buttonCombustiveis = document.getElementById('combustiveis');
     buttonCombustiveis.addEventListener("click", combustiveis);
+
 function combustiveis (){
+    let tanqueCarro = 40;
+    let kmRodadosGas = parseInt(prompt('Digite km Percorridos com Gasolina.'))
+    let consumoGasolina = (kmRodadosGas / tanqueCarro )
     console.log('combustiveis')
+
+    let imgCombustiveis = document.createElement('img');
+    imgCombustiveis.src = "https://cdn.pixabay.com/photo/2016/08/15/22/20/fuel-1596622__340.jpg"
+    imgCombustiveis.width = "340";
+
+    buttonCombustiveis.insertAdjacentElement("beforeEnd", imgCombustiveis)
+    buttonCombustiveis.insertAdjacentHTML("beforeEnd", consumoGasolina);
 }
 
 //Media de Idade dos familiares
