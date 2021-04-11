@@ -63,6 +63,9 @@ header {
     padding-left: 5%;
     max-width: 340px;
 }
+#scripts img {
+    width: 340px;
+}
 
 .title {
     color: rgba(240, 234, 202, 0.76);
@@ -91,6 +94,7 @@ a:hover, a.active {
     background-color: rgb(53, 91, 151);
     color: rgb(134, 136, 36);
 }
+
 
 /*.clearfix usado para adicionar um espaço vazio antes e depois dos elementos
   evitando que os floats se aglomerem.

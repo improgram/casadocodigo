@@ -11,6 +11,7 @@ function batimentos () {
 
     let imgBatimentos = document.createElement("img");
     imgBatimentos.src = "https://cdn.pixabay.com/photo/2018/04/12/04/26/blood-pressure-3312513_960_720.png";
+    imgBatimentos.width = "340";
     imgBatimentos.height = "200";
 
     buttonBatimentos.insertAdjacentElement("afterend", imgBatimentos);  //Adiciona imagem como filha do id=batimentos.
@@ -145,7 +146,11 @@ function combustiveis (){
 }
 
 function comparaCombustivel () {
-    console.log("comparar Combustiveis")
+    let buttonValorGas = parseInt(prompt('Digite o valor do litro da Gasolina.') );
+        
+    let buttonValorAlcool = parseInt(prompt('Digite o valor do litro do Alcool.') );
+    console.log("litro da Gasolina: " + buttonValorGas);
+    console.log("litro do Alcool: " + buttonValorAlcool);
 }
 
 
@@ -153,13 +158,169 @@ function comparaCombustivel () {
 //Media de Idade dos familiares
 let buttonIdade = document.getElementById('mediaIdade');
     buttonIdade.addEventListener("click", mediaIdade);
+
 function mediaIdade(){
     console.log('media de idade')
+
+    let imgIdade = document.createElement('img');
+        imgIdade.src = "http://google.com"
+        imgIdade.width = "340"; // Retirar e testar img pelo CSS
+
+    buttonIdade.insertAdjacentElement("beforeEnd", imgIdade);
 }
+
+
 
 //Acertar Numero pensado
 let buttonNumero = document.getElementById('adivinharNumero');
     buttonNumero.addEventListener("click", numeroPensado);
+
 function numeroPensado() {
     console.log('numero pensado:' )
+
+    let imgNumero = document.createElement('img');
+        imgNumero.src = "http://google.com";
+        imgNumero.width = "340";
+
+    buttonNumero.insertAdjacentElement("beforeEnd", imgNumero);
 }
+
+//Linhas e Colunas
+let buttonlinhaColuna = document.getElementById('linhaColuna');
+    buttonlinhaColuna.addEventListener("click", linhaComColuna);
+
+function linhaComColuna(){
+    console.log('linhas e colunas')
+
+    let imgLinhaColuna = document.createElement('img');
+        imgLinhaColuna.src = "http://google.com";
+        imgLinhaColuna.width = "340";
+
+    buttonlinhaColuna.insertAdjacentElement("before", imgLinhaColuna);
+}
+
+
+
+//Mega-Sena
+let buttonMegaSena = document.getElementById('megaSena');
+    buttonMegaSena.addEventListener("click", megasena);
+
+function megasena(){
+    console.log('teste Mega Sena');
+
+    let imgMegaSena = document.createElement('img');
+        imgMegaSena.src = "http://google.com";
+        imgMegaSena.width = "340";
+
+    buttonMegaSena.insertAdjacentElement("before", imgMegaSena);
+}
+
+
+
+//Introducao Canvas
+let buttonCanvas = document.getElementById('canvas');
+    buttonCanvas.addEventListener("click", introCanvas);
+
+function introCanvas() {
+    console.log('Intro Canvas');
+
+    let imgCanvas = document.createElement('img');
+        imgCanvas.src = "http://google.com";
+        imgCanvas.width = "340";
+
+    buttonCanvas.insertAdjacentElement("before", imgCanvas);
+}
+
+
+
+//Tabuleiro Damas
+let buttonDamas = document.getElementById('damas');
+    buttonDamas.addEventListener("click", damas);
+
+function damas(){
+    console.log('teste damas');
+
+    let imgDamas = document.createElement('img');
+        imgDamas.src = "http://google.com";
+        imgDamas.width = "340";
+
+    buttonDamas.insertAdjacentElement("before", imgDamas);
+}
+
+
+//Bandeiras com Canvas
+let buttonBandeiras = document.getElementById('bandeiras');
+    buttonBandeiras.addEventListener("click", bandeiras)
+
+function bandeiras() {
+    console.log('bandeiras');
+
+    let imgPaises = document.createElement('img');
+        imgPaises.src = "http://google.com";
+        imgPaises.width = "340";
+
+    buttonBandeiras.insertAdjacentElement("before", imgPaises);
+}
+
+
+//Canvas com Condicionais
+let buttonCondicionais = document.getElementById('canvasCondicionais');
+    buttonCondicionais.addEventListener("click", canvasCondicionais);
+
+function canvasCondicionais(){
+    console.log('canvas condicionais')
+
+    let imgCondicionais = document.createElement('img');
+    imgCondicionais.src = "http://google.com";
+    imgCondicionais.width = "340";
+
+    buttonCondicionais.insertAdjacentElement("before", imgCondicionais);
+}
+
+
+//Canvas Ordem crescente
+let buttonCrescente = document.getElementById('canvasCrescente');
+    buttonCrescente.addEventListener("click", canvasCrescente);
+
+function canvasCrescente(){
+    console.log('canvas crescente')
+
+    let imgCrescente = document.createElement('img');
+        imgCrescente.src = "http://google.com";
+        imgCrescente.width = "340";
+
+    buttonCrescente.insertAdjacentElement("before", imgCrescente);    
+}
+
+
+//Canvas Parabola
+let buttonParabola = document.getElementById('canvasParabola');
+    buttonParabola.addEventListener("click", canvasParabola)
+
+function canvasParabola(){
+    console.log('canvas parabola')
+
+    let imgParabola = document.createElement('img');
+        imgParabola.src = "http://google.com";
+        imgParabola.width = "340";
+
+    buttonParabola.insertAdjacentElement("before", imgParabola)
+}
+
+
+//Calculo do Seno com Canvas
+let buttonSeno = document.getElementById('seno');
+    buttonSeno.addEventListener("click", seno)
+
+function seno(){
+    console.log('seno')
+
+    let imgSeno = document.createElement('img');
+        imgSeno.src = "http://google.com";
+        imgSeno.width = "340";
+
+    buttonSeno.insertAdjacentElement("before", imgSeno);
+}
+
+
+//
