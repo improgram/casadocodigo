@@ -33,7 +33,7 @@ header {
 
 .menu a {
     color: rgb(255, 254, 254);
-    font-size: clamp(1em, 1em + 1vw, 3em) /* Valores min, desejavel e max */
+    font-size: clamp(0.5em, 0.8em + 1vw, 3em) /* Valores min, desejavel e max */
 }
 
 .main {
