@@ -6,7 +6,7 @@ let buttonBatimentos = document.getElementById("batimentos")
 function batimentos () {
     let idade = prompt('Quantos anos voce tem ?');
     let diasdevida = idade * 365;
-    let calcBatimentos = 'Idade: ' + idade + ' anos.\n' + 'Coração bateu: ' + diasdevida * 24 * 60 * 80 + ' vezes \n' + 'em toda a vida.';
+    let calcBatimentos = '\n Idade: ' + idade + ' anos.\n' + 'Coração bateu: ' + diasdevida * 24 * 60 * 80 + ' vezes \n' + 'em toda a vida.';
     console.log(calcBatimentos);
 
     let imgBatimentos = document.createElement("img");
@@ -123,6 +123,10 @@ let buttonTabuada2 = document.createElement('button');
 let buttonCombustiveis = document.getElementById('combustiveis');
     buttonCombustiveis.addEventListener("click", combustiveis);
 
+let buttonComparativo = document.createElement('button')
+    buttonComparativo.innerText = "Clique para Comparar Alcool x Gasolina";
+    buttonComparativo.addEventListener("click", comparaCombustivel);
+
 function combustiveis (){
     let tanqueCarro = 40;
     let kmcomGas = parseInt(prompt('Digite km Percorridos com Gasolina.'))
@@ -133,16 +137,13 @@ function combustiveis (){
                     'Resultado: km rodado por litro: ' + consumoGasolina + ' km/L.\n';
 
     let imgCombustiveis = document.createElement('img');
-    imgCombustiveis.src = "https://cdn.pixabay.com/photo/2016/08/15/22/20/fuel-1596622__340.jpg"
+        imgCombustiveis.src = "https://cdn.pixabay.com/photo/2016/08/15/22/20/fuel-1596622__340.jpg"
         imgCombustiveis.width = "340";
-
-    let buttonComparativo = document.createElement('button');
-        buttonComparativo.innerText = "Clique para Comparar Alcool x Gasolina";
-        buttonComparativo = addEventListener("click", comparaCombustivel);
 
         buttonCombustiveis.insertAdjacentElement("beforeEnd", imgCombustiveis);
         buttonCombustiveis.insertAdjacentHTML("beforeEnd", resumoGas);
-        buttonCombustiveis.insertAdjacentHTML("beforeEnd", buttonComparativo);
+        buttonCombustiveis.insertAdjacentElement("beforeEnd", buttonComparativo);
+
 }
 
 function comparaCombustivel () {

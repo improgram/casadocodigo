@@ -36,6 +36,10 @@ header {
     font-size: clamp(0.5em, 0.8em + 1vw, 3em) /* Valores min, desejavel e max */
 }
 
+.menu img {
+     max-width: 80px;
+}
+
 .main {
     color: rgba(243, 237, 237, 0.774);
     white-space: pre-line;
@@ -50,7 +54,7 @@ header {
 .button {
     background-color: rgba(0, 0, 0, 0.76);
     color: rgb(248, 247, 242);
-    font-size: 16px;
+    font-size: 14px;
     border: 1px solid rgb(123, 116, 155);
     border-radius: 2px;
     -webkit-border-radius: 2px;
@@ -75,6 +79,7 @@ header {
 .projects {
     float: right;
     padding-left: 20%;
+    font-size: 15px;
     /* justify-content: space-between; */
 }
 
