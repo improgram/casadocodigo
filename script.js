@@ -6,7 +6,7 @@ let buttonBatimentos = document.getElementById("batimentos")
 function batimentos () {
     let idade = prompt('Quantos anos voce tem ?');
     let diasdevida = idade * 365;
-    let calcBatimentos = '\n Idade: ' + idade + ' anos.\n' + 'Coração bateu: ' + diasdevida * 24 * 60 * 80 + ' vezes \n' + 'em toda a vida.';
+    let calcBatimentos = '\n Idade: ' + idade + ' anos.' + 'O Coração bateu: ' + diasdevida * 24 * 60 * 80 + ' vezes em toda a vida.\n';
     console.log(calcBatimentos);
 
     let imgBatimentos = document.createElement("img");
@@ -14,11 +14,20 @@ function batimentos () {
     imgBatimentos.width = "340";
     imgBatimentos.height = "200";
 
-    buttonBatimentos.insertAdjacentElement("afterend", imgBatimentos);  //Adiciona imagem como filha do id=batimentos.
-    //document.getElementById("batimentos").appendChild(imgBatimentos); //Igual a linha acima
-    buttonBatimentos.insertAdjacentHTML("afterend", calcBatimentos);
-    //beforebegin=antes do element  -  afterbegin=dentro do element e antes do primeiro filho
-    //beforeEnd=dentro do element e apos seu ultimo filho  - afterend= Após o element
+    let codBatimentos = document.createElement('a');
+        codBatimentos.setAttribute('href', 'https://github.com/improgram/casadocodigo/blob/master/Capitulo3/024Topico3.6.html');     
+        codBatimentos.setAttribute("target", "_blank");
+        codBatimentos.text = '\n Batimentos: Abrir em nova Aba o Codigo Fonte no GitHub';
+
+    buttonBatimentos.insertAdjacentElement("afterEnd", imgBatimentos);  //Adiciona imagem como filha do id=batimentos.
+    /*document.getElementById("batimentos").appendChild(imgBatimentos);  = Igual a linha acima */
+    buttonBatimentos.insertAdjacentHTML("afterEnd", calcBatimentos);
+    imgBatimentos.insertAdjacentElement("afterEnd", codBatimentos);
+        
+    //beforebegin = Antes do element
+    //afterbegin = Dentro do element e antes do primeiro filho
+    //beforeEnd = Dentro do element e apos seu ultimo filho
+    //afterend = Após o element
 }
 
 // Anos de Copa
@@ -46,17 +55,23 @@ let buttonCopa = document.getElementById('copas')
         }
             if (ano > 2020) {
                     console.log('Em: ' + ano + ' : vai ter copa.')
-                    copa += 'Em ' + ano + ': vai ter Copa.';        
+                    copa += 'Em ' + ano + ': vai ter Copa.\n';        
             }
 
         let imgCopa = document.createElement("img");
-        imgCopa.src = "https://static.mundoeducacao.uol.com.br/mundoeducacao/conteudo_legenda/ad7523a3d1a139039d9a33bdd76a9ddf.jpg";
-        imgCopa.height = "200";
-        imgCopa.width = "340";
-        buttonCopa.insertAdjacentElement("afterend", imgCopa); // insere element IMG apos o fim do id=copas.
-        //document.getElementById("copas").appendChild(imgCopa); IGUAL a mesma coisa que a linha acima.
+            imgCopa.src = "https://static.mundoeducacao.uol.com.br/mundoeducacao/conteudo_legenda/ad7523a3d1a139039d9a33bdd76a9ddf.jpg";
+            imgCopa.height = "200";
+            imgCopa.width = "340";
+
+        let codCopas = document.createElement('a');
+            codCopas.setAttribute('href', "https://github.com/improgram/casadocodigo/blob/master/Capitulo5/036Topico5.3.html");
+            codCopas.setAttribute("target", "_blank");
+            codCopas.text = '\n Copas: Abrir em nova aba o Codigo Fonte no GitHub';
+
+        buttonCopa.insertAdjacentElement("afterend", imgCopa);
         buttonCopa.insertAdjacentHTML("afterend", copa);
-        //Com innerText usar \n para pular a linha. textContent e innerHTML nao pula a linha
+        //Com innerText usar \n para pular a linha. textContent e innerHTML nao pula a linha    
+        imgCopa.insertAdjacentElement('afterEnd', codCopas);
     } 
     
 //Anos de Olimpiada
@@ -85,15 +100,21 @@ function anodeOlimpiadas(){
 
     if(ano > 2019) {
         console.log('Em: ' + ano + ' : vai ter Olimpiadas.')
-        olimpiadas += 'Em ' + ano + ': Interrupção devido a Covid-19.'
+        olimpiadas += 'Em ' + ano + ': Interrupção devido a Covid-19.\n '
     }
 
     let imgOlimpiadas = document.createElement('img');
-    imgOlimpiadas.src = "https://onlympics.com.br/wp-content/uploads/2019/01/Onlympics-jogos-olimpicos-1200x554.png";
-    imgOlimpiadas.width = "340";
+        imgOlimpiadas.src = "https://onlympics.com.br/wp-content/uploads/2019/01/Onlympics-jogos-olimpicos-1200x554.png";
+        imgOlimpiadas.width = "340";
 
+    let codOlimpiadas = document.createElement('a');
+        codOlimpiadas.setAttribute('href', "https://github.com/improgram/casadocodigo/blob/master/Capitulo5/038Topico5.5.html");
+        codOlimpiadas.setAttribute('target', "_blank");
+        codOlimpiadas.text = '\n Olimpiadas: Abrir em nova aba o Codigo Fonte no GitHub';
+    
     buttonOlimpiadas.insertAdjacentElement("afterend", imgOlimpiadas);
     buttonOlimpiadas.insertAdjacentHTML("afterend", olimpiadas);
+    imgOlimpiadas.insertAdjacentElement('afterEnd', codOlimpiadas);
 }
 
 //Tabuada

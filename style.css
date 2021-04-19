@@ -5,11 +5,10 @@
 }
 
 html, body {
-    font-size: 1.0em;
+    font-size: 0.9em;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Verdana, sans-serif;
     width: 100%;
     height: auto;
-    text-align: left; 
 }
 
 header {
@@ -32,8 +31,14 @@ header {
 }
 
 .menu li img {
-    width: 70px;
+    width: 60%;
 }
+
+/*
+@media only screen and (max-device-width: 900px){
+    .main {width: 100%;}
+}
+*/
 
 .main {
     color: rgba(243, 237, 237, 0.774);
@@ -41,9 +46,26 @@ header {
     line-height: 1.5;
     width: 100%;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     background: url("https://cdn.pixabay.com/photo/2016/10/20/18/35/earth-1756274_960_720.jpg") no-repeat center;
-    background-size: cover;  
+    background-size: cover;
+    align-items: center;
+    text-align: center;
+}
+
+#intro {
+    color: rgba(237, 238, 209, 0.87);
+    float: center;
+}
+
+#scripts {
+    color: rgba(255, 217, 0, 0.76);
+    padding-left: 5%;
+    /*float: left;*/
+}
+
+#scripts img {
+    width: 340px;
 }
 
 .btn {
@@ -51,7 +73,8 @@ header {
     color: rgb(248, 247, 242);
     font-size: 14px;
     border: 1px solid rgb(123, 116, 155);
-    border-radius: 2px;
+    border-radius: 6px;
+    padding: 6px; /* espaço interno do botao */
     -webkit-border-radius: 2px;
     -moz-border-radius: 2px;
     cursor: pointer;
@@ -59,13 +82,11 @@ header {
     overflow: hidden;
 }
 
-.btn:hover
-{
+.btn:hover {
     color: white;
 }
 
-.btn::before
-{
+.btn:before {
     content: "";
     position: absolute;
     top: 0;
@@ -78,30 +99,14 @@ header {
     height: 0%;
     transition: all 0.5s;
 }
-.btn:hover::before{
+
+.btn:hover::before {
     height: 190%;
 }
 
-#scripts {
-    float: left;
-    color: rgba(255, 217, 0, 0.76);
-    padding-left: 5%;
-    max-width: 340px;
-}
-#scripts img {
-    width: 340px;
-}
-
 .title {
-    color: rgba(240, 234, 202, 0.76);
+    color: rgba(230, 202, 48, 0.76);
     text-transform: uppercase;
-}
-
-.projects {
-    float: right;
-    padding-left: 20%;
-    font-size: 15px;
-    /* justify-content: space-between; */
 }
 
 footer {
@@ -121,20 +126,16 @@ footer img {
 
 @keyframes animate
 {
-    0%
-    {
+    0% {
         box-shadow: 0 0 0 0 rgba(221, 208, 21, 0.7), 0 0 0 0 rgba(209, 208, 135, 0.7);
     }
-    40%
-    {
+    40% {
         box-shadow: 0 0 0 40px rgba(55, 209, 201, 0), 0 0 0 0 rgba(186, 209, 55, 0.7);
     }
-    80%
-    {
+    80% {
         box-shadow: 0 0 0 50px rgba(55, 209, 201, 0), 0 0 0 30px rgba(55, 209, 201, 0);
     }
-    100%
-    {
+    100% {
         box-shadow: 0 0 0 0 rgba(55, 209, 201, 0), 0 0 0 30px rgba(55, 209, 201, 0);
     }
 }
@@ -148,18 +149,8 @@ a:hover, a.active {
     color: rgb(184, 181, 26);
 }
 
-
-/*.clearfix usado para adicionar um espaço vazio antes e depois dos elementos
-  evitando que os floats se aglomerem.
-  
-.clearfix:before, .clearfix:after {
-    content: &quot; &quot;; 
-    display: table; 
+a:visited{
+    color: #FE9380;
+    font-weight: 400;
+    text-decoration: none;
 }
-.clearfix:after {
-    clear: both;
-}
-.clearfix {
-    *zoom: 1;
-}
-/*fim do clearfix*/
