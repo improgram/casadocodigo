@@ -43,29 +43,28 @@ header {
 .main {
     color: rgba(243, 237, 237, 0.774);
     white-space: pre-line;
-    line-height: 1.5;
     width: 100%;
-    display: flex;
-    flex-direction: column;
     background: url("https://cdn.pixabay.com/photo/2016/10/20/18/35/earth-1756274_960_720.jpg") no-repeat center;
     background-size: cover;
-    align-items: center;
-    text-align: center;
 }
 
 #intro {
     color: rgba(237, 238, 209, 0.87);
-    float: center;
+    text-align: center;
+}
+
+.title {
+    color: rgba(230, 202, 48, 0.76);
+    text-transform: uppercase;
+    text-align: center;
 }
 
 #scripts {
     color: rgba(255, 217, 0, 0.76);
-    padding-left: 5%;
-    /*float: left;*/
-}
-
-#scripts img {
-    width: 340px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr; /* 3 colunas */
+    grid-auto-rows: minmax(1px, 200px);
+    grid-column-gap: 1em;
 }
 
 .btn {
@@ -75,11 +74,10 @@ header {
     border: 1px solid rgb(123, 116, 155);
     border-radius: 6px;
     padding: 6px; /* espaço interno do botao */
-    -webkit-border-radius: 2px;
-    -moz-border-radius: 2px;
     cursor: pointer;
     transition: all 0.5s;
     overflow: hidden;
+    margin: 10px 0;
 }
 
 .btn:hover {
@@ -104,13 +102,7 @@ header {
     height: 190%;
 }
 
-.title {
-    color: rgba(230, 202, 48, 0.76);
-    text-transform: uppercase;
-}
-
-footer {
-    /*clear: both; Limpa o float*/
+.footer {
     text-align: center;
     background: url("https://cdn.pixabay.com/photo/2016/11/30/12/16/question-mark-1872665__340.jpg") no-repeat center;
     background-size: cover;
@@ -119,7 +111,7 @@ footer {
     color:rgb(245, 245, 238);
 }
 
-footer img {
+.footer img {
     border-radius: 50%;
     animation: animate 4s linear infinite;
 }

@@ -11,18 +11,18 @@ function batimentos () {
 
     let imgBatimentos = document.createElement("img");
     imgBatimentos.src = "https://cdn.pixabay.com/photo/2018/04/12/04/26/blood-pressure-3312513_960_720.png";
-    imgBatimentos.width = "340";
-    imgBatimentos.height = "200";
+    imgBatimentos.width = "240";
+    imgBatimentos.height = "100";
 
     let codBatimentos = document.createElement('a');
         codBatimentos.setAttribute('href', 'https://github.com/improgram/casadocodigo/blob/master/Capitulo3/024Topico3.6.html');     
         codBatimentos.setAttribute("target", "_blank");
         codBatimentos.text = '\n Batimentos: Abrir em nova Aba o Codigo Fonte no GitHub';
 
-    buttonBatimentos.insertAdjacentElement("afterEnd", imgBatimentos);  //Adiciona imagem como filha do id=batimentos.
+    //buttonBatimentos.insertAdjacentElement("beforeEnd", imgBatimentos);  //Adiciona imagem como filha do id=batimentos.
     /*document.getElementById("batimentos").appendChild(imgBatimentos);  = Igual a linha acima */
-    buttonBatimentos.insertAdjacentHTML("afterEnd", calcBatimentos);
-    imgBatimentos.insertAdjacentElement("afterEnd", codBatimentos);
+    buttonBatimentos.insertAdjacentHTML("beforeEnd", calcBatimentos);
+    imgBatimentos.insertAdjacentElement("beforeEnd", codBatimentos);
         
     //beforebegin = Antes do element
     //afterbegin = Dentro do element e antes do primeiro filho
@@ -139,6 +139,36 @@ let buttonTabuada2 = document.createElement('button');
         buttonTabuada.insertAdjacentHTML("beforeEnd", resposta);
         buttonTabuada.insertAdjacentElement("beforeEnd", buttonTabuada2);
     }
+
+
+
+/*
+tabuada: <a href="https://github.com/improgram/casadocodigo/blob/master/Capitulo5/039Topico5.6-Tabuada.html" target="_blank">Tabuada Código Fonte no GitHub</a>      
+combustiveis: <a href="https://github.com/improgram/casadocodigo/blob/master/Capitulo2/011Topico2.6_Opcao3.html" target="_blank">Consumo de Combustivel Código Fonte no GitHub</a>
+idade: <a href="https://github.com/improgram/casadocodigo/blob/master/Capitulo5/042Topico5.9.html" target="_blank">Media de idade Código Fonte no GitHub</a>
+adivinhar: <a href="https://github.com/improgram/casadocodigo/blob/master/Capitulo5/044Topico5.11_Exerci1_2_3.html" target="_blank">Acertar Numero - Código Fonte no GitHub</a>
+linhas/colunas: <a href="https://github.com/improgram/casadocodigo/blob/master/Capitulo5/045Topico5.12.html" target="_blank">Linhas e Colunas Código Fonte no GitHub</a>
+Mega-Sena: <a href="https://github.com/improgram/casadocodigo/blob/master/Capitulo6/051Topico6.4_Opcao2.html" target="_blank">Mega-Sena Código Fonte no GitHub</a>
+Intro-Canvas: <a href="https://github.com/improgram/casadocodigo/blob/master/Capitulo7/055Topico7.2.html" target="_blank">Introdução Canvas Código Fonte no GitHub</a>
+Damas: <a href="https://github.com/improgram/casadocodigo/blob/master/Capitulo7/056Topico7.3_Tabuleiro.html" target="_blank">Tabuleiro de Damas Código Fonte no GitHub</a>
+Bandeiras: <a href="https://github.com/improgram/casadocodigo/blob/master/Capitulo7/057Topico7.4_Bandeiras.html" target="_blank">Bandeiras Código Fonte no GitHub</a>      
+Canvas condicionais: <a href="https://github.com/improgram/casadocodigo/blob/master/Capitulo7/062Topico7.6_Exercicio4.html" target="_blank">Canvas com Condicionais Código Fonte no GitHub</a>
+Canvas ordem Crescente: <a href="https://github.com/improgram/casadocodigo/blob/master/Capitulo7/063Topico7.7.html" target="_blank">Canvas Ordem crescente Código Fonte no GitHub</a>
+Canvas - Parabola: <a href="https://github.com/improgram/casadocodigo/blob/master/Capitulo7/065Topico7.9_Parabola.html" target="_blank">Canvas - Parabola Código Fonte no GitHub</a>
+Canvas - Seno: <a href="https://github.com/improgram/casadocodigo/blob/master/Capitulo7/069Topico7.13_Seno.html" target="_blank">Canvas - Calculo do Seno Código Fonte no GitHub</a>
+Detecta clique: <a href="https://github.com/improgram/casadocodigo/blob/master/Capitulo8/070Topico8.1_Com_Alert.html" target="_blank">Detectar posicao dos cliques Código Fonte no GitHub</a>
+Detecta mouse: <a href="https://github.com/improgram/casadocodigo/blob/master/Capitulo8/071Topico8.2_Exercicio1.html" target="_blank">Detectar botao mouse Código Fonte no GitHub</a>
+Paint: <a href="https://github.com/improgram/casadocodigo/blob/master/Capitulo8/073Topico8.2_Paint_Canvas_Exerci3.html" target="_blank">Paint-Brush Código Fonte no GitHub</a>
+Canvas - Animacoes: <a href="https://github.com/improgram/casadocodigo/blob/master/Capitulo8/075Topico8.4.html" target="_blank">Animacoes com canvas Código Fonte no GitHub</a>
+Tiro ao Alvo: <a href="https://github.com/improgram/casadocodigo/blob/master/Capitulo8/079Topico8.5_opcao2.html" target="_blank">Jogo Tiro ao Alvo - Código Fonte no GitHub</a>
+Form.Eventos: <a href="https://github.com/improgram/casadocodigo/blob/master/Capitulo8/080Topico9.1.html" target="_blank">Formulario com eventos - Código Fonte no GitHub</a>
+Form. Array: <a href="https://github.com/improgram/casadocodigo/blob/master/Capitulo8/081Topico9.1_formulario_array.html" target="_blank">Formulario com array - Código Fonte no GitHub</a>
+Objetos: <a href="https://github.com/improgram/casadocodigo/blob/master/Capitulo8/083_Arrays.html" target="_blank">Introducao Objetos Código Fonte no GitHub</a>    
+Dom: <a href="https://github.com/improgram/casadocodigo/blob/master/Capitulo8/084Topico9.2_links.html" target="_blank">Manipulacao DOM Código Fonte no GitHub</a>           
+IMC: <a href="https://github.com/improgram/casadocodigo/blob/master/Capitulo8/085Topico9.3_IMC.html" target="_blank">Calcular IMC - Código Fonte no GitHub</a> 
+      
+*/
+
 
 //Comparativo combustiveis
 let buttonCombustiveis = document.getElementById('combustiveis');
