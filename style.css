@@ -24,7 +24,7 @@ header {
 .menu {
     list-style: none;
     display: flex; /*menu lado a lado */
-    justify-content: space-between; /*Utiliza todo espaço disponivel */
+    justify-content: space-between; /*Utiliza todo espaço disponivel*/
     align-items: center;
     text-transform: uppercase;
     font-size: clamp(0.3em, 0.8em + 1vw, 4em) /* Valores min, desejavel e max */
@@ -42,29 +42,31 @@ header {
 
 .main {
     color: rgba(243, 237, 237, 0.774);
-    white-space: pre-line;
+    white-space: pre-line; /*espaços em branco dentro dos elementos são manipulados.*/
     width: 100%;
-    background: url("https://cdn.pixabay.com/photo/2016/10/20/18/35/earth-1756274_960_720.jpg") no-repeat center;
+    background: url("https://cdn.pixabay.com/photo/2016/11/30/12/16/question-mark-1872665__340.jpg") no-repeat center;
     background-size: cover;
+    display: flex;
+    flex-direction: column;
+    /*justify-content: center; */
 }
 
 #intro {
     color: rgba(237, 238, 209, 0.87);
     text-align: center;
+    
+}
+
+#scripts {
+    color: rgba(255, 217, 0, 0.76);
+    padding: 10px; /* espaço da section para as margens */
+    flex-direction: row;
 }
 
 .title {
     color: rgba(230, 202, 48, 0.76);
     text-transform: uppercase;
     text-align: center;
-}
-
-#scripts {
-    color: rgba(255, 217, 0, 0.76);
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr; /* 3 colunas */
-    grid-auto-rows: minmax(1px, 200px);
-    grid-column-gap: 1em;
 }
 
 .btn {
@@ -104,11 +106,15 @@ header {
 
 .footer {
     text-align: center;
-    background: url("https://cdn.pixabay.com/photo/2016/11/30/12/16/question-mark-1872665__340.jpg") no-repeat center;
+    display: flex; /*menu lado a lado */
+    justify-content: space-between;
+    align-items: center;
     background-size: cover;
     text-shadow: 1px 1px 1px rgb(218, 221, 28);
     font-family: sans-serif;
     color:rgb(245, 245, 238);
+    padding-top: 2%;
+    padding-bottom: 2%;
 }
 
 .footer img {
