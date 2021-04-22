@@ -14,11 +14,14 @@ html, body {
 header {
     position: sticky;
     top: 0;
-    width: 100%;
-    height: 10%;
+    width: 100%; /* largura */
+    /*height: 10%; */
     background: url("https://cdn.pixabay.com/photo/2017/02/08/12/46/moon-2048727_960_720.jpg") no-repeat center;
     background-size: cover;
     text-shadow: 1px 1px 0px rgb(236, 240, 2); /*sombreamento das fontes*/
+    text-transform: uppercase;
+    text-align: center;
+    
 }
 
 .menu {
@@ -26,8 +29,8 @@ header {
     display: flex; /*menu lado a lado */
     justify-content: space-between; /*Utiliza todo espaço disponivel*/
     align-items: center;
-    text-transform: uppercase;
     font-size: clamp(0.3em, 0.8em + 1vw, 4em) /* Valores min, desejavel e max */
+
 }
 
 .menu li img {
@@ -44,22 +47,45 @@ header {
     color: rgba(243, 237, 237, 0.774);
     white-space: pre-line; /*espaços em branco dentro dos elementos são manipulados.*/
     width: 100%;
-    background: url("https://cdn.pixabay.com/photo/2016/11/30/12/16/question-mark-1872665__340.jpg") no-repeat center;
+    background: url("https://cdn.pixabay.com/photo/2014/04/05/11/38/bokeh-316425__340.jpg") center;
+    /* background: url("https://cdn.pixabay.com/photo/2016/04/04/12/43/texture-1306790__340.jpg") center; */
+    /*background: url("https://cdn.pixabay.com/photo/2016/10/07/14/42/space-1721695__340.jpg") center; */
+    /*background: url("https://cdn.pixabay.com/photo/2014/04/05/11/38/bokeh-316425__340.jpg") center; */
+    /* background: url("https://cdn.pixabay.com/photo/2016/07/28/14/40/space-1548139__340.jpg") center; */
+    /*background: url("https://cdn.pixabay.com/photo/2016/06/23/16/07/background-1475670__340.jpg") center; */
+    /* background: url("https://cdn.pixabay.com/photo/2016/08/04/14/04/space-1569133__340.jpg") center; */
+    /*background: url("https://cdn.pixabay.com/photo/2017/10/12/20/15/photoshop-2845779__340.jpg") center; */
+    /* background: url("https://cdn.pixabay.com/photo/2018/08/31/18/21/fantasy-3645269__340.jpg") center; */
+    /* background: url("https://cdn.pixabay.com/photo/2018/02/22/14/58/nature-3173180__340.jpg") center; */
+    /* background: url("https://cdn.pixabay.com/photo/2016/07/17/19/10/background-1524540__340.jpg") center; */
+    /* background: url("https://cdn.pixabay.com/photo/2015/07/03/15/46/wallpaper-830417__340.jpg") center; */
+    /* background: url("https://cdn.pixabay.com/photo/2017/02/19/14/30/water-2079907__340.jpg") center; */
+    /* background: url("https://cdn.pixabay.com/photo/2017/12/26/02/57/sea-3039586__340.jpg") center; */
+    /* background: url("https://cdn.pixabay.com/photo/2016/01/19/17/29/earth-1149733__340.jpg") center; */
+    /* background: url("https://cdn.pixabay.com/photo/2018/05/20/11/40/flower-3415551__340.jpg") center; */
+    /* background: url("https://cdn.pixabay.com/photo/2018/05/17/15/24/armillar-ball-3408811__340.jpg") center; */
+    /* background: url("https://cdn.pixabay.com/photo/2017/10/20/01/06/north-star-2869817_960_720.jpg") no-repeat center;*/
+    /*background: url("https://cdn.pixabay.com/photo/2016/04/02/19/40/moon-1303512__340.png") center;*/
     background-size: cover;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    /*align-items: center; */
+    /*display: flex;*/
+    /*flex-direction: column;*/
+    
 }
 
 #intro {
     color: rgba(237, 238, 209, 0.87);
-    text-align: center;
-    
+    text-align: center; 
 }
 
-#scripts {
+.scripts {
     color: rgba(255, 217, 0, 0.76);
     padding: 10px; /* espaço da section para as margens */
+    vertical-align: middle;
+    /*display: flex; /* Lado a lado */
+    text-align: center;
+    /*float: left; */
+    /*display: inline-block; */
 }
 
 .title {
@@ -71,7 +97,7 @@ header {
 .btn {
     background-color:rgba(12, 12, 2, 0.452);
     color: rgb(197, 186, 130);
-    font-size: 14px;
+    font-size: 16px;
     border: 1px solid rgb(123, 116, 155);
     border-radius: 6px;
     padding: 6px; /* espaço interno do botao */
@@ -79,7 +105,16 @@ header {
     transition: all 0.5s;
     overflow: hidden;
     margin: 10px 0;
+    font-weight: 600;/* Negrito */
 }
+
+#batimentos {
+    width: 380px;
+    height: 180px;
+    background-image: url("https://cdn.pixabay.com/photo/2018/04/12/04/26/blood-pressure-3312513_960_720.png");
+    background-size: cover; /* contain */
+   
+} 
 
 .btn:hover {
     color: white;
@@ -97,11 +132,12 @@ header {
     border-radius: 0 0 50% 50%;
     height: 0%;
     transition: all 0.5s;
+    text-decoration: none;
 }
 
-.btn:hover::before {
-    height: 190%;
-}
+/*.btn:hover::before {
+    height: 40%;
+}*/
 
 .footer {
     text-align: center;
@@ -139,6 +175,7 @@ header {
 
 a {
     color: #fff;
+    text-decoration: underline; /*insere uma linha sob o link*/
 }
 
 a:hover, a.active {
@@ -149,5 +186,8 @@ a:hover, a.active {
 a:visited{
     color: #FE9380;
     font-weight: 400;
+    text-decoration: none;
+}
+a:before {
     text-decoration: none;
 }
