@@ -1,7 +1,8 @@
 
 // Calculo Batimentos
-let buttonBatimentos = document.getElementById("batimentos")
-    buttonBatimentos.addEventListener("click", batimentos)
+let buttonBatimentos = document.getElementById("batimentos");
+    buttonBatimentos.width = "340";
+    buttonBatimentos.addEventListener("click", batimentos);
 
 function batimentos () {
     let idade = prompt('Quantos anos voce tem ?');
@@ -11,18 +12,18 @@ function batimentos () {
 
     let imgBatimentos = document.createElement("img");
     imgBatimentos.src = "https://cdn.pixabay.com/photo/2018/04/12/04/26/blood-pressure-3312513_960_720.png";
-    imgBatimentos.width = "240";
-    imgBatimentos.height = "100";
+    imgBatimentos.width = "340";
+    imgBatimentos.height = "200";
 
     let codBatimentos = document.createElement('a');
         codBatimentos.setAttribute('href', 'https://github.com/improgram/casadocodigo/blob/master/Capitulo3/024Topico3.6.html');     
         codBatimentos.setAttribute("target", "_blank");
         codBatimentos.text = '\n Batimentos: Abrir em nova Aba o Codigo Fonte no GitHub';
 
-    //buttonBatimentos.insertAdjacentElement("beforeEnd", imgBatimentos);  //Adiciona imagem como filha do id=batimentos.
-    /*document.getElementById("batimentos").appendChild(imgBatimentos);  = Igual a linha acima */
     buttonBatimentos.insertAdjacentHTML("beforeEnd", calcBatimentos);
-    imgBatimentos.insertAdjacentElement("beforeEnd", codBatimentos);
+    buttonBatimentos.insertAdjacentElement("beforeEnd", imgBatimentos);  //Adiciona imagem como filha do id=batimentos.
+    /*document.getElementById("batimentos").appendChild(imgBatimentos);  = Igual a linha acima */
+    buttonBatimentos.insertAdjacentElement("beforeEnd", codBatimentos);
         
     //beforebegin = Antes do element
     //afterbegin = Dentro do element e antes do primeiro filho
