@@ -49,12 +49,12 @@ header {
     width: 100%;
     background: url("https://cdn.pixabay.com/photo/2014/04/05/11/38/bokeh-316425__340.jpg") center;
     /* background: url("https://cdn.pixabay.com/photo/2016/04/04/12/43/texture-1306790__340.jpg") center; */
-    /*background: url("https://cdn.pixabay.com/photo/2016/10/07/14/42/space-1721695__340.jpg") center; */
-    /*background: url("https://cdn.pixabay.com/photo/2014/04/05/11/38/bokeh-316425__340.jpg") center; */
+    /* background: url("https://cdn.pixabay.com/photo/2016/10/07/14/42/space-1721695__340.jpg") center; */
+    /* background: url("https://cdn.pixabay.com/photo/2014/04/05/11/38/bokeh-316425__340.jpg") center; */
     /* background: url("https://cdn.pixabay.com/photo/2016/07/28/14/40/space-1548139__340.jpg") center; */
-    /*background: url("https://cdn.pixabay.com/photo/2016/06/23/16/07/background-1475670__340.jpg") center; */
+    /* background: url("https://cdn.pixabay.com/photo/2016/06/23/16/07/background-1475670__340.jpg") center; */
     /* background: url("https://cdn.pixabay.com/photo/2016/08/04/14/04/space-1569133__340.jpg") center; */
-    /*background: url("https://cdn.pixabay.com/photo/2017/10/12/20/15/photoshop-2845779__340.jpg") center; */
+    /* background: url("https://cdn.pixabay.com/photo/2017/10/12/20/15/photoshop-2845779__340.jpg") center; */
     /* background: url("https://cdn.pixabay.com/photo/2018/08/31/18/21/fantasy-3645269__340.jpg") center; */
     /* background: url("https://cdn.pixabay.com/photo/2018/02/22/14/58/nature-3173180__340.jpg") center; */
     /* background: url("https://cdn.pixabay.com/photo/2016/07/17/19/10/background-1524540__340.jpg") center; */
@@ -67,40 +67,31 @@ header {
     /* background: url("https://cdn.pixabay.com/photo/2017/10/20/01/06/north-star-2869817_960_720.jpg") no-repeat center;*/
     /*background: url("https://cdn.pixabay.com/photo/2016/04/02/19/40/moon-1303512__340.png") center;*/
     background-size: cover;
-    /*align-items: center; */
-    /*display: flex;*/
-    /*flex-direction: column;*/
-    
+}
+
+.container {
+    padding: 20px; /* espaço da section para as margens */
+    text-align: center;
+    display: flex; /* Lado a lado */
+    flex-wrap: wrap; /* Quebra de linha  e row (padrao)*/
+    align-items: center; /* flex-start; */
+    justify-content: space-around;
+    /*flex: 1 1 auto; */
 }
 
 #intro {
-    color: rgba(237, 238, 209, 0.87);
+    color: rgba(231, 233, 186, 0.87);
     text-align: center; 
 }
 
-.scripts {
-    color: rgba(255, 217, 0, 0.76);
-    padding: 10px; /* espaço da section para as margens */
-    vertical-align: middle;
-    /*display: flex; /* Lado a lado */
-    text-align: center;
-    /*float: left; */
-    /*display: inline-block; */
-}
-
-.title {
-    color: rgba(230, 202, 48, 0.76);
-    text-transform: uppercase;
-    text-align: center;
-}
 
 .btn {
     background-color:rgba(12, 12, 2, 0.452);
-    color: rgb(197, 186, 130);
+    color: rgb(224, 218, 186);
     font-size: 16px;
-    border: 1px solid rgb(123, 116, 155);
+    border: 1px solid rgb(183, 179, 199);
     border-radius: 6px;
-    padding: 6px; /* espaço interno do botao */
+    /*padding: 6px; /* espaço interno do botao */
     cursor: pointer;
     transition: all 0.5s;
     overflow: hidden;
@@ -113,8 +104,14 @@ header {
     height: 180px;
     background-image: url("https://cdn.pixabay.com/photo/2018/04/12/04/26/blood-pressure-3312513_960_720.png");
     background-size: cover; /* contain */
-   
-} 
+}
+
+#copas {
+    width: 380px;
+    height: 180px;
+    background-image: url("https://static.mundoeducacao.uol.com.br/mundoeducacao/conteudo_legenda/ad7523a3d1a139039d9a33bdd76a9ddf.jpg");
+    background-size: cover;
+}
 
 .btn:hover {
     color: white;
@@ -140,20 +137,17 @@ header {
 }*/
 
 .footer {
-    text-align: center;
     display: flex; /*menu lado a lado */
     justify-content: space-between;
-    align-items: center;
-    background-size: cover;
     text-shadow: 1px 1px 1px rgb(218, 221, 28);
-    font-family: sans-serif;
     color:rgb(245, 245, 238);
     padding-top: 2%;
     padding-bottom: 2%;
+    align-items: center;
 }
 
 .footer img {
-    border-radius: 50%;
+    border-radius: 40%;
     animation: animate 4s linear infinite;
 }
 

@@ -1,28 +1,20 @@
 
 // Calculo Batimentos
 let buttonBatimentos = document.getElementById("batimentos");
-    buttonBatimentos.width = "340";
     buttonBatimentos.addEventListener("click", batimentos);
 
 function batimentos () {
     let idade = prompt('Quantos anos voce tem ?');
     let diasdevida = idade * 365;
-    let calcBatimentos = '\n Idade: ' + idade + ' anos.' + 'O Coração bateu: ' + diasdevida * 24 * 60 * 80 + ' vezes em toda a vida.\n';
+    let calcBatimentos = '\n Idade: ' + idade + ' anos.\n' + 'O Coração bateu: \n' + diasdevida * 24 * 60 * 80 + ' vezes em toda a vida.\n';
     console.log(calcBatimentos);
-
-    let imgBatimentos = document.createElement("img");
-    imgBatimentos.src = "https://cdn.pixabay.com/photo/2018/04/12/04/26/blood-pressure-3312513_960_720.png";
-    imgBatimentos.width = "340";
-    imgBatimentos.height = "200";
 
     let codBatimentos = document.createElement('a');
         codBatimentos.setAttribute('href', 'https://github.com/improgram/casadocodigo/blob/master/Capitulo3/024Topico3.6.html');     
         codBatimentos.setAttribute("target", "_blank");
-        codBatimentos.text = '\n Batimentos: Abrir em nova Aba o Codigo Fonte no GitHub';
+        codBatimentos.text = '\n Ver Codigo Batimentos no GitHub';
 
     buttonBatimentos.insertAdjacentHTML("beforeEnd", calcBatimentos);
-    buttonBatimentos.insertAdjacentElement("beforeEnd", imgBatimentos);  //Adiciona imagem como filha do id=batimentos.
-    /*document.getElementById("batimentos").appendChild(imgBatimentos);  = Igual a linha acima */
     buttonBatimentos.insertAdjacentElement("beforeEnd", codBatimentos);
         
     //beforebegin = Antes do element
@@ -59,20 +51,19 @@ let buttonCopa = document.getElementById('copas')
                     copa += 'Em ' + ano + ': vai ter Copa.\n';        
             }
 
-        let imgCopa = document.createElement("img");
-            imgCopa.src = "https://static.mundoeducacao.uol.com.br/mundoeducacao/conteudo_legenda/ad7523a3d1a139039d9a33bdd76a9ddf.jpg";
+        /*let imgCopa = document.createElement("img");
+            //imgCopa.src = "https://static.mundoeducacao.uol.com.br/mundoeducacao/conteudo_legenda/ad7523a3d1a139039d9a33bdd76a9ddf.jpg";
             imgCopa.height = "200";
-            imgCopa.width = "340";
+            imgCopa.width = "340";*/
 
         let codCopas = document.createElement('a');
             codCopas.setAttribute('href', "https://github.com/improgram/casadocodigo/blob/master/Capitulo5/036Topico5.3.html");
             codCopas.setAttribute("target", "_blank");
-            codCopas.text = '\n Copas: Abrir em nova aba o Codigo Fonte no GitHub';
+            codCopas.text = '\n Abrir Codigo Fonte das Copas no GitHub';
 
-        buttonCopa.insertAdjacentElement("afterend", imgCopa);
-        buttonCopa.insertAdjacentHTML("afterend", copa);
-        //Com innerText usar \n para pular a linha. textContent e innerHTML nao pula a linha    
-        imgCopa.insertAdjacentElement('afterEnd', codCopas);
+        buttonCopa.insertAdjacentHTML("beforeEnd", copa);
+        buttonCopa.insertAdjacentElement("beforeEnd", codCopas);
+        //Com innerText usar \n para pular a linha. Com textContent e innerHTML nao pula a linha
     } 
     
 //Anos de Olimpiada
