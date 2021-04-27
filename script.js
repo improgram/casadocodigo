@@ -10,10 +10,10 @@ function batimentos () {
     console.log(calcBatimentos);
 
     let codBatimentos = document.createElement('a');
-        codBatimentos.setAttribute('href', 'https://github.com/improgram/casadocodigo/blob/master/Capitulo3/024Topico3.6.html');     
+        codBatimentos.text = '\n Abrir Codigo Batimentos no GitHub';
+        codBatimentos.setAttribute('href', 'https://github.com/improgram/casadocodigo/blob/master/Capitulo3/024Topico3.6.html');
         codBatimentos.setAttribute("target", "_blank");
-        codBatimentos.text = '\n Ver Codigo Batimentos no GitHub';
-
+        
     buttonBatimentos.insertAdjacentHTML("beforeEnd", calcBatimentos);
     buttonBatimentos.insertAdjacentElement("beforeEnd", codBatimentos);
         
@@ -51,17 +51,12 @@ let buttonCopa = document.getElementById('copas')
                     copa += 'Em ' + ano + ': vai ter Copa.\n';        
             }
 
-        /*let imgCopa = document.createElement("img");
-            //imgCopa.src = "https://static.mundoeducacao.uol.com.br/mundoeducacao/conteudo_legenda/ad7523a3d1a139039d9a33bdd76a9ddf.jpg";
-            imgCopa.height = "200";
-            imgCopa.width = "340";*/
-
         let codCopas = document.createElement('a');
+            codCopas.text = '\n Abrir Codigo Fonte das Copas no GitHub';
             codCopas.setAttribute('href', "https://github.com/improgram/casadocodigo/blob/master/Capitulo5/036Topico5.3.html");
             codCopas.setAttribute("target", "_blank");
-            codCopas.text = '\n Abrir Codigo Fonte das Copas no GitHub';
 
-        buttonCopa.insertAdjacentHTML("beforeEnd", copa);
+        buttonCopa.insertAdjacentHTML("afterEnd", copa);
         buttonCopa.insertAdjacentElement("beforeEnd", codCopas);
         //Com innerText usar \n para pular a linha. Com textContent e innerHTML nao pula a linha
     } 
@@ -95,18 +90,13 @@ function anodeOlimpiadas(){
         olimpiadas += 'Em ' + ano + ': Interrupção devido a Covid-19.\n '
     }
 
-    let imgOlimpiadas = document.createElement('img');
-        imgOlimpiadas.src = "https://onlympics.com.br/wp-content/uploads/2019/01/Onlympics-jogos-olimpicos-1200x554.png";
-        imgOlimpiadas.width = "340";
-
     let codOlimpiadas = document.createElement('a');
+        codOlimpiadas.text = '\n Abrir o Codigo Olimpiadas no GitHub';
         codOlimpiadas.setAttribute('href', "https://github.com/improgram/casadocodigo/blob/master/Capitulo5/038Topico5.5.html");
         codOlimpiadas.setAttribute('target', "_blank");
-        codOlimpiadas.text = '\n Olimpiadas: Abrir em nova aba o Codigo Fonte no GitHub';
     
-    buttonOlimpiadas.insertAdjacentElement("afterend", imgOlimpiadas);
-    buttonOlimpiadas.insertAdjacentHTML("afterend", olimpiadas);
-    imgOlimpiadas.insertAdjacentElement('afterEnd', codOlimpiadas);
+    buttonOlimpiadas.insertAdjacentHTML("afterEnd", olimpiadas);
+    buttonOlimpiadas.insertAdjacentElement('beforeEnd', codOlimpiadas);
 }
 
 //Tabuada
@@ -122,20 +112,20 @@ let buttonTabuada2 = document.createElement('button');
             for(let count = 1; count <= 10; count++) {
                 resposta += numero + " X " + count + " = " + numero*count + '\n';
             }
+            
+        let codTabuada = document.createElement('a');
+            codTabuada.text = '\n Abrir o Codigo Tabuada no GitHub';
+            codTabuada.setAttribute('href', "https://github.com/improgram/casadocodigo/blob/master/Capitulo5/039Topico5.6-Tabuada.html");
+            codTabuada.setAttribute('target', "_blank");
 
-        let imgTabuada = document.createElement('img');
-        imgTabuada.src = "https://geniodamatematica.com.br/wp-content/uploads/2019/04/multiplicacao-tabela-de-pitagoras.png"
-        imgTabuada.width = "340";       
-
-        buttonTabuada.insertAdjacentElement("beforeEnd", imgTabuada);
-        buttonTabuada.insertAdjacentHTML("beforeEnd", resposta);
-        buttonTabuada.insertAdjacentElement("beforeEnd", buttonTabuada2);
+        buttonTabuada.insertAdjacentHTML("afterEnd", resposta);
+        buttonTabuada.insertAdjacentElement("afterEnd", buttonTabuada2);
+        buttonTabuada.insertAdjacentElement('afterEnd', codTabuada);
     }
 
 
 
-/*
-tabuada: <a href="https://github.com/improgram/casadocodigo/blob/master/Capitulo5/039Topico5.6-Tabuada.html" target="_blank">Tabuada Código Fonte no GitHub</a>      
+/*      
 combustiveis: <a href="https://github.com/improgram/casadocodigo/blob/master/Capitulo2/011Topico2.6_Opcao3.html" target="_blank">Consumo de Combustivel Código Fonte no GitHub</a>
 idade: <a href="https://github.com/improgram/casadocodigo/blob/master/Capitulo5/042Topico5.9.html" target="_blank">Media de idade Código Fonte no GitHub</a>
 adivinhar: <a href="https://github.com/improgram/casadocodigo/blob/master/Capitulo5/044Topico5.11_Exerci1_2_3.html" target="_blank">Acertar Numero - Código Fonte no GitHub</a>
@@ -179,15 +169,16 @@ function combustiveis (){
                     'Com tanque de combustivel: ' + tanqueCarro + ' litros.\n' +
                     'Resultado: km rodado por litro: ' + consumoGasolina + ' km/L.\n';
 
-    let imgCombustiveis = document.createElement('img');
-        imgCombustiveis.src = "https://cdn.pixabay.com/photo/2016/08/15/22/20/fuel-1596622__340.jpg"
-        imgCombustiveis.width = "340";
-
         buttonCombustiveis.insertAdjacentElement("beforeEnd", imgCombustiveis);
         buttonCombustiveis.insertAdjacentHTML("beforeEnd", resumoGas);
         buttonCombustiveis.insertAdjacentElement("beforeEnd", buttonComparativo);
-
+/*
+    let cod = document.createElement('a');
+        .text = '\n Abrir o Codigo no GitHub';
+        .setAttribute('href', "");
+        .setAttribute('target', "_blank");    
 }
+*/
 
 function comparaCombustivel () {
     let buttonValorGas = parseInt(prompt('Digite o valor do litro da Gasolina.') );
@@ -210,6 +201,15 @@ function mediaIdade(){
         imgIdade.src = "http://google.com"
         imgIdade.width = "340"; // Retirar e testar img pelo CSS
 
+    /*
+    let cod = document.createElement('a');
+        .text = '\n Abrir o Codigo no GitHub';
+        .setAttribute('href', "");
+        .setAttribute('target', "_blank");    
+}
+*/
+
+
     buttonIdade.insertAdjacentElement("beforeEnd", imgIdade);
 }
 
@@ -226,6 +226,14 @@ function numeroPensado() {
         imgNumero.src = "http://google.com";
         imgNumero.width = "340";
 
+    /*
+    let cod = document.createElement('a');
+        .text = '\n Abrir o Codigo no GitHub';
+        .setAttribute('href', "");
+        .setAttribute('target', "_blank");    
+}
+*/    
+
     buttonNumero.insertAdjacentElement("beforeEnd", imgNumero);
 }
 
@@ -239,6 +247,14 @@ function linhaComColuna(){
     let imgLinhaColuna = document.createElement('img');
         imgLinhaColuna.src = "http://google.com";
         imgLinhaColuna.width = "340";
+
+    /*
+    let cod = document.createElement('a');
+        .text = '\n Abrir o Codigo no GitHub';
+        .setAttribute('href', "");
+        .setAttribute('target', "_blank");    
+}
+*/
 
     buttonlinhaColuna.insertAdjacentElement("before", imgLinhaColuna);
 }
@@ -256,6 +272,14 @@ function megasena(){
         imgMegaSena.src = "http://google.com";
         imgMegaSena.width = "340";
 
+    /*
+    let cod = document.createElement('a');
+        .text = '\n Abrir o Codigo no GitHub';
+        .setAttribute('href', "");
+        .setAttribute('target', "_blank");    
+}
+*/
+
     buttonMegaSena.insertAdjacentElement("before", imgMegaSena);
 }
 
@@ -271,6 +295,14 @@ function introCanvas() {
     let imgCanvas = document.createElement('img');
         imgCanvas.src = "http://google.com";
         imgCanvas.width = "340";
+
+    /*
+    let cod = document.createElement('a');
+        .text = '\n Abrir o Codigo no GitHub';
+        .setAttribute('href', "");
+        .setAttribute('target', "_blank");    
+}
+*/
 
     buttonCanvas.insertAdjacentElement("before", imgCanvas);
 }
@@ -288,6 +320,14 @@ function damas(){
         imgDamas.src = "http://google.com";
         imgDamas.width = "340";
 
+    /*
+    let cod = document.createElement('a');
+        .text = '\n Abrir o Codigo no GitHub';
+        .setAttribute('href', "");
+        .setAttribute('target', "_blank");    
+}
+*/
+
     buttonDamas.insertAdjacentElement("before", imgDamas);
 }
 
@@ -302,6 +342,14 @@ function bandeiras() {
     let imgPaises = document.createElement('img');
         imgPaises.src = "http://google.com";
         imgPaises.width = "340";
+
+    /*
+    let cod = document.createElement('a');
+        .text = '\n Abrir o Codigo no GitHub';
+        .setAttribute('href', "");
+        .setAttribute('target', "_blank");    
+}
+*/
 
     buttonBandeiras.insertAdjacentElement("before", imgPaises);
 }
@@ -318,6 +366,14 @@ function canvasCondicionais(){
     imgCondicionais.src = "http://google.com";
     imgCondicionais.width = "340";
 
+    /*
+    let cod = document.createElement('a');
+        .text = '\n Abrir o Codigo no GitHub';
+        .setAttribute('href', "");
+        .setAttribute('target', "_blank");    
+}
+*/
+
     buttonCondicionais.insertAdjacentElement("before", imgCondicionais);
 }
 
@@ -332,6 +388,14 @@ function canvasCrescente(){
     let imgCrescente = document.createElement('img');
         imgCrescente.src = "http://google.com";
         imgCrescente.width = "340";
+
+    /*
+    let cod = document.createElement('a');
+        .text = '\n Abrir o Codigo no GitHub';
+        .setAttribute('href', "");
+        .setAttribute('target', "_blank");    
+}
+*/
 
     buttonCrescente.insertAdjacentElement("before", imgCrescente);    
 }
@@ -348,6 +412,14 @@ function canvasParabola(){
         imgParabola.src = "http://google.com";
         imgParabola.width = "340";
 
+    /*
+    let cod = document.createElement('a');
+        .text = '\n Abrir o Codigo no GitHub';
+        .setAttribute('href', "");
+        .setAttribute('target', "_blank");    
+}
+*/        
+
     buttonParabola.insertAdjacentElement("before", imgParabola)
 }
 
@@ -363,8 +435,13 @@ function seno(){
         imgSeno.src = "http://google.com";
         imgSeno.width = "340";
 
+    /*
+    let cod = document.createElement('a');
+        .text = '\n Abrir o Codigo no GitHub';
+        .setAttribute('href', "");
+        .setAttribute('target', "_blank");    
+}
+*/
+
     buttonSeno.insertAdjacentElement("before", imgSeno);
 }
-
-
-//

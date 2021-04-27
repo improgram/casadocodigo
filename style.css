@@ -1,6 +1,6 @@
 * {
     margin: 0;
-    padding: 0;
+    /*padding: 0; */
     text-decoration: none;
 }
 
@@ -87,7 +87,7 @@ header {
 
 .btn {
     background-color:rgba(12, 12, 2, 0.452);
-    color: rgb(224, 218, 186);
+    color: rgb(250, 250, 248);
     font-size: 16px;
     border: 1px solid rgb(183, 179, 199);
     border-radius: 6px;
@@ -97,20 +97,6 @@ header {
     overflow: hidden;
     margin: 10px 0;
     font-weight: 600;/* Negrito */
-}
-
-#batimentos {
-    width: 380px;
-    height: 180px;
-    background-image: url("https://cdn.pixabay.com/photo/2018/04/12/04/26/blood-pressure-3312513_960_720.png");
-    background-size: cover; /* contain */
-}
-
-#copas {
-    width: 380px;
-    height: 180px;
-    background-image: url("https://static.mundoeducacao.uol.com.br/mundoeducacao/conteudo_legenda/ad7523a3d1a139039d9a33bdd76a9ddf.jpg");
-    background-size: cover;
 }
 
 .btn:hover {
@@ -135,6 +121,41 @@ header {
 /*.btn:hover::before {
     height: 40%;
 }*/
+
+#batimentos {
+    width: 380px;
+    height: 180px;
+    background-image: url("https://cdn.pixabay.com/photo/2018/04/12/04/26/blood-pressure-3312513_960_720.png");
+    background-size: cover; /* contain */
+}
+
+#copas {
+    width: 380px;
+    height: 180px;
+    background-image: url("https://static.mundoeducacao.uol.com.br/mundoeducacao/conteudo_legenda/ad7523a3d1a139039d9a33bdd76a9ddf.jpg");
+    background-size: cover;
+}
+
+#olimpiadas {
+    width: 380px;
+    height: 180px;
+    background-image: url("https://onlympics.com.br/wp-content/uploads/2019/01/Onlympics-jogos-olimpicos-1200x554.png");
+    background-size: cover;
+}
+
+#tabuada {
+    width: 380px;
+    height: 180px;
+    background-image: url("https://geniodamatematica.com.br/wp-content/uploads/2019/04/multiplicacao-tabela-de-pitagoras.png");
+    background-size: cover;
+}
+
+#combustiveis {
+    width: 380px;
+    height: 180px;
+    background-image: url("https://cdn.pixabay.com/photo/2016/08/15/22/20/fuel-1596622__340.jpg");
+    background-size: cover;
+}
 
 .footer {
     display: flex; /*menu lado a lado */
