@@ -164,25 +164,21 @@ function combustiveis (){
     let tanqueCarro = 40;
     let kmcomGas = parseInt(prompt('Digite km Percorridos com Gasolina.'))
     let consumoGasolina = (kmcomGas / tanqueCarro);
-    //console.log('km por litros: ' + consumoGasolina)
     let resumoGas = 'Km percorridos digitado: ' + kmcomGas + '\n' +
                     'Com tanque de combustivel: ' + tanqueCarro + ' litros.\n' +
                     'Resultado: km rodado por litro: ' + consumoGasolina + ' km/L.\n';
 
-        buttonCombustiveis.insertAdjacentElement("beforeEnd", imgCombustiveis);
         buttonCombustiveis.insertAdjacentHTML("beforeEnd", resumoGas);
         buttonCombustiveis.insertAdjacentElement("beforeEnd", buttonComparativo);
-/*
-    let cod = document.createElement('a');
-        .text = '\n Abrir o Codigo no GitHub';
-        .setAttribute('href', "");
-        .setAttribute('target', "_blank");    
+
+    let codCombustiveis = document.createElement('a');
+        codCombustiveis.text = '\n Abrir o Codigo no GitHub';
+        codCombustiveis.setAttribute('href', "");
+        codCombustiveis.setAttribute('target', "_blank");
 }
-*/
 
 function comparaCombustivel () {
-    let buttonValorGas = parseInt(prompt('Digite o valor do litro da Gasolina.') );
-        
+    let buttonValorGas = parseInt(prompt('Digite o valor do litro da Gasolina.') );   
     let buttonValorAlcool = parseInt(prompt('Digite o valor do litro do Alcool.') );
     console.log("litro da Gasolina: " + buttonValorGas);
     console.log("litro do Alcool: " + buttonValorAlcool);
@@ -197,17 +193,12 @@ let buttonIdade = document.getElementById('mediaIdade');
 function mediaIdade(){
     console.log('media de idade')
 
-    let imgIdade = document.createElement('img');
-        imgIdade.src = "http://google.com"
-        imgIdade.width = "340"; // Retirar e testar img pelo CSS
-
     /*
     let cod = document.createElement('a');
         .text = '\n Abrir o Codigo no GitHub';
         .setAttribute('href', "");
         .setAttribute('target', "_blank");    
-}
-*/
+    */
 
 
     buttonIdade.insertAdjacentElement("beforeEnd", imgIdade);
@@ -222,17 +213,12 @@ let buttonNumero = document.getElementById('adivinharNumero');
 function numeroPensado() {
     console.log('numero pensado:' )
 
-    let imgNumero = document.createElement('img');
-        imgNumero.src = "http://google.com";
-        imgNumero.width = "340";
-
     /*
     let cod = document.createElement('a');
         .text = '\n Abrir o Codigo no GitHub';
         .setAttribute('href', "");
         .setAttribute('target', "_blank");    
-}
-*/    
+    */    
 
     buttonNumero.insertAdjacentElement("beforeEnd", imgNumero);
 }
@@ -244,17 +230,12 @@ let buttonlinhaColuna = document.getElementById('linhaColuna');
 function linhaComColuna(){
     console.log('linhas e colunas')
 
-    let imgLinhaColuna = document.createElement('img');
-        imgLinhaColuna.src = "http://google.com";
-        imgLinhaColuna.width = "340";
-
     /*
     let cod = document.createElement('a');
         .text = '\n Abrir o Codigo no GitHub';
         .setAttribute('href', "");
         .setAttribute('target', "_blank");    
-}
-*/
+    */
 
     buttonlinhaColuna.insertAdjacentElement("before", imgLinhaColuna);
 }
@@ -268,17 +249,12 @@ let buttonMegaSena = document.getElementById('megaSena');
 function megasena(){
     console.log('teste Mega Sena');
 
-    let imgMegaSena = document.createElement('img');
-        imgMegaSena.src = "http://google.com";
-        imgMegaSena.width = "340";
-
     /*
     let cod = document.createElement('a');
         .text = '\n Abrir o Codigo no GitHub';
         .setAttribute('href', "");
         .setAttribute('target', "_blank");    
-}
-*/
+    */
 
     buttonMegaSena.insertAdjacentElement("before", imgMegaSena);
 }
@@ -292,17 +268,12 @@ let buttonCanvas = document.getElementById('canvas');
 function introCanvas() {
     console.log('Intro Canvas');
 
-    let imgCanvas = document.createElement('img');
-        imgCanvas.src = "http://google.com";
-        imgCanvas.width = "340";
-
     /*
     let cod = document.createElement('a');
         .text = '\n Abrir o Codigo no GitHub';
         .setAttribute('href', "");
         .setAttribute('target', "_blank");    
-}
-*/
+    */
 
     buttonCanvas.insertAdjacentElement("before", imgCanvas);
 }
@@ -316,17 +287,12 @@ let buttonDamas = document.getElementById('damas');
 function damas(){
     console.log('teste damas');
 
-    let imgDamas = document.createElement('img');
-        imgDamas.src = "http://google.com";
-        imgDamas.width = "340";
-
     /*
     let cod = document.createElement('a');
         .text = '\n Abrir o Codigo no GitHub';
         .setAttribute('href', "");
         .setAttribute('target', "_blank");    
-}
-*/
+    */
 
     buttonDamas.insertAdjacentElement("before", imgDamas);
 }
@@ -339,17 +305,12 @@ let buttonBandeiras = document.getElementById('bandeiras');
 function bandeiras() {
     console.log('bandeiras');
 
-    let imgPaises = document.createElement('img');
-        imgPaises.src = "http://google.com";
-        imgPaises.width = "340";
-
     /*
     let cod = document.createElement('a');
         .text = '\n Abrir o Codigo no GitHub';
         .setAttribute('href', "");
         .setAttribute('target', "_blank");    
-}
-*/
+    */
 
     buttonBandeiras.insertAdjacentElement("before", imgPaises);
 }
@@ -362,17 +323,12 @@ let buttonCondicionais = document.getElementById('canvasCondicionais');
 function canvasCondicionais(){
     console.log('canvas condicionais')
 
-    let imgCondicionais = document.createElement('img');
-    imgCondicionais.src = "http://google.com";
-    imgCondicionais.width = "340";
-
     /*
     let cod = document.createElement('a');
         .text = '\n Abrir o Codigo no GitHub';
         .setAttribute('href', "");
         .setAttribute('target', "_blank");    
-}
-*/
+    */
 
     buttonCondicionais.insertAdjacentElement("before", imgCondicionais);
 }
@@ -385,17 +341,12 @@ let buttonCrescente = document.getElementById('canvasCrescente');
 function canvasCrescente(){
     console.log('canvas crescente')
 
-    let imgCrescente = document.createElement('img');
-        imgCrescente.src = "http://google.com";
-        imgCrescente.width = "340";
-
     /*
     let cod = document.createElement('a');
         .text = '\n Abrir o Codigo no GitHub';
         .setAttribute('href', "");
         .setAttribute('target', "_blank");    
-}
-*/
+    */
 
     buttonCrescente.insertAdjacentElement("before", imgCrescente);    
 }
@@ -408,17 +359,12 @@ let buttonParabola = document.getElementById('canvasParabola');
 function canvasParabola(){
     console.log('canvas parabola')
 
-    let imgParabola = document.createElement('img');
-        imgParabola.src = "http://google.com";
-        imgParabola.width = "340";
-
     /*
     let cod = document.createElement('a');
         .text = '\n Abrir o Codigo no GitHub';
         .setAttribute('href', "");
-        .setAttribute('target', "_blank");    
-}
-*/        
+        .setAttribute('target', "_blank");
+    */        
 
     buttonParabola.insertAdjacentElement("before", imgParabola)
 }
@@ -430,18 +376,19 @@ let buttonSeno = document.getElementById('seno');
 
 function seno(){
     console.log('seno')
-
-    let imgSeno = document.createElement('img');
-        imgSeno.src = "http://google.com";
-        imgSeno.width = "340";
-
     /*
     let cod = document.createElement('a');
         .text = '\n Abrir o Codigo no GitHub';
         .setAttribute('href', "");
-        .setAttribute('target', "_blank");    
-}
-*/
+        .setAttribute('target', "_blank");
+    */
 
     buttonSeno.insertAdjacentElement("before", imgSeno);
 }
+
+/*
+    let cod = document.createElement('a');
+        .text = '\n Abrir o Codigo no GitHub';
+        .setAttribute('href', "");
+        .setAttribute('target', "_blank");
+*/
