@@ -3,31 +3,31 @@
 let buttonBatimentos = document.getElementById("batimentos");
     buttonBatimentos.addEventListener("click", batimentos);
 
+let codBatimentos = document.createElement('a');
+    codBatimentos.text = '\n Abrir Codigo Batimentos no GitHub';
+    codBatimentos.setAttribute('href', 'https://github.com/improgram/casadocodigo/blob/master/Capitulo3/024Topico3.6.html');
+    codBatimentos.setAttribute("target", "_blank");
+
 function batimentos () {
     let idade = prompt('Quantos anos voce tem ?');
     let diasdevida = idade * 365;
     let calcBatimentos = '\n Idade: ' + idade + ' anos.\n' + 'O Coração bateu: \n' + diasdevida * 24 * 60 * 80 + ' vezes em toda a vida.\n';
     console.log(calcBatimentos);
-
-    let codBatimentos = document.createElement('a');
-        codBatimentos.text = '\n Abrir Codigo Batimentos no GitHub';
-        codBatimentos.setAttribute('href', 'https://github.com/improgram/casadocodigo/blob/master/Capitulo3/024Topico3.6.html');
-        codBatimentos.setAttribute("target", "_blank");
         
     buttonBatimentos.insertAdjacentHTML("beforeEnd", calcBatimentos);
-    buttonBatimentos.insertAdjacentElement("beforeEnd", codBatimentos);
-        
-    //beforebegin = Antes do element
-    //afterbegin = Dentro do element e antes do primeiro filho
-    //beforeEnd = Dentro do element e apos seu ultimo filho
-    //afterend = Após o element
+    buttonBatimentos.insertAdjacentElement("afterEnd", codBatimentos);
 }
 
 // Anos de Copa
 let copa = '\n Todas as Copas \n';
 let ultimaCopa = 2018;
-let buttonCopa = document.getElementById('copas')
-    buttonCopa.addEventListener("click", anodeCopa)
+let buttonCopa = document.getElementById('copas');
+    buttonCopa.addEventListener("click", anodeCopa);
+
+let codCopas = document.createElement('a');
+    codCopas.text = '\n Abrir Codigo Fonte das Copas no GitHub';
+    codCopas.setAttribute('href', "https://github.com/improgram/casadocodigo/blob/master/Capitulo5/036Topico5.3.html");
+    codCopas.setAttribute("target", "_blank");    
 
     function checkWar (ano){
         var houveGuerra = false;
@@ -47,17 +47,11 @@ let buttonCopa = document.getElementById('copas')
                 console.log('Em: ' + ano + ': Teve Copa.')
         }
             if (ano > 2020) {
-                    console.log('Em: ' + ano + ' : vai ter copa.')
-                    copa += 'Em ' + ano + ': vai ter Copa.\n';        
+                console.log('Em: ' + ano + ' : vai ter copa.')
+                copa += 'Em ' + ano + ': vai ter Copa.\n';
+                buttonCopa.insertAdjacentElement("afterEnd", codCopas);
             }
-
-        let codCopas = document.createElement('a');
-            codCopas.text = '\n Abrir Codigo Fonte das Copas no GitHub';
-            codCopas.setAttribute('href', "https://github.com/improgram/casadocodigo/blob/master/Capitulo5/036Topico5.3.html");
-            codCopas.setAttribute("target", "_blank");
-
-        buttonCopa.insertAdjacentHTML("afterEnd", copa);
-        buttonCopa.insertAdjacentElement("beforeEnd", codCopas);
+        buttonCopa.insertAdjacentHTML("afterEnd", copa);      
         //Com innerText usar \n para pular a linha. Com textContent e innerHTML nao pula a linha
     } 
     
@@ -66,6 +60,11 @@ let olimpiadas = '\n Todas as Olimpiadas \n';
 let ultimaOlimpiadas = 2016;
 let buttonOlimpiadas = document.getElementById('olimpiadas');
     buttonOlimpiadas.addEventListener("click", anodeOlimpiadas);
+
+let codOlimpiadas = document.createElement('a');
+    codOlimpiadas.text = '\n Abrir o Codigo Olimpiadas no GitHub';
+    codOlimpiadas.setAttribute('href', "https://github.com/improgram/casadocodigo/blob/master/Capitulo5/038Topico5.5.html");
+    codOlimpiadas.setAttribute('target', "_blank");
 
 function checkWar2 (ano){
     let pausaGuerra = false;
@@ -86,17 +85,11 @@ function anodeOlimpiadas(){
     }
 
     if(ano > 2019) {
-        console.log('Em: ' + ano + ' : vai ter Olimpiadas.')
-        olimpiadas += 'Em ' + ano + ': Interrupção devido a Covid-19.\n '
-    }
-
-    let codOlimpiadas = document.createElement('a');
-        codOlimpiadas.text = '\n Abrir o Codigo Olimpiadas no GitHub';
-        codOlimpiadas.setAttribute('href', "https://github.com/improgram/casadocodigo/blob/master/Capitulo5/038Topico5.5.html");
-        codOlimpiadas.setAttribute('target', "_blank");
-    
-    buttonOlimpiadas.insertAdjacentHTML("afterEnd", olimpiadas);
-    buttonOlimpiadas.insertAdjacentElement('beforeEnd', codOlimpiadas);
+        console.log('Em: ' + ano + ' : vai ter Olimpiadas.');
+        olimpiadas += 'Em ' + ano + ': Interrupção devido a Covid-19.\n';
+        buttonOlimpiadas.insertAdjacentElement('afterEnd', codOlimpiadas);
+    }   
+    buttonOlimpiadas.insertAdjacentHTML("afterEnd", olimpiadas);   
 }
 
 //Tabuada
@@ -123,6 +116,10 @@ let buttonTabuada2 = document.createElement('button');
         buttonTabuada.insertAdjacentElement('afterEnd', codTabuada);
     }
 
+//beforebegin = Antes do element
+//afterbegin = Dentro do element e antes do primeiro filho
+//beforeEnd = Dentro do element e apos seu ultimo filho
+//afterEnd = Após o element
 
 
 /*      
@@ -148,7 +145,6 @@ Form. Array: <a href="https://github.com/improgram/casadocodigo/blob/master/Capi
 Objetos: <a href="https://github.com/improgram/casadocodigo/blob/master/Capitulo8/083_Arrays.html" target="_blank">Introducao Objetos Código Fonte no GitHub</a>    
 Dom: <a href="https://github.com/improgram/casadocodigo/blob/master/Capitulo8/084Topico9.2_links.html" target="_blank">Manipulacao DOM Código Fonte no GitHub</a>           
 IMC: <a href="https://github.com/improgram/casadocodigo/blob/master/Capitulo8/085Topico9.3_IMC.html" target="_blank">Calcular IMC - Código Fonte no GitHub</a> 
-      
 */
 
 
