@@ -1,208 +1,455 @@
 * {
     margin: 0;
     padding: 0;
+    text-decoration: none; /*Retirar sublinhado */
+    scroll-behavior: smooth;
 }
 
 html, body {
-    font-size: 0.9em;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Verdana, sans-serif;
-    width: 100%;
-    height: auto;
+    font-size: 0.8em;
+    font-family: 'Open Sans', sans-serif;
+    color: white;
+    height: 100%;
 }
 
 header {
-    position: sticky;
-    top: 0;
-    width: 100%; /* largura */
-    /*height: 10%; */
-    background: url("https://cdn.pixabay.com/photo/2017/02/08/12/46/moon-2048727_960_720.jpg") no-repeat center;
-    background-size: cover;
-    text-shadow: 1px 1px 0px rgb(236, 240, 2); /*sombreamento das fontes*/
+    position: sticky;   
+    position: -webkit-sticky; /* Safari */
+    top: 0;  
+    height: 15vh; 
+    width: auto;    
+    text-shadow: 1px 1px 1px rgb(226, 226, 136);  
+    background: radial-gradient(rgb(56, 52, 52) 1%, rgba(10,10,10,1) 40%, rgba(20,20,20,1) 45%,
+                 rgba(30,30,30,1) 48%, rgb(83, 71, 71) 40%, rgba(25,25,25,1) 60%,
+                 rgba(20,20,20,1) 80%, rgb(104, 97, 97) 100%);
+    /*box-sizing: border-box;  */
+}
+
+.menu ul {
+    display: -webkit-flex;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    justify-content: space-between;
+}
+
+.menu ul li {                       /* 26/9 testado OK */
+    position: relative; 
+    display: inline;                /* => menu lado a lado */
+    font-size: clamp(0.2rem, 1.8em, 2.0rem);
+    padding: 1em 0.2em; 
+}
+
+/* https://www.devmedia.com.br/criando-um-menu-vertical-dropdown-com-css-e-html/37207 */
+
+.menu ul li a:hover, a:focus {  
+    background: #333;
+    border-radius: 20px;
+    -moz-box-shadow: 8px 3px 10px 10px #CCC;
+    -webkit-box-shadow: 8px 3px 10px 10px #ccc;
+}
+
+.menu ul li:hover ol {         /* 26/9 teste ok */
+    display: block; 
+}
+
+.menu ul li ol {
+    position: absolute;                             /* ol depende da relative */
+    text-align: center;                             /* 27/9 teste OK */
+    display: none;                             /* 26/9 teste OK */  
+    /*width: 100px; */                               
+    background: radial-gradient(circle, rgba(60,52,59,1) 0%, rgba(12,10,15,1) 100%);  
+}
+
+.menu ul li ol li {
+    display: block;                                 /* 27/9 teste OK */
+    font-size: 10px;   
     text-transform: uppercase;
-    text-align: center;
-    justify-content: center;
+    /*vertical-align: top; */
+    /* display: inline-block; */  
+    /* padding: 1px 2px; */
+    /* border-radius: 10%; */
+    /* border: 1px ridge rgb(66, 61, 61); */
 }
 
-.menu {
-    list-style: none;
-    display: flex; /*menu lado a lado */
-    justify-content: space-between; /*Utiliza todo espaço disponivel*/
-    align-items: center;
-    font-size: clamp(0.3em, 0.8em + 1vw, 4em) /* Valores min, desejavel e max */
-    
-}
-
-.menu li img {
-    width: 50%;
-}
-
-/*
-@media only screen and (max-device-width: 900px){
-    .main {width: 100%;}
-}
-*/
-
-.main {
-    color: rgba(243, 237, 237, 0.774);
-    white-space: pre-line; /*espaços em branco dentro dos elementos são manipulados.*/
-    width: 100%;
-    justify-content: center;
-    background: url("https://cdn.pixabay.com/photo/2014/04/05/11/38/bokeh-316425__340.jpg") center;
-    /* background: url("https://cdn.pixabay.com/photo/2016/04/04/12/43/texture-1306790__340.jpg") center; */
-    /* background: url("https://cdn.pixabay.com/photo/2016/10/07/14/42/space-1721695__340.jpg") center; */
-    /* background: url("https://cdn.pixabay.com/photo/2014/04/05/11/38/bokeh-316425__340.jpg") center; */
-    /* background: url("https://cdn.pixabay.com/photo/2016/07/28/14/40/space-1548139__340.jpg") center; */
-    /* background: url("https://cdn.pixabay.com/photo/2016/06/23/16/07/background-1475670__340.jpg") center; */
-    /* background: url("https://cdn.pixabay.com/photo/2016/08/04/14/04/space-1569133__340.jpg") center; */
-    /* background: url("https://cdn.pixabay.com/photo/2017/10/12/20/15/photoshop-2845779__340.jpg") center; */
-    /* background: url("https://cdn.pixabay.com/photo/2018/08/31/18/21/fantasy-3645269__340.jpg") center; */
-    /* background: url("https://cdn.pixabay.com/photo/2018/02/22/14/58/nature-3173180__340.jpg") center; */
-    /* background: url("https://cdn.pixabay.com/photo/2016/07/17/19/10/background-1524540__340.jpg") center; */
-    /* background: url("https://cdn.pixabay.com/photo/2015/07/03/15/46/wallpaper-830417__340.jpg") center; */
-    /* background: url("https://cdn.pixabay.com/photo/2017/02/19/14/30/water-2079907__340.jpg") center; */
-    /* background: url("https://cdn.pixabay.com/photo/2017/12/26/02/57/sea-3039586__340.jpg") center; */
-    /* background: url("https://cdn.pixabay.com/photo/2016/01/19/17/29/earth-1149733__340.jpg") center; */
-    /* background: url("https://cdn.pixabay.com/photo/2018/05/20/11/40/flower-3415551__340.jpg") center; */
-    /* background: url("https://cdn.pixabay.com/photo/2018/05/17/15/24/armillar-ball-3408811__340.jpg") center; */
-    /* background: url("https://cdn.pixabay.com/photo/2017/10/20/01/06/north-star-2869817_960_720.jpg") no-repeat center;*/
-    /*background: url("https://cdn.pixabay.com/photo/2016/04/02/19/40/moon-1303512__340.png") center;*/
-    background-size: cover;
-}
-
-#intro {
-    color: rgba(231, 233, 186, 0.87);
-    text-align: center; 
-}
-
-.container {
-    padding: 20px; /* espaço da section para as margens */
-    text-align: center;
-    display: flex; /* Lado a lado */
-    flex-wrap: wrap; /* Quebra de linha  e row (padrao)*/
-    align-items: center; /* flex-start; */
-    justify-content: space-around;
-}
-
-.btn {
-    background-color:rgba(12, 12, 2, 0.452);
-    color: rgb(250, 250, 248);
-    font-size: 20px;
-    border: 1px solid rgb(183, 179, 199);
-    border-radius: 6px;
-    /*padding: 6px; /* espaço interno do botao */
-    cursor: pointer;
-    transition: all 0.5s;
-    overflow: hidden;
-    margin: 10px 0;
-    font-weight: 600;/* Negrito */
-}
-
-.btn:hover {
+.menu ul li ol li a { 
+    all: revert;
+    text-decoration: none;
     color: white;
 }
 
-.btn:before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgb(0, 165, 124);
-    z-index: -1;
-    border-radius: 0 0 50% 50%;
-    height: 0%;
-    transition: all 0.5s;
-    text-decoration: none;
+.menu cite{
+    font-style: normal;
 }
 
-/*.btn:hover::before {
-    height: 40%;
-}*/
-
-#batimentos {
-    width: 380px;
-    height: 180px;
-    background-image: url("https://cdn.pixabay.com/photo/2018/04/12/04/26/blood-pressure-3312513_960_720.png");
-    background-size: cover; /* contain */
-}
-
-#copas {
-    width: 380px;
-    height: 180px;
-    background-image: url("https://static.mundoeducacao.uol.com.br/mundoeducacao/conteudo_legenda/ad7523a3d1a139039d9a33bdd76a9ddf.jpg");
+.main {   /* verificados 13/09 */
+    background: url(https://cdn.pixabay.com/photo/2017/02/08/12/46/moon-2048727_960_720.jpg) no-repeat center;
     background-size: cover;
-    color: rgb(0, 0, 158);
+    padding-top: 1em;
+    white-space: pre-line; /*espaços em branco dentro dos elementos são manipulados.*/
 }
 
-#olimpiadas {
-    width: 380px;
-    height: 180px;
-    background-image: url("https://onlympics.com.br/wp-content/uploads/2019/01/Onlympics-jogos-olimpicos-1200x554.png");
-    background-size: cover;
-}
-
-#tabuada {
-    width: 380px;
-    height: 180px;
-    background-image: url("https://geniodamatematica.com.br/wp-content/uploads/2019/04/multiplicacao-tabela-de-pitagoras.png");
-    background-size: cover;
-    color: rgb(0, 0, 158);
-}
-
-#combustiveis {
-    width: 380px;
-    height: 180px;
-    background-image: url("https://cdn.pixabay.com/photo/2016/08/15/22/20/fuel-1596622__340.jpg");
-    background-size: cover;
-}
-
-.footer {
-    display: flex; /*menu lado a lado */
-    justify-content: space-between;
-    text-shadow: 1px 1px 1px rgb(218, 221, 28);
-    color:rgb(245, 245, 238);
-    padding-top: 2%;
+.intro {
     text-align: center;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-variant: small-caps;
+    padding: 1em 0 2em 0;
+}
+
+.container {
+    display: flex; /* Lado a lado */
+    flex-wrap: wrap; /* Quebra de linha  e row (padrao) */
+    justify-content: center;  /*  space-around  distribuicao */
+}
+
+figure {
+    cursor: pointer;
+    width: auto;
+    height: auto;
+    margin: 10px;
+    border-radius: 15px;
+    border: 1px #259ab8 ridge;
+    text-align: center;
+    flex: 1 1 auto;
+    padding: 10px;
+}
+
+figure:hover { /* mouse sobre o botao */
+    font-size: large;
+    transform: scale(1.2);
+    transition: all 0.5s;
+}
+
+figure::after {
+    /* position: absolute; */
+    /* bottom: -20px; */
+    content: attr(data-title);   
+    width: 100%;   
+    left: 0;
+}
+
+figcaption {
+    text-align: center;
+    /* padding: 5px; */
+}
+
+/*
+button:nth-child(2) {
+margin: 0.1em 0.1em;
+}
+button:nth-last-child(1) {
+margin: 0.1em 0.1em;
+}
+*/
+
+.mostrar {
+    background-color: rgba(12, 12, 12, 0.801);
+    outline: 1px groove rgb(214, 175, 170);   /*contorno*/
+    font-size: 12px;
+    color:rgb(245, 244, 215);
+    display: flex;
+    justify-content: center; /* Titulo centralizado */
+    align-items: center;
+    margin: 1% 30% 5% 30%;
+    padding: 2em 2em 2em 2em;
+}
+
+.buttonResult{
+    color: white;
+    text-align: center;
+    cursor: pointer;
+    width: auto;
+    height: auto;
+    border-radius: 50%;
+    background-color: #008CBA;
+    padding: 15px;
+}
+
+.buttonResult:hover {
+    background-color: #0ab1e9;
+    color: white;
+    border-radius: 50%;
+}
+
+#linkcodigo{
+    color: rgb(252, 251, 250);
+    font-size: 12px;
+    border: 1px groove;
+    padding: 7px;
+}
+
+/* botao de pois de clicado: content: '✓';  */
+.visited {
+    background-image: none;
+    background-color: yellow;
+    color: ciano;
+}
+
+.batimentos {
+    background-image: url(https://cdn.pixabay.com/photo/2018/04/12/04/26/blood-pressure-3312513_960_720.png);
+    background-color: rgba(12, 12, 2, 0.452);
+    background-size: contain;
+    color: white;
+    display: flex; /* Para mudar a frase de lugar */
+    align-items: flex-end;
+}
+
+.copas { 
+    background-image: url(https://static.mundoeducacao.uol.com.br/mundoeducacao/conteudo_legenda/ad7523a3d1a139039d9a33bdd76a9ddf.jpg);
+    background-size: cover;
+    color: rgb(15, 12, 197);
+    font-weight: bold;
+    border-color: rgb(163, 194, 223);
+}
+
+.olimpiadas {
+    background-image: url(https://upload.wikimedia.org/wikipedia/commons/6/6d/2020_Summer_Olympics_text_logo.svg);
+    background-color:rgba(12, 12, 2, 0.452);
+    background-size: cover;
+    text-transform: uppercase;
+    color: white;
+    border-color: rgb(90, 94, 128);
+    display: flex; /* Para mudar a frase de lugar */
+    align-items: flex-start;
+}
+
+.tabuada {
+    background-image: url(https://upload.wikimedia.org/wikipedia/commons/5/5b/Duodecimal_Multiplication_Table.PNG);
+    background-size: cover;
+    color: rgb(240, 47, 13);
+    text-transform: uppercase;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.combustiveis {
+    background-image: url(https://cdn.pixabay.com/photo/2016/08/15/22/20/fuel-1596622__340.jpg);
+    background-size: cover;
+    font-family: trebuchet MS;
+    color: white;
+    display: flex; 
+    align-items: flex-end;
+}
+
+.mediaIdade {
+    background-size: cover; /* Trocar foto */
+    background-image: url(https://cdn.pensador.com/img/imagens/le/ge/legendas_para_foto_com_familia_f_l.jpg);
+/*https://cdn.pixabay.com/photo/2016/04/01/08/58/boy-1299084_960_720.png*/
+/*https://cdn.pixabay.com/photo/2017/08/08/15/37/family-2611748_960_720.jpg*/
+/*https://cdn.pixabay.com/photo/2020/10/29/15/32/beach-5696492_960_720.jpg*/
+    color: rgba(0, 0, 255, 0.856);
+    font-weight: bold;
+    align-items: flex-initial;
+    /* font-size: 12px; */
+}
+
+.adivinharNumero {
+    background-size: cover;
+    color: white;
+    background-image: url(https://upload.wikimedia.org/wikipedia/commons/e/ee/Numbers.gif);
+    background-size: contain;
+    display: flex; /* Para mudar a frase de lugar */
+    align-items: flex-initial;
+    border-color: rgb(100, 151, 151);
+    /*background-image: url("https://media.istockphoto.com/vectors/cartoon-of-a-crystal-ball-with-hands-hovering-over-it-vector-id472281537?s=612x612");*/
+}
+
+.linhaColuna {
+    background-size: cover;
+    background-image: url(https://cdn.pixabay.com/photo/2013/03/13/04/24/building-93098_960_720.jpg);
+    color: white;
+    font-weight: bold;
+    display: flex; /* Para mudar a frase de lugar */
+    align-items: flex-end;
+}
+
+.megaSena {
+    background-size: cover;
+    color: red;
+    text-align: end;
+    text-transform: uppercase;
+    font-weight: bold;
+    background-image: url(https://upload.wikimedia.org/wikipedia/commons/3/3c/Bolas-de-loteria.jpg);
+    /*background-image: url("https://media.istockphoto.com/photos/lottery-balls-picture-id1054934320?s=612x612");*/
+    /* font-size: 20px; */
+}
+
+.canvas {
+    background-size: cover;
+    background-image: url(https://cdn.pixabay.com/photo/2018/03/21/07/16/learning-3245792_960_720.jpg);
+    color: red;
+    display: flex;
+    align-items: flex-end;
+    /* font-size: 18px; */
+}
+
+.damas {
+    background-size: cover; /* Trocar foto */
+    background-image: url(https://cdn.pixabay.com/photo/2018/02/25/10/21/pattern-3180129_960_720.jpg);
+    color:rgb(53, 248, 4);
+    /* font-size: 20px; */
+}
+
+.bandeiras {
+    background-size: cover;     /* Trocar Foto */
+    background-image: url(https://cdn.pixabay.com/photo/2017/12/24/15/12/russia-3037142_960_720.png);
+    /* url("https://cdn.pixabay.com/photo/2017/07/11/18/07/bolivia-2494518_960_720.jpg"); */
+    color: blue;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.canvasCondicionais {
+    background-size: cover;
+    color: blue;
+    background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTvRQXSfdIS62ICCa9p0-MQeSaJSQSzaTtCUQ&usqp=CAU);
+}
+
+.canvasCrescente {
+    background-size: cover;
+    color: red;
+    background-image: url(https://upload.wikimedia.org/wikipedia/commons/8/8c/Tabela_Crescimento_Meninas.svg);
+    /* https://upload.wikimedia.org/wikipedia/commons/c/ce/Cyclin_Expression.svg */
+}
+
+.canvasParabola {
+    background-size: contain; /*imagem tamanho certo para a caixa*/
+    background-image: url(https://slidetodoc.com/presentation_image_h/28125f7d925d269b189d7980046e949c/image-12.jpg);
+    display: flex;
+    align-items: flex-initial;
+    color: white;
+}
+
+.seno {
+    background-size: cover;
+    color: red;
+    background-image: url(https://cdn.pixabay.com/photo/2015/10/15/09/09/mathematics-989124_960_720.jpg);
+}
+
+.cliques {
+    background-size: cover;
+    color: red; /* Trocar Foto */
+    background-image: url(https://upload.wikimedia.org/wikipedia/commons/3/32/Sunjang_Baduk_starting_position.png);
+    align-items: flex-initial;
     justify-content: center;
 }
 
-.footer img {
-    border-radius: 40%;
-    animation: animate 4s linear infinite;
+.botaoMouse {
+    background-size: cover;
+    background-image: url(https://cdn.pixabay.com/photo/2017/09/26/22/23/dark-green-2790337_960_720.png);
+    color: white;
 }
 
-@keyframes animate
-{
+.paint {
+    background-size: cover;
+    color: red; /* Trocar foto */
+    background-image: url(https://upload.wikimedia.org/wikipedia/commons/f/f9/Gif2.gif);
+    display: flex;
+    align-items: flex-end;
+}
+
+.animacoes {
+    color: white;
+    background-size: cover;
+    background-image: url(https://upload.wikimedia.org/wikipedia/commons/d/de/Geostationary_orbit_animation.gif);
+    display: flex; /* Para mudar a frase de lugar */
+    align-items: flex-initial;
+    border-color: aqua;
+}
+
+.tiroAlvo {
+    background-size: contain;
+    color: blue;
+    font-weight: bold;
+    background-image: url(https://media.istockphoto.com/vectors/hitting-the-target-vector-id1310235449?s=612x612);
+    display: flex;
+    align-items: flex-initial;
+}
+
+.formEventos {
+    background-size: contain;
+    color: red;
+    background-image: url(https://cdn.pixabay.com/photo/2016/12/07/09/27/fax-1889009_960_720.jpg);
+    display: flex; /* Para mudar a frase de lugar */
+    align-items: flex-initial;
+}
+
+.formArray {
+    color: white;
+    background-size: cover; /* Trocar foto */
+    background-image: url(https://cdn.pixabay.com/photo/2017/02/25/23/42/racism-2099029_960_720.png);
+    background-color: rgba(12, 12, 2, 0.452);
+    border-color: rgb(105, 214, 214);
+}
+
+.objetos {
+    background-size: cover;
+    background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ4cw-kxwEH9frdwHQTSiOJcMeCxtbUZN04kw&usqp=CAU);
+    color: white;
+    display: flex; /* Para mudar a frase de lugar */
+    align-items: flex-end;
+}
+
+.dom {
+    background-size: cover;
+    color: red;
+    background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTsQEt8uEEJWGjOqmjRAAceQ1lQO68C_g9aHg&usqp=CAU);
+    display: flex;
+    align-items: flex-end;
+    /* font-size: 20px; */
+}
+
+.imc {
+    background-size: cover;
+    color:red;
+    background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRiDOCyM2r8w2Nccj58-m15DrNLC_mqeP1_BA&usqp=CAU);
+    display: flex; /* Para mudar a frase de lugar */
+    align-items: flex-end;
+}
+
+footer {
+    display: flex; /*menu lado a lado */
+    justify-content: center;
+    font-variant: small-caps;
+}
+
+footer img {
+    border-radius: 30%;
+    animation: animate 6s ease-out infinite;
+    height: 36px;
+    width: 30px;
+    margin: 10px;
+}
+
+@keyframes animate {
     0% {
-        box-shadow: 0 0 0 0 rgba(221, 208, 21, 0.7), 0 0 0 0 rgba(209, 208, 135, 0.7);
+        box-shadow: 0 0 0 2px rgba(66, 66, 55, 0.7), 0 0 0 2px rgba(71, 71, 41, 0.884);
+    }
+    20% {
+        box-shadow: 0 0 0 5px rgba(51, 54, 3, 0.877), 0 0 0 5px rgba(70, 63, 23, 0.842);
     }
     40% {
-        box-shadow: 0 0 0 40px rgba(55, 209, 201, 0), 0 0 0 0 rgba(186, 209, 55, 0.7);
+        box-shadow: 0 0 0 10px rgba(60, 63, 47, 0.685), 0 0 0 10px rgba(127, 128, 123, 0.521);
     }
     80% {
-        box-shadow: 0 0 0 50px rgba(55, 209, 201, 0), 0 0 0 30px rgba(55, 209, 201, 0);
+        box-shadow: 0 0 0 4px rgba(57, 61, 3, 0.877), 0 0 0 4px rgbrgba(59, 52, 7, 0.842);
     }
     100% {
-        box-shadow: 0 0 0 0 rgba(55, 209, 201, 0), 0 0 0 30px rgba(55, 209, 201, 0);
+        box-shadow: 0 0 0 10px rgba(56, 58, 27, 0.856), 0 0 0 10px rgrgba(83, 88, 52, 0.911)
     }
 }
 
 a {
     color: #fff;
-    text-decoration: underline; /*insere uma linha sob o link*/
-}
-
-a:hover, a.active {
-    background-color: rgb(3, 11, 24);
-    color: rgb(184, 181, 26);
 }
 
 a:visited{
-    color: #FE9380;
+    color: #ece1de;
     font-weight: 400;
-    text-decoration: none;
 }
-a:before {
-    text-decoration: none;
+
+a:before { 
+    color:rgb(0, 0, 158);
 }
