@@ -107,19 +107,23 @@ header {
 /* https://www.w3.org/Style/Examples/007/figures.pt_BR.html  */
 
 figure {
+    float: right;
+    width: 30%;
+    text-align: center;
+    text-indent: 0;
     display: table;
     cursor: pointer;
-    /* width: 90px; */
-    /* height: 70px; */
+
+    width: 90px;
+    height: 70px;
     /* margin: 5px; */
+    /* flex: 1 1 auto; */
     border-radius: 15px;
     border: 1px #259ab8 ridge;
-    text-align: center;
     padding: 5px;
-    /* flex: 1 1 auto; */
 }
 
-figure:hover { /* mouse sobre o botao */
+figure:hover {              /* mouse sobre o botao */
     font-size: large;
     transform: scale(1.2);
     transition: all 0.5s;
@@ -135,9 +139,11 @@ figure::after {
 }
 */
 
-figure img {
-    width: 100px;
+figure img{
+    width: 100%;
 }
+
+
 
 figcaption {
     text-align: center;
@@ -202,8 +208,10 @@ margin: 0.1em 0.1em;
 /* https://www.w3.org/Style/Examples/007/figures.pt_BR.html */
 
 .batimentos {
-    /*background-image: url(https://cdn.pixabay.com/photo/2018/04/12/04/26/blood-pressure-3312513_960_720.png);*/
-    /*background-color: rgba(12, 12, 2, 0.452); */
+    /*
+    background-image: url(https://cdn.pixabay.com/photo/2018/04/12/04/26/blood-pressure-3312513_960_720.png);
+    */
+    background-color: rgba(12, 12, 2, 0.452);
     background-size: contain;
     color: white;
     /* display: flex; /* Para mudar a frase de lugar */
