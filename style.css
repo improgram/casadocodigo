@@ -83,9 +83,10 @@ header {
 }
 
 .main {   /* verificados 13/09 */
+    /*
     background: url(https://cdn.pixabay.com/photo/2017/02/08/12/46/moon-2048727_960_720.jpg) no-repeat center;
+    */
     background-size: cover;
-    /*padding-top: 0.5em;*/
     white-space: pre-line; /*espaços em branco dentro dos elementos são manipulados.*/
 }
 
@@ -103,12 +104,14 @@ header {
     justify-content: center;  /*  space-around  distribuicao */
 }
 
+/* https://www.w3.org/Style/Examples/007/figures.pt_BR.html  */
+
 figure {
     display: table;
     cursor: pointer;
     /* width: 90px; */
     /* height: 70px; */
-    margin: 5px;
+    /* margin: 5px; */
     border-radius: 15px;
     border: 1px #259ab8 ridge;
     text-align: center;
