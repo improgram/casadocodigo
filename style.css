@@ -83,12 +83,11 @@ header {
 }
 
 .main {   /* verificados 13/09 */
-    /*
-    background: url(https://cdn.pixabay.com/photo/2017/02/08/12/46/moon-2048727_960_720.jpg) no-repeat center;
-    */
+    background: url(img/moon-2048727_960_720.jpg);
     background-size: cover;
-    white-space: pre-line; /*espaços em branco dentro dos elementos são manipulados.*/
-}
+    white-space: pre-line; /* 26/10 OK */
+    /*espaços em branco dentro dos elementos são manipulados.*/
+}    
 
 .intro {
     text-align: center;
