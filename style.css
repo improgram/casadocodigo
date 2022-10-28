@@ -94,7 +94,7 @@ header {
     text-transform: uppercase;
     font-weight: bold;
     font-variant: small-caps;
-    padding: 1em 0 2em 0;
+    padding: 1em 0 1em 0;
 }
 
 .container {
@@ -102,61 +102,6 @@ header {
     flex-wrap: wrap; /* Quebra de linha  e row (padrao) */
     justify-content: center;  /*  space-around  distribuicao */
 }
-
-/* https://www.w3.org/Style/Examples/007/figures.pt_BR.html  */
-
-figure {
-    float: right;
-    width: 30%;
-    text-align: center;
-    text-indent: 0;
-    display: table;
-    cursor: pointer;
-
-    width: 90px;
-    height: 70px;
-    /* margin: 5px; */
-    /* flex: 1 1 auto; */
-    border-radius: 15px;
-    border: 1px #259ab8 ridge;
-    padding: 5px;
-}
-
-figure:hover {              /* mouse sobre o botao */
-    font-size: large;
-    transform: scale(1.2);
-    transition: all 0.5s;
-}
-
-/*
-figure::after {
-    /* position: absolute; */
-    /* bottom: -20px; 
-    content: attr(data-title);   
-    width: 100%;   
-    left: 0;
-}
-*/
-
-figure img{
-    width: 100%;
-}
-
-figcaption {
-    text-align: center;
-    display: table-caption;
-    caption-side: top;
-    /* padding: 5px; */
-}
-
-/*
-button:nth-child(2) {
-margin: 0.1em 0.1em;
-}
-button:nth-last-child(1) {
-margin: 0.1em 0.1em;
-}
-*/
 
 .mostrar {
     background-color: rgba(12, 12, 12, 0.801);
@@ -199,29 +144,63 @@ margin: 0.1em 0.1em;
     background-image: none;
     background-color: yellow;
     color: ciano;
-}
-*/
+}*/
 
 /* https://www.w3.org/Style/Examples/007/figures.pt_BR.html */
 
-.batimentos {
-    /*
-    background-image: url(https://cdn.pixabay.com/photo/2018/04/12/04/26/blood-pressure-3312513_960_720.png);
-    */
-    background-color: rgba(12, 12, 2, 0.452);
-    background-size: contain;
-    color: white;
-    /* display: flex; /* Para mudar a frase de lugar */
-    /* align-items: flex-end; */
+figure {
+    display: table;
+    cursor: pointer;
+    border-top: none;
+    padding-top: 0;
+    /*     float: right;
+    text-align: center;
+    text-indent: 0; */
+    /* margin: 5px; */
+    /* flex: 1 1 auto; */
 }
 
+figure img{
+    width: 100%; /* 27/10 = OK */
+    max-width: 140px;
+    max-height: 100px;
+    border-radius: 15px;
+    border: 1px #259ab8 ridge;
+}
+
+figure img:hover {              /* mouse sobre o botao */
+    font-size: medium;
+    transform: scale(1.4);
+    transition: all 0.7s;
+}
+
+figcaption {
+    text-align: center;
+    display: table-caption;
+    font-weight: bold;
+    caption-side: top;
+    padding: 0.5em;
+    border-bottom: none;
+}
+
+/*figure::after {
+/* position: absolute; */
+/* bottom: -20px; 
+content: attr(data-title);   
+width: 100%;   
+left: 0; }*/
+/*button:nth-child(2) {
+margin: 0.1em 0.1em;}
+button:nth-last-child(1) {
+margin: 0.1em 0.1em; } */
+
+.batimentos {
+    background-color: rgba(26, 26, 22, 0.452);
+    /*background-size: contain; */
+}
 
 .copas { 
-    background-image: url(https://static.mundoeducacao.uol.com.br/mundoeducacao/conteudo_legenda/ad7523a3d1a139039d9a33bdd76a9ddf.jpg);
     background-size: cover;
-    color: rgb(15, 12, 197);
-    font-weight: bold;
-    border-color: rgb(163, 194, 223);
 }
 
 .olimpiadas {
@@ -229,10 +208,6 @@ margin: 0.1em 0.1em;
     background-color:rgba(12, 12, 2, 0.452);
     background-size: cover;
     text-transform: uppercase;
-    color: white;
-    border-color: rgb(90, 94, 128);
-    display: flex; /* Para mudar a frase de lugar */
-    align-items: flex-start;
 }
 
 .tabuada {
