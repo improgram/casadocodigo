@@ -101,6 +101,8 @@ header {
     display: flex; /* Lado a lado */
     flex-wrap: wrap; /* Quebra de linha  e row (padrao) */
     justify-content: center;  /*  space-around  distribuicao */
+    padding: 0.5em;
+    font-size: 11px;
 }
 
 .mostrar {
@@ -111,8 +113,8 @@ header {
     display: flex;
     justify-content: center; /* Titulo centralizado */
     align-items: center;
-    margin: 1% 30% 5% 30%;
-    padding: 2em 2em 2em 2em;
+    margin: 1% 30% 1% 30%;
+    padding: 1em 1em 1em 1em;
 }
 
 .buttonResult{
@@ -132,10 +134,9 @@ header {
     border-radius: 50%;
 }
 
-#linkcodigo{
-    color: rgb(252, 251, 250);
+#linkcodigo{    /* ID para codigo github */
+    color: rgb(216, 204, 192);
     font-size: 12px;
-    border: 1px groove;
     padding: 7px;
 }
 
@@ -152,25 +153,19 @@ figure {
     display: table;
     cursor: pointer;
     border-top: none;
-    padding-top: 0;
-    /*     float: right;
-    text-align: center;
-    text-indent: 0; */
-    /* margin: 5px; */
-    /* flex: 1 1 auto; */
+    padding: 0.5em;
 }
 
 figure img{
-    width: 100%; /* 27/10 = OK */
-    max-width: 140px;
-    max-height: 100px;
+    max-width: 130px;
+    max-height: 110px;
     border-radius: 15px;
     border: 1px #259ab8 ridge;
 }
 
 figure img:hover {              /* mouse sobre o botao */
     font-size: medium;
-    transform: scale(1.4);
+    transform: scale(1.6);
     transition: all 0.7s;
 }
 
@@ -195,213 +190,139 @@ button:nth-last-child(1) {
 margin: 0.1em 0.1em; } */
 
 .batimentos {
-    background-color: rgba(26, 26, 22, 0.452);
-    /*background-size: contain; */
+    color: red;
 }
 
 .copas { 
-    background-size: cover;
+    color: gold;
 }
 
 .olimpiadas {
-    background-image: url(https://upload.wikimedia.org/wikipedia/commons/6/6d/2020_Summer_Olympics_text_logo.svg);
-    background-color:rgba(12, 12, 2, 0.452);
-    background-size: cover;
-    text-transform: uppercase;
+    background: linear-gradient(to right,
+      rgb(145, 145, 201) 20%,
+      rgb(75, 131, 75) 20%, rgb(148, 184, 148) 40%,
+      rgb(221, 191, 191) 40%, rgb(187, 123, 123) 60%,
+      orange 60%, orange 80%,
+      rgb(197, 174, 197) 80%
+      );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 900;
 }
 
 .tabuada {
-    background-image: url(https://upload.wikimedia.org/wikipedia/commons/5/5b/Duodecimal_Multiplication_Table.PNG);
-    background-size: cover;
-    color: rgb(240, 47, 13);
-    text-transform: uppercase;
-    font-size: 18px;
-    font-weight: bold;
+    color:rgba(182, 198, 250, 0.795)
 }
 
 .combustiveis {
-    background-image: url(https://cdn.pixabay.com/photo/2016/08/15/22/20/fuel-1596622__340.jpg);
-    background-size: cover;
+    color:aquamarine;
     font-family: trebuchet MS;
-    color: white;
-    display: flex; 
-    align-items: flex-end;
 }
 
 .mediaIdade {
-    background-size: cover; /* Trocar foto */
-    background-image: url(https://cdn.pensador.com/img/imagens/le/ge/legendas_para_foto_com_familia_f_l.jpg);
-/*https://cdn.pixabay.com/photo/2016/04/01/08/58/boy-1299084_960_720.png*/
-/*https://cdn.pixabay.com/photo/2017/08/08/15/37/family-2611748_960_720.jpg*/
-/*https://cdn.pixabay.com/photo/2020/10/29/15/32/beach-5696492_960_720.jpg*/
-    color: rgba(0, 0, 255, 0.856);
-    font-weight: bold;
-    align-items: flex-initial;
-    /* font-size: 12px; */
+    color:rgb(216, 211, 164);
 }
 
 .adivinharNumero {
-    background-size: cover;
-    color: white;
-    background-image: url(https://upload.wikimedia.org/wikipedia/commons/e/ee/Numbers.gif);
-    background-size: contain;
-    display: flex; /* Para mudar a frase de lugar */
-    align-items: flex-initial;
-    border-color: rgb(100, 151, 151);
-    /*background-image: url("https://media.istockphoto.com/vectors/cartoon-of-a-crystal-ball-with-hands-hovering-over-it-vector-id472281537?s=612x612");*/
+    background: linear-gradient(to bottom,
+        #1abc42 50%,
+        #258dd3 50%
+    );
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .linhaColuna {
-    background-size: cover;
-    background-image: url(https://cdn.pixabay.com/photo/2013/03/13/04/24/building-93098_960_720.jpg);
-    color: white;
-    font-weight: bold;
-    display: flex; /* Para mudar a frase de lugar */
-    align-items: flex-end;
+    color:rgba(214, 214, 55, 0.856);
 }
 
 .megaSena {
-    background-size: cover;
-    color: red;
-    text-align: end;
-    text-transform: uppercase;
-    font-weight: bold;
-    background-image: url(https://upload.wikimedia.org/wikipedia/commons/3/3c/Bolas-de-loteria.jpg);
-    /*background-image: url("https://media.istockphoto.com/photos/lottery-balls-picture-id1054934320?s=612x612");*/
-    /* font-size: 20px; */
+    color:#0ab1e9;
 }
 
-.canvas {
-    background-size: cover;
-    background-image: url(https://cdn.pixabay.com/photo/2018/03/21/07/16/learning-3245792_960_720.jpg);
-    color: red;
-    display: flex;
-    align-items: flex-end;
-    /* font-size: 18px; */
+.canvasLearning {
+    color:#ece1de;
 }
 
 .damas {
-    background-size: cover; /* Trocar foto */
-    background-image: url(https://cdn.pixabay.com/photo/2018/02/25/10/21/pattern-3180129_960_720.jpg);
-    color:rgb(53, 248, 4);
-    /* font-size: 20px; */
+    color:#000;
+    background: linear-gradient(to right,
+        #ccc 10%,
+        #c8d6cc9a 20%,
+        #C9c9c9 30%,
+        #c8d6cc9a 40%,
+        #ccc 50%,
+        #8299a8 60%,
+        #C1c1c1 70%,
+        #c8d6cc9a 80%,
+        #C1c1c1 90%
+    );
+    background-clip: border-box;
 }
 
 .bandeiras {
-    background-size: cover;     /* Trocar Foto */
-    background-image: url(https://cdn.pixabay.com/photo/2017/12/24/15/12/russia-3037142_960_720.png);
-    /* url("https://cdn.pixabay.com/photo/2017/07/11/18/07/bolivia-2494518_960_720.jpg"); */
-    color: blue;
-    font-weight: bold;
-    text-transform: uppercase;
+    color:#d49797;
 }
 
 .canvasCondicionais {
-    background-size: cover;
-    color: blue;
-    background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTvRQXSfdIS62ICCa9p0-MQeSaJSQSzaTtCUQ&usqp=CAU);
+    color:#0ae954;
 }
 
 .canvasCrescente {
-    background-size: cover;
-    color: red;
-    background-image: url(https://upload.wikimedia.org/wikipedia/commons/8/8c/Tabela_Crescimento_Meninas.svg);
-    /* https://upload.wikimedia.org/wikipedia/commons/c/ce/Cyclin_Expression.svg */
+    color:#55bde0;
 }
 
 .canvasParabola {
-    background-size: contain; /*imagem tamanho certo para a caixa*/
-    background-image: url(https://slidetodoc.com/presentation_image_h/28125f7d925d269b189d7980046e949c/image-12.jpg);
-    display: flex;
-    align-items: flex-initial;
-    color: white;
+    color:#a4a9aa;
 }
 
 .seno {
-    background-size: cover;
-    color: red;
-    background-image: url(https://cdn.pixabay.com/photo/2015/10/15/09/09/mathematics-989124_960_720.jpg);
+    color:#5a65a1;
 }
 
 .cliques {
-    background-size: cover;
-    color: red; /* Trocar Foto */
-    background-image: url(https://upload.wikimedia.org/wikipedia/commons/3/32/Sunjang_Baduk_starting_position.png);
-    align-items: flex-initial;
-    justify-content: center;
+    color:#e0d755;
 }
 
 .botaoMouse {
-    background-size: cover;
-    background-image: url(https://cdn.pixabay.com/photo/2017/09/26/22/23/dark-green-2790337_960_720.png);
-    color: white;
+    color:#5a9b77;
 }
 
 .paint {
-    background-size: cover;
-    color: red; /* Trocar foto */
-    background-image: url(https://upload.wikimedia.org/wikipedia/commons/f/f9/Gif2.gif);
-    display: flex;
-    align-items: flex-end;
+    color:#e9eef0;
 }
 
 .animacoes {
-    color: white;
-    background-size: cover;
-    background-image: url(https://upload.wikimedia.org/wikipedia/commons/d/de/Geostationary_orbit_animation.gif);
-    display: flex; /* Para mudar a frase de lugar */
-    align-items: flex-initial;
-    border-color: aqua;
+    background: linear-gradient(to bottom,
+        #e8eeea 10%,
+        #0f0f0f 90%
+    );
+    background-clip: border-box;
 }
 
 .tiroAlvo {
-    background-size: contain;
-    color: blue;
-    font-weight: bold;
-    background-image: url(https://media.istockphoto.com/vectors/hitting-the-target-vector-id1310235449?s=612x612);
-    display: flex;
-    align-items: flex-initial;
+    color:#fa3e3e;
 }
 
 .formEventos {
-    background-size: contain;
-    color: red;
-    background-image: url(https://cdn.pixabay.com/photo/2016/12/07/09/27/fax-1889009_960_720.jpg);
-    display: flex; /* Para mudar a frase de lugar */
-    align-items: flex-initial;
+    color:#cdd0db;
 }
 
 .formArray {
-    color: white;
-    background-size: cover; /* Trocar foto */
-    background-image: url(https://cdn.pixabay.com/photo/2017/02/25/23/42/racism-2099029_960_720.png);
-    background-color: rgba(12, 12, 2, 0.452);
-    border-color: rgb(105, 214, 214);
+    color:#badce7;
 }
 
 .objetos {
-    background-size: cover;
-    background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ4cw-kxwEH9frdwHQTSiOJcMeCxtbUZN04kw&usqp=CAU);
-    color: white;
-    display: flex; /* Para mudar a frase de lugar */
-    align-items: flex-end;
+    color:#e1e3e4;
 }
 
 .dom {
-    background-size: cover;
-    color: red;
-    background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTsQEt8uEEJWGjOqmjRAAceQ1lQO68C_g9aHg&usqp=CAU);
-    display: flex;
-    align-items: flex-end;
-    /* font-size: 20px; */
+    color:#55bde0;
 }
 
 .imc {
-    background-size: cover;
-    color:red;
-    background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRiDOCyM2r8w2Nccj58-m15DrNLC_mqeP1_BA&usqp=CAU);
-    display: flex; /* Para mudar a frase de lugar */
-    align-items: flex-end;
+    color:#afe055;
 }
 
 footer {

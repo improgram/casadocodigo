@@ -49,14 +49,10 @@ let codigoGithub = document.createElement("a");
     
 //https://stackoverflow.com/questions/42277092/javascript-function-on-multiple-buttons  
 //https://stackoverflow.com/questions/14615712/toggle-classname-onclick-javascript
-/*
-    function botaoClicado() {
+/*    function botaoClicado() {
         let botaoRepetido = 1  
-        let but = document.querySelectorAll(".but").onclick = function botaoClicado(){
-
-        };
-            console.log('FUNCTION REPETIDA')
-        }   
+        let but = document.querySelectorAll(".but").onclick = function botaoClicado(){        };
+            console.log('FUNCTION REPETIDA')        }   
 */
 
 // Calculo Batimentos
