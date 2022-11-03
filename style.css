@@ -83,10 +83,15 @@ header {
 }
 
 .main {   /* verificados 13/09 */
-    background: url(img/moon-2048727_960_720.jpg);
+    background: url(img/moon-2048727_960_720.jpg) no-repeat;
     background-size: cover;
     white-space: pre-line; /* 26/10 OK */
     /*espaços em branco dentro dos elementos são manipulados.*/
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
 }    
 
 .intro {
