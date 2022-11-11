@@ -97,7 +97,9 @@ function anodeCopa () {
     let ano;
     let copa;
     let ultimaCopa = 2022;
+    /* https://acervolima.com/como-criar-e-aplicar-dinamicamente-a-classe-css-em-javascript/ */
     if (typeof window.mostrar) {
+        /*copa.classList.add = ("buttonResult");*/
         copa = '\n Todas as Copas \n \n ';
     }
 
@@ -115,8 +117,8 @@ function anodeCopa () {
         codigoGithub.innerHTML = ''; //Limpa o valor antigo (test OK)
         codigoGithub.href = "https://github.com/improgram/casadocodigo/blob/master/Capitulo5/036Topico5.3.html";
         codigoGithub.appendChild(codCopas);
-        resultado();
-    } 
+    resultado();
+} 
     
 //Anos de Olimpiada
 let buttonOlimpiadas = document.getElementsByClassName('olimpiadas');
