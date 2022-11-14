@@ -94,24 +94,37 @@ function checkWar(ano){
 }
 
 function anodeCopa () {
-    let ano;
-    let copa;
-    let ultimaCopa = 2022;
-    /* https://acervolima.com/como-criar-e-aplicar-dinamicamente-a-classe-css-em-javascript/ */
-    if (typeof window.mostrar) {
-        /*copa.classList.add = ("buttonResult");*/
-        copa = '\n Todas as Copas \n \n ';
-    }
+        /* https://acervolima.com/como-criar-e-aplicar-dinamicamente-a-classe-css-em-javascript/ */
 
-    for (ano = 1930; ano <= ultimaCopa; ano += 4) {
-        if (checkWar(ano)) {          
-            copa += 'Em ' + ano + ': nao realizado devido a Guerra. \n';                 
-        } else if ( ano > 2018){
-            mostrar.textContent = copa += 'Em ' + ano + ': Teremos Copa em 2022. \n';
-        } else {
-            mostrar.textContent = copa += 'Em ' + ano + ': Teve Copa. \n';
+    if (typeof window.mostrar) {            
+        let ano;
+        let ultimaCopa = 2022;
+        let copa = "\n Todas as Copas \n \n";   /* = document.createElement('H1');*/
+        /*copa.className = 'intro';*/
+        /* copa.textContent = 'TODAS'; */
+        /*mostrar.appendChild(copa);*/
+
+        /*copa.style = 'intro'*/
+        /* copa.textContent = "\n Todas as Copas \n \n"; */
+        /*copa.setAttribute("class", "intro"); */
+        /*let tituloCopa = document.createTextNode("\n Todas as Copas \n \n");
+        copa.appendChild(tituloCopa);
+        mostrar.textContent = tituloCopa;*/
+        /*copa.textContent = 'TODAS'; */
+        /*copa.className = 'intro';*/
+        /*copa.setAttribute("class", "intro"); */
+        /*copa = '\n Todas as Copas \n \n ';*/
+
+        for (ano = 1930; ano <= ultimaCopa; ano += 4) {
+            if (checkWar(ano)) {          
+                copa += 'Em ' + ano + ': nao realizado devido a Guerra. \n';                 
+            } else if ( ano > 2018){
+                mostrar.textContent = copa += 'Em ' + ano + ': Teremos Copa. \n';
+            } else {
+                mostrar.textContent = copa += 'Em ' + ano + ': Teve Copa. \n';
+            }
         }
-    }
+    }   
 
     let codCopas = document.createTextNode('Abrir codigo Anos de copa no Github \n \n');
         codigoGithub.innerHTML = ''; //Limpa o valor antigo (test OK)
@@ -147,7 +160,7 @@ let buttonOlimpiadas = document.getElementsByClassName('olimpiadas');
                 olimpiadas += 'Em ' + ano + ': Covid (Adiada para 2021).\n';
                 break;
             case 2024:
-                mostrar.textContent = olimpiadas += 'Em ' + ano + ': Teremos Olimpiadas em 2024. \n'
+                mostrar.textContent = olimpiadas += 'Em ' + ano + ': Teremos Olimpiadas. \n'
                 console.log('2024');               
                 break;               
             default:
@@ -228,9 +241,9 @@ let buttonCombustiveis = document.getElementsByClassName('combustiveis');
             mostrar.appendChild(buttonComparaValor);
 
             function valorPorKm() { //https://pt.stackoverflow.com/questions/27919/como-verificar-se-um-n%C3%BAmero-%C3%A9-decimal
-                let precoGas = parseFloat(prompt('Digite o valor do litro da Gasolina.'));
+                let precoGas = parseFloat(prompt('Digite o valor do litro da Gasolina com virgula.'));
                     precoGas.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
-                let precoAlcool = parseFloat(prompt('Digite o valor do litro do Alcool.') );
+                let precoAlcool = parseFloat(prompt('Digite o valor do litro do Alcool com virgula.') );
                     precoAlcool.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
                 mostrar.textContent = 'Preço por Km de Gasolina: R$ ' + (precoGas / consumoGasolina).toFixed(2) +
                                       '\n Preço por Km de Alcool: R$ ' + (precoAlcool / consumoAlcool).toFixed(2);
@@ -261,8 +274,8 @@ let buttonIdade = document.getElementsByClassName('mediaIdade');
             }
 
     let calculoIdade = somarIdades / familiares;
-        mostrar.textContent = '\n Numero de familiares: ' + familiares + '\n'
-            + 'Media de idade dos familiares: ' + Math.round(calculoIdade);
+        mostrar.textContent = '\n Numero de familiares: \n' + familiares + '\n \n'
+            + 'Media de idade dos familiares: \n' + Math.round(calculoIdade);
 
     let codIdade = document.createTextNode('\n Abrir o Codigo Media de Idade no GitHub');
         codigoGithub.innerHTML = '';
