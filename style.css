@@ -19,7 +19,7 @@ header {
     position: sticky;   
     position: -webkit-sticky; /* Safari */
     top: 0;  
-    height: 10vh;
+    height: 9vh;
     width: auto;    
     text-shadow: 1px 1px 1px rgb(243, 243, 231);  
     background: radial-gradient(rgb(92, 64, 64) 1%, rgba(10,10,10,1) 10%, rgb(51, 18, 18) 20%,
@@ -207,11 +207,11 @@ margin: 0.1em 0.1em; } */
 
 .olimpiadas {
     background: linear-gradient(to right,
-      rgb(145, 145, 201) 20%,
-      rgb(75, 131, 75) 20%, rgb(148, 184, 148) 40%,
+      rgb(220, 220, 233) 20%,
+      rgb(221, 236, 165) 20%, rgb(148, 184, 148) 40%,
       rgb(221, 191, 191) 40%, rgb(187, 123, 123) 60%,
       orange 60%, orange 80%,
-      rgb(197, 174, 197) 80%
+      rgb(235, 224, 235) 80%
       );
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;

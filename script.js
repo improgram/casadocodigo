@@ -25,11 +25,10 @@ let mostrar = document.createElement("object");
 let titulo = document.createElement("H3");
 let codigoGithub = document.createElement("a");
 
-    function resultado() {        
-        intro.insertAdjacentElement("beforeEnd", titulo); /* intro.appendChild(titulo); */
-        titulo.insertAdjacentElement("afterEnd", mostrar);
-        mostrar.className = 'mostrar';      // => mostrar.setAttribute("class", "mostrar");
-        mostrar.insertAdjacentElement("afterEnd", codigoGithub); //=>mostrar.appendChild
+    function resultado() {      
+        intro.appendChild(titulo);                                // intro.insertAdjacentElement("beforeEnd", titulo);
+        titulo.appendChild(mostrar).className = ('mostrar');      // mostrar.setAttribute("class", "mostrar");
+        mostrar.insertAdjacentElement("afterEnd", codigoGithub);  //=>mostrar.appendChild
         
         codigoGithub.title = "Abrir o codigo no Github em outra página";  // mostra o titulo ao posicionar mouse
         codigoGithub.target = "_blank";
@@ -43,12 +42,12 @@ let codigoGithub = document.createElement("a");
             if(!botoesCriados){                 //intro não é pai do buttonResult entao cria buttons
                 console.log('Botao criado');
                 buttonPrevious.textContent = 'Anterior';
+                codigoGithub.appendChild(buttonPrevious) // codigoGithub.insertAdjacentElement("afterEnd", buttonPrevious);
                 buttonPrevious.addEventListener("click", todasFunctions);
                 let buttonNext = document.createElement('button');                                              
                     buttonNext.className = 'buttonResult';
                     buttonNext.textContent = 'Próximo';
 
-                    codigoGithub.insertAdjacentElement("afterEnd", buttonPrevious); //=>codigoGithub pai
                     buttonPrevious.insertAdjacentElement("afterEnd", buttonNext); //Previous pai no Next   
                     buttonPrevious.addEventListener("click", todasFunctions);
                     buttonNext.addEventListener("click", todasFunctions);                 
@@ -65,24 +64,21 @@ let buttonBatimentos = document.getElementsByClassName('batimentos');
         elementBatimentos.onclick = batimentos;
     }
 function batimentos() {
-    titulo.innerHTML = '';
-    let tituloBatimentos = document.createTextNode("Calculo de Batimentos \n");
-    titulo.insertAdjacentText("afterbegin", tituloBatimentos.textContent); /* = titulo.appendChild(tituloBatimentos)*/
-    
+    titulo.textContent = "Calculo de Batimentos \n";  
     let idade = prompt('Quantos anos voce tem ?');
-        if (isNaN(idade)) {
-            alert('ERRO : Digite apenas numeros.');
-            console.log('Nao foi digitado um Numero.');
-        }
+    if (isNaN(idade)) {
+        alert('ERRO : Digite apenas numeros.');
+        console.log('Nao foi digitado um Numero.');
+    }
     let diasdevida = idade * 365;   
     let calcBatimentos = '\n Idade: ' + idade + ' anos.\n' + '\n Seu Coração bateu: \n \n' 
         + diasdevida * 24 * 60 * 80 + ' vezes em toda sua vida. \n';
-        mostrar.textContent  = calcBatimentos + " \n";
+    mostrar.textContent  = calcBatimentos + " \n";
 
     let codBatimentos = document.createTextNode('Abrir codigo Batimentos em outra página \n \n');
         codigoGithub.innerHTML = '';
         codigoGithub.href = "https://github.com/improgram/casadocodigo/blob/master/Capitulo3/024Topico3.6.html \n";
-        codigoGithub.insertAdjacentText("afterEnd", codBatimentos); /* = codigoGithub.appendChild(codBatimentos);*/
+        codigoGithub.appendChild(codBatimentos);
     resultado();
 }
 
@@ -92,10 +88,7 @@ let buttonCopa = document.getElementsByClassName('copas');
         elementCopas.onclick = anodeCopa;
     }
 function anodeCopa () {
-    titulo.innerHTML = '';
-    let tituloCopas = document.createTextNode('Anos de Copa do Mundo \n');
-    titulo.insertAdjacentText("afterbegin", tituloCopas.textContent);
-
+    titulo.textContent = 'Anos de Copa do Mundo \n';
     function checkWar(ano){       
         let houveGuerra = false;
             if (ano >= 1940 && ano <= 1946) {                  
@@ -121,10 +114,9 @@ function anodeCopa () {
     }   
 
     let codCopas = document.createTextNode('Abrir codigo Anos de copa no Github \n \n');
-        codigoGithub.innerHTML = ''; //Limpa o valor antigo (test OK)
+        codigoGithub.innerHTML = '';
         codigoGithub.href = "https://github.com/improgram/casadocodigo/blob/master/Capitulo5/036Topico5.3.html \n";
-        codigoGithub.insertAdjacentText("afterEnd", codCopas);
-        /*codigoGithub.appendChild(codCopas);*/
+        codigoGithub.appendChild(codCopas);
     resultado();
 } 
     
@@ -135,6 +127,7 @@ let buttonOlimpiadas = document.getElementsByClassName('olimpiadas');
     }
 
     function anodeOlimpiadas() {
+        titulo.textContent = 'Anos de Jogos Olimpicos \n';
         let ano;
         let olimpiadas;       
         if (typeof window.mostrar) {
@@ -176,6 +169,7 @@ let buttonTabuada = document.getElementsByClassName('tabuada');
     }
 
     function tabuada (){
+        titulo.textContent = 'Tabuada';
         let tabuada2 = document.createElement('button');
             tabuada2.textContent = 'Outro Numero';
             tabuada2.addEventListener("click", tabuada);
@@ -204,6 +198,7 @@ let buttonCombustiveis = document.getElementsByClassName('combustiveis');
     }   
 
     function combustiveis (){
+        titulo.textContent = 'Comparativo Alcool ou Gasolina';
         let tanqueCarro = 40;
         let kmcomAlcool;
         let kmcomGas = parseInt(prompt('Quantos kM Percorridos com Gasolina ?'));
@@ -245,7 +240,7 @@ let buttonCombustiveis = document.getElementsByClassName('combustiveis');
             }  
         }     
 
-        let codCombustiveis = document.createTextNode('\n Abrir o Codigo no GitHub');
+        let codCombustiveis = document.createTextNode(' Abrir Codigo combustiveis no GitHub \n');
             codigoGithub.innerHTML = '';
             codigoGithub.href = "https://github.com/improgram/casadocodigo/blob/master/Capitulo2/011Topico2.6_Opcao3.html \n";
             codigoGithub.appendChild(codCombustiveis);    
@@ -259,6 +254,7 @@ let buttonIdade = document.getElementsByClassName('mediaIdade');
     }
 
     function mediaIdade(){
+        titulo.textContent = 'Média de Idade dos familiares';
         let familiares = parseInt(prompt('Quantos familiares ?'));
         let somarIdades = 0;
         let numeroInicio = 1;
@@ -286,6 +282,8 @@ let buttonNumero = document.getElementsByClassName('adivinharNumero');
     }
 
     function numeroPensado() {
+        titulo.textContent = 'Adivinhar Numero Pensado';
+
         //mostrar.textContent = ;
     let codNumero = document.createTextNode('\n Abrir o Codigo Numero Pensado no GitHub');
         codigoGithub.innerHTML = '';
@@ -294,6 +292,9 @@ let buttonNumero = document.getElementsByClassName('adivinharNumero');
     resultado();
     }
 
+
+
+
 //Linhas e Colunas
 let buttonlinhaColuna = document.getElementsByClassName('linhaColuna');
     for(const elementLinhaColuna of buttonlinhaColuna) {
@@ -301,6 +302,8 @@ let buttonlinhaColuna = document.getElementsByClassName('linhaColuna');
     }
 
     function linhaComColuna(){
+        titulo.textContent = 'Linha e Colunas';
+
         //mostrar.textContent = ;
         let codLinhasColunas = document.createTextNode('\n Abrir o Codigo Linhas e Colunas no GitHub');
             codigoGithub.innetHTML = '\n Abrir o Codigo no GitHub';
@@ -317,6 +320,7 @@ let buttonMegaSena = document.getElementById('megaSena');
     buttonMegaSena.addEventListener("click", megasena);
 
     function megasena(){
+        titulo.textContent = '';
         console.log('teste Mega Sena');
         let codMegasena = document.createElement('a');
             codigoGithub.text = '\n Abrir o Codigo no GitHub';
