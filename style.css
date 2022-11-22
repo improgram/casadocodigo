@@ -19,7 +19,7 @@ header {
     position: sticky;   
     position: -webkit-sticky; /* Safari */
     top: 0;  
-    height: 15vh; 
+    height: 10vh;
     width: auto;    
     text-shadow: 1px 1px 1px rgb(243, 243, 231);  
     background: radial-gradient(rgb(92, 64, 64) 1%, rgba(10,10,10,1) 10%, rgb(51, 18, 18) 20%,
@@ -42,7 +42,7 @@ header {
     position: relative; 
     display: inline;                /* => menu lado a lado */
     font-size: clamp(0.1rem, 1.8em, 2.0rem);
-    padding: 1.2em 0.2em;
+    padding: 0.5em 0.2em;
 }
 
 .nav ul li a:hover, a:focus {  
@@ -88,7 +88,7 @@ header {
 }
 
 .main {   /* verificados 13/09 */
-    white-space: pre-line; /* 26/10 OK */
+    white-space: pre-line; /* 26/10=OK */
     /*espaços em branco dentro dos elementos são manipulados.*/
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -103,8 +103,6 @@ header {
     text-align: center;
     text-transform: uppercase;
     font-weight: bold;
-    /*font-variant: small-caps;*/
-    padding: 1em 0 1em 0;
 }
 
 .container {
@@ -145,7 +143,7 @@ header {
 }
 
 #linkcodigo{    /* ID para codigo github */
-    color: rgb(216, 204, 192);
+    color: rgb(214, 186, 158);
     font-size: 12px;
     padding: 7px;
 }
