@@ -259,11 +259,12 @@ let buttonIdade = document.getElementsByClassName('mediaIdade');
         let familiares = parseInt(prompt('Quantos familiares ?'));
         let somarIdades = 0;
         let numeroInicio = 1;
-            while (numeroInicio <= familiares) {
-                let idade = parseInt(prompt('Digite a idade do familiar'));         
-                somarIdades = somarIdades + idade;
-                numeroInicio++
-            }
+
+        while (numeroInicio <= familiares) {
+            let idade = parseInt(prompt('Digite a idade do familiar'));         
+            somarIdades = somarIdades + idade;
+            numeroInicio++
+        }
 
     let calculoIdade = somarIdades / familiares;
         mostrar.textContent = '\n Numero de familiares: \n' + familiares + '\n \n'
@@ -284,48 +285,65 @@ let buttonNumero = document.getElementsByClassName('adivinharNumero');
 
     function numeroPensado() {
         titulo.textContent = 'Adivinhar Numero Pensado \n';
-
+        let segredo = 'Adivinhar o Numero \n \n';
         let numeropensado = Math.round(Math.random() * 10);
         let tentativa = 1;
-        while(tentativa <= 5) {
-	        let chute = prompt('DIGITE um numero de 1 a 10 ? ');
-	        mostrar.textContent = 'Numero digitado : ' + chute;
-	        if(isNaN(chute)) {
-                alert('Voce digitou : ' + chute + '\n Digite apenas numeros.');
-		        mostrar.textContent = 'Voce digitou : ' + chute;
-            }
-	        if(chute ==numeropensado) {
-		        alert('Parabens, ACERTOU');
-                mostrar.textContent = 'ACERTOU ! \n o numero é : \n' + numeropensado + '\n : FIM \n';
-	            break;
-	        } else {
-	            if(chute > numeropensado) {
-		            alert('Chute foi maior que o numero pensado ');
-		            mostrar.textContent = 'Chute foi maior que o numero pensado \n';
-	            }
-	            if(chute < numeropensado) {
-		            alert('Chute foi menor que o numero pensado ' );
-		            mostrar.textContent = 'Chute foi menor que o numero pensado \n';
-	            }
-	        }	
-	        tentativa++;
-	        if(tentativa > 5) {
-		        alert('5 CHANCES ESGOTADAS');
-		        mostrar.textContent = '5 CHANCES ESGOTADAS \n';
-	        }
+        let inputNumero = document.createElement("input");
+        
+        if (typeof window.mostrar) {  
+            mostrar.textContent = segredo + '\n \n';
+            mostrar.appendChild(inputNumero);
+            inputNumero.focus();
         }
-
-        //mostrar.textContent = ;
-    let codNumero = document.createTextNode('Abrir o Codigo Numero Pensado no GitHub \n');
-        codigoGithub.innerHTML = '';
-        codigoGithub.href = "https://github.com/improgram/casadocodigo/blob/master/Capitulo5/044Topico5.11_Exerci1_2_3.html \n";
-        codigoGithub.appendChild(codNumero);       
-    resultado();
-    }
-
-
-
-
+/*
+        while(tentativa <= 5) {
+            let chute = prompt('DIGITE um numero de 1 a 10 ? ');
+            switch (tentativa) {
+                case isNaN(chute):
+                    segredo += 'Voce digitou : ' + chute + '\n Digite apenas numeros.';
+                    break;
+                case chute == numeropensado:
+                    segredo += 'ACERTOU ! \n' + 'o numero é : \n' + numeropensado; 
+                    break;   
+                default:
+                    mostrar.textContent = segredo += 'foi o seu palpite : \n' + chute + '\n';
+            }
+*/
+        let codNumero = document.createTextNode('Abrir o Codigo Numero Pensado no GitHub \n');
+            codigoGithub.innerHTML = '';
+            codigoGithub.href = "https://github.com/improgram/casadocodigo/blob/master/Capitulo5/044Topico5.11_Exerci1_2_3.html \n";
+            codigoGithub.appendChild(codNumero);       
+        resultado();
+        }
+    //}       
+         
+            /*
+            //let chute = prompt('DIGITE um numero de 1 a 10 ? ');
+	        //if(isNaN(chute)) {
+              //  alert('Voce digitou : ' + chute + '\n Digite apenas numeros.');
+               // mostrar.textContent = chute;
+            //}
+	        //if(chute == numeropensado) {
+    //mostrar.textContent = chute + ' foi o seu palpite ! \n \n' + 'ACERTOU ! \n \n o numero é : \n' + numeropensado + '\n \n FIM \n';
+	  //          break;
+	    //    } else {
+	      //      if(chute > numeropensado) {
+		    //        alert('Chute foi maior que o numero pensado ');
+		      //      mostrar.textContent = 'Chute foi maior que o numero pensado \n';
+	        //    }
+	        //    if(chute < numeropensado) {
+		    //        alert('Chute foi menor que o numero pensado ' );
+		    //        mostrar.textContent = 'Chute foi menor que o numero pensado \n';
+	        //    }
+	        //    }	
+	        //tentativa++;
+            
+	        // if(tentativa > 5) {
+		    //    alert('5 CHANCES ESGOTADAS');
+            //    mostrar.textContent = '\n' + '\n AS 5 CHANCES FORAM ESGOTADAS ! \n';
+	        //    }                 
+            //   } 
+*/
 //Linhas e Colunas
 let buttonlinhaColuna = document.getElementsByClassName('linhaColuna');
     for(const elementLinhaColuna of buttonlinhaColuna) {
@@ -343,10 +361,10 @@ let buttonlinhaColuna = document.getElementsByClassName('linhaColuna');
     resultado();    
 }
 
-// PAREI AQUI
-/*
 
-//Mega-Sena
+/* PAREI AQUI Mega-Sena
+
+
 let buttonMegaSena = document.getElementById('megaSena');
     buttonMegaSena.addEventListener("click", megasena);
 
@@ -628,4 +646,5 @@ let buttonImc = document.getElementById('imc');
     buttonImc.insertAdjacentElement("before", codImc);
     resultado();
     }
-*/
+
+    */
