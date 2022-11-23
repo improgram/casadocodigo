@@ -182,7 +182,7 @@ figcaption {
     display: table-caption;
     font-weight: bold;
     caption-side: top;
-    padding: 0.5em;
+    padding: 0.2em;
     border-bottom: none;
 }
 

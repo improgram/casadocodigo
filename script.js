@@ -168,12 +168,8 @@ let buttonTabuada = document.getElementsByClassName('tabuada');
         elementTabuada.onclick = tabuada;
     }
 
-    function tabuada (){
+    function tabuada () {
         titulo.textContent = 'Tabuada';
-        let tabuada2 = document.createElement('button');
-            tabuada2.textContent = 'Outro Numero';
-            tabuada2.addEventListener("click", tabuada);
-            tabuada2.className = 'buttonResult';
         let numero = parseInt(prompt('Tabuada de qual numero ?' ));
 
         let resposta = 'Numero escolhido: ' + numero + '\n' + '\n';        
@@ -181,10 +177,15 @@ let buttonTabuada = document.getElementsByClassName('tabuada');
                 resposta += numero + " X " + count + " = " + numero*count + '\n';
             }
 
-            mostrar.textContent = resposta;
-            mostrar.appendChild(tabuada2);
+        let tabuada2 = document.createElement('button');
+            tabuada2.textContent = 'Outro Numero';
+            tabuada2.addEventListener("click", tabuada);
+            tabuada2.className = 'buttonResult';
 
-        let codTabuada = document.createTextNode('\n Abrir o Codigo Tabuada no GitHub \n');
+        mostrar.textContent = resposta + "\n";
+        mostrar.appendChild(tabuada2);
+
+        let codTabuada = document.createTextNode('Abrir o Codigo Tabuada no GitHub \n');
             codigoGithub.innerHTML = '';
             codigoGithub.href = "https://github.com/improgram/casadocodigo/blob/master/Capitulo5/039Topico5.6-Tabuada.html \n";
             codigoGithub.appendChild(codTabuada);
@@ -268,7 +269,7 @@ let buttonIdade = document.getElementsByClassName('mediaIdade');
         mostrar.textContent = '\n Numero de familiares: \n' + familiares + '\n \n'
             + 'Media de idade dos familiares: \n' + Math.round(calculoIdade);
 
-    let codIdade = document.createTextNode('\n Abrir o Codigo Media de Idade no GitHub');
+    let codIdade = document.createTextNode('\n Abrir o Codigo Media de Idade no GitHub \n');
         codigoGithub.innerHTML = '';
         codigoGithub.href = "https://github.com/improgram/casadocodigo/blob/master/Capitulo5/042Topico5.9.html \n";
         codigoGithub.appendChild(codIdade);
@@ -282,10 +283,40 @@ let buttonNumero = document.getElementsByClassName('adivinharNumero');
     }
 
     function numeroPensado() {
-        titulo.textContent = 'Adivinhar Numero Pensado';
+        titulo.textContent = 'Adivinhar Numero Pensado \n';
+
+        let numeropensado = Math.round(Math.random() * 10);
+        let tentativa = 1;
+        while(tentativa <= 5) {
+	        let chute = prompt('DIGITE um numero de 1 a 10 ? ');
+	        mostrar.textContent = 'Numero digitado : ' + chute;
+	        if(isNaN(chute)) {
+                alert('Voce digitou : ' + chute + '\n Digite apenas numeros.');
+		        mostrar.textContent = 'Voce digitou : ' + chute;
+            }
+	        if(chute ==numeropensado) {
+		        alert('Parabens, ACERTOU');
+                mostrar.textContent = 'ACERTOU ! \n o numero é : \n' + numeropensado + '\n : FIM \n';
+	            break;
+	        } else {
+	            if(chute > numeropensado) {
+		            alert('Chute foi maior que o numero pensado ');
+		            mostrar.textContent = 'Chute foi maior que o numero pensado \n';
+	            }
+	            if(chute < numeropensado) {
+		            alert('Chute foi menor que o numero pensado ' );
+		            mostrar.textContent = 'Chute foi menor que o numero pensado \n';
+	            }
+	        }	
+	        tentativa++;
+	        if(tentativa > 5) {
+		        alert('5 CHANCES ESGOTADAS');
+		        mostrar.textContent = '5 CHANCES ESGOTADAS \n';
+	        }
+        }
 
         //mostrar.textContent = ;
-    let codNumero = document.createTextNode('\n Abrir o Codigo Numero Pensado no GitHub');
+    let codNumero = document.createTextNode('Abrir o Codigo Numero Pensado no GitHub \n');
         codigoGithub.innerHTML = '';
         codigoGithub.href = "https://github.com/improgram/casadocodigo/blob/master/Capitulo5/044Topico5.11_Exerci1_2_3.html \n";
         codigoGithub.appendChild(codNumero);       
