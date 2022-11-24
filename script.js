@@ -282,68 +282,66 @@ let buttonNumero = document.getElementsByClassName('adivinharNumero');
     for(const elementNumero of buttonNumero) {
         elementNumero.onclick = numeroPensado;
     }
-
-    function numeroPensado() {
+/* https://medium.com/@davidsodrelins/criando-e-manipulando-itens-do-html-via-javascript-98158977984b */
+    function numeroPensado() {                          /* http://squids.com.br/editor/index.php?id=66 */
         titulo.textContent = 'Adivinhar Numero Pensado \n';
-        let segredo = 'Adivinhar o Numero \n \n';
-        let numeropensado = Math.round(Math.random() * 10);
+        let segredo = Math.round(Math.random() * 10);
         let tentativa = 1;
-        let inputNumero = document.createElement("input");
-        
+        let inputNumber = document.createElement("input");
+            inputNumber.setAttribute('type', 'number');
+            inputNumber.setAttribute('placeholder', 'Digite o numero aqui.');
+            inputNumber.setAttribute('max', '10');
+        let enviarNumero = document.createElement("button");
+            enviarNumero.appendChild(document.createTextNode("Comparar"));
+        //let textButton = document.createTextNode("Comparar");
+          //  enviarNumero.appendChild(textButton);
+            /* enviarNumero.setAttribute('onClick', numeroPensado); */
+            enviarNumero.addEventListener("click", numeroPensado);
+            
+            
         if (typeof window.mostrar) {  
             mostrar.textContent = segredo + '\n \n';
-            mostrar.appendChild(inputNumero);
-            inputNumero.focus();
+            titulo.appendChild(inputNumber);
+            titulo.appendChild(enviarNumero);
+            inputNumber.focus();
         }
-/*
         while(tentativa <= 5) {
-            let chute = prompt('DIGITE um numero de 1 a 10 ? ');
-            switch (tentativa) {
-                case isNaN(chute):
-                    segredo += 'Voce digitou : ' + chute + '\n Digite apenas numeros.';
-                    break;
-                case chute == numeropensado:
-                    segredo += 'ACERTOU ! \n' + 'o numero é : \n' + numeropensado; 
-                    break;   
-                default:
-                    mostrar.textContent = segredo += 'foi o seu palpite : \n' + chute + '\n';
-            }
-*/
-        let codNumero = document.createTextNode('Abrir o Codigo Numero Pensado no GitHub \n');
-            codigoGithub.innerHTML = '';
-            codigoGithub.href = "https://github.com/improgram/casadocodigo/blob/master/Capitulo5/044Topico5.11_Exerci1_2_3.html \n";
-            codigoGithub.appendChild(codNumero);       
-        resultado();
-        }
-    //}       
-         
-            /*
-            //let chute = prompt('DIGITE um numero de 1 a 10 ? ');
-	        //if(isNaN(chute)) {
-              //  alert('Voce digitou : ' + chute + '\n Digite apenas numeros.');
-               // mostrar.textContent = chute;
-            //}
-	        //if(chute == numeropensado) {
-    //mostrar.textContent = chute + ' foi o seu palpite ! \n \n' + 'ACERTOU ! \n \n o numero é : \n' + numeropensado + '\n \n FIM \n';
-	  //          break;
-	    //    } else {
-	      //      if(chute > numeropensado) {
-		    //        alert('Chute foi maior que o numero pensado ');
-		      //      mostrar.textContent = 'Chute foi maior que o numero pensado \n';
-	        //    }
-	        //    if(chute < numeropensado) {
-		    //        alert('Chute foi menor que o numero pensado ' );
-		    //        mostrar.textContent = 'Chute foi menor que o numero pensado \n';
-	        //    }
-	        //    }	
-	        //tentativa++;
             
-	        // if(tentativa > 5) {
-		    //    alert('5 CHANCES ESGOTADAS');
-            //    mostrar.textContent = '\n' + '\n AS 5 CHANCES FORAM ESGOTADAS ! \n';
-	        //    }                 
-            //   } 
-*/
+	        if(isNaN(inputNumber.value)) {
+                alert('Voce digitou : ' + inputNumber.value + '\n Digite apenas numeros.');
+                mostrar.textContent = 'Voce digitou : ' + inputNumber.value + '\n Digite apenas numeros.';
+            } else if(inputNumber.value == segredo) {
+                mostrar.textContent = inputNumber.value + ' foi o seu palpite ! \n \n' + 'ACERTOU ! \n \n o numero é : \n' + segredo + '\n';
+                console.log('Voce ACERTOU !! ')
+	            break;
+	        } else if(inputNumber.value > segredo) {
+		        /* alert('Palpite foi maior que o numero pensado '); */
+		        mostrar.textContent = 'Palpite foi maior que o numero pensado \n';
+                console.log(' Numero é MAIOR que o Pensado.')
+	        } else if(inputNumber.value < segredo) {
+		        /* alert('Palpite foi menor que o numero pensado ' ); */
+		        mostrar.textContent = 'Palpite foi menor que o numero pensado \n';
+                console.log('Numero é MENOR que o pensado')
+	        } else {                                                //(tentativa > 5)
+                mostrar.textContent = '\n' + '\n AS 5 CHANCES FORAM ESGOTADAS ! \n';
+                mostrar.classList.add("batimentos");
+                console.log(' As 5 Chances foram ESGOTADAS.');
+	        }
+            inputNumber.focus();
+            tentativa++;
+            console.log('Seu palpite foi :' + inputNumber);
+            mostrar.textContent = inputNumber.value;
+            inputNumber.value = "";           
+        }    
+
+            codigoGithub.innerHTML = '';
+            codigoGithub.appendChild(document.createTextNode('Abrir o Codigo Numero Pensado no GitHub \n')); /* FUNCIONA */
+            codigoGithub.href = "https://github.com/improgram/casadocodigo/blob/master/Capitulo5/044Topico5.11_Exerci1_2_3.html \n";
+            //let codNumero = document.createTextNode('Abrir o Codigo Numero Pensado no GitHub \n');
+            //codigoGithub.appendChild(codNumero);       
+        resultado();
+    }
+
 //Linhas e Colunas
 let buttonlinhaColuna = document.getElementsByClassName('linhaColuna');
     for(const elementLinhaColuna of buttonlinhaColuna) {
