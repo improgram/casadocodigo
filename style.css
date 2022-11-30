@@ -103,6 +103,10 @@ header {
     text-align: center;
     text-transform: uppercase;
     font-weight: bold;
+    /*display:flex;
+    flex-direction: column;
+    justify-content: center;
+    */
 }
 
 .container {

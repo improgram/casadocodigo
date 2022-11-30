@@ -251,71 +251,78 @@ function anodeCopa () {
                                             /* http://squids.com.br/editor/index.php?id=66 */
         /* https://medium.com/@davidsodrelins/criando-e-manipulando-itens-do-html-via-javascript-98158977984b */
     function numeroPensado() {                          
-        titulo.textContent = 'Adivinhar Numero Pensado \n \n';
-        
-        let segredo = Math.round(Math.random() * 10);
+        titulo.textContent = 'Adivinhar Numero Pensado \n \n';       
+        let segredo = Math.round(Math.random() * 9);
         let tentativa = 1;
-
-        let buttonComparar = document.createElement('button');
-            buttonComparar.appendChild(document.createTextNode('COMPARAR'));
-
-        let inputNumber = document.createElement('input');
-            inputNumber.setAttribute('placeholder', 'Digite AQUI.');
-            inputNumber.setAttribute('id', 'inputNumber');
-            inputNumber.setAttribute('type', 'number');
-            inputNumber.setAttribute('max', '10');
-
-        let listElement = document.createElement('ul');
-            listElement.setAttribute('id', 'listElement');
-
-        titulo.appendChild(inputNumber);
-        titulo.appendChild(buttonComparar);      
-
-        buttonComparar.onclick = function() {
-            addNumber();   
-        }            
-
-        function addNumber () {
-            mostrar.textContent = 'Numero Digitado : \n' + inputNumber.value + '\n';
-            titulo.appendChild(document.createTextNode('Numeros Digitados : \n \n'));
-            var numeroNovo = inputNumber.value;
-            var numeroLista = document.createElement('li');
-            numeroLista.appendChild(document.createTextNode(numeroNovo));
-            listElement.appendChild(numeroLista);                       // ul pai do numeroLista(li)
-            inputNumber.value = "";                                     // Limpa conteudo do input
-            mostrar.insertAdjacentElement('beforeEnd', listElement);
-        }
-          
+        console.log('Tentativa : ' + tentativa + ' TESTE 1');
+        let buttonAdicionar = document.createElement('button');                     // cria botao  
+            buttonAdicionar.appendChild(document.createTextNode('Adicionar'));      // Adiciona texto ao botao
+            buttonAdicionar.setAttribute('id','buttonAdicionar');
+        let inputNumber = document.createElement('input');                          // Cria input
+            inputNumber.setAttribute('placeholder', 'Digite 5 numeros de 1 a 9');   // Atributo placeholder
+            inputNumber.setAttribute('id', 'inputNumber');                          // Atributo id adicionado
+            inputNumber.setAttribute('type', 'number');                             // Atributo number
+            inputNumber.setAttribute('max', '10');                                  // Atributo max 10 carac
+        let listElement = document.createElement('ul');                             // Cria lista uL
+            listElement.setAttribute('id', 'listElement');                          // Atributo id adicionado
+            titulo.appendChild(inputNumber);                                        // inputNumber filho do titulo
+            titulo.appendChild(buttonAdicionar);                                    // button filho do titulo
+            //titulo.insertAdjacentElement('beforeEnd', buttonAdicionar);
+                                                
         if (typeof window.mostrar) {
-            //titulo.appendChild(inputN);
-            console.log('TESTE window mostrar');
-            mostrar.textContet = 'TESTE window mostrar';            
-        }          
+            buttonAdicionar.insertAdjacentText('afterEnd' ,'\n Numeros Digitados : \n');
+        }                      
+            
+        while(tentativa <= 5) {
+                buttonAdicionar.onclick = function() {
+                    console.log('Tentativa : ' + tentativa + 'TESTE 2');
+                    console.log('Segredo : ' + segredo);                        
+                    //document.getElementById("buttonAdicionar").disabled = true;                       
+                addNumber();   
+                }
+            function addNumber () {
+                console.log('Tentativa : ' + tentativa + ' TESTE 3 ');
+                let numeroNovo = inputNumber.value;
+                let numeroLista = document.createElement('li');
+                numeroLista.appendChild(document.createTextNode(numeroNovo));
+                listElement.appendChild(numeroLista);                       // ul pai do numeroLista(li)
+                inputNumber.value = "";                                     // Limpa conteudo do input
+                mostrar.insertAdjacentElement('afterBegin', listElement);   //Dentro do element mostrar,antes 1° filho
+                comparaNumero();             
+            }
+            function comparaNumero (){
+                let resultado = document.createElement('resultado');
+                    resultado.setAttribute('id', 'comparaNumero');
+                    resultado.appendChild(document.createTextNode('Resultado : \n \n \n'));
+                    mostrar.insertAdjacentElement('afterEnd', resultado);
 
-        while(tentativa <= 5) {                     
-	        if(isNaN(inputNumber.value)) {
-                alert('Voce digitou : ' + inputNumber.value + '\n Digite apenas numeros.');
-                mostrar.textContent = 'Voce digitou : ' + inputNumber.value + '\n Digite apenas numeros.';
-            } else if(inputNumber.value == segredo) {
-                mostrar.textContent = inputNumber.value + ' foi o seu palpite ! \n \n' + 'ACERTOU ! \n \n o numero é : \n' + segredo + '\n';
-                console.log('Voce ACERTOU !! ')
-	            break;
-	        } else if(inputNumber.value > segredo) {
-		        mostrar.textContent = 'Palpite foi maior que o numero pensado \n';
-                console.log(' Numero é MAIOR que o Pensado.')
-	        } else if(inputNumber.value < segredo) {
-		        mostrar.textContent = 'Palpite foi menor que o numero pensado \n';
-                //console.log('Numero é MENOR que o pensado')
-	        } else {                                                //(tentativa > 5)
-                mostrar.textContent = '\n' + '\n AS 5 CHANCES FORAM ESGOTADAS ! \n';
-                mostrar.classList.add("batimentos");
-                console.log(' As 5 Chances foram ESGOTADAS.');
-	        }
-            inputNumber.focus();
+                if(isNaN(inputNumber.value)) {
+                    console.log('Tentativa : ' + tentativa + ' TESTE 4 ');
+                    alert('Voce digitou : ' + inputNumber.value + '\n Digite apenas numeros.');
+                    mostrar.textContent = 'Voce digitou : ' + inputNumber.value + '\n Digite apenas numeros.';
+                } else if(inputNumber.value == segredo) {
+                    console.log('Tentativa : ' + tentativa + ' TESTE 5 ');
+                    console.log('Voce ACERTOU !! ')
+                    mostrar.textContent = inputNumber.value + ' foi o seu palpite ! \n \n' + 'ACERTOU ! \n \n o numero é : \n' + segredo + '\n';                   
+                    //break;
+                } else if(inputNumber.value > segredo) {
+                    console.log(' Numero é MAIOR que o Pensado.');
+                    mostrar.textContent = 'Palpite foi maior que o numero pensado \n';                    
+                } else if(inputNumber.value < segredo) {
+                    console.log('Numero é MENOR que o pensado');
+                    mostrar.textContent = 'Palpite foi menor que o numero pensado \n';  
+                } else {                                                //(tentativa > 5)
+                    console.log(' As 5 Chances foram ESGOTADAS.');
+                    mostrar.textContent = '\n' + '\n AS 5 CHANCES FORAM ESGOTADAS ! \n';
+                    mostrar.classList.add("batimentos");
+                }
+            }                    	        
+            
+            console.log('Tentativa : ' + tentativa + ' TESTE 6 ');
             tentativa++;
-            //console.log('Seu palpite foi :' + inputN);
-            mostrar.textContent = inputNumber.value;
-            inputNumber.value = "";           
+            console.log('Tentativa : ' + tentativa + ' TESTE  7 ');
+            mostrar.textContent = inputNumber.value;  // necessario
+            console.error('Seu palpite foi : ' + tentativa++ + ' Terminou' + inputNumber.value);
         } 
         codigoGithub.innerHTML = '';
         codigoGithub.appendChild(document.createTextNode('Abrir o Codigo Numero Pensado no GitHub \n'));
