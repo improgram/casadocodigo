@@ -237,6 +237,7 @@ function anodeCopa () {
     let calculoIdade = somarIdades / familiares;
         mostrar.textContent = '\n Numero de familiares: \n' + familiares + '\n \n'
             + 'Media de idade dos familiares: \n' + Math.round(calculoIdade);
+
         codigoGithub.innerHTML = '';
         codigoGithub.appendChild(document.createTextNode('\n Abrir o Codigo Media de Idade no GitHub \n'));
         codigoGithub.href = "https://github.com/improgram/casadocodigo/blob/master/Capitulo5/042Topico5.9.html \n";       
@@ -248,87 +249,60 @@ function anodeCopa () {
     for(const elementNumero of buttonNumero) {
         elementNumero.onclick = numeroPensado;
     }
-                                            /* http://squids.com.br/editor/index.php?id=66 */
+        /* http://squids.com.br/editor/index.php?id=66 */
+        /* https://cursos.alura.com.br/forum/topico-funcao-que-chama-outra-funcao-diferente-213694 */
         /* https://medium.com/@davidsodrelins/criando-e-manipulando-itens-do-html-via-javascript-98158977984b */
-    function numeroPensado() {                          
-        titulo.textContent = 'Adivinhar Numero Pensado \n \n';       
-        let segredo = Math.round(Math.random() * 9);
-        let tentativa = 1;
-        console.log('Tentativa : ' + tentativa + ' TESTE 1');
-        let buttonAdicionar = document.createElement('button');                     // cria botao  
-            buttonAdicionar.appendChild(document.createTextNode('Adicionar'));      // Adiciona texto ao botao
-            buttonAdicionar.setAttribute('id','buttonAdicionar');
-        let inputNumber = document.createElement('input');                          // Cria input
-            inputNumber.setAttribute('placeholder', 'Digite 5 numeros de 1 a 9');   // Atributo placeholder
-            inputNumber.setAttribute('id', 'inputNumber');                          // Atributo id adicionado
-            inputNumber.setAttribute('type', 'number');                             // Atributo number
-            inputNumber.setAttribute('max', '10');                                  // Atributo max 10 carac
-        let listElement = document.createElement('ul');                             // Cria lista uL
-            listElement.setAttribute('id', 'listElement');                          // Atributo id adicionado
-            titulo.appendChild(inputNumber);                                        // inputNumber filho do titulo
-            titulo.appendChild(buttonAdicionar);                                    // button filho do titulo
-            //titulo.insertAdjacentElement('beforeEnd', buttonAdicionar);
-                                                
+        /* https://cursos.alura.com.br/forum/topico-habitar-desabilitar-botao-65202 */
+    function numeroPensado () {                          
+        titulo.textContent = 'Adivinhar Numero Pensado \n \n';
         if (typeof window.mostrar) {
-            buttonAdicionar.insertAdjacentText('afterEnd' ,'\n Numeros Digitados : \n');
-        }                      
-            
-        while(tentativa <= 5) {
-                buttonAdicionar.onclick = function() {
-                    console.log('Tentativa : ' + tentativa + 'TESTE 2');
-                    console.log('Segredo : ' + segredo);                        
-                    //document.getElementById("buttonAdicionar").disabled = true;                       
-                addNumber();   
-                }
-            function addNumber () {
-                console.log('Tentativa : ' + tentativa + ' TESTE 3 ');
-                let numeroNovo = inputNumber.value;
-                let numeroLista = document.createElement('li');
-                numeroLista.appendChild(document.createTextNode(numeroNovo));
-                listElement.appendChild(numeroLista);                       // ul pai do numeroLista(li)
-                inputNumber.value = "";                                     // Limpa conteudo do input
-                mostrar.insertAdjacentElement('afterBegin', listElement);   //Dentro do element mostrar,antes 1° filho
-                comparaNumero();             
-            }
-            function comparaNumero (){
-                let resultado = document.createElement('resultado');
-                    resultado.setAttribute('id', 'comparaNumero');
-                    resultado.appendChild(document.createTextNode('Resultado : \n \n \n'));
-                    mostrar.insertAdjacentElement('afterEnd', resultado);
-
-                if(isNaN(inputNumber.value)) {
-                    console.log('Tentativa : ' + tentativa + ' TESTE 4 ');
-                    alert('Voce digitou : ' + inputNumber.value + '\n Digite apenas numeros.');
-                    mostrar.textContent = 'Voce digitou : ' + inputNumber.value + '\n Digite apenas numeros.';
-                } else if(inputNumber.value == segredo) {
-                    console.log('Tentativa : ' + tentativa + ' TESTE 5 ');
-                    console.log('Voce ACERTOU !! ')
-                    mostrar.textContent = inputNumber.value + ' foi o seu palpite ! \n \n' + 'ACERTOU ! \n \n o numero é : \n' + segredo + '\n';                   
-                    //break;
-                } else if(inputNumber.value > segredo) {
-                    console.log(' Numero é MAIOR que o Pensado.');
-                    mostrar.textContent = 'Palpite foi maior que o numero pensado \n';                    
-                } else if(inputNumber.value < segredo) {
-                    console.log('Numero é MENOR que o pensado');
-                    mostrar.textContent = 'Palpite foi menor que o numero pensado \n';  
-                } else {                                                //(tentativa > 5)
-                    console.log(' As 5 Chances foram ESGOTADAS.');
-                    mostrar.textContent = '\n' + '\n AS 5 CHANCES FORAM ESGOTADAS ! \n';
-                    mostrar.classList.add("batimentos");
-                }
-            }                    	        
-            
-            console.log('Tentativa : ' + tentativa + ' TESTE 6 ');
+            let buttoncincoTentativas = document.createElement('button');                     // cria botao  
+                buttoncincoTentativas.appendChild(document.createTextNode('5 Tentativas'));   // Adiciona texto ao botao
+                buttoncincoTentativas.setAttribute('id','buttoncincoTentativas');
+                buttoncincoTentativas.className = 'buttonResult';
+                titulo.appendChild(buttoncincoTentativas);  
+                buttoncincoTentativas.onclick = cincoTentativas;              
+        }           
+        function cincoTentativas(){
+            let segredo = Math.round(Math.random() * 9);
+            let tentativa = 1;
+            document.getElementById("buttoncincoTentativas").disabled = true;
+            document.getElementById("buttoncincoTentativas").className = "";
+            console.log('%c > >  São 5 Tentativas < < ', "background: #7fff; color: #000");
+            while(tentativa <= 5) {
+                    let chute = prompt('DIGITE um numero de 1 a 9 ');
+                    console.log('Numero digitado : ' + chute);
+                if (isNaN(chute)) {
+                    console.error('Voce não digitou um numero : ' + chute) ;
+                    alert('Voce digitou : ' + chute + ' . Digite apenas numeros.');                   
+                } else if (chute == segredo) {
+                    console.log("%c ACERTOU : " + segredo , "background: #007fff; color: #FFF");
+                    alert('Parabens, ACERTOU');               
+                    break;
+                } else if (chute > segredo) {
+                    console.error('Chute foi maior que o numero pensado ');
+                    alert('Chute foi maior que o numero pensado ');               
+                } else if (chute < segredo) {
+                    console.error('Chute foi menor que o numero pensado ');
+                    alert('Chute foi menor que o numero pensado ' );               
+                } else   // inserir function()
+                    console.error('%c O numero é : ' + segredo , "background: #fff; color: #000");                                
             tentativa++;
-            console.log('Tentativa : ' + tentativa + ' TESTE  7 ');
-            mostrar.textContent = inputNumber.value;  // necessario
-            console.error('Seu palpite foi : ' + tentativa++ + ' Terminou' + inputNumber.value);
-        } 
+                if (tentativa > 5 ) {
+                    console.error('%c O numero é : ' + segredo , "background: #fff; color: #00F");
+                    console.error('%c 5 Chances ESGOTADAS ' , "background: #FF0000; color: #FFF");
+                    alert('5 CHANCES ESGOTADAS'); 
+                }            
+            }
+        }                                    
         codigoGithub.innerHTML = '';
         codigoGithub.appendChild(document.createTextNode('Abrir o Codigo Numero Pensado no GitHub \n'));
         codigoGithub.href = "https://github.com/improgram/casadocodigo/blob/master/Capitulo5/044Topico5.11_Exerci1_2_3.html \n";    
         resultado();
-    }
+        //cincoTentativas();
+    }    
+                                                         
+
 
 //Linhas e Colunas
     let buttonlinhaColuna = document.getElementsByClassName('linhaColuna');
@@ -337,13 +311,12 @@ function anodeCopa () {
     }
 
     function linhaComColuna(){
-        titulo.textContent = 'Linha e Colunas';
+        titulo.textContent = 'Linha e Colunas \n';
 
         //mostrar.textContent = ;
-        let codLinhasColunas = document.createTextNode('\n Abrir o Codigo Linhas e Colunas no GitHub');
-            codigoGithub.innetHTML = '\n Abrir o Codigo no GitHub';
-            codigoGithub.href = "https://github.com/improgram/casadocodigo/blob/master/Capitulo5/045Topico5.12.html \n";
-            codigoGithub.appendChild(codLinhasColunas);
+        codigoGithub.innetHTML = '';
+        codigoGithub.appendChild(document.createTextNode('\n Abrir o Codigo Linhas e Colunas no GitHub \n'));    
+        codigoGithub.href = "https://github.com/improgram/casadocodigo/blob/master/Capitulo5/045Topico5.12.html \n";
     resultado();    
 }
 
