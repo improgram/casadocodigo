@@ -76,35 +76,34 @@ function batimentos() {
     for(const elementCopas of buttonCopa) {
         elementCopas.onclick = anodeCopa;
     }
-function anodeCopa () {
-    titulo.textContent = 'Anos de Copa do Mundo \n';
-    function checkWar(ano){       
-        let houveGuerra = false;
-            if (ano >= 1940 && ano <= 1946) {                  
-                houveGuerra = true;
-            }
-        return houveGuerra;
-    }
-    if (typeof window.mostrar) {            
-        let ano;
-        let ultimaCopa = 2022;
-        let copa = "\n Todas as Copas \n \n";
-
-        for (ano = 1930; ano <= ultimaCopa; ano += 4) {
-            if (checkWar(ano)) {          
-                copa += 'Em ' + ano + ': nao realizado devido a Guerra. \n';                 
-            } else if ( ano > 2018){
-                mostrar.textContent = copa += 'Em ' + ano + ': Teremos Copa. \n';
-            } else {
-                mostrar.textContent = copa += 'Em ' + ano + ': Teve Copa. \n';
-            }
+    function anodeCopa () {
+        titulo.textContent = 'Anos de Copa do Mundo \n';
+        function checkWar(ano){       
+            let houveGuerra = false;
+                if (ano >= 1940 && ano <= 1946) {                  
+                    houveGuerra = true;
+                }
+            return houveGuerra;
         }
-    } 
+        if (typeof window.mostrar) {            
+            let ano;
+            let ultimaCopa = 2022;
+            let copa = "\n Todas as Copas \n \n";
+            for (ano = 1930; ano <= ultimaCopa; ano += 4) {
+                if (checkWar(ano)) {          
+                    copa += 'Em ' + ano + ': nao realizado devido a Guerra. \n';                 
+                } else if ( ano > 2018){
+                    mostrar.textContent = copa += 'Em ' + ano + ': Teremos Copa. \n';
+                } else {
+                    mostrar.textContent = copa += 'Em ' + ano + ': Teve Copa. \n';
+                }
+            }
+        } 
     codigoGithub.innerHTML = '';
     codigoGithub.appendChild(document.createTextNode('Abrir codigo Anos de copa no Github \n \n'));
     codigoGithub.href = "https://github.com/improgram/casadocodigo/blob/master/Capitulo5/036Topico5.3.html \n";       
     resultado();
-} 
+    } 
     
 //Anos de Olimpiada
     let buttonOlimpiadas = document.getElementsByClassName('olimpiadas');
@@ -113,7 +112,7 @@ function anodeCopa () {
     }
 
     function anodeOlimpiadas() {
-            titulo.textContent = 'Anos de Jogos Olimpicos \n';
+        titulo.textContent = 'Anos de Jogos Olimpicos \n';
         let ano;
         let olimpiadas;       
         if (typeof window.mostrar) {
@@ -223,7 +222,6 @@ function anodeCopa () {
     for(const elementIdade of buttonIdade) {
         elementIdade.onclick = mediaIdade;
     }
-
     function mediaIdade(){
         titulo.textContent = 'Média de Idade dos familiares';
         let familiares = parseInt(prompt('Quantos familiares ?'));
@@ -234,15 +232,15 @@ function anodeCopa () {
             somarIdades = somarIdades + idade;
             numeroInicio++
         }
-    let calculoIdade = somarIdades / familiares;
+        let calculoIdade = somarIdades / familiares;
         mostrar.textContent = '\n Numero de familiares: \n' + familiares + '\n \n'
-            + 'Media de idade dos familiares: \n' + Math.round(calculoIdade);
+        + 'Media de idade dos familiares: \n' + Math.round(calculoIdade);
 
         codigoGithub.innerHTML = '';
         codigoGithub.appendChild(document.createTextNode('\n Abrir o Codigo Media de Idade no GitHub \n'));
         codigoGithub.href = "https://github.com/improgram/casadocodigo/blob/master/Capitulo5/042Topico5.9.html \n";       
     resultado();
-}
+    }
 
 //Acertar Numero pensado
     let buttonNumero = document.getElementsByClassName('adivinharNumero');
@@ -250,59 +248,95 @@ function anodeCopa () {
         elementNumero.onclick = numeroPensado;
     }
         /* http://squids.com.br/editor/index.php?id=66 */
-        /* https://cursos.alura.com.br/forum/topico-funcao-que-chama-outra-funcao-diferente-213694 */
         /* https://medium.com/@davidsodrelins/criando-e-manipulando-itens-do-html-via-javascript-98158977984b */
-        /* https://cursos.alura.com.br/forum/topico-habitar-desabilitar-botao-65202 */
+        /* https://www.maujor.com/tutorial/anti-heroi-css-display-table.php */
+    
     function numeroPensado () {                          
-        titulo.textContent = 'Adivinhar Numero Pensado \n \n';
-        if (typeof window.mostrar) {
-            let buttoncincoTentativas = document.createElement('button');                     // cria botao  
-                buttoncincoTentativas.appendChild(document.createTextNode('5 Tentativas'));   // Adiciona texto ao botao
-                buttoncincoTentativas.setAttribute('id','buttoncincoTentativas');
-                buttoncincoTentativas.className = 'buttonResult';
-                titulo.appendChild(buttoncincoTentativas);  
-                buttoncincoTentativas.onclick = cincoTentativas;              
-        }           
+            titulo.textContent = 'Adivinhar Numero Pensado \n \n';
+        let buttoncincoTentativas = document.createElement('button');                     // cria botao  
+            buttoncincoTentativas.appendChild(document.createTextNode('5 Tentativas'));   // Adiciona texto ao botao
+            buttoncincoTentativas.setAttribute('id','buttoncincoTentativas');
+            buttoncincoTentativas.className = 'buttonResult';
+            titulo.appendChild(buttoncincoTentativas);  
+            buttoncincoTentativas.onclick = cincoTentativas;
+        let buttonAteAcertar = document.createElement('button');
+            buttonAteAcertar.appendChild (document.createTextNode('De 1 a 6 '));
+            buttonAteAcertar.setAttribute('id', 'buttonAteAcertar');
+            buttonAteAcertar.className = 'buttonResult';
+            titulo.appendChild(buttonAteAcertar);
+            buttonAteAcertar.onclick = ateAcertar;
+        let chute;
+        let tentativa = 1;
+                                 // UL pai do listli(Li) 
+            
+            
+                
+
         function cincoTentativas(){
             let segredo = Math.round(Math.random() * 9);
-            let tentativa = 1;
             document.getElementById("buttoncincoTentativas").disabled = true;
-            document.getElementById("buttoncincoTentativas").className = "";
-            console.log('%c > >  São 5 Tentativas < < ', "background: #7fff; color: #000");
+            document.getElementById("buttoncincoTentativas").className = "objetos";
             while(tentativa <= 5) {
-                    let chute = prompt('DIGITE um numero de 1 a 9 ');
-                    console.log('Numero digitado : ' + chute);
+                    chute = prompt('DIGITE um numero de 1 a 9 ' );
                 if (isNaN(chute)) {
-                    console.error('Voce não digitou um numero : ' + chute) ;
                     alert('Voce digitou : ' + chute + ' . Digite apenas numeros.');                   
-                } else if (chute == segredo) {
-                    console.log("%c ACERTOU : " + segredo , "background: #007fff; color: #FFF");
+                } else if (chute == segredo) {                    
+                    buttoncincoTentativas.insertAdjacentText("afterEnd", '\n ACERTOU o NÚMERO é : ' + segredo + '\n \n');
                     alert('Parabens, ACERTOU');               
                     break;
                 } else if (chute > segredo) {
-                    console.error('Chute foi maior que o numero pensado ');
                     alert('Chute foi maior que o numero pensado ');               
                 } else if (chute < segredo) {
-                    console.error('Chute foi menor que o numero pensado ');
-                    alert('Chute foi menor que o numero pensado ' );               
-                } else   // inserir function()
-                    console.error('%c O numero é : ' + segredo , "background: #fff; color: #000");                                
-            tentativa++;
-                if (tentativa > 5 ) {
+                    alert('Chute foi menor que o numero pensado ' );                                            
+                } else
+                    console.log(chute);
+                    tentativa ++;
+                if (tentativa >= 6 ) {
                     console.error('%c O numero é : ' + segredo , "background: #fff; color: #00F");
                     console.error('%c 5 Chances ESGOTADAS ' , "background: #FF0000; color: #FFF");
-                    alert('5 CHANCES ESGOTADAS'); 
-                }            
+                    mostrar.appendChild(document.createTextNode(' 5 Tentativas Esgotadas. '));
+                }
+                let listul = document.createElement('ul');                // Cria lista UL
+                listul.setAttribute('id', 'listul');                  // Atributo id adicionado
+                let listli = document.createElement('li');                // Cria elemento Li
+                listli.setAttribute('id', 'listli');                  // Atributo id adicionado
+                listul.appendChild(listli); 
+                listli.appendChild(document.createTextNode('Número Digitado : ' + chute + '\n'));
+                mostrar.insertAdjacentElement('beforeEnd', listul);                  
+                
             }
-        }                                    
+        }
+
+        function ateAcertar() {
+            let deumaseis = Math.round(Math.random() * 6);
+            document.getElementById("buttonAteAcertar").disabled = true;
+            document.getElementById("buttonAteAcertar").className = "objetos";                                          
+            while(chute != deumaseis) {
+                    chute = prompt('ESCOLHA um numero de 0 ate 6' );
+                if(chute == deumaseis) {
+                    console.log('%c ACERTOU : O numero é : ' + deumaseis, "background: #000; color: #FF0");
+                    buttonAteAcertar.insertAdjacentText("afterEnd", '\n ACERTOU o NÚMERO é : ' + deumaseis + '\n \n');
+                    alert('Parabens, ACERTOU');
+                    break;
+                } else if (chute > deumaseis) {
+                    alert('Chute foi maior que o numero pensado ');              
+                } else if (chute < deumaseis) {
+                    alert('Chute foi menor que o numero pensado ' );
+                } else if (isNaN(chute)) {
+                chute = ' Voce digitou : ' + chute;
+                alert('Voce digitou : ' + chute + ' >  Digite apenas numeros.');
+                } else {
+                    tentativa++;
+                }                            
+                
+            }
+        }
+        mostrar.insertAdjacentText('afterBegin', '\n NÚMEROS DIGITADOS : \n \n' );
         codigoGithub.innerHTML = '';
         codigoGithub.appendChild(document.createTextNode('Abrir o Codigo Numero Pensado no GitHub \n'));
-        codigoGithub.href = "https://github.com/improgram/casadocodigo/blob/master/Capitulo5/044Topico5.11_Exerci1_2_3.html \n";    
+        codigoGithub.href = "https://github.com/improgram/casadocodigo/blob/master/Capitulo5/044Topico5.11_Exerci1_2_3.html \n";
         resultado();
-        //cincoTentativas();
-    }    
-                                                         
-
+    }                                                           
 
 //Linhas e Colunas
     let buttonlinhaColuna = document.getElementsByClassName('linhaColuna');
