@@ -15,7 +15,6 @@ function todasFunctions() {
 //insertAdjacentHtml ()    insere o código html: '<li>texto</li>'
 /* https://stackoverflow.com/questions/42277092/javascript-function-on-multiple-buttons  */
 /* https://acervolima.com/como-criar-e-aplicar-dinamicamente-a-classe-css-em-javascript/ */
-/* https://acervolima.com/como-substituir-um-elemento-html-por-outro-usando-javascript/ */
 /* https://medium.com/@caualoewen1/manipulando-a-dom-usando-javascript-para-p%C3%A1ginas-mais-din%C3%A2micas-328a467b4fb */
 /* https://www.w3schools.com/jsref/dom_obj_all.asp */
 /* http://devfuria.com.br/javascript/dom-create-element/ */
@@ -85,20 +84,18 @@ function batimentos() {
                 }
             return houveGuerra;
         }
-        if (typeof window.mostrar) {            
             let ano;
-            let ultimaCopa = 2022;
+            let ultimaCopa = 2026;
             let copa = "\n Todas as Copas \n \n";
             for (ano = 1930; ano <= ultimaCopa; ano += 4) {
                 if (checkWar(ano)) {          
                     copa += 'Em ' + ano + ': nao realizado devido a Guerra. \n';                 
-                } else if ( ano > 2018){
+                } else if ( ano > 2022) {
                     mostrar.textContent = copa += 'Em ' + ano + ': Teremos Copa. \n';
                 } else {
                     mostrar.textContent = copa += 'Em ' + ano + ': Teve Copa. \n';
                 }
             }
-        } 
     codigoGithub.innerHTML = '';
     codigoGithub.appendChild(document.createTextNode('Abrir codigo Anos de copa no Github \n \n'));
     codigoGithub.href = "https://github.com/improgram/casadocodigo/blob/master/Capitulo5/036Topico5.3.html \n";       
@@ -152,10 +149,10 @@ function batimentos() {
         elementTabuada.onclick = tabuada;
     }
     function tabuada () {
-            titulo.textContent = 'Tabuada';
+        titulo.textContent = 'Tabuada';
         let numero = parseInt(prompt('Tabuada de qual numero ?' ));
         let resposta = 'Numero escolhido: ' + numero + '\n' + '\n';        
-            for(let count = 1; count <= 10; count++) {
+            for (let count = 1; count <= 10; count++ ) {
                 resposta += numero + " X " + count + " = " + numero*count + '\n';
             }
         let tabuada2 = document.createElement('button');
@@ -217,7 +214,7 @@ function batimentos() {
     resultado();
     }
 
-//Media de Idade dos familiares 008Topico2.3
+// Media de Idade dos familiares 008Topico2.3
     let buttonIdade = document.getElementsByClassName('mediaIdade');
     for(const elementIdade of buttonIdade) {
         elementIdade.onclick = mediaIdade;
@@ -247,10 +244,6 @@ function batimentos() {
     for(const elementNumero of buttonNumero) {
         elementNumero.onclick = numeroPensado;
     }
-        /* http://squids.com.br/editor/index.php?id=66 */
-        /* https://medium.com/@davidsodrelins/criando-e-manipulando-itens-do-html-via-javascript-98158977984b */
-        /* https://www.maujor.com/tutorial/anti-heroi-css-display-table.php */
-    
     function numeroPensado () {                          
             titulo.textContent = 'Adivinhar Numero Pensado \n \n';
         let buttoncincoTentativas = document.createElement('button');                     // cria botao  
@@ -267,10 +260,11 @@ function batimentos() {
             buttonAteAcertar.onclick = ateAcertar;
         let chute;
         let tentativa = 1;
-                                 // UL pai do listli(Li) 
-            
-            
-                
+        let listul = document.createElement('ul');              // Cria lista UL
+            listul.setAttribute('id', 'listul');                // Atributo id adicionado
+        let listli = document.createElement('li');              // Cria elemento Li
+            listli.setAttribute('id', 'listli');                // Atributo id adicionado
+            listul.appendChild(listli);                         // UL pai do listli(Li)
 
         function cincoTentativas(){
             let segredo = Math.round(Math.random() * 9);
@@ -292,18 +286,14 @@ function batimentos() {
                     console.log(chute);
                     tentativa ++;
                 if (tentativa >= 6 ) {
-                    console.error('%c O numero é : ' + segredo , "background: #fff; color: #00F");
+                    console.group();
+                    console.warnr('%c O numero é : ' + segredo , "background: #fff; color: #00F");
                     console.error('%c 5 Chances ESGOTADAS ' , "background: #FF0000; color: #FFF");
-                    mostrar.appendChild(document.createTextNode(' 5 Tentativas Esgotadas. '));
-                }
-                let listul = document.createElement('ul');                // Cria lista UL
-                listul.setAttribute('id', 'listul');                  // Atributo id adicionado
-                let listli = document.createElement('li');                // Cria elemento Li
-                listli.setAttribute('id', 'listli');                  // Atributo id adicionado
-                listul.appendChild(listli); 
-                listli.appendChild(document.createTextNode('Número Digitado : ' + chute + '\n'));
-                mostrar.insertAdjacentElement('beforeEnd', listul);                  
-                
+                    console.groupEnd();
+                    buttoncincoTentativas.appendChild(document.createTextNode(' ESGOTADAS. '));
+                }                                           
+                listli.appendChild(document.createTextNode('Você Digitou : ' + chute + '\n'));
+                mostrar.insertAdjacentElement('beforeEnd', listli);                            
             }
         }
 
@@ -328,7 +318,8 @@ function batimentos() {
                 } else {
                     tentativa++;
                 }                            
-                
+                listli.appendChild(document.createTextNode('Número Digitado : ' + chute + '\n'));
+                mostrar.insertAdjacentElement('beforeEnd', listli);
             }
         }
         mostrar.insertAdjacentText('afterBegin', '\n NÚMEROS DIGITADOS : \n \n' );
@@ -337,17 +328,98 @@ function batimentos() {
         codigoGithub.href = "https://github.com/improgram/casadocodigo/blob/master/Capitulo5/044Topico5.11_Exerci1_2_3.html \n";
         resultado();
     }                                                           
-
+  
 //Linhas e Colunas
     let buttonlinhaColuna = document.getElementsByClassName('linhaColuna');
     for(const elementLinhaColuna of buttonlinhaColuna) {
         elementLinhaColuna.onclick = linhaComColuna;
     }
+    function linhaComColuna() {
+        titulo.textContent = 'Linhas e Colunas \n';
+        let buttonTabela = document.createElement('button');
+            buttonTabela.appendChild(document.createTextNode('Criar Tabela' ));
+            buttonTabela.setAttribute('id', 'buttonTabela');
+            buttonTabela.className = 'buttonResult';
+            buttonTabela.addEventListener("click", criarTabela);
+            titulo.appendChild(buttonTabela);
+        let buttonCrescente = document.createElement('button');
+            buttonCrescente.appendChild(document.createTextNode(' Coluna Crescente '));
+            buttonCrescente.setAttribute('id', 'buttonCrescente');
+            buttonCrescente.className = 'buttonResult';
+            buttonCrescente.addEventListener("click", crescente);
+            titulo.appendChild(buttonCrescente);
+        let buttonV = document.createElement('button');
+            buttonV.appendChild(document.createTextNode(' V de Vingança '));
+            buttonV.setAttribute('id', 'buttonV');
+            buttonV.className = 'buttonResult';
+            buttonV.addEventListener("click", desenharV);
+            titulo.appendChild(buttonV);
+    
+        function criarTabela () {                    // <font color="teal">
+            document.getElementById("buttonTabela").disabled = true;
+            document.getElementById("buttonTabela").className = "objetos";
+            let tabela = document.createElement('table');
+                tabela.setAttribute('id', 'tabela');
+            let linha1 = Number(prompt("Digite a quantidade de linha"));
+            let coluna1 = Number(prompt("Digite a quantidade de coluna"));
+            let tamanho = ' Quantidade de linhas : ' + linha1 + '\n' +
+                          ' Quantidade de colunas : ' + coluna1 + '\n \n';
+            mostrar.textContent = tamanho + ' \n TABELA \n \n';
+            if (isNaN(linha1, coluna1)) {
+                alert('ERRO : Digite apenas numeros.');
+                console.error('Nao foi digitado um Numero.');
+                mostrar.textContent = tamanho + ' \n Não foi digitado um numero.';
+            }   
+            let conteudo = "";
+            conteudo += "<table border='1'>";
+            for (let i = 1; i <= linha1; i++) {
+                conteudo += "<tr style = 'border: 1px solid #5882FA;'>";
+                for (let j = 1; j <= coluna1; j++) {
+                    if (j % 2 == 0) {       // Se For numero PAR
+                        conteudo += "<td style = 'border: 2px solid #F7FE2E; width: 20px;' >" + i + "</td>";
+                        console.log(' Numero é PAR: ' + j);
+                    } else {
+                        conteudo += "<td style = 'border: 2px solid #0C0C; width: 20px;'>" + i + "</td>";
+                        console.warn(' Numero é IMPAR: ' + j);
+                    }
+                }
+                conteudo += "</tr>";
+            }
+            conteudo += "</table>";
+            mostrar.insertAdjacentElement("beforeEnd", tabela);     
+            tabela.insertAdjacentHTML("beforeEnd", conteudo );
+        }                                    
 
-    function linhaComColuna(){
-        titulo.textContent = 'Linha e Colunas \n';
+        function crescente () {                 /* Desafio Coluna crescente até 6*/
+            document.getElementById("buttonCrescente").disabled = true;
+            document.getElementById("buttonCrescente").className = "objetos";
+            mostrar.textContent = ' Criar Coluna Crescente \n';
+            for (let linha2 = 0; linha2 < 6; linha2 = linha2 + 1) {
+                for (let coluna2 = 0; coluna2 < linha2; coluna2 = coluna2 + 1) {
+                    console.log( ' * ');
+                    mostrar.textContent = ' * \n';
+                }
+                mostrar.textContent = ' | \n';
+                console.log(' | ');
+            }
+        }    
 
-        //mostrar.textContent = ;
+/* Quando mudamos de coluna < 10 para coluna < Linha, a variavel coluna so vai andar de 0 ate o valor da Linha atual.
+        isso é, (na Linha 3 vai de 0 a 2), (na Linha 4 vai de 0 a 3) e assim por diante. 
+        Assim voce cria uma relacao entre quantas colunas devem ser percorridas e a Linha atual. */
+
+        function desenharV () {             // <font color="cerulean">                 
+            for (let linha3 = 1; linha3 <= 5; linha3++) {
+                for (let coluna3 = 1; coluna3 < 10; coluna3++) {
+                    if (linha3 == coluna3 || linha3 == 10 - coluna3) {
+                        console.log("*");
+                    } else 
+                    console.log("_");
+                }
+                console.log("<br>");
+            }
+        }
+      
         codigoGithub.innetHTML = '';
         codigoGithub.appendChild(document.createTextNode('\n Abrir o Codigo Linhas e Colunas no GitHub \n'));    
         codigoGithub.href = "https://github.com/improgram/casadocodigo/blob/master/Capitulo5/045Topico5.12.html \n";
@@ -355,8 +427,9 @@ function batimentos() {
 }
 
 
-/* PAREI AQUI Mega-Sena
 
+
+/* PAREI AQUI Mega-Sena
 
 let buttonMegaSena = document.getElementById('megaSena');
     buttonMegaSena.addEventListener("click", megasena);
