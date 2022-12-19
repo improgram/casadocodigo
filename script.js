@@ -16,7 +16,7 @@ function todasFunctions() {
 /* https://stackoverflow.com/questions/42277092/javascript-function-on-multiple-buttons  */
 /* https://acervolima.com/como-criar-e-aplicar-dinamicamente-a-classe-css-em-javascript/ */
 /* https://medium.com/@caualoewen1/manipulando-a-dom-usando-javascript-para-p%C3%A1ginas-mais-din%C3%A2micas-328a467b4fb */
-/* https://www.w3schools.com/jsref/dom_obj_all.asp */
+/* https://www.w3schools.com/jsref/dom_obj_all.asp */               // Atributos
 /* http://devfuria.com.br/javascript/dom-create-element/ */
 
 let intro = document.querySelector(".intro"); // Igual a document.getElementsByClassName('intro')[0];
@@ -27,7 +27,7 @@ let codigoGithub = document.createElement("a");
     function resultado() {      
         intro.appendChild(titulo);                                // intro.insertAdjacentElement("beforeEnd", titulo);
         titulo.appendChild(mostrar).className = ('mostrar');      // mostrar.setAttribute("class", "mostrar");       
-        mostrar.insertAdjacentElement("afterEnd", codigoGithub);  //=>mostrar.appendChild        
+        mostrar.insertAdjacentElement("afterEnd", codigoGithub);       
         codigoGithub.title = "Abrir o codigo no Github em outra página";  // mostra o titulo ao posicionar mouse
         codigoGithub.target = "_blank";
         codigoGithub.rel = "noopener";
@@ -46,6 +46,7 @@ let codigoGithub = document.createElement("a");
                 buttonPrevious.addEventListener("click", todasFunctions);
         }                      
         createButtons();
+        document.getElementsByClassName("mostrar")[0].focus();      // VALIDAR
     }
 
 // Calculo Batimentos
@@ -321,7 +322,7 @@ function batimentos() {
                 listli.appendChild(document.createTextNode('Número Digitado : ' + chute + '\n'));
                 mostrar.insertAdjacentElement('beforeEnd', listli);
             }
-        }
+        }      
         mostrar.insertAdjacentText('afterBegin', '\n NÚMEROS DIGITADOS : \n \n' );
         codigoGithub.innerHTML = '';
         codigoGithub.appendChild(document.createTextNode('Abrir o Codigo Numero Pensado no GitHub \n'));
@@ -336,25 +337,51 @@ function batimentos() {
     }
     function linhaComColuna() {
         titulo.textContent = 'Linhas e Colunas \n';
+        let buttonQuadrado = document.createElement('button');
+            buttonQuadrado.appendChild(document.createTextNode('Criar Quadrado'));
+            buttonQuadrado.setAttribute('id', 'buttonQuadrado');
+            buttonQuadrado.className = 'buttonResult';
+            buttonQuadrado.addEventListener("click", desenharQuadrado);
+            titulo.appendChild(buttonQuadrado);
         let buttonTabela = document.createElement('button');
-            buttonTabela.appendChild(document.createTextNode('Criar Tabela' ));
+            buttonTabela.appendChild(document.createTextNode('Criar Tabela'));
             buttonTabela.setAttribute('id', 'buttonTabela');
             buttonTabela.className = 'buttonResult';
             buttonTabela.addEventListener("click", criarTabela);
             titulo.appendChild(buttonTabela);
         let buttonCrescente = document.createElement('button');
-            buttonCrescente.appendChild(document.createTextNode(' Coluna Crescente '));
+            buttonCrescente.appendChild(document.createTextNode('Coluna Crescente'));
             buttonCrescente.setAttribute('id', 'buttonCrescente');
             buttonCrescente.className = 'buttonResult';
             buttonCrescente.addEventListener("click", crescente);
             titulo.appendChild(buttonCrescente);
         let buttonV = document.createElement('button');
-            buttonV.appendChild(document.createTextNode(' V de Vingança '));
+            buttonV.appendChild(document.createTextNode('V de Vingança'));
             buttonV.setAttribute('id', 'buttonV');
             buttonV.className = 'buttonResult';
             buttonV.addEventListener("click", desenharV);
             titulo.appendChild(buttonV);
-    
+
+        function desenharQuadrado () {
+            document.getElementById("buttonQuadrado").disabled = true;
+            document.getElementById("buttonQuadrado").className = "imc";
+            let lin = Number (prompt('Numero de Linhas') );
+            let col = Number (prompt('Numero de Colunas') );
+            let quadrado = '\n Quantidade de linhas: ' + lin + '\n' +
+                            'Quantidade de Colunas: ' + col + '\n';
+            mostrar.textContent = quadrado + '\n';                            
+            let estrela = "&#9733";
+            let txt = "";
+                for (let linha=1; linha<= lin; linha++){
+                    for (let coluna=1; coluna<= col; coluna++){
+                        txt += estrela + " ";
+                    }
+                    txt += '\n';
+                }
+            mostrar.insertAdjacentElement("beforeEnd", buttonQuadrado);
+            document.getElementById("buttonQuadrado").innerHTML = txt;
+        }            
+            
         function criarTabela () {                    // <font color="teal">
             document.getElementById("buttonTabela").disabled = true;
             document.getElementById("buttonTabela").className = "objetos";
@@ -390,23 +417,24 @@ function batimentos() {
             tabela.insertAdjacentHTML("beforeEnd", conteudo );
         }                                    
 
+        /* Quando mudamos de coluna < 10 para coluna < Linha, 
+        a variavel coluna so vai andar de 0 ate o valor da Linha atual.
+        isso é, (na Linha 3 vai de 0 a 2), (na Linha 4 vai de 0 a 3) e assim por diante. 
+        Assim voce cria uma relacao entre quantas colunas devem ser percorridas e a Linha atual. */
+
         function crescente () {                 /* Desafio Coluna crescente até 6*/
             document.getElementById("buttonCrescente").disabled = true;
             document.getElementById("buttonCrescente").className = "objetos";
             mostrar.textContent = ' Criar Coluna Crescente \n';
-            for (let linha2 = 0; linha2 < 6; linha2 = linha2 + 1) {
-                for (let coluna2 = 0; coluna2 < linha2; coluna2 = coluna2 + 1) {
-                    console.log( ' * ');
-                    mostrar.textContent = ' * \n';
+            for (let linha2=0; linha2<6; linha2=linha2 + 1) {
+                for (let coluna2=0; coluna2<linha2; coluna2=coluna2 + 1) {
+                    console.log(' * ');
+                    //mostrar.textContent = ' * \n';
                 }
-                mostrar.textContent = ' | \n';
-                console.log(' | ');
+                console.log('<br>');
+                //mostrar.textContent = ' | \n';
             }
-        }    
-
-/* Quando mudamos de coluna < 10 para coluna < Linha, a variavel coluna so vai andar de 0 ate o valor da Linha atual.
-        isso é, (na Linha 3 vai de 0 a 2), (na Linha 4 vai de 0 a 3) e assim por diante. 
-        Assim voce cria uma relacao entre quantas colunas devem ser percorridas e a Linha atual. */
+        }
 
         function desenharV () {             // <font color="cerulean">                 
             for (let linha3 = 1; linha3 <= 5; linha3++) {
@@ -419,6 +447,7 @@ function batimentos() {
                 console.log("<br>");
             }
         }
+
       
         codigoGithub.innetHTML = '';
         codigoGithub.appendChild(document.createTextNode('\n Abrir o Codigo Linhas e Colunas no GitHub \n'));    
