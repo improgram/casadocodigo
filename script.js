@@ -19,34 +19,34 @@ function todasFunctions() {
 /* https://www.w3schools.com/jsref/dom_obj_all.asp */               // Atributos
 /* http://devfuria.com.br/javascript/dom-create-element/ */
 
-let intro = document.querySelector(".intro"); // Igual a document.getElementsByClassName('intro')[0];
-let mostrar = document.createElement("object");
-let titulo = document.createElement("H3");
-let codigoGithub = document.createElement("a");
+let intro = document.querySelector('.intro'); // Igual a document.getElementsByClassName('intro')[0];
+let mostrar = document.createElement('object');
+let titulo = document.createElement('H3');
+let codigoGithub = document.createElement('a');
 
     function resultado() {      
         intro.appendChild(titulo);                                // intro.insertAdjacentElement("beforeEnd", titulo);
         titulo.appendChild(mostrar).className = ('mostrar');      // mostrar.setAttribute("class", "mostrar");       
-        mostrar.insertAdjacentElement("afterEnd", codigoGithub);       
-        codigoGithub.title = "Abrir o codigo no Github em outra página";  // mostra o titulo ao posicionar mouse
-        codigoGithub.target = "_blank";
+        mostrar.insertAdjacentElement('afterEnd', codigoGithub);       
+        codigoGithub.title = 'Abrir o codigo no Github em outra página';  // mostra o titulo ao posicionar mouse
+        codigoGithub.target = '_blank';
         codigoGithub.rel = "noopener";
         codigoGithub.id = 'linkcodigo';
         function createButtons() {
-            let buttonPrevious = document.createElement('button');        
+            let buttonPrevious = document.createElement('button'); 
                 buttonPrevious.className = 'buttonResult';  
                 buttonPrevious.textContent = 'Anterior';
-                buttonPrevious.addEventListener("click", todasFunctions);
+                buttonPrevious.addEventListener('click', todasFunctions);
                 codigoGithub.appendChild(buttonPrevious);               
             let buttonNext = document.createElement('button');                                              
                 buttonNext.className = 'buttonResult';
                 buttonNext.textContent = 'Próximo';
-                buttonNext.addEventListener("click", todasFunctions);
-                buttonPrevious.insertAdjacentElement("afterEnd", buttonNext); //Previous pai no Next   
-                buttonPrevious.addEventListener("click", todasFunctions);
+                buttonNext.addEventListener('click', todasFunctions);
+                buttonPrevious.insertAdjacentElement('afterEnd', buttonNext); //Previous pai no Next   
+                buttonPrevious.addEventListener('click', todasFunctions);
         }                      
         createButtons();
-        document.getElementsByClassName("mostrar")[0].focus();      // VALIDAR
+        document.getElementsByClassName('mostrar')[0].focus();      // VALIDAR
     }
 
 // Calculo Batimentos
@@ -55,7 +55,7 @@ let codigoGithub = document.createElement("a");
         elementBatimentos.onclick = batimentos;
     }
 function batimentos() {
-    titulo.textContent = "Calculo de Batimentos \n";  
+    titulo.textContent = 'Calculo de Batimentos \n';
     let idade = prompt('Quantos anos voce tem ?');
     if (isNaN(idade)) {
         alert('ERRO : Digite apenas numeros.');
@@ -64,10 +64,10 @@ function batimentos() {
     let diasdevida = idade * 365;   
     let calcBatimentos = '\n Idade: ' + idade + ' anos.\n' + '\n Seu Coração bateu: \n \n' 
                             + diasdevida * 24 * 60 * 80 + ' vezes em toda sua vida. \n';
-    mostrar.textContent  = calcBatimentos + " \n"; 
+    mostrar.textContent  = calcBatimentos + ' \n';
     codigoGithub.innerHTML = '';
     codigoGithub.appendChild(document.createTextNode('Abrir codigo Batimentos em outra página \n \n'));
-    codigoGithub.href = "https://github.com/improgram/casadocodigo/blob/master/Capitulo3/024Topico3.6.html \n";    
+    codigoGithub.href = 'https://github.com/improgram/casadocodigo/blob/master/Capitulo3/024Topico3.6.html \n';
     resultado();
 }
 
@@ -87,7 +87,7 @@ function batimentos() {
         }
             let ano;
             let ultimaCopa = 2026;
-            let copa = "\n Todas as Copas \n \n";
+            let copa = '\n Todas as Copas \n \n';
             for (ano = 1930; ano <= ultimaCopa; ano += 4) {
                 if (checkWar(ano)) {          
                     copa += 'Em ' + ano + ': nao realizado devido a Guerra. \n';                 
@@ -99,7 +99,7 @@ function batimentos() {
             }
     codigoGithub.innerHTML = '';
     codigoGithub.appendChild(document.createTextNode('Abrir codigo Anos de copa no Github \n \n'));
-    codigoGithub.href = "https://github.com/improgram/casadocodigo/blob/master/Capitulo5/036Topico5.3.html \n";       
+    codigoGithub.href = 'https://github.com/improgram/casadocodigo/blob/master/Capitulo5/036Topico5.3.html \n';
     resultado();
     } 
     
@@ -140,7 +140,7 @@ function batimentos() {
         }   
         codigoGithub.innerHTML = '';
         codigoGithub.appendChild(document.createTextNode('Abrir codigo Olimpiadas no gitHub \n \n'));
-        codigoGithub.href = "https://github.com/improgram/casadocodigo/blob/master/Capitulo5/038Topico5.5.html \n";           
+        codigoGithub.href = 'https://github.com/improgram/casadocodigo/blob/master/Capitulo5/038Topico5.5.html \n';
         resultado();   
     }    
 
@@ -154,17 +154,17 @@ function batimentos() {
         let numero = parseInt(prompt('Tabuada de qual numero ?' ));
         let resposta = 'Numero escolhido: ' + numero + '\n' + '\n';        
             for (let count = 1; count <= 10; count++ ) {
-                resposta += numero + " X " + count + " = " + numero*count + '\n';
+                resposta += numero + ' X ' + count + ' = ' + numero*count + '\n';
             }
         let tabuada2 = document.createElement('button');
             tabuada2.textContent = 'Outro Numero';
-            tabuada2.addEventListener("click", tabuada);
+            tabuada2.addEventListener('click', tabuada);
             tabuada2.className = 'buttonResult';
-            mostrar.textContent = resposta + "\n";
+            mostrar.textContent = resposta + '\n';
             mostrar.appendChild(tabuada2);
             codigoGithub.innerHTML = '';
             codigoGithub.appendChild(document.createTextNode('Abrir o Codigo Tabuada no GitHub \n'));
-            codigoGithub.href = "https://github.com/improgram/casadocodigo/blob/master/Capitulo5/039Topico5.6-Tabuada.html \n";           
+            codigoGithub.href = 'https://github.com/improgram/casadocodigo/blob/master/Capitulo5/039Topico5.6-Tabuada.html \n';
         resultado();
     }
 
@@ -180,13 +180,13 @@ function batimentos() {
         let kmcomGas = parseInt(prompt('Quantos kM Percorridos com Gasolina ?'));
         let consumoGasolina = kmcomGas / tanqueCarro;    
         let buttonComparativo = document.createElement('button');
-            buttonComparativo.textContent = "Comparar com Alcool";
-            buttonComparativo.addEventListener("click", comparaCombustivel);
+            buttonComparativo.textContent = 'Comparar com Alcool';
+            buttonComparativo.addEventListener('click', comparaCombustivel);
             buttonComparativo.className = 'buttonResult';
         mostrar.textContent = '\n Com tanque de ' + tanqueCarro +  ' litros: \n' +
                                 '\n' + kmcomGas + ' Km percorridos com Gasolina \n' +
                                 'Foram: ' + (kmcomGas / tanqueCarro) + ' KM rodados por litro.\n \n';
-        mostrar.insertAdjacentElement("beforeEnd", buttonComparativo);
+        mostrar.insertAdjacentElement('beforeEnd', buttonComparativo);
         
         function comparaCombustivel () {
             kmcomAlcool = parseInt(prompt('Quantos kM Percorridos com Alcool ?'));
@@ -195,10 +195,10 @@ function batimentos() {
                                     '\n Consumo Gasolina: ' + consumoGasolina + ' km por litro.' +
                                     '\n Consumo Alcool: ' + consumoAlcool + ' km por litro.';            
             let buttonComparaValor = document.createElement('button');
-                buttonComparaValor.innerText = "Comparar preço: \n  Gasolina e Alcool";
+                buttonComparaValor.innerText = 'Comparar preço: \n  Gasolina e Alcool';
                 buttonComparaValor.addEventListener("click", valorPorKm);
                 buttonComparaValor.className = 'buttonResult';
-            mostrar.insertAdjacentElement("beforeEnd", buttonComparaValor);
+            mostrar.insertAdjacentElement('beforeEnd', buttonComparaValor);
 
             function valorPorKm() {
                 let precoGas = parseFloat(prompt('Digite o valor do litro da Gasolina com virgula.'));
@@ -211,7 +211,7 @@ function batimentos() {
         } 
             codigoGithub.innerHTML = '';
             codigoGithub.appendChild(document.createTextNode(' Abrir Codigo combustiveis no GitHub \n'));
-            codigoGithub.href = "https://github.com/improgram/casadocodigo/blob/master/Capitulo2/011Topico2.6_Opcao3.html \n";    
+            codigoGithub.href = 'https://github.com/improgram/casadocodigo/blob/master/Capitulo2/011Topico2.6_Opcao3.html \n';
     resultado();
     }
 
@@ -236,7 +236,7 @@ function batimentos() {
 
         codigoGithub.innerHTML = '';
         codigoGithub.appendChild(document.createTextNode('\n Abrir o Codigo Media de Idade no GitHub \n'));
-        codigoGithub.href = "https://github.com/improgram/casadocodigo/blob/master/Capitulo5/042Topico5.9.html \n";       
+        codigoGithub.href = 'https://github.com/improgram/casadocodigo/blob/master/Capitulo5/042Topico5.9.html \n';
     resultado();
     }
 
@@ -269,14 +269,14 @@ function batimentos() {
 
         function cincoTentativas(){
             let segredo = Math.round(Math.random() * 9);
-            document.getElementById("buttoncincoTentativas").disabled = true;
-            document.getElementById("buttoncincoTentativas").className = "objetos";
+            document.getElementById('buttoncincoTentativas').disabled = true;
+            document.getElementById('buttoncincoTentativas').className = 'objetos';
             while(tentativa <= 5) {
                     chute = prompt('DIGITE um numero de 1 a 9 ' );
                 if (isNaN(chute)) {
                     alert('Voce digitou : ' + chute + ' . Digite apenas numeros.');                   
                 } else if (chute == segredo) {                    
-                    buttoncincoTentativas.insertAdjacentText("afterEnd", '\n ACERTOU o NÚMERO é : ' + segredo + '\n \n');
+                    buttoncincoTentativas.insertAdjacentText('afterEnd', '\n ACERTOU o NÚMERO é : ' + segredo + '\n \n');
                     alert('Parabens, ACERTOU');               
                     break;
                 } else if (chute > segredo) {
@@ -288,8 +288,8 @@ function batimentos() {
                     tentativa ++;
                 if (tentativa >= 6 ) {
                     console.group();
-                    console.warnr('%c O numero é : ' + segredo , "background: #fff; color: #00F");
-                    console.error('%c 5 Chances ESGOTADAS ' , "background: #FF0000; color: #FFF");
+                    console.warnr('%c O numero é : ' + segredo , 'background: #fff; color: #00F');
+                    console.error('%c 5 Chances ESGOTADAS ' , 'background: #FF0000; color: #FFF');
                     console.groupEnd();
                     buttoncincoTentativas.appendChild(document.createTextNode(' ESGOTADAS. '));
                 }                                           
@@ -300,13 +300,13 @@ function batimentos() {
 
         function ateAcertar() {
             let deumaseis = Math.round(Math.random() * 6);
-            document.getElementById("buttonAteAcertar").disabled = true;
-            document.getElementById("buttonAteAcertar").className = "objetos";                                          
+            document.getElementById('buttonAteAcertar').disabled = true;
+            document.getElementById('buttonAteAcertar').className = 'objetos';
             while(chute != deumaseis) {
                     chute = prompt('ESCOLHA um numero de 0 ate 6' );
                 if(chute == deumaseis) {
-                    console.log('%c ACERTOU : O numero é : ' + deumaseis, "background: #000; color: #FF0");
-                    buttonAteAcertar.insertAdjacentText("afterEnd", '\n ACERTOU o NÚMERO é : ' + deumaseis + '\n \n');
+                    console.log('%c ACERTOU : O numero é : ' + deumaseis, 'background: #000; color: #FF0');
+                    buttonAteAcertar.insertAdjacentText('afterEnd', '\n ACERTOU o NÚMERO é : ' + deumaseis + '\n \n');
                     alert('Parabens, ACERTOU');
                     break;
                 } else if (chute > deumaseis) {
@@ -326,7 +326,7 @@ function batimentos() {
         mostrar.insertAdjacentText('afterBegin', '\n NÚMEROS DIGITADOS : \n \n' );
         codigoGithub.innerHTML = '';
         codigoGithub.appendChild(document.createTextNode('Abrir o Codigo Numero Pensado no GitHub \n'));
-        codigoGithub.href = "https://github.com/improgram/casadocodigo/blob/master/Capitulo5/044Topico5.11_Exerci1_2_3.html \n";
+        codigoGithub.href = 'https://github.com/improgram/casadocodigo/blob/master/Capitulo5/044Topico5.11_Exerci1_2_3.html \n';
         resultado();
     }                                                           
   
@@ -341,121 +341,147 @@ function batimentos() {
             buttonQuadrado.appendChild(document.createTextNode('Criar Quadrado'));
             buttonQuadrado.setAttribute('id', 'buttonQuadrado');
             buttonQuadrado.className = 'buttonResult';
-            buttonQuadrado.addEventListener("click", desenharQuadrado);
+            buttonQuadrado.addEventListener('click', desenharQuadrado);
             titulo.appendChild(buttonQuadrado);
         let buttonTabela = document.createElement('button');
             buttonTabela.appendChild(document.createTextNode('Criar Tabela'));
             buttonTabela.setAttribute('id', 'buttonTabela');
             buttonTabela.className = 'buttonResult';
-            buttonTabela.addEventListener("click", criarTabela);
+            buttonTabela.addEventListener('click', criarTabela);
             titulo.appendChild(buttonTabela);
         let buttonCrescente = document.createElement('button');
             buttonCrescente.appendChild(document.createTextNode('Coluna Crescente'));
             buttonCrescente.setAttribute('id', 'buttonCrescente');
             buttonCrescente.className = 'buttonResult';
-            buttonCrescente.addEventListener("click", crescente);
+            buttonCrescente.addEventListener('click', crescente);
             titulo.appendChild(buttonCrescente);
         let buttonV = document.createElement('button');
             buttonV.appendChild(document.createTextNode('V de Vingança'));
             buttonV.setAttribute('id', 'buttonV');
             buttonV.className = 'buttonResult';
-            buttonV.addEventListener("click", desenharV);
+            buttonV.addEventListener('click', desenharV);
             titulo.appendChild(buttonV);
+        let buttonPiramide = document.createElement('button');
+            buttonPiramide.appendChild(document.createTextNode('Piramide'));
+            buttonPiramide.setAttribute('id', 'buttonPiramide');
+            buttonPiramide.className = 'buttonResult';
+            buttonPiramide.addEventListener('click', desenharPiramide);
+            titulo.appendChild(buttonPiramide);
+        let conteudo = '';
+        let estrela = '&#9733';   
 
         function desenharQuadrado () {
-            document.getElementById("buttonQuadrado").disabled = true;
-            document.getElementById("buttonQuadrado").className = "imc";
+            document.getElementById('buttonQuadrado').disabled = true;
+            document.getElementById('buttonQuadrado').className = 'imc';
             let lin = Number (prompt('Numero de Linhas') );
             let col = Number (prompt('Numero de Colunas') );
             let quadrado = '\n Quantidade de linhas: ' + lin + '\n' +
                             'Quantidade de Colunas: ' + col + '\n';
-            mostrar.textContent = quadrado + '\n';                            
-            let estrela = "&#9733";
-            let txt = "";
+            mostrar.textContent = quadrado + '\n';
+            let txt = '';
                 for (let linha=1; linha<= lin; linha++){
                     for (let coluna=1; coluna<= col; coluna++){
-                        txt += estrela + " ";
+                        txt += estrela + ' ';
                     }
                     txt += '\n';
                 }
-            mostrar.insertAdjacentElement("beforeEnd", buttonQuadrado);
-            document.getElementById("buttonQuadrado").innerHTML = txt;
+            mostrar.insertAdjacentElement('beforeEnd', buttonQuadrado);
+            document.getElementById('buttonQuadrado').innerHTML = txt;
         }            
             
-        function criarTabela () {                    // <font color="teal">
-            document.getElementById("buttonTabela").disabled = true;
-            document.getElementById("buttonTabela").className = "objetos";
+        function criarTabela () {
+            document.getElementById('buttonTabela').disabled = true;
+            document.getElementById('buttonTabela').className = 'objetos';
             let tabela = document.createElement('table');
-                tabela.setAttribute('id', 'tabela');
-            let linha1 = Number(prompt("Digite a quantidade de linha"));
-            let coluna1 = Number(prompt("Digite a quantidade de coluna"));
+                tabela.setAttribute('border', '3');
+            let tbody = document.createElement('tbody');
+            let linha1 = prompt('Digite a quantidade de linha');
+            let coluna1 = prompt('Digite a quantidade de coluna');
             let tamanho = ' Quantidade de linhas : ' + linha1 + '\n' +
                           ' Quantidade de colunas : ' + coluna1 + '\n \n';
-            mostrar.textContent = tamanho + ' \n TABELA \n \n';
+                mostrar.textContent = tamanho + 'TABELA \n \n';
             if (isNaN(linha1, coluna1)) {
                 alert('ERRO : Digite apenas numeros.');
-                console.error('Nao foi digitado um Numero.');
-                mostrar.textContent = tamanho + ' \n Não foi digitado um numero.';
-            }   
-            let conteudo = "";
-            conteudo += "<table border='1'>";
-            for (let i = 1; i <= linha1; i++) {
-                conteudo += "<tr style = 'border: 1px solid #5882FA;'>";
-                for (let j = 1; j <= coluna1; j++) {
-                    if (j % 2 == 0) {       // Se For numero PAR
-                        conteudo += "<td style = 'border: 2px solid #F7FE2E; width: 20px;' >" + i + "</td>";
-                        console.log(' Numero é PAR: ' + j);
-                    } else {
-                        conteudo += "<td style = 'border: 2px solid #0C0C; width: 20px;'>" + i + "</td>";
-                        console.warn(' Numero é IMPAR: ' + j);
-                    }
+                console.error('Nao foi digitado um Numero.');               
+                mostrar.textContent = '\n Não foi digitado um numero: \n' + linha1 + '\n' + coluna1;
+            }  
+            for (let i = 0; i < linha1; i++) {
+                let tr = document.createElement('tr');   // tr => linha da tabela 
+                    tr.style = 'border: 1px solid #00FF00';
+                for (let j = 0; j < coluna1; j++) {
+                    let td = document.createElement('td');  // td => celula
+                        //td.style = 'border: 1px solid #5882FA';
+                    let cellText = document.createTextNode(`linha ${i}, coluna ${j}`);
+                    td.appendChild(cellText);
+                    tr.appendChild(td);
                 }
-                conteudo += "</tr>";
+                tbody.appendChild(tr);               
             }
-            conteudo += "</table>";
-            mostrar.insertAdjacentElement("beforeEnd", tabela);     
-            tabela.insertAdjacentHTML("beforeEnd", conteudo );
+            let imgTabela = document.createElement('img');
+            imgTabela.setAttribute('src', 'https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Traversing_an_HTML_table_with_JavaScript_and_DOM_Interfaces/sample1-tabledom.jpg');
+        
+            tabela.appendChild(tbody);
+            mostrar.insertAdjacentElement('beforeEnd', tabela);
+            mostrar.insertAdjacentElement('afterEnd', imgTabela);
+            tabela.insertAdjacentHTML('beforeEnd', conteudo);
         }                                    
 
-        /* Quando mudamos de coluna < 10 para coluna < Linha, 
-        a variavel coluna so vai andar de 0 ate o valor da Linha atual.
-        isso é, (na Linha 3 vai de 0 a 2), (na Linha 4 vai de 0 a 3) e assim por diante. 
-        Assim voce cria uma relacao entre quantas colunas devem ser percorridas e a Linha atual. */
-
         function crescente () {                 /* Desafio Coluna crescente até 6*/
-            document.getElementById("buttonCrescente").disabled = true;
-            document.getElementById("buttonCrescente").className = "objetos";
-            mostrar.textContent = ' Criar Coluna Crescente \n';
-            for (let linha2=0; linha2<6; linha2=linha2 + 1) {
-                for (let coluna2=0; coluna2<linha2; coluna2=coluna2 + 1) {
-                    console.log(' * ');
-                    //mostrar.textContent = ' * \n';
-                }
-                console.log('<br>');
-                //mostrar.textContent = ' | \n';
+            document.getElementById('buttonCrescente').disabled = true;
+            document.getElementById('buttonCrescente').className = 'objetos';
+            mostrar.textContent = ' Cria Coluna Crescente \n';
+            let caracter = 'x';         // Caracter que deseja imprimir.
+            let resultado = '';         // Variável para armazenar o resultado e imprimir.
+            for (let i = 0; i < 5; i++) {   
+                resultado+= caracter;
+                document.getElementById('crescente2').innerHTML += resultado + '<br>';
+                console.log(resultado);
             }
         }
 
-        function desenharV () {             // <font color="cerulean">                 
-            for (let linha3 = 1; linha3 <= 5; linha3++) {
-                for (let coluna3 = 1; coluna3 < 10; coluna3++) {
-                    if (linha3 == coluna3 || linha3 == 10 - coluna3) {
-                        console.log("*");
-                    } else 
-                    console.log("_");
+        function desenharV () {
+            document.getElementById('buttonV').disabled = true;
+            document.getElementById('buttonV').className = 'objetos';
+            mostrar.textContent = 'Desenho de um V \n';
+            let v = '||';
+            let t = '_';
+            for (let linhaV = 1; linhaV <= 5; linhaV++) {
+                for (let colunaV = 1; colunaV < 10; colunaV++) {
+                    if (linhaV == colunaV || linhaV == 10 - colunaV) { // Se linha = coluna OU linha = 10 - coluna
+                        document.getElementById('v').innerHTML += v;   // linha = coluna entao ID igual a ||
+                    } else                                      
+                    document.getElementById('v').innerHTML += t;        // linha nao igual a coluna entao ID igual a _
                 }
-                console.log("<br>");
+            document.getElementById('v').innerHTML += '<br />';   // finalizado loop em 10 colunas ele pula até a linha limite: 5
             }
         }
 
-      
+        function desenharPiramide () {
+            document.getElementById('buttonPiramide').disabled = true;
+            document.getElementById('buttonPiramide').className = 'objetos';
+            mostrar.textContent = 'Desenho de uma Piramide \n';
+            let aux = '';
+            for (let linha = 1; linha <= 5; linha++) {
+                for(let coluna = 1; coluna <= linha; coluna++) {
+                    if (coluna == linha) {         
+                    aux += estrela;
+                    console.log('piramide');
+                    document.getElementById('piramide').innerHTML += aux + '<br />'; // '\n' -> NAO
+                    } else {
+                    console.log('pular Linha');
+                    }   
+                }
+            }
+        }
+
+        mostrar.insertAdjacentText('afterBegin', '\n RESULTADO AQUI \n \n' );
         codigoGithub.innetHTML = '';
         codigoGithub.appendChild(document.createTextNode('\n Abrir o Codigo Linhas e Colunas no GitHub \n'));    
-        codigoGithub.href = "https://github.com/improgram/casadocodigo/blob/master/Capitulo5/045Topico5.12.html \n";
+        codigoGithub.href = 'https://github.com/improgram/casadocodigo/blob/master/Capitulo5/045Topico5.12.html \n';
     resultado();    
 }
 
-
+// https://www.w3schools.com/charsets/ref_utf_symbols.asp
 
 
 /* PAREI AQUI Mega-Sena
