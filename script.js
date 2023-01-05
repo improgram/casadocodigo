@@ -378,28 +378,28 @@ function batimentos() {
             let quadrado = '\n Quantidade de linhas: ' + lin + '\n' +
                             'Quantidade de Colunas: ' + col + '\n';
             mostrar.textContent = quadrado + '\n';
-            let txt = '';
-                for (let linha=1; linha<= lin; linha++){
-                    for (let coluna=1; coluna<= col; coluna++){
-                        txt += estrela + ' ';
-                    }
-                    txt += '\n';
+            for (let linha=1; linha<= lin; linha++){
+                for (let coluna=1; coluna<= col; coluna++){
+                    conteudo += estrela + ' ';
                 }
-            mostrar.insertAdjacentElement('beforeEnd', buttonQuadrado);
-            document.getElementById('buttonQuadrado').innerHTML = txt;
+                conteudo += '\n';        }
+            mostrar.insertAdjacentHTML('beforeEnd', conteudo);
         }            
             
         function criarTabela () {
             document.getElementById('buttonTabela').disabled = true;
-            document.getElementById('buttonTabela').className = 'objetos';
+            document.getElementById('buttonTabela').className = 'imc';
             let tabela = document.createElement('table');
-                tabela.setAttribute('border', '3');
+                tabela.setAttribute('border', '4');
+                tabela.style = 'border: 1px solid #5882FA';
             let tbody = document.createElement('tbody');
+            let imgTabela = document.createElement('img');
+                imgTabela.style = 'border: 2px solid #D20';
+                imgTabela.setAttribute('src', 'https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Traversing_an_HTML_table_with_JavaScript_and_DOM_Interfaces/sample1-tabledom.jpg');
             let linha1 = prompt('Digite a quantidade de linha');
             let coluna1 = prompt('Digite a quantidade de coluna');
             let tamanho = ' Quantidade de linhas : ' + linha1 + '\n' +
-                          ' Quantidade de colunas : ' + coluna1 + '\n \n';
-                mostrar.textContent = tamanho + 'TABELA \n \n';
+                          ' Quantidade de colunas : ' + coluna1 + '\n \n';       
             if (isNaN(linha1, coluna1)) {
                 alert('ERRO : Digite apenas numeros.');
                 console.error('Nao foi digitado um Numero.');               
@@ -410,23 +410,19 @@ function batimentos() {
                     tr.style = 'border: 1px solid #00FF00';
                 for (let j = 0; j < coluna1; j++) {
                     let td = document.createElement('td');  // td => celula
-                        //td.style = 'border: 1px solid #5882FA';
                     let cellText = document.createTextNode(`linha ${i}, coluna ${j}`);
                     td.appendChild(cellText);
                     tr.appendChild(td);
                 }
                 tbody.appendChild(tr);               
             }
-            let imgTabela = document.createElement('img');
-            imgTabela.setAttribute('src', 'https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Traversing_an_HTML_table_with_JavaScript_and_DOM_Interfaces/sample1-tabledom.jpg');
-        
+            mostrar.textContent = tamanho + 'TABELA \n \n';
             tabela.appendChild(tbody);
             mostrar.insertAdjacentElement('beforeEnd', tabela);
-            mostrar.insertAdjacentElement('afterEnd', imgTabela);
-            tabela.insertAdjacentHTML('beforeEnd', conteudo);
+            tabela.insertAdjacentElement('afterEnd', imgTabela);
         }                                    
 
-        function crescente () {                 /* Desafio Coluna crescente até 6*/
+        function crescente () {                 /* Desafio Coluna crescente até 6 */
             document.getElementById('buttonCrescente').disabled = true;
             document.getElementById('buttonCrescente').className = 'objetos';
             mostrar.textContent = ' Cria Coluna Crescente \n';
