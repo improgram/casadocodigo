@@ -382,7 +382,8 @@ function batimentos() {
                 for (let coluna=1; coluna<= col; coluna++){
                     conteudo += estrela + ' ';
                 }
-                conteudo += '\n';        }
+                conteudo += '\n';    
+            }
             mostrar.insertAdjacentHTML('beforeEnd', conteudo);
         }            
             
@@ -422,39 +423,47 @@ function batimentos() {
             tabela.insertAdjacentElement('afterEnd', imgTabela);
         }                                    
 
-        function crescente () {                 /* Desafio Coluna crescente até 6 */
+        function crescente () {                         // Desafio Coluna crescente até 6
             document.getElementById('buttonCrescente').disabled = true;
-            document.getElementById('buttonCrescente').className = 'objetos';
-            mostrar.textContent = ' Cria Coluna Crescente \n';
-            let caracter = 'x';         // Caracter que deseja imprimir.
-            let resultado = '';         // Variável para armazenar o resultado e imprimir.
-            for (let i = 0; i < 5; i++) {   
-                resultado+= caracter;
-                document.getElementById('crescente2').innerHTML += resultado + '<br>';
+            document.getElementById('buttonCrescente').className = 'imc';
+            mostrar.textContent = ' Cria Coluna Crescente \n \n';
+            let caracter = ' | ';                       // Caracter que deseja imprimir.
+            let resultado = '';                         // Variável para armazenar o resultado e imprimir.
+            for (let i = 0; i < 5; i++) { 
+                resultado += caracter + '';
+                //conteudo += caracter + '\n';               
+                //conteudo += estrela + '\n';
+                //console.log(conteudo);
                 console.log(resultado);
+                mostrar.insertAdjacentHTML('beforeEnd', resultado);
             }
+            resultado += '\n';
+            //conteudo += '\n';
+            // conteudo += resultado + '\n';
+            //mostrar.insertAdjacentHTML('beforeEnd', resultado);
         }
 
         function desenharV () {
             document.getElementById('buttonV').disabled = true;
-            document.getElementById('buttonV').className = 'objetos';
+            document.getElementById('buttonV').className = 'imc';
             mostrar.textContent = 'Desenho de um V \n';
             let v = '||';
             let t = '_';
             for (let linhaV = 1; linhaV <= 5; linhaV++) {
                 for (let colunaV = 1; colunaV < 10; colunaV++) {
-                    if (linhaV == colunaV || linhaV == 10 - colunaV) { // Se linha = coluna OU linha = 10 - coluna
+                    if (linhaV == colunaV || linhaV == 10 - colunaV) { // Se linha = coluna ou linha = 10 - coluna
+                        
                         document.getElementById('v').innerHTML += v;   // linha = coluna entao ID igual a ||
                     } else                                      
                     document.getElementById('v').innerHTML += t;        // linha nao igual a coluna entao ID igual a _
                 }
-            document.getElementById('v').innerHTML += '<br />';   // finalizado loop em 10 colunas ele pula até a linha limite: 5
+            //document.getElementById('v').innerHTML += '<br />';   // finalizado loop em 10 colunas ele pula até a linha limite: 5
             }
         }
 
         function desenharPiramide () {
             document.getElementById('buttonPiramide').disabled = true;
-            document.getElementById('buttonPiramide').className = 'objetos';
+            document.getElementById('buttonPiramide').className = 'imc';
             mostrar.textContent = 'Desenho de uma Piramide \n';
             let aux = '';
             for (let linha = 1; linha <= 5; linha++) {
@@ -477,291 +486,265 @@ function batimentos() {
     resultado();    
 }
 
-// https://www.w3schools.com/charsets/ref_utf_symbols.asp
-
-
 /* PAREI AQUI Mega-Sena
 
-let buttonMegaSena = document.getElementById('megaSena');
-    buttonMegaSena.addEventListener("click", megasena);
-
-    function megasena(){
-        titulo.textContent = '';
-        console.log('teste Mega Sena');
-        let codMegasena = document.createElement('a');
-            codigoGithub.text = '\n Abrir o Codigo no GitHub';
-            codigoGithub.setAttribute('href', "https://github.com/improgram/casadocodigo/blob/master/Capitulo6/051Topico6.4_Opcao2.html \n");
-            codigoGithub.setAttribute('target', "_blank");        
-
-            buttonMegaSena.insertAdjacentElement("before", codMegasena);
+let buttonMegaSena = document.getElementByClassName('megaSena');
+    for (let elementMegaSena of buttonMegaSena) {
+        elementMegaSena.onclick = megaSena;
+    }
+    function megaSena(){
+        titulo.textContent = 'Mega-Sena';
+        mostrar.textContent = 'Mega-Sena \n';
+        codigoGithub.innerHTML = '';
+        codigoGithub.appendChild(document.createTextNode('\n Abrir o Codigo Mega Sena no GitHub \n'));
+        codigoGithub.href = 'https://github.com/improgram/casadocodigo/blob/master/Capitulo6/051Topico6.4_Opcao2.html \n';
     resultado();
     }
 
-//Introducao Canvas
-let buttonCanvas = document.getElementById('canvas');
-    buttonCanvas.addEventListener("click", introCanvas);
 
+// Introducao Canvas
+let buttonCanvas = document.getElementByClassName('canvasLearning');
+    for (let elementIntroCanvas of buttonCanvas) {
+        elementIntroCanvas.onclick = introCanvas;
+    }
     function introCanvas() {
-        
-        let codIntroCanvas = document.createElement('a');
-            codigoGithub.text = '\n Abrir o Codigo no GitHub';
-            codigoGithub.setAttribute('href', "https://github.com/improgram/casadocodigo/blob/master/Capitulo7/055Topico7.2.html \n");
-            codigoGithub.setAttribute('target', "_blank");
-
-            buttonCanvas.insertAdjacentElement("before", codIntroCanvas);
+        titulo.textContent = 'Canvas Learning';
+        mostrar.textContent = 'Canvas Learning \n';
+        codigoGithub.innerHTML = '';
+        codigoGithub.appendChild(document.createTextNode('\n Abrir o Codigo Canvas Learning no GitHub \n'));
+        codigoGithub.href = 'https://github.com/improgram/casadocodigo/blob/master/Capitulo7/055Topico7.2.html \n';
     resultado();
     }
 
-//Tabuleiro Damas
-let buttonDamas = document.getElementById('damas');
-    buttonDamas.addEventListener("click", damas);
 
+// Tabuleiro Damas
+let buttonDamas = document.getElementByClassName('damas');
+    for (let elementButtonDamas of buttonDamas){
+        elementButtonDamas.onclick = damas;
+    }
     function damas(){
-        console.log('teste damas');
-        let codDamas = document.createElement('a');
-            codigoGithub.text = '\n Abrir o Codigo no GitHub';
-            codigoGithub.setAttribute('href', "https://github.com/improgram/casadocodigo/blob/master/Capitulo7/056Topico7.3_Tabuleiro.html \n");
-            codigoGithub.setAttribute('target', "_blank");
-
-        buttonDamas.insertAdjacentElement("before", codDamas);
+        titulo.textContent = '';
+        mostrar.textContent = ' \n';
+        codigoGithub.innerHTML = '';
+        codigoGithub.appendChild(document.createTextNode('\n Abrir o Codigo --- no GitHub \n'));
+        codigoGithub.href = 'https://github.com/improgram/casadocodigo/blob/master/Capitulo7/056Topico7.3_Tabuleiro.html \n';
     resultado();
     }
 
-//Bandeiras com Canvas
-let buttonBandeiras = document.getElementById('bandeiras');
-    buttonBandeiras.addEventListener("click", bandeiras);
-
+// Bandeiras com Canvas
+let buttonBandeiras = document.getElementByClassName('bandeiras');
+    for (let elementBandeiras of buttonBandeiras) {
+        elementBandeiras.onclick = bandeiras;
+    }
     function bandeiras() {
-        let codBandeiras = document.createElement('a');
-            codigoGithub.text = '\n Abrir o Codigo no GitHub';
-            codigoGithub.setAttribute('href', "https://github.com/improgram/casadocodigo/blob/master/Capitulo7/057Topico7.4_Bandeiras.html \n");
-            codBandeiras.setAttribute('target', "_blank");
-
-            buttonBandeiras.insertAdjacentElement("before", codBandeiras);
+        titulo.textContent = '';
+        mostrar.textContent = ' \n';
+        codigoGithub.innerHTML = '';
+        codigoGithub.appendChild(document.createTextNode('\n Abrir o Codigo --- no GitHub \n'));
+        codigoGithub.href = 'https://github.com/improgram/casadocodigo/blob/master/Capitulo7/057Topico7.4_Bandeiras.html \n';
     resultado();
     }
 
 //Canvas com Condicionais
-let buttonCondicionais = document.getElementById('canvasCondicionais');
-    buttonCondicionais.addEventListener("click", canvasCondicionais);
-
+let buttonCondicionais = document.getElementByClassName('canvasCondicionais');
+    for (let elementCondicionais of buttonCondicionais){
+        elementCondicionais.onclick = canvasCondicionais;
+    }    
     function canvasCondicionais(){
-        console.log('canvas condicionais')
-
-    let codCondicionais = document.createElement('a');
-        codigoGithub.text = '\n Abrir o Codigo no GitHub';
-        codigoGithub.setAttribute('href', "https://github.com/improgram/casadocodigo/blob/master/Capitulo7/062Topico7.6_Exercicio4.html \n");
-        codigoGithub.setAttribute('target', "_blank");
-
-    buttonCondicionais.insertAdjacentElement("before", codCondicionais);
+        titulo.textContent = '';
+        mostrar.textContent = ' \n';
+        codigoGithub.innerHTML = '';
+        codigoGithub.appendChild(document.createTextNode('\n Abrir o Codigo --- no GitHub \n'));
+        codigoGithub.href = 'https://github.com/improgram/casadocodigo/blob/master/Capitulo7/062Topico7.6_Exercicio4.html \n';
     resultado();
     }
 
 //Canvas Ordem crescente
-let buttonCrescente = document.getElementById('canvasCrescente');
-    buttonCrescente.addEventListener("click", canvasCrescente);
-
+let buttonCrescente = document.getElementByClassName('canvasCrescente');
+    for (let elementCanvasCrescente of buttonCrescente) {
+        elementCanvasCrescente.onclick = canvasCrescente;
+    }
     function canvasCrescente(){
-        console.log('canvas crescente')
-    let codCanvasCrescente = document.createElement('a');
-        codigoGithub.text = '\n Abrir o Codigo no GitHub';
-        codigoGithub.setAttribute('href', "https://github.com/improgram/casadocodigo/blob/master/Capitulo7/063Topico7.7.html \n");
-        codigoGithub.setAttribute('target', "_blank");
-
-    buttonCrescente.insertAdjacentElement("before", codCanvasCrescente);
+        titulo.textContent = '';
+        mostrar.textContent = ' \n';
+        codigoGithub.innerHTML = '';
+        codigoGithub.appendChild(document.createTextNode('\n Abrir o Codigo --- no GitHub \n'));
+        codigoGithub.href = 'https://github.com/improgram/casadocodigo/blob/master/Capitulo7/063Topico7.7.html \n';
     resultado();    
     }
 
 //Canvas Parabola
-let buttonParabola = document.getElementById('canvasParabola');
-    buttonParabola.addEventListener("click", canvasParabola)
-
+let buttonParabola = document.getElementByClassName('canvasParabola');
+    for (let elementCanvasParabola of buttonParabola) {
+        elementCanvasParabola.onclick = canvasParabola;
+    }
     function canvasParabola(){
-    console.log('canvas parabola')
-
-    let codParabola = document.createElement('a');
-        codigoGithub.text = '\n Abrir o Codigo no GitHub';
-        codigoGithub.setAttribute('href', "https://github.com/improgram/casadocodigo/blob/master/Capitulo7/065Topico7.9_Parabola.html \n");
-        codigoGithub.setAttribute('target', "_blank");
-
-    buttonParabola.insertAdjacentElement("before", codParabola);
+        titulo.textContent = '';
+        mostrar.textContent = ' \n';
+        codigoGithub.innerHTML = '';
+        codigoGithub.appendChild(document.createTextNode('\n Abrir o Codigo --- no GitHub \n'));
+        codigoGithub.href = 'https://github.com/improgram/casadocodigo/blob/master/Capitulo7/065Topico7.9_Parabola.html \n';
     resultado();
     }
 
 //Calculo do Seno com Canvas
-let buttonSeno = document.getElementById('seno');
-    buttonSeno.addEventListener("click", seno)
-
+let buttonSeno = document.getElementByClassName('seno');
+    for (let elementSeno of buttonSeno) {
+        elementSeno.onclick = seno;
+    }
     function seno(){
-        console.log('seno');
-
-    let codSeno = document.createElement('a');
-        codigoGithub.text = '\n Abrir o Codigo no GitHub';
-        codigoGithub.setAttribute('href', "https://github.com/improgram/casadocodigo/blob/master/Capitulo7/069Topico7.13_Seno.html \n");
-        codigoGithub.setAttribute('target', "_blank");
-
-    buttonSeno.insertAdjacentElement("before", codSeno);
+        titulo.textContent = '';
+        mostrar.textContent = ' \n';
+        codigoGithub.innerHTML = '';
+        codigoGithub.appendChild(document.createTextNode('\n Abrir o Codigo --- no GitHub \n'));
+        codigoGithub.href = 'https://github.com/improgram/casadocodigo/blob/master/Capitulo7/069Topico7.13_Seno.html \n';
     resultado();
     }
 
 // Detecta cliques:
-let buttonClique = document.getElementById('cliques');
-    buttonClique.addEventListener("click", detectaClique)
-
+let buttonClique = document.getElementByClassName('cliques');
+    for (let elementDetectaClique of buttonClique) {
+        elementDetectaClique.onclick = detectaClique;
+    }
     function detectaClique(){
-        console.log('test detecta clique')
-
-    let codClique = document.createElement('a');
-        codigoGithub.text = '\n Abrir o Codigo no GitHub';
-        codigoGithub.setAttribute('href', "https://github.com/improgram/casadocodigo/blob/master/Capitulo8/070Topico8.1_Com_Alert.html \n");
-        codigoGithub.setAttribute('target', "_blank");
-
-    buttonClique.insertAdjacentElement("before", codClique);
+        titulo.textContent = '';
+        mostrar.textContent = ' \n';
+        codigoGithub.innerHTML = '';
+        codigoGithub.appendChild(document.createTextNode('\n Abrir o Codigo --- no GitHub \n'));
+        codigoGithub.href = 'https://github.com/improgram/casadocodigo/blob/master/Capitulo8/070Topico8.1_Com_Alert.html \n';
     resultado();
     }
 
 // Detecta botao Mouse:
-let buttonMouse = document.getElementById('botaoMouse');
-    buttonMouse.addEventListener("click", mouse)
-
+let buttonMouse = document.getElementByClassName('botaoMouse');
+    for (let elementMouse of buttonMouse) {
+        elementMouse.onclick = mouse;
+    }
     function mouse(){
-        console.log('test mouse')
-
-    let codMouse = document.createElement('a');
-        codigoGithub.text = '\n Abrir o Codigo no GitHub';
-        codigoGithub.setAttribute('href', "https://github.com/improgram/casadocodigo/blob/master/Capitulo8/071Topico8.2_Exercicio1.html \n");
-        codigoGithub.setAttribute('target', "_blank");
-
-    buttonMouse.insertAdjacentElement("before", codMouse);
+        titulo.textContent = '';
+        mostrar.textContent = ' \n';
+        codigoGithub.innerHTML = '';
+        codigoGithub.appendChild(document.createTextNode('\n Abrir o Codigo --- no GitHub \n'));
+        codigoGithub.href = 'https://github.com/improgram/casadocodigo/blob/master/Capitulo8/071Topico8.2_Exercicio1.html \n';
     resultado();
     }
 
 // Paint com Canvas:
-let buttonPaint = document.getElementById('paint');
-    buttonPaint.addEventListener("click", paint)
-
+let buttonPaint = document.getElementByClassName('paint');
+    for(let elementPaint of buttonPaint) {
+        elementPaint.onclick = paint;
+    }
     function paint(){
-        console.log('test paint')
-
-    let codPaint = document.createElement('a');
-        codigoGithub.text = '\n Abrir o Codigo no GitHub';
-        codigoGithub.setAttribute('href', "https://github.com/improgram/casadocodigo/blob/master/Capitulo8/073Topico8.2_Paint_Canvas_Exerci3.html \n");
-        codigoGithub.setAttribute('target', "_blank");
-
-    buttonPaint.insertAdjacentElement("before", codPaint);
+        titulo.textContent = '';
+        mostrar.textContent = ' \n';
+        codigoGithub.innerHTML = '';
+        codigoGithub.appendChild(document.createTextNode('\n Abrir o Codigo --- no GitHub \n'));
+        codigoGithub.href = 'https://github.com/improgram/casadocodigo/blob/master/Capitulo8/073Topico8.2_Paint_Canvas_Exerci3.html \n';
     resultado();
     }
+
 
 // CanvasaAnimacoes:
-let buttonAnimacoes = document.getElementById('animacoes');
-    buttonAnimacoes.addEventListener("click", CanvasAnimacoes)
-
-    function CanvasAnimacoes(){
-        console.log('test Canvas Animacoes')
-
-    let codAnimacoes = document.createElement('a');
-        codigoGithub.text = '\n Abrir o Codigo no GitHub';
-        codigoGithub.setAttribute('href', "https://github.com/improgram/casadocodigo/blob/master/Capitulo8/075Topico8.4.html \n");
-        codigoGithub.setAttribute('target', "_blank");
-
-    buttonAnimacoes.insertAdjacentElement("before", codAnimacoes);
+let buttonAnimacoes = document.getElementByClassName('animacoes');
+    for (let elementCanvasAnimacoes of buttonAnimacoes) {
+        elementCanvasAnimacoes.onclick = canvasAnimacoes;
+    }
+    function canvasAnimacoes(){
+        titulo.textContent = '';
+        mostrar.textContent = ' \n';
+        codigoGithub.innerHTML = '';
+        codigoGithub.appendChild(document.createTextNode('\n Abrir o Codigo --- no GitHub \n'));
+        codigoGithub.href = 'https://github.com/improgram/casadocodigo/blob/master/Capitulo8/075Topico8.4.html \n';
     resultado();
     }
+
 
 // CODIGO Tiro ao alvo:
-let buttonAlvo = document.getElementById('tiroAlvo');
-    buttonAlvo.addEventListener("click", tiroAlvo)
-
+let buttonAlvo = document.getElementByClassName('tiroAlvo');
+    for (let elementTiroAlvo of buttonAlvo) {
+        elementTiroAlvo.onclick = tiroAlvo;
+    }
     function tiroAlvo(){
-        console.log('test tiro Alvo')
-
-    let codTiroAlvo = document.createElement('a');
-        codigoGithub.text = '\n Abrir o Codigo no GitHub';
-        codigoGithub.setAttribute('href', "https://github.com/improgram/casadocodigo/blob/master/Capitulo8/079Topico8.5_opcao2.html \n");
-        codigoGithub.setAttribute('target', "_blank");
-
-    buttonAlvo.insertAdjacentElement("before", codTiroAlvo);
+        titulo.textContent = '';
+        mostrar.textContent = ' \n';
+        codigoGithub.innerHTML = '';
+        codigoGithub.appendChild(document.createTextNode('\n Abrir o Codigo --- no GitHub \n'));
+        codigoGithub.href = 'https://github.com/improgram/casadocodigo/blob/master/Capitulo8/079Topico8.5_opcao2.html \n';
     resultado();
     }
 
+
 // CODIGO Formulario com Eventos:
-let buttonFormEventos = document.getElementById('formEventos');
-    buttonFormEventos.addEventListener("click", formEventos)
-
+let buttonFormEventos = document.getElementByClassName('formEventos');
+    for (let elementFormEventos of buttonFormEventos) {
+        elementFormEventos.onclick = formEventos;
+    }
     function formEventos(){
-        console.log('test formEventos')
-
-    let codFormEventos = document.createElement('a');
-        codigoGithub.text = '\n Abrir o Codigo no GitHub';
-        codigoGithub.setAttribute('href', "https://github.com/improgram/casadocodigo/blob/master/Capitulo8/080Topico9.1.html \n");
-        codigoGithub.setAttribute('target', "_blank");
-
-    buttonFormEventos.insertAdjacentElement("before", codFormEventos);
+        titulo.textContent = '';
+        mostrar.textContent = ' \n';
+        codigoGithub.innerHTML = '';
+        codigoGithub.appendChild(document.createTextNode('\n Abrir o Codigo --- no GitHub \n'));
+        codigoGithub.href = 'https://github.com/improgram/casadocodigo/blob/master/Capitulo8/080Topico9.1.html \n';
     resultado();
     }
 
 //Formulario com Array:
-let buttonFormArray = document.getElementById('formArray');
-    buttonFormArray.addEventListener("click", formArray)
+let buttonFormArray = document.getElementByClassName('formArray');
+    for (let elementFormArray of buttonFormArray) {
+        elementFormArray.onclick = formArray;
+    }
 
     function formArray(){
-        console.log('test form Array');
-
-    let codFormArray = document.createElement('a');
-        codigoGithub.text = '\n Abrir o Codigo no GitHub';
-        codigoGithub.setAttribute('href', "https://github.com/improgram/casadocodigo/blob/master/Capitulo8/081Topico9.1_formulario_array.html \n");
-        codigoGithub.setAttribute('target', "_blank");
-
-    buttonFormArray.insertAdjacentElement("before", codFormArray);
+        titulo.textContent = '';
+        mostrar.textContent = ' \n';
+        codigoGithub.innerHTML = '';
+        codigoGithub.appendChild(document.createTextNode('\n Abrir o Codigo --- no GitHub \n'));
+        codigoGithub.href = 'https://github.com/improgram/casadocodigo/blob/master/Capitulo8/081Topico9.1_formulario_array.html \n';
     resultado();
     }
 
 // Codigo Objetos:
-let buttonObjetos = document.getElementById('objetos');
-    buttonObjetos.addEventListener("click", objetos)
-
+let buttonObjetos = document.getElementByClassName('objetos');
+    for (let elementObjetos of buttonObjetos) {
+        elementObjetos.onclick = objetos;
+    }
     function objetos(){
-        console.log('test objetos')
-
-    let codObjetos = document.createElement('a');
-        codigoGithub.text = '\n Abrir o Codigo no GitHub';
-        codigoGithub.setAttribute('href', "https://github.com/improgram/casadocodigo/blob/master/Capitulo8/083_Arrays.html \n");
-        codigoGithub.setAttribute('target', "_blank");
-
-    buttonObjetos.insertAdjacentElement("before", codObjetos);
+        titulo.textContent = '';
+        mostrar.textContent = ' \n';
+        codigoGithub.innerHTML = '';
+        codigoGithub.appendChild(document.createTextNode('\n Abrir o Codigo --- no GitHub \n'));
+        codigoGithub.href = 'https://github.com/improgram/casadocodigo/blob/master/Capitulo8/083_Arrays.html \n';
     resultado();
     }
 
+
 // CODIGO DOM:
-let buttonDom = document.getElementById('dom');
-    buttonDom.addEventListener("click", dom);
-
+let buttonDom = document.getElementByClassName('dom');
+    for (let elementDom of buttonDom) {
+        elementDom.onclick = dom;
+    }
     function dom(){
-        console.log('test dom')
-
-    let codDom = document.createElement('a');
-        codigoGithub.text = '\n Abrir o Codigo no GitHub';
-        codigoGithub.setAttribute('href', "https://github.com/improgram/casadocodigo/blob/master/Capitulo8/084Topico9.2_codigoGithubs.html \n");
-        codigoGithub.setAttribute('target', "_blank");
-
-    buttonDom.insertAdjacentElement("before", codDom);
+        titulo.textContent = '';
+        mostrar.textContent = ' \n';
+        codigoGithub.innerHTML = '';
+        codigoGithub.appendChild(document.createTextNode('\n Abrir o Codigo --- no GitHub \n'));
+        codigoGithub.href = 'https://github.com/improgram/casadocodigo/blob/master/Capitulo8/084Topico9.2_codigoGithubs.html \n';
     resultado();
     }
 
 // CODIGO IMC:
-let buttonImc = document.getElementById('imc');
-    buttonImc.addEventListener("click", imc);
+let buttonImc = document.getElementByClassName('imc');
+    for (let elementImc of buttonImc) {
+        elementImc.onclick = imc;
+    }
 
     function imc(){
-        console.log('test imc')
-
-    let codImc = document.createElement('a');
-        codigoGithub.text = '\n Abrir o Codigo no GitHub';
-        codigoGithub.setAttribute('href', "https://github.com/improgram/casadocodigo/blob/master/Capitulo8/085Topico9.3_IMC.html \n");
-        codigoGithub.setAttribute('target', "_blank");
-
-    buttonImc.insertAdjacentElement("before", codImc);
+        titulo.textContent = '';
+        mostrar.textContent = ' \n';
+        codigoGithub.innerHTML = '';
+        codigoGithub.appendChild(document.createTextNode('\n Abrir o Codigo --- no GitHub \n'));
+        codigoGithub.href = 'https://github.com/improgram/casadocodigo/blob/master/Capitulo8/085Topico9.3_IMC.html \n';
     resultado();
     }
 
-    */
+*/
