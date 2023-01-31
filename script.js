@@ -368,7 +368,7 @@ function batimentos() {
             buttonPiramide.addEventListener('click', desenharPiramide);
             titulo.appendChild(buttonPiramide);
         let conteudo = '';
-        let estrela = '&#9733';   
+        let estrela = '&#9733';
 
         function desenharQuadrado () {
             document.getElementById('buttonQuadrado').disabled = true;
@@ -395,8 +395,7 @@ function batimentos() {
                 tabela.style = 'border: 1px solid #5882FA';
             let tbody = document.createElement('tbody');
             let imgTabela = document.createElement('img');
-                imgTabela.style = 'border: 2px solid #D20';
-                imgTabela.setAttribute('src', 'https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Traversing_an_HTML_table_with_JavaScript_and_DOM_Interfaces/sample1-tabledom.jpg');
+                imgTabela.className = 'imgtabela';
             let linha1 = prompt('Digite a quantidade de linha');
             let coluna1 = prompt('Digite a quantidade de coluna');
             let tamanho = ' Quantidade de linhas : ' + linha1 + '\n' +
@@ -429,18 +428,15 @@ function batimentos() {
             mostrar.textContent = ' Cria Coluna Crescente \n \n';
             let caracter = ' | ';                       // Caracter que deseja imprimir.
             let resultado = '';                         // Variável para armazenar o resultado e imprimir.
-            for (let i = 0; i < 5; i++) { 
-                resultado += caracter + '';
-                //conteudo += caracter + '\n';               
-                //conteudo += estrela + '\n';
-                //console.log(conteudo);
+            let crescente = document.createElement('p');
+                crescente.setAttribute('id', 'crescente');
+            for (let i = 0; i < 5; i++) {
                 console.log(resultado);
-                mostrar.insertAdjacentHTML('beforeEnd', resultado);
+                resultado += caracter;
+                
+                    document.getElementById('crescente').innerHTML += resultado + '<br>';
+                // mostrar.insertAdjacentHTML('beforeEnd', resultado);
             }
-            resultado += '\n';
-            //conteudo += '\n';
-            // conteudo += resultado + '\n';
-            //mostrar.insertAdjacentHTML('beforeEnd', resultado);
         }
 
         function desenharV () {

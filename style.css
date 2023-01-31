@@ -213,7 +213,8 @@ margin: 0.1em 0.1em; } */
       rgb(221, 191, 191) 40%, rgb(187, 123, 123) 60%,
       orange 60%, orange 80%,
       rgb(235, 224, 235) 80%
-      );
+    );
+    background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     font-weight: 900;
@@ -225,7 +226,6 @@ margin: 0.1em 0.1em; } */
 
 .combustiveis {
     color:aquamarine;
-    font-family: trebuchet MS;
 }
 
 .mediaIdade {
@@ -244,6 +244,15 @@ margin: 0.1em 0.1em; } */
 
 .linhaColuna {
     color:rgba(214, 214, 55, 0.856);
+
+}
+
+.imgtabela {
+    border: 2px solid #D20;
+    height: 16em;
+    width: 26em;
+    margin-top: 7px;
+    background: url(https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Traversing_an_HTML_table_with_JavaScript_and_DOM_Interfaces/sample1-tabledom.jpg);
 }
 
 .megaSena {
@@ -254,20 +263,17 @@ margin: 0.1em 0.1em; } */
     color:#ece1de;
 }
 
-.damas {
-    color:#000;
+.damas {  
     background: linear-gradient(to right,
-        #ccc 10%,
-        #c8d6cc9a 20%,
-        #C9c9c9 30%,
-        #c8d6cc9a 40%,
-        #ccc 50%,
-        #8299a8 60%,
-        #C1c1c1 70%,
-        #c8d6cc9a 80%,
-        #C1c1c1 90%
+    rgb(234, 234, 241) 20%,
+    rgb(245, 247, 131) 20%, rgb(149, 247, 149) 40%,
+    rgb(221, 191, 191) 40%, rgb(240, 201, 201) 60%,
+    rgb(255, 238, 0) 60%, rgb(255, 251, 0) 80%,
+    rgb(235, 224, 235) 80%
     );
-    background-clip: border-box;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .bandeiras {
@@ -283,7 +289,7 @@ margin: 0.1em 0.1em; } */
 }
 
 .canvasParabola {
-    color:#a4a9aa;
+    color:#adcbd1;
 }
 
 .seno {
@@ -295,7 +301,7 @@ margin: 0.1em 0.1em; } */
 }
 
 .botaoMouse {
-    color:#5a9b77;
+    color:#0ae9b7;
 }
 
 .paint {
@@ -304,10 +310,13 @@ margin: 0.1em 0.1em; } */
 
 .animacoes {
     background: linear-gradient(to bottom,
-        #e8eeea 10%,
-        #0f0f0f 90%
+        #e8eeea 40%,
+        #0f0f0f 20%,
+        #e8eeea 40%
     );
-    background-clip: border-box;
+    background-clip: text; /* border-box; */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .tiroAlvo {
