@@ -329,7 +329,8 @@ function batimentos() {
         codigoGithub.href = 'https://github.com/improgram/casadocodigo/blob/master/Capitulo5/044Topico5.11_Exerci1_2_3.html \n';
         resultado();
     }                                                           
-  
+    
+    
 //Linhas e Colunas
     let buttonlinhaColuna = document.getElementsByClassName('linhaColuna');
     for(const elementLinhaColuna of buttonlinhaColuna) {
@@ -416,26 +417,28 @@ function batimentos() {
                 }
                 tbody.appendChild(tr);               
             }
-            mostrar.textContent = tamanho + 'TABELA \n \n';
-            tabela.appendChild(tbody);
+            mostrar.textContent = tamanho + 'TABELA \n \n';            
             mostrar.insertAdjacentElement('beforeEnd', tabela);
+            tabela.appendChild(tbody);
             tabela.insertAdjacentElement('afterEnd', imgTabela);
-        }                                    
-
-        function crescente () {                         // Desafio Coluna crescente até 6
+        }       
+        
+        function crescente () {                                         // Desafio Coluna crescente até 6
             document.getElementById('buttonCrescente').disabled = true;
             document.getElementById('buttonCrescente').className = 'imc';
             mostrar.textContent = ' Cria Coluna Crescente \n \n';
-            let caracter = ' | ';                       // Caracter que deseja imprimir.
-            let resultado = '';                         // Variável para armazenar o resultado e imprimir.
-            let crescente = document.createElement('p');
-                crescente.setAttribute('id', 'crescente');
-            for (let i = 0; i < 5; i++) {
-                console.log(resultado);
-                resultado += caracter;
-                
-                    document.getElementById('crescente').innerHTML += resultado + '<br>';
-                // mostrar.insertAdjacentHTML('beforeEnd', resultado);
+            let colunaCrescente = document.createElement('p');
+                colunaCrescente.setAttribute('id', 'colunaCrescente');
+            mostrar.insertAdjacentElement('beforeEnd', colunaCrescente);
+            let caracter = estrela;                                     // Caracter que deseja imprimir.
+            let resultado = '';                                         // Variável para armazenar o resultado e imprimir.            
+            for (let i = 0; i < 6; i++) {     
+                resultado += caracter; 
+                console.log(resultado + " + ");
+                colunaCrescente.setAttribute('style', 'text-align: left; font-size: 18px;');
+            // = colunaCrescente.style.cssText = "text-align: left; font-size: 20px;"; // Para I.E usar propriedade cssText
+            // = document.getElementById("colunaCrescente").style.textAlign = "left";
+                document.getElementById('colunaCrescente').innerHTML += resultado + '<br>';                          
             }
         }
 
