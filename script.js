@@ -479,7 +479,7 @@ function batimentos() {
         }
 
         mostrar.insertAdjacentText('afterBegin', '\n RESULTADO AQUI \n \n' );
-        codigoGithub.innetHTML = '';
+        codigoGithub.innerHTML = '';
         codigoGithub.appendChild(document.createTextNode('\n Abrir o Codigo Linhas e Colunas no GitHub \n'));    
         codigoGithub.href = 'https://github.com/improgram/casadocodigo/blob/master/Capitulo5/045Topico5.12.html \n';
     resultado();    
@@ -494,6 +494,7 @@ let buttonMegaSena = document.getElementByClassName('megaSena');
     function megaSena(){
         titulo.textContent = 'Mega-Sena';
         mostrar.textContent = 'Mega-Sena \n';
+        
         codigoGithub.innerHTML = '';
         codigoGithub.appendChild(document.createTextNode('\n Abrir o Codigo Mega Sena no GitHub \n'));
         codigoGithub.href = 'https://github.com/improgram/casadocodigo/blob/master/Capitulo6/051Topico6.4_Opcao2.html \n';
