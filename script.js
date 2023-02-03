@@ -368,6 +368,9 @@ function batimentos() {
             buttonPiramide.className = 'buttonResult';
             buttonPiramide.addEventListener('click', desenharPiramide);
             titulo.appendChild(buttonPiramide);
+        let createColuna = document.createElement('p');
+            createColuna.setAttribute('id', 'createColuna');
+            
         let conteudo = '';
         let estrela = '&#9733';
 
@@ -427,36 +430,35 @@ function batimentos() {
             document.getElementById('buttonCrescente').disabled = true;
             document.getElementById('buttonCrescente').className = 'imc';
             mostrar.textContent = ' Cria Coluna Crescente \n \n';
-            let colunaCrescente = document.createElement('p');
-                colunaCrescente.setAttribute('id', 'colunaCrescente');
-            mostrar.insertAdjacentElement('beforeEnd', colunaCrescente);
+            mostrar.insertAdjacentElement('beforeEnd', createColuna);   // Insere o elemento antes do final
             let caracter = estrela;                                     // Caracter que deseja imprimir.
             let resultado = '';                                         // Variável para armazenar o resultado e imprimir.            
             for (let i = 0; i < 6; i++) {     
                 resultado += caracter; 
                 console.log(resultado + " + ");
-                colunaCrescente.setAttribute('style', 'text-align: left; font-size: 18px;');
-            // = colunaCrescente.style.cssText = "text-align: left; font-size: 20px;"; // Para I.E usar propriedade cssText
-            // = document.getElementById("colunaCrescente").style.textAlign = "left";
-                document.getElementById('colunaCrescente').innerHTML += resultado + '<br>';                          
+                createColuna.setAttribute('style', 'text-align: left; font-size: 18px; color: gold');
+            // = createColuna.style.cssText = "text-align: left; font-size: 20px;"; (Para I.E usar propriedade cssText)
+            // = document.getElementById("createColuna").style.textAlign = "left";
+                document.getElementById('createColuna').innerHTML += resultado + '<br>';
             }
         }
 
         function desenharV () {
             document.getElementById('buttonV').disabled = true;
             document.getElementById('buttonV').className = 'imc';
-            mostrar.textContent = 'Desenho de um V \n';
+            mostrar.textContent = 'Desenho de um V \n \n';
+            mostrar.insertAdjacentElement('beforeEnd', createColuna);
+            createColuna = "";
             let v = '||';
             let t = '_';
             for (let linhaV = 1; linhaV <= 5; linhaV++) {
                 for (let colunaV = 1; colunaV < 10; colunaV++) {
-                    if (linhaV == colunaV || linhaV == 10 - colunaV) { // Se linha = coluna ou linha = 10 - coluna
-                        
-                        document.getElementById('v').innerHTML += v;   // linha = coluna entao ID igual a ||
-                    } else                                      
-                    document.getElementById('v').innerHTML += t;        // linha nao igual a coluna entao ID igual a _
+                  if (linhaV == colunaV || linhaV == 10 - colunaV) { // Se linha = coluna ou linha = 10 menor que coluna
+                      document.getElementById("createColuna").innerHTML += v;   // linha = coluna entao ID igual a ||
+                  } else                                      
+                  document.getElementById("createColuna").innerHTML += t;       // linha nao igual a coluna entao ID sera igual a _
                 }
-            //document.getElementById('v').innerHTML += '<br />';   // finalizado loop em 10 colunas ele pula até a linha limite: 5
+                document.getElementById("createColuna").innerHTML += '<br/>';  // finalizado loop em 10 colunas pula até linha limite: 5
             }
         }
 
