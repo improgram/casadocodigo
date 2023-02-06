@@ -183,17 +183,19 @@ function batimentos() {
             buttonComparativo.textContent = 'Comparar com Alcool';
             buttonComparativo.addEventListener('click', comparaCombustivel);
             buttonComparativo.className = 'buttonResult';
-        mostrar.textContent = '\n Com tanque de ' + tanqueCarro +  ' litros: \n' +
+        mostrar.textContent = '\n Com tanque de: ' + tanqueCarro +  ' litros: \n' +
                                 '\n' + kmcomGas + ' Km percorridos com Gasolina \n' +
-                                'Foram: ' + (kmcomGas / tanqueCarro) + ' KM rodados por litro.\n \n';
+                                '\n Então: \n' + (kmcomGas / tanqueCarro) + ' KM rodados por litro.\n \n';
         mostrar.insertAdjacentElement('beforeEnd', buttonComparativo);
         
         function comparaCombustivel () {
             kmcomAlcool = parseInt(prompt('Quantos kM Percorridos com Alcool ?'));
             let consumoAlcool = kmcomAlcool / tanqueCarro;           
-            mostrar.textContent = '\n Com tanque de : ' + tanqueCarro + ' litros: \n' +
-                                    '\n Consumo Gasolina: ' + consumoGasolina + ' km por litro.' +
-                                    '\n Consumo Alcool: ' + consumoAlcool + ' km por litro.';            
+            mostrar.textContent = '\n Com tanque de ' + tanqueCarro + ' litros: \n' +
+                                    '\n' + kmcomGas + ' Km percorridos com Gasolina \n' + 'Então: \n' + 
+                                    'Consumo Gasolina: ' + consumoGasolina + ' km por litro.' + '\n' +
+                                    '\n' + kmcomAlcool + ' Km precorridos com Alcool \n' + 'Então: \n' +                                  
+                                    'Consumo Alcool: ' + consumoAlcool + ' km por litro.';            
             let buttonComparaValor = document.createElement('button');
                 buttonComparaValor.innerText = 'Comparar preço: \n  Gasolina e Alcool';
                 buttonComparaValor.addEventListener("click", valorPorKm);
@@ -282,7 +284,7 @@ function batimentos() {
                 } else if (chute > segredo) {
                     alert('Chute foi maior que o numero pensado ');               
                 } else if (chute < segredo) {
-                    alert('Chute foi menor que o numero pensado ' );                                            
+                    alert('Chute foi menor que o numero pensado ' );                                        
                 } else
                     console.log(chute);
                     tentativa ++;
@@ -357,7 +359,7 @@ function batimentos() {
             buttonCrescente.addEventListener('click', crescente);
             titulo.appendChild(buttonCrescente);
         let buttonV = document.createElement('button');
-            buttonV.appendChild(document.createTextNode('V de Vingança'));
+            buttonV.appendChild(document.createTextNode('Desenhar V'));
             buttonV.setAttribute('id', 'buttonV');
             buttonV.className = 'buttonResult';
             buttonV.addEventListener('click', desenharV);
@@ -368,9 +370,8 @@ function batimentos() {
             buttonPiramide.className = 'buttonResult';
             buttonPiramide.addEventListener('click', desenharPiramide);
             titulo.appendChild(buttonPiramide);
-        let createColuna = document.createElement('p');
-            createColuna.setAttribute('id', 'createColuna');
-            
+        let criarElemento = document.createElement('p');
+            criarElemento.setAttribute('id', 'criarElemento');          
         let conteudo = '';
         let estrela = '&#9733';
 
@@ -381,6 +382,7 @@ function batimentos() {
             let col = Number (prompt('Numero de Colunas') );
             let quadrado = '\n Quantidade de linhas: ' + lin + '\n' +
                             'Quantidade de Colunas: ' + col + '\n';
+            conteudo = "";                                                // Limpar valor da variavel ja utilizada antes.
             mostrar.textContent = quadrado + '\n';
             for (let linha=1; linha<= lin; linha++){
                 for (let coluna=1; coluna<= col; coluna++){
@@ -429,36 +431,38 @@ function batimentos() {
         function crescente () {                                         // Desafio Coluna crescente até 6
             document.getElementById('buttonCrescente').disabled = true;
             document.getElementById('buttonCrescente').className = 'imc';
-            mostrar.textContent = ' Cria Coluna Crescente \n \n';
-            mostrar.insertAdjacentElement('beforeEnd', createColuna);   // Insere o elemento antes do final
-            let caracter = estrela;                                     // Caracter que deseja imprimir.
-            let resultado = '';                                         // Variável para armazenar o resultado e imprimir.            
-            for (let i = 0; i < 6; i++) {     
-                resultado += caracter; 
-                console.log(resultado + " + ");
-                createColuna.setAttribute('style', 'text-align: left; font-size: 18px; color: gold');
-            // = createColuna.style.cssText = "text-align: left; font-size: 20px;"; (Para I.E usar propriedade cssText)
-            // = document.getElementById("createColuna").style.textAlign = "left";
-                document.getElementById('createColuna').innerHTML += resultado + '<br>';
+            mostrar.textContent = ' Criar Coluna Crescente \n \n';
+            mostrar.insertAdjacentElement('beforeEnd', criarElemento);   // Insere o elemento antes do final
+            criarElemento.setAttribute('style', 'text-align: left; font-size: 18px; color: gold');
+            // = criarElemento.style.cssText = "text-align: left; font-size: 20px;"; (Para I.E usar propriedade cssText)
+            // = document.getElementById("criarElemento").style.textAlign = "left";
+            conteudo = "";                                                // Limpar valor da variavel ja utilizada antes.
+            let caracter = estrela;                                       // Caracter que deseja imprimir.           
+            for (let i = 0; i < 6; i++) {                 
+                conteudo += caracter; 
+                console.log(conteudo + " + ");               
+                document.getElementById('criarElemento').innerHTML += conteudo + '<br>';
             }
+            
         }
 
         function desenharV () {
+            mostrar.textContent = ""; // Validar
             document.getElementById('buttonV').disabled = true;
             document.getElementById('buttonV').className = 'imc';
             mostrar.textContent = 'Desenho de um V \n \n';
-            mostrar.insertAdjacentElement('beforeEnd', createColuna);
-            createColuna = "";
+            mostrar.insertAdjacentElement('beforeEnd', criarElemento);
+            criarElemento.setAttribute('style', 'text-align: center; font-size: 20px; color: red');
             let v = '||';
             let t = '_';
             for (let linhaV = 1; linhaV <= 5; linhaV++) {
                 for (let colunaV = 1; colunaV < 10; colunaV++) {
                   if (linhaV == colunaV || linhaV == 10 - colunaV) { // Se linha = coluna ou linha = 10 menor que coluna
-                      document.getElementById("createColuna").innerHTML += v;   // linha = coluna entao ID igual a ||
+                      document.getElementById("criarElemento").innerHTML += v;   // linha = coluna entao ID igual a ||
                   } else                                      
-                  document.getElementById("createColuna").innerHTML += t;       // linha nao igual a coluna entao ID sera igual a _
+                  document.getElementById("criarElemento").innerHTML += t;       // linha nao igual a coluna entao ID sera igual a _
                 }
-                document.getElementById("createColuna").innerHTML += '<br/>';  // finalizado loop em 10 colunas pula até linha limite: 5
+                document.getElementById("criarElemento").innerHTML += '<br/>';  // finalizado loop em 10 colunas pula até linha limite: 5
             }
         }
 
@@ -466,6 +470,7 @@ function batimentos() {
             document.getElementById('buttonPiramide').disabled = true;
             document.getElementById('buttonPiramide').className = 'imc';
             mostrar.textContent = 'Desenho de uma Piramide \n';
+            conteudo = "";                                                // Limpar valor da variavel ja utilizada antes.
             let aux = '';
             for (let linha = 1; linha <= 5; linha++) {
                 for(let coluna = 1; coluna <= linha; coluna++) {
