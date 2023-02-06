@@ -431,6 +431,7 @@ function batimentos() {
         function crescente () {                                         // Desafio Coluna crescente até 6
             document.getElementById('buttonCrescente').disabled = true;
             document.getElementById('buttonCrescente').className = 'imc';
+            criarElemento.innerHTML = "";                      // Elemento utilizado em outra function tem seu conteudo zerado
             mostrar.textContent = ' Criar Coluna Crescente \n \n';
             mostrar.insertAdjacentElement('beforeEnd', criarElemento);   // Insere o elemento antes do final
             criarElemento.setAttribute('style', 'text-align: left; font-size: 18px; color: gold');
@@ -450,6 +451,7 @@ function batimentos() {
             mostrar.textContent = ""; // Validar
             document.getElementById('buttonV').disabled = true;
             document.getElementById('buttonV').className = 'imc';
+            criarElemento.innerHTML = "";                   // Elemento utilizado em outra function tem seu conteudo zerado
             mostrar.textContent = 'Desenho de um V \n \n';
             mostrar.insertAdjacentElement('beforeEnd', criarElemento);
             criarElemento.setAttribute('style', 'text-align: center; font-size: 20px; color: red');
@@ -470,21 +472,20 @@ function batimentos() {
             document.getElementById('buttonPiramide').disabled = true;
             document.getElementById('buttonPiramide').className = 'imc';
             mostrar.textContent = 'Desenho de uma Piramide \n';
-            conteudo = "";                                                // Limpar valor da variavel ja utilizada antes.
-            let aux = '';
+            criarElemento.innerHTML = "";                       // Elemento utilizado em outra function tem seu conteudo zerado
+            conteudo = "";                                                      // Limpar valor da variavel ja utilizada antes.
             for (let linha = 1; linha <= 5; linha++) {
                 for(let coluna = 1; coluna <= linha; coluna++) {
                     if (coluna == linha) {         
-                    aux += estrela;
-                    console.log('piramide');
-                    document.getElementById('piramide').innerHTML += aux + '<br />'; // '\n' -> NAO
+                        conteudo += estrela;
+                        console.log('piramide');
+                        document.getElementById("criarElemento").innerHTML += conteudo + '<br>';
                     } else {
-                    console.log('pular Linha');
+                        console.log('pular Linha');
                     }   
                 }
             }
         }
-
         mostrar.insertAdjacentText('afterBegin', '\n RESULTADO AQUI \n \n' );
         codigoGithub.innerHTML = '';
         codigoGithub.appendChild(document.createTextNode('\n Abrir o Codigo Linhas e Colunas no GitHub \n'));    
