@@ -353,7 +353,7 @@ function batimentos() {
             buttonTabela.addEventListener('click', criarTabela);
             titulo.appendChild(buttonTabela);
         let buttonCrescente = document.createElement('button');
-            buttonCrescente.appendChild(document.createTextNode('Coluna Crescente'));
+            buttonCrescente.appendChild(document.createTextNode('Adiciona mais um por Linha'));
             buttonCrescente.setAttribute('id', 'buttonCrescente');
             buttonCrescente.className = 'buttonResult';
             buttonCrescente.addEventListener('click', crescente);
@@ -380,9 +380,9 @@ function batimentos() {
             document.getElementById('buttonQuadrado').className = 'imc';
             let lin = Number (prompt('Numero de Linhas') );
             let col = Number (prompt('Numero de Colunas') );
-            let quadrado = '\n Quantidade de linhas: ' + lin + '\n' +
-                            'Quantidade de Colunas: ' + col + '\n';
-            conteudo = "";                                                // Limpar valor da variavel ja utilizada antes.
+            let quadrado = '\n Linhas: ' + lin + '\n' +
+                            'Colunas: ' + col + '\n';
+            conteudo = "";                                // Limpar valor da variavel ja utilizada antes.
             mostrar.textContent = quadrado + '\n';
             for (let linha=1; linha<= lin; linha++){
                 for (let coluna=1; coluna<= col; coluna++){
@@ -428,31 +428,31 @@ function batimentos() {
             tabela.insertAdjacentElement('afterEnd', imgTabela);
         }       
         
-        function crescente () {                                         // Desafio Coluna crescente até 6
+        function crescente () {                                // Desafio Coluna crescente até 6
             document.getElementById('buttonCrescente').disabled = true;
             document.getElementById('buttonCrescente').className = 'imc';
+            conteudo = "";                                     // Limpar valor da variavel ja utilizada antes.
+            let caracter = estrela;                            // Caracter que deseja imprimir.
             criarElemento.innerHTML = "";                      // Elemento utilizado em outra function tem seu conteudo zerado
-            mostrar.textContent = ' Criar Coluna Crescente \n \n';
+            mostrar.textContent = 'Adiciona uma: \n';
+            mostrar.insertAdjacentHTML('beforeEnd', caracter + '\n por Linha \n \n');
             mostrar.insertAdjacentElement('beforeEnd', criarElemento);   // Insere o elemento antes do final
             criarElemento.setAttribute('style', 'text-align: left; font-size: 18px; color: gold');
             // = criarElemento.style.cssText = "text-align: left; font-size: 20px;"; (Para I.E usar propriedade cssText)
-            // = document.getElementById("criarElemento").style.textAlign = "left";
-            conteudo = "";                                                // Limpar valor da variavel ja utilizada antes.
-            let caracter = estrela;                                       // Caracter que deseja imprimir.           
+            // = document.getElementById("criarElemento").style.textAlign = "left";                      
             for (let i = 0; i < 6; i++) {                 
                 conteudo += caracter; 
                 console.log(conteudo + " + ");               
                 document.getElementById('criarElemento').innerHTML += conteudo + '<br>';
-            }
-            
+            }           
         }
 
         function desenharV () {
             mostrar.textContent = ""; // Validar
             document.getElementById('buttonV').disabled = true;
             document.getElementById('buttonV').className = 'imc';
-            criarElemento.innerHTML = "";                   // Elemento utilizado em outra function tem seu conteudo zerado
             mostrar.textContent = 'Desenho de um V \n \n';
+            criarElemento.innerHTML = "";                   // Elemento utilizado em outra function tem seu conteudo zerado          
             mostrar.insertAdjacentElement('beforeEnd', criarElemento);
             criarElemento.setAttribute('style', 'text-align: center; font-size: 20px; color: red');
             let v = '||';
@@ -471,9 +471,11 @@ function batimentos() {
         function desenharPiramide () {
             document.getElementById('buttonPiramide').disabled = true;
             document.getElementById('buttonPiramide').className = 'imc';
-            mostrar.textContent = 'Desenho de uma Piramide \n';
-            criarElemento.innerHTML = "";                       // Elemento utilizado em outra function tem seu conteudo zerado
-            conteudo = "";                                                      // Limpar valor da variavel ja utilizada antes.
+            mostrar.textContent = 'Desenho de uma Piramide \n \n';
+            conteudo = "";                                   // Limpar valor da variavel ja utilizada antes.
+            criarElemento.innerHTML = "";                    // Elemento utilizado em outra function tem seu conteudo zerado           
+            mostrar.insertAdjacentElement('beforeEnd', criarElemento);
+            criarElemento.setAttribute('style', 'font-size: 18px; color: gold');
             for (let linha = 1; linha <= 5; linha++) {
                 for(let coluna = 1; coluna <= linha; coluna++) {
                     if (coluna == linha) {         
@@ -486,6 +488,7 @@ function batimentos() {
                 }
             }
         }
+
         mostrar.insertAdjacentText('afterBegin', '\n RESULTADO AQUI \n \n' );
         codigoGithub.innerHTML = '';
         codigoGithub.appendChild(document.createTextNode('\n Abrir o Codigo Linhas e Colunas no GitHub \n'));    
@@ -493,22 +496,64 @@ function batimentos() {
     resultado();    
 }
 
-/* PAREI AQUI Mega-Sena
-
-let buttonMegaSena = document.getElementByClassName('megaSena');
+// Mega-Sena
+let buttonMegaSena = document.getElementsByClassName('megaSena');
     for (let elementMegaSena of buttonMegaSena) {
         elementMegaSena.onclick = megaSena;
     }
+
     function megaSena(){
+        let sorteio = [];
+        for (let i = 0; i < 6; i++) {
+            sorteio[i] = Math.round(Math.random()*60);     
+        }
+        sorteio.sort(function(a, b){
+            return a - b;
+        })
+        console.log('Sorteados Ordenados : ' + sorteio);    
+        //usuario digita numeros
+        let array = []
+        for (let i = 0; i < 6; i++){
+            let num = prompt('Digite 6 numeros ate 60.');
+            array.push(num)
+        }
+        console.log('Numeros digitados: ' + array);
+        array.sort(function(a, b){
+            return a - b;
+        })
+        console.log('Digitados ordenados : ' + array);
+        // comparativo
+        let elementAcerto = document.createElement('p');
+        let acerto = 0;
+        for(let i = 0; i < 6; i++) {
+            for(let j = 0; j < 6; j++) {
+                if (array[i] == sorteio[j]) {
+                    acerto++;
+                    console.log('Acertou o numero : ' + array[i] );
+                }
+            }
+        }
+        if (acerto > 0) {
+            console.log('Quantidade de Acertos: ' + acerto);
+            elementAcerto.innerHTML = acerto;
+            //mostrar.appendChild(elementAcerto); // deu certo sem string
+            mostrar.insertAdjacentElement('beforeEnd', '\n Você acertou o numero: ' + elementAcerto + '\n');
+        } else {
+            console.error('Voce Errou Todos numeros.');
+            mostrar.insertAdjacentHTML('beforeEnd', '\n Você Errou todos Numeros \n');
+        }
+
         titulo.textContent = 'Mega-Sena';
-        mostrar.textContent = 'Mega-Sena \n';
+        //mostrar.textContent = 'Numeros Digitados : ' + array + '\n';
+        //mostrar.insertAdjacentHTML('afterBegin', 'Numeros Sorteados : ' + sorteio + '\n');
         
         codigoGithub.innerHTML = '';
         codigoGithub.appendChild(document.createTextNode('\n Abrir o Codigo Mega Sena no GitHub \n'));
         codigoGithub.href = 'https://github.com/improgram/casadocodigo/blob/master/Capitulo6/051Topico6.4_Opcao2.html \n';
-    resultado();
+        resultado();
     }
 
+/*PAREI AQUI
 
 // Introducao Canvas
 let buttonCanvas = document.getElementByClassName('canvasLearning');
@@ -526,7 +571,7 @@ let buttonCanvas = document.getElementByClassName('canvasLearning');
 
 
 // Tabuleiro Damas
-let buttonDamas = document.getElementByClassName('damas');
+let buttonDamas = document.getElementsByClassName('damas');
     for (let elementButtonDamas of buttonDamas){
         elementButtonDamas.onclick = damas;
     }
@@ -540,7 +585,7 @@ let buttonDamas = document.getElementByClassName('damas');
     }
 
 // Bandeiras com Canvas
-let buttonBandeiras = document.getElementByClassName('bandeiras');
+let buttonBandeiras = document.getElementsByClassName('bandeiras');
     for (let elementBandeiras of buttonBandeiras) {
         elementBandeiras.onclick = bandeiras;
     }
@@ -554,7 +599,7 @@ let buttonBandeiras = document.getElementByClassName('bandeiras');
     }
 
 //Canvas com Condicionais
-let buttonCondicionais = document.getElementByClassName('canvasCondicionais');
+let buttonCondicionais = document.getElementsByClassName('canvasCondicionais');
     for (let elementCondicionais of buttonCondicionais){
         elementCondicionais.onclick = canvasCondicionais;
     }    
@@ -568,7 +613,7 @@ let buttonCondicionais = document.getElementByClassName('canvasCondicionais');
     }
 
 //Canvas Ordem crescente
-let buttonCrescente = document.getElementByClassName('canvasCrescente');
+let buttonCrescente = document.getElementsByClassName('canvasCrescente');
     for (let elementCanvasCrescente of buttonCrescente) {
         elementCanvasCrescente.onclick = canvasCrescente;
     }
@@ -582,7 +627,7 @@ let buttonCrescente = document.getElementByClassName('canvasCrescente');
     }
 
 //Canvas Parabola
-let buttonParabola = document.getElementByClassName('canvasParabola');
+let buttonParabola = document.getElementsByClassName('canvasParabola');
     for (let elementCanvasParabola of buttonParabola) {
         elementCanvasParabola.onclick = canvasParabola;
     }
@@ -596,7 +641,7 @@ let buttonParabola = document.getElementByClassName('canvasParabola');
     }
 
 //Calculo do Seno com Canvas
-let buttonSeno = document.getElementByClassName('seno');
+let buttonSeno = document.getElementsByClassName('seno');
     for (let elementSeno of buttonSeno) {
         elementSeno.onclick = seno;
     }
@@ -610,7 +655,7 @@ let buttonSeno = document.getElementByClassName('seno');
     }
 
 // Detecta cliques:
-let buttonClique = document.getElementByClassName('cliques');
+let buttonClique = document.getElementsByClassName('cliques');
     for (let elementDetectaClique of buttonClique) {
         elementDetectaClique.onclick = detectaClique;
     }
@@ -624,7 +669,7 @@ let buttonClique = document.getElementByClassName('cliques');
     }
 
 // Detecta botao Mouse:
-let buttonMouse = document.getElementByClassName('botaoMouse');
+let buttonMouse = document.getElementsByClassName('botaoMouse');
     for (let elementMouse of buttonMouse) {
         elementMouse.onclick = mouse;
     }
@@ -638,7 +683,7 @@ let buttonMouse = document.getElementByClassName('botaoMouse');
     }
 
 // Paint com Canvas:
-let buttonPaint = document.getElementByClassName('paint');
+let buttonPaint = document.getElementsByClassName('paint');
     for(let elementPaint of buttonPaint) {
         elementPaint.onclick = paint;
     }
@@ -653,7 +698,7 @@ let buttonPaint = document.getElementByClassName('paint');
 
 
 // CanvasaAnimacoes:
-let buttonAnimacoes = document.getElementByClassName('animacoes');
+let buttonAnimacoes = document.getElementsByClassName('animacoes');
     for (let elementCanvasAnimacoes of buttonAnimacoes) {
         elementCanvasAnimacoes.onclick = canvasAnimacoes;
     }
@@ -668,7 +713,7 @@ let buttonAnimacoes = document.getElementByClassName('animacoes');
 
 
 // CODIGO Tiro ao alvo:
-let buttonAlvo = document.getElementByClassName('tiroAlvo');
+let buttonAlvo = document.getElementsByClassName('tiroAlvo');
     for (let elementTiroAlvo of buttonAlvo) {
         elementTiroAlvo.onclick = tiroAlvo;
     }
@@ -683,7 +728,7 @@ let buttonAlvo = document.getElementByClassName('tiroAlvo');
 
 
 // CODIGO Formulario com Eventos:
-let buttonFormEventos = document.getElementByClassName('formEventos');
+let buttonFormEventos = document.getElementsByClassName('formEventos');
     for (let elementFormEventos of buttonFormEventos) {
         elementFormEventos.onclick = formEventos;
     }
@@ -697,7 +742,7 @@ let buttonFormEventos = document.getElementByClassName('formEventos');
     }
 
 //Formulario com Array:
-let buttonFormArray = document.getElementByClassName('formArray');
+let buttonFormArray = document.getElementsByClassName('formArray');
     for (let elementFormArray of buttonFormArray) {
         elementFormArray.onclick = formArray;
     }
@@ -712,7 +757,7 @@ let buttonFormArray = document.getElementByClassName('formArray');
     }
 
 // Codigo Objetos:
-let buttonObjetos = document.getElementByClassName('objetos');
+let buttonObjetos = document.getElementsByClassName('objetos');
     for (let elementObjetos of buttonObjetos) {
         elementObjetos.onclick = objetos;
     }
@@ -727,7 +772,7 @@ let buttonObjetos = document.getElementByClassName('objetos');
 
 
 // CODIGO DOM:
-let buttonDom = document.getElementByClassName('dom');
+let buttonDom = document.getElementsByClassName('dom');
     for (let elementDom of buttonDom) {
         elementDom.onclick = dom;
     }
@@ -741,7 +786,7 @@ let buttonDom = document.getElementByClassName('dom');
     }
 
 // CODIGO IMC:
-let buttonImc = document.getElementByClassName('imc');
+let buttonImc = document.getElementsByClassName('imc');
     for (let elementImc of buttonImc) {
         elementImc.onclick = imc;
     }
