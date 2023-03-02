@@ -120,6 +120,7 @@ header {
     align-items: center; /* Necessario para a IMG */
     margin: 1% 10% 1% 10%;
     padding: 0.7em 0.7em 0.7em 0.7em;
+    
 }
 
 .buttonResult{
@@ -166,6 +167,7 @@ figure img{
     max-height: 110px;
     border-radius: 15px;
     border: 1px #259ab8 ridge;
+    /*filter: brightness(0.9); */
 }
 
 figure img:hover {              /* mouse sobre o botao */
@@ -251,6 +253,29 @@ margin: 0.1em 0.1em; } */
 
 .megaSena {
     color:#0ab1e9;
+}
+
+.ulNumbers {
+    border: 1px solid rgb(214, 219, 139);
+    background-color: rgb(29, 44, 56);
+    padding: 1%;   
+    font-family: monospace;
+    font-size: 18px;
+    /* list-style-type: none; */
+    /* text-align: center; */
+}
+
+.liNumbers {
+    border: 2px solid rgb(54, 173, 219);
+    display: inline-block;
+    background-color: white;
+    color: black;
+    font-size: larger;   
+    width: 25px;
+    border-radius: 50%;  
+    user-select: none;
+    /* padding: 5px 10px; */
+    /* margin: 10px; */
 }
 
 .canvasLearning {

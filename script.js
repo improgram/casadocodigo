@@ -1,6 +1,6 @@
 function todasFunctions() {  
     //let tasks = [batimentos(), anodeCopa(), anodeOlimpiadas() ];
-    //https://www.devmedia.com.br/javascript-foreach-executando-uma-funcao-para-cada-elemento-de-um-array/39808
+    //https://www.devmedia.com.br/javascript-foreach-executando-uma-funcao-para-cada-elemento-de-um-numerosEscolhidos/39808
         console.log('teste todasFunctions');
     }
 
@@ -488,7 +488,6 @@ function batimentos() {
                 }
             }
         }
-
         mostrar.insertAdjacentText('afterBegin', '\n RESULTADO AQUI \n \n' );
         codigoGithub.innerHTML = '';
         codigoGithub.appendChild(document.createTextNode('\n Abrir o Codigo Linhas e Colunas no GitHub \n'));    
@@ -501,52 +500,67 @@ let buttonMegaSena = document.getElementsByClassName('megaSena');
     for (let elementMegaSena of buttonMegaSena) {
         elementMegaSena.onclick = megaSena;
     }
-
-    function megaSena(){
+    function megaSena() {
+        titulo.textContent = 'Mega-Sena';
         let sorteio = [];
-        for (let i = 0; i < 6; i++) {
-            sorteio[i] = Math.round(Math.random()*60);     
-        }
-        sorteio.sort(function(a, b){
-            return a - b;
-        })
-        console.log('Sorteados Ordenados : ' + sorteio);    
-        //usuario digita numeros
-        let array = []
-        for (let i = 0; i < 6; i++){
-            let num = prompt('Digite 6 numeros ate 60.');
-            array.push(num)
-        }
-        console.log('Numeros digitados: ' + array);
-        array.sort(function(a, b){
-            return a - b;
-        })
-        console.log('Digitados ordenados : ' + array);
-        // comparativo
-        let elementAcerto = document.createElement('p');
         let acerto = 0;
-        for(let i = 0; i < 6; i++) {
-            for(let j = 0; j < 6; j++) {
-                if (array[i] == sorteio[j]) {
+        let ulNumbers =  document.createElement('ul');
+            ulNumbers.setAttribute('class', 'ulNumbers');
+        let liNumbers = document.createElement('li');
+            liNumbers.setAttribute('class', 'liNumbers');
+        
+        function numero_aleatorio() {
+            while (sorteio.length < 6) {
+                let aleatorio = Math.floor(Math.random() * 60 + 1);            
+                if (sorteio.indexOf(aleatorio) == -1)
+                    sorteio.push(aleatorio);
+            }                                            
+        }
+        numero_aleatorio();    
+// método indexOf() retorna o primeiro índice em que o elemento pode ser encontrado no array,
+// Retorna -1 caso o mesmo não esteja presente, se numeros.indexOf resultar -1 
+// para o número que acabamos de gerar, ele não está presente no array e deve ser adicionado.                    
+                   
+        sorteio.sort (function(a, b){
+            return a - b;
+        })
+        console.log('Sorteados Ordenados : ' + sorteio);
+        ulNumbers.insertAdjacentHTML('afterBegin', '\n Numeros Sorteados: \n' + sorteio + '' + '\n');
+                
+        // usuario digita numeros
+        let numerosEscolhidos = []       
+        for (let i = 0; i < 2; i++) {                        // mudar para 6            
+            let num = prompt('Digite 6 numeros ate 60.');
+                numerosEscolhidos.push(num);
+                liNumbers.textContent = numerosEscolhidos;
+                // numerosEscolhidos = liNumbers.cloneNode(false);
+        }
+        
+        numerosEscolhidos.sort (function(a, b) {
+            return a - b;
+        })
+        console.log ('Digitados ordenados : ' + numerosEscolhidos); 
+        ulNumbers.appendChild(document.createTextNode('\n Numeros Digitados: \n'));
+    //liNumbers.appendChild(document.createTextNode('\n Acertou os Numeros: ' + acerto + '\n'));
+        // comparativo
+        for (let i = 0; i < 6; i++) {            
+            for (let j = 0; j < 6; j++) {        
+                if (numerosEscolhidos[i] == sorteio[j]) {
                     acerto++;
-                    console.log('Acertou o numero : ' + array[i] );
+                    console.log('Acertou o numero : ' + numerosEscolhidos[i] );
                 }
             }
         }
         if (acerto > 0) {
             console.log('Quantidade de Acertos: ' + acerto);
-            elementAcerto.innerHTML = acerto;
-            //mostrar.appendChild(elementAcerto); // deu certo sem string
-            mostrar.insertAdjacentElement('beforeEnd', '\n Você acertou o numero: ' + elementAcerto + '\n');
+            mostrar.insertAdjacentHTML('afterBegin', '\n Você acertou o numero: ' + numerosEscolhidos + '\n');        
         } else {
-            console.error('Voce Errou Todos numeros.');
-            mostrar.insertAdjacentHTML('beforeEnd', '\n Você Errou todos Numeros \n');
+            mostrar.insertAdjacentHTML('afterBegin', '\n Voce errou todos Numeros. \n');
+            console.error('Voce Errou Todos numeros.');         
         }
 
-        titulo.textContent = 'Mega-Sena';
-        //mostrar.textContent = 'Numeros Digitados : ' + array + '\n';
-        //mostrar.insertAdjacentHTML('afterBegin', 'Numeros Sorteados : ' + sorteio + '\n');
-        
+        mostrar.insertAdjacentElement('afterBegin', ulNumbers);
+        ulNumbers.appendChild(liNumbers);
         codigoGithub.innerHTML = '';
         codigoGithub.appendChild(document.createTextNode('\n Abrir o Codigo Mega Sena no GitHub \n'));
         codigoGithub.href = 'https://github.com/improgram/casadocodigo/blob/master/Capitulo6/051Topico6.4_Opcao2.html \n';
@@ -741,18 +755,18 @@ let buttonFormEventos = document.getElementsByClassName('formEventos');
     resultado();
     }
 
-//Formulario com Array:
-let buttonFormArray = document.getElementsByClassName('formArray');
-    for (let elementFormArray of buttonFormArray) {
-        elementFormArray.onclick = formArray;
+//Formulario com numerosEscolhidos:
+let buttonFormnumerosEscolhidos = document.getElementsByClassName('formnumerosEscolhidos');
+    for (let elementFormnumerosEscolhidos of buttonFormnumerosEscolhidos) {
+        elementFormnumerosEscolhidos.onclick = formnumerosEscolhidos;
     }
 
-    function formArray(){
+    function formnumerosEscolhidos(){
         titulo.textContent = '';
         mostrar.textContent = ' \n';
         codigoGithub.innerHTML = '';
         codigoGithub.appendChild(document.createTextNode('\n Abrir o Codigo --- no GitHub \n'));
-        codigoGithub.href = 'https://github.com/improgram/casadocodigo/blob/master/Capitulo8/081Topico9.1_formulario_array.html \n';
+        codigoGithub.href = 'https://github.com/improgram/casadocodigo/blob/master/Capitulo8/081Topico9.1_formulario_numerosEscolhidos.html \n';
     resultado();
     }
 
@@ -766,7 +780,7 @@ let buttonObjetos = document.getElementsByClassName('objetos');
         mostrar.textContent = ' \n';
         codigoGithub.innerHTML = '';
         codigoGithub.appendChild(document.createTextNode('\n Abrir o Codigo --- no GitHub \n'));
-        codigoGithub.href = 'https://github.com/improgram/casadocodigo/blob/master/Capitulo8/083_Arrays.html \n';
+        codigoGithub.href = 'https://github.com/improgram/casadocodigo/blob/master/Capitulo8/083_numerosEscolhidoss.html \n';
     resultado();
     }
 
