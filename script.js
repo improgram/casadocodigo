@@ -353,7 +353,7 @@ function batimentos() {
             buttonTabela.addEventListener('click', criarTabela);
             titulo.appendChild(buttonTabela);
         let buttonCrescente = document.createElement('button');
-            buttonCrescente.appendChild(document.createTextNode('Adiciona mais um por Linha'));
+            buttonCrescente.appendChild(document.createTextNode('Adiciona mais uma por Linha'));
             buttonCrescente.setAttribute('id', 'buttonCrescente');
             buttonCrescente.className = 'buttonResult';
             buttonCrescente.addEventListener('click', crescente);
@@ -434,12 +434,12 @@ function batimentos() {
             conteudo = "";                                     // Limpar valor da variavel ja utilizada antes.
             let caracter = estrela;                            // Caracter que deseja imprimir.
             criarElemento.innerHTML = "";                      // Elemento utilizado em outra function tem seu conteudo zerado
-            mostrar.textContent = 'Adiciona uma: \n';
+            mostrar.textContent = 'Adiciona uma: ';
             mostrar.insertAdjacentHTML('beforeEnd', caracter + '\n por Linha \n \n');
             mostrar.insertAdjacentElement('beforeEnd', criarElemento);   // Insere o elemento antes do final
             criarElemento.setAttribute('style', 'text-align: left; font-size: 18px; color: gold');
-            // = criarElemento.style.cssText = "text-align: left; font-size: 20px;"; (Para I.E usar propriedade cssText)
-            // = document.getElementById("criarElemento").style.textAlign = "left";                      
+            // => criarElemento.style.cssText = "text-align: left; font-size: 20px;"; (Para I.E usar propriedade cssText)
+            // => document.getElementById("criarElemento").style.textAlign = "left";                      
             for (let i = 0; i < 6; i++) {                 
                 conteudo += caracter; 
                 console.log(conteudo + " + ");               
@@ -448,7 +448,6 @@ function batimentos() {
         }
 
         function desenharV () {
-            mostrar.textContent = ""; // Validar
             document.getElementById('buttonV').disabled = true;
             document.getElementById('buttonV').className = 'imc';
             mostrar.textContent = 'Desenho de um V \n \n';
@@ -502,46 +501,53 @@ let buttonMegaSena = document.getElementsByClassName('megaSena');
     }
     function megaSena() {
         titulo.textContent = 'Mega-Sena';
+        mostrar.textContent = "Sorteio de 6 Numeros \n \n";
         let sorteio = [];
         let acerto = 0;
         let ulNumbers =  document.createElement('ul');
             ulNumbers.setAttribute('class', 'ulNumbers');
-        let liNumbers = document.createElement('li');
-            liNumbers.setAttribute('class', 'liNumbers');
-        
-        function numero_aleatorio() {
+        mostrar.insertAdjacentElement('beforeEnd', ulNumbers);      
+
+        function numero_aleatorio() {           // Evitar duplicidade
             while (sorteio.length < 6) {
-                let aleatorio = Math.floor(Math.random() * 60 + 1);            
+                let aleatorio = Math.floor(Math.random() * 60 + 1);
+                let listaNumbers = document.createElement('li');
+                    listaNumbers.setAttribute('class', 'liNumbers');
+                    ulNumbers.insertAdjacentElement('afterBegin', listaNumbers);
+                let textList = document.createTextNode(`${sorteio}`);
+                listaNumbers.appendChild(textList);
+    
+    // Método indexOf() retorna o primeiro índice em que o elemento pode ser encontrado no array,
+    // Retorna -1 caso o mesmo não esteja presente, se numeros.indexOf resultar -1 
+    // para o número que acabamos de gerar, ele não está presente no array e deve ser adicionado.             
                 if (sorteio.indexOf(aleatorio) == -1)
                     sorteio.push(aleatorio);
             }                                            
         }
-        numero_aleatorio();    
-// método indexOf() retorna o primeiro índice em que o elemento pode ser encontrado no array,
-// Retorna -1 caso o mesmo não esteja presente, se numeros.indexOf resultar -1 
-// para o número que acabamos de gerar, ele não está presente no array e deve ser adicionado.                    
-                   
+        numero_aleatorio();               
         sorteio.sort (function(a, b){
             return a - b;
-        })
-        console.log('Sorteados Ordenados : ' + sorteio);
-        ulNumbers.insertAdjacentHTML('afterBegin', '\n Numeros Sorteados: \n' + sorteio + '' + '\n');
+        })  
+        console.log('Sorteados Ordenados : ' + sorteio);       
+        ulNumbers.insertAdjacentHTML('afterBegin', '\n Numeros Sorteados: \n \n');
                 
-        // usuario digita numeros
+        // Usuario digita numeros
         let numerosEscolhidos = []       
-        for (let i = 0; i < 2; i++) {                        // mudar para 6            
+        for (let i = 0; i < 2; i++) {                        // mudar para 6
+            let liNumbers = document.createElement('li');
+                liNumbers.setAttribute('class', 'liNumbers');                       
             let num = prompt('Digite 6 numeros ate 60.');
                 numerosEscolhidos.push(num);
-                liNumbers.textContent = numerosEscolhidos;
-                // numerosEscolhidos = liNumbers.cloneNode(false);
+            // liNumbers.textContent = numerosEscolhidos;       
+            // numerosEscolhidos = liNumbers.cloneNode(false);
         }
         
         numerosEscolhidos.sort (function(a, b) {
             return a - b;
         })
-        console.log ('Digitados ordenados : ' + numerosEscolhidos); 
-        ulNumbers.appendChild(document.createTextNode('\n Numeros Digitados: \n'));
-    //liNumbers.appendChild(document.createTextNode('\n Acertou os Numeros: ' + acerto + '\n'));
+        console.log ('Digitados ordenados : ' + numerosEscolhidos);
+    ulNumbers.insertAdjacentHTML('afterEnd', '\n Numeros Escolhidos: \n' + numerosEscolhidos + '\n');
+        
         // comparativo
         for (let i = 0; i < 6; i++) {            
             for (let j = 0; j < 6; j++) {        
@@ -553,36 +559,34 @@ let buttonMegaSena = document.getElementsByClassName('megaSena');
         }
         if (acerto > 0) {
             console.log('Quantidade de Acertos: ' + acerto);
-            mostrar.insertAdjacentHTML('afterBegin', '\n Você acertou o numero: ' + numerosEscolhidos + '\n');        
+            mostrar.insertAdjacentHTML('beforeEnd', '\n Você acertou o numero: ' + numerosEscolhidos + '\n');        
         } else {
-            mostrar.insertAdjacentHTML('afterBegin', '\n Voce errou todos Numeros. \n');
+            mostrar.insertAdjacentHTML('beforeEnd', '\n Voce errou todos Numeros. \n');
             console.error('Voce Errou Todos numeros.');         
         }
 
-        mostrar.insertAdjacentElement('afterBegin', ulNumbers);
-        ulNumbers.appendChild(liNumbers);
         codigoGithub.innerHTML = '';
         codigoGithub.appendChild(document.createTextNode('\n Abrir o Codigo Mega Sena no GitHub \n'));
         codigoGithub.href = 'https://github.com/improgram/casadocodigo/blob/master/Capitulo6/051Topico6.4_Opcao2.html \n';
         resultado();
     }
 
-/*PAREI AQUI
+// PAREI AQUI
 
 // Introducao Canvas
-let buttonCanvas = document.getElementByClassName('canvasLearning');
+let buttonCanvas = document.getElementsByClassName('canvasLearning');
     for (let elementIntroCanvas of buttonCanvas) {
         elementIntroCanvas.onclick = introCanvas;
     }
     function introCanvas() {
         titulo.textContent = 'Canvas Learning';
-        mostrar.textContent = 'Canvas Learning \n';
+        mostrar.textContent = 'Learning \n';
+
         codigoGithub.innerHTML = '';
         codigoGithub.appendChild(document.createTextNode('\n Abrir o Codigo Canvas Learning no GitHub \n'));
         codigoGithub.href = 'https://github.com/improgram/casadocodigo/blob/master/Capitulo7/055Topico7.2.html \n';
     resultado();
     }
-
 
 // Tabuleiro Damas
 let buttonDamas = document.getElementsByClassName('damas');
@@ -590,8 +594,9 @@ let buttonDamas = document.getElementsByClassName('damas');
         elementButtonDamas.onclick = damas;
     }
     function damas(){
-        titulo.textContent = '';
-        mostrar.textContent = ' \n';
+        titulo.textContent = 'Tabuleiro de Damas';
+        mostrar.textContent = 'Criar um tabuleiro com Canvas \n';
+
         codigoGithub.innerHTML = '';
         codigoGithub.appendChild(document.createTextNode('\n Abrir o Codigo --- no GitHub \n'));
         codigoGithub.href = 'https://github.com/improgram/casadocodigo/blob/master/Capitulo7/056Topico7.3_Tabuleiro.html \n';
@@ -604,8 +609,9 @@ let buttonBandeiras = document.getElementsByClassName('bandeiras');
         elementBandeiras.onclick = bandeiras;
     }
     function bandeiras() {
-        titulo.textContent = '';
-        mostrar.textContent = ' \n';
+        titulo.textContent = 'Bandeiras';
+        mostrar.textContent = 'Desenhar Bandeiras com Canvas \n';
+
         codigoGithub.innerHTML = '';
         codigoGithub.appendChild(document.createTextNode('\n Abrir o Codigo --- no GitHub \n'));
         codigoGithub.href = 'https://github.com/improgram/casadocodigo/blob/master/Capitulo7/057Topico7.4_Bandeiras.html \n';
@@ -618,8 +624,9 @@ let buttonCondicionais = document.getElementsByClassName('canvasCondicionais');
         elementCondicionais.onclick = canvasCondicionais;
     }    
     function canvasCondicionais(){
-        titulo.textContent = '';
-        mostrar.textContent = ' \n';
+        titulo.textContent = 'Trabalho com Canvas';
+        mostrar.textContent = 'Canvas Condicionais \n';
+
         codigoGithub.innerHTML = '';
         codigoGithub.appendChild(document.createTextNode('\n Abrir o Codigo --- no GitHub \n'));
         codigoGithub.href = 'https://github.com/improgram/casadocodigo/blob/master/Capitulo7/062Topico7.6_Exercicio4.html \n';
@@ -632,8 +639,9 @@ let buttonCrescente = document.getElementsByClassName('canvasCrescente');
         elementCanvasCrescente.onclick = canvasCrescente;
     }
     function canvasCrescente(){
-        titulo.textContent = '';
-        mostrar.textContent = ' \n';
+        titulo.textContent = 'Trabalho com Canvas';
+        mostrar.textContent = 'Canvas crescente \n';
+
         codigoGithub.innerHTML = '';
         codigoGithub.appendChild(document.createTextNode('\n Abrir o Codigo --- no GitHub \n'));
         codigoGithub.href = 'https://github.com/improgram/casadocodigo/blob/master/Capitulo7/063Topico7.7.html \n';
@@ -646,8 +654,9 @@ let buttonParabola = document.getElementsByClassName('canvasParabola');
         elementCanvasParabola.onclick = canvasParabola;
     }
     function canvasParabola(){
-        titulo.textContent = '';
-        mostrar.textContent = ' \n';
+        titulo.textContent = 'Trabalho com Canvas';
+        mostrar.textContent = 'Canvas Parabola \n';
+
         codigoGithub.innerHTML = '';
         codigoGithub.appendChild(document.createTextNode('\n Abrir o Codigo --- no GitHub \n'));
         codigoGithub.href = 'https://github.com/improgram/casadocodigo/blob/master/Capitulo7/065Topico7.9_Parabola.html \n';
@@ -660,8 +669,9 @@ let buttonSeno = document.getElementsByClassName('seno');
         elementSeno.onclick = seno;
     }
     function seno(){
-        titulo.textContent = '';
-        mostrar.textContent = ' \n';
+        titulo.textContent = 'Trabalho com Canvas';
+        mostrar.textContent = 'Canvas Seno \n';
+
         codigoGithub.innerHTML = '';
         codigoGithub.appendChild(document.createTextNode('\n Abrir o Codigo --- no GitHub \n'));
         codigoGithub.href = 'https://github.com/improgram/casadocodigo/blob/master/Capitulo7/069Topico7.13_Seno.html \n';
@@ -674,8 +684,9 @@ let buttonClique = document.getElementsByClassName('cliques');
         elementDetectaClique.onclick = detectaClique;
     }
     function detectaClique(){
-        titulo.textContent = '';
-        mostrar.textContent = ' \n';
+        titulo.textContent = 'Detectar Cliques';
+        mostrar.textContent = 'Posição dos cliques \n';
+
         codigoGithub.innerHTML = '';
         codigoGithub.appendChild(document.createTextNode('\n Abrir o Codigo --- no GitHub \n'));
         codigoGithub.href = 'https://github.com/improgram/casadocodigo/blob/master/Capitulo8/070Topico8.1_Com_Alert.html \n';
@@ -688,8 +699,9 @@ let buttonMouse = document.getElementsByClassName('botaoMouse');
         elementMouse.onclick = mouse;
     }
     function mouse(){
-        titulo.textContent = '';
-        mostrar.textContent = ' \n';
+        titulo.textContent = 'Detecta movimentos';
+        mostrar.textContent = 'Mouse \n';
+
         codigoGithub.innerHTML = '';
         codigoGithub.appendChild(document.createTextNode('\n Abrir o Codigo --- no GitHub \n'));
         codigoGithub.href = 'https://github.com/improgram/casadocodigo/blob/master/Capitulo8/071Topico8.2_Exercicio1.html \n';
@@ -702,8 +714,9 @@ let buttonPaint = document.getElementsByClassName('paint');
         elementPaint.onclick = paint;
     }
     function paint(){
-        titulo.textContent = '';
-        mostrar.textContent = ' \n';
+        titulo.textContent = 'Trabalho com Canvas';
+        mostrar.textContent = 'Paint \n';
+
         codigoGithub.innerHTML = '';
         codigoGithub.appendChild(document.createTextNode('\n Abrir o Codigo --- no GitHub \n'));
         codigoGithub.href = 'https://github.com/improgram/casadocodigo/blob/master/Capitulo8/073Topico8.2_Paint_Canvas_Exerci3.html \n';
@@ -717,8 +730,9 @@ let buttonAnimacoes = document.getElementsByClassName('animacoes');
         elementCanvasAnimacoes.onclick = canvasAnimacoes;
     }
     function canvasAnimacoes(){
-        titulo.textContent = '';
-        mostrar.textContent = ' \n';
+        titulo.textContent = 'Trabalho com Canvas';
+        mostrar.textContent = 'Animações \n';
+
         codigoGithub.innerHTML = '';
         codigoGithub.appendChild(document.createTextNode('\n Abrir o Codigo --- no GitHub \n'));
         codigoGithub.href = 'https://github.com/improgram/casadocodigo/blob/master/Capitulo8/075Topico8.4.html \n';
@@ -732,8 +746,9 @@ let buttonAlvo = document.getElementsByClassName('tiroAlvo');
         elementTiroAlvo.onclick = tiroAlvo;
     }
     function tiroAlvo(){
-        titulo.textContent = '';
-        mostrar.textContent = ' \n';
+        titulo.textContent = 'Trabalho com Canvas';
+        mostrar.textContent = 'Tiro ao alvo \n';
+
         codigoGithub.innerHTML = '';
         codigoGithub.appendChild(document.createTextNode('\n Abrir o Codigo --- no GitHub \n'));
         codigoGithub.href = 'https://github.com/improgram/casadocodigo/blob/master/Capitulo8/079Topico8.5_opcao2.html \n';
@@ -747,8 +762,9 @@ let buttonFormEventos = document.getElementsByClassName('formEventos');
         elementFormEventos.onclick = formEventos;
     }
     function formEventos(){
-        titulo.textContent = '';
-        mostrar.textContent = ' \n';
+        titulo.textContent = 'Formulário';
+        mostrar.textContent = 'Eventos \n';
+
         codigoGithub.innerHTML = '';
         codigoGithub.appendChild(document.createTextNode('\n Abrir o Codigo --- no GitHub \n'));
         codigoGithub.href = 'https://github.com/improgram/casadocodigo/blob/master/Capitulo8/080Topico9.1.html \n';
@@ -756,14 +772,14 @@ let buttonFormEventos = document.getElementsByClassName('formEventos');
     }
 
 //Formulario com numerosEscolhidos:
-let buttonFormnumerosEscolhidos = document.getElementsByClassName('formnumerosEscolhidos');
-    for (let elementFormnumerosEscolhidos of buttonFormnumerosEscolhidos) {
-        elementFormnumerosEscolhidos.onclick = formnumerosEscolhidos;
+let buttonFormArray = document.getElementsByClassName('formArray');
+    for (let elementFormArray of buttonFormArray) {
+        elementFormArray.onclick = formArray;
     }
 
-    function formnumerosEscolhidos(){
-        titulo.textContent = '';
-        mostrar.textContent = ' \n';
+    function formArray(){
+        titulo.textContent = 'Formulario com numeros';
+        mostrar.textContent = 'Numeros na Array \n';
         codigoGithub.innerHTML = '';
         codigoGithub.appendChild(document.createTextNode('\n Abrir o Codigo --- no GitHub \n'));
         codigoGithub.href = 'https://github.com/improgram/casadocodigo/blob/master/Capitulo8/081Topico9.1_formulario_numerosEscolhidos.html \n';
@@ -776,8 +792,9 @@ let buttonObjetos = document.getElementsByClassName('objetos');
         elementObjetos.onclick = objetos;
     }
     function objetos(){
-        titulo.textContent = '';
-        mostrar.textContent = ' \n';
+        titulo.textContent = 'Objetos';
+        mostrar.textContent = 'Objetos JS \n';
+
         codigoGithub.innerHTML = '';
         codigoGithub.appendChild(document.createTextNode('\n Abrir o Codigo --- no GitHub \n'));
         codigoGithub.href = 'https://github.com/improgram/casadocodigo/blob/master/Capitulo8/083_numerosEscolhidoss.html \n';
@@ -791,8 +808,8 @@ let buttonDom = document.getElementsByClassName('dom');
         elementDom.onclick = dom;
     }
     function dom(){
-        titulo.textContent = '';
-        mostrar.textContent = ' \n';
+        titulo.textContent = 'DOM';
+        mostrar.textContent = 'Manipular DOM \n';
         codigoGithub.innerHTML = '';
         codigoGithub.appendChild(document.createTextNode('\n Abrir o Codigo --- no GitHub \n'));
         codigoGithub.href = 'https://github.com/improgram/casadocodigo/blob/master/Capitulo8/084Topico9.2_codigoGithubs.html \n';
@@ -806,12 +823,10 @@ let buttonImc = document.getElementsByClassName('imc');
     }
 
     function imc(){
-        titulo.textContent = '';
-        mostrar.textContent = ' \n';
+        titulo.textContent = 'I M C';
+        mostrar.textContent = 'Calcular IMC \n';
         codigoGithub.innerHTML = '';
         codigoGithub.appendChild(document.createTextNode('\n Abrir o Codigo --- no GitHub \n'));
         codigoGithub.href = 'https://github.com/improgram/casadocodigo/blob/master/Capitulo8/085Topico9.3_IMC.html \n';
     resultado();
     }
-
-*/
