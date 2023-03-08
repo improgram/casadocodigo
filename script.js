@@ -316,8 +316,8 @@ function batimentos() {
                 } else if (chute < deumaseis) {
                     alert('Chute foi menor que o numero pensado ' );
                 } else if (isNaN(chute)) {
-                chute = ' Voce digitou : ' + chute;
-                alert('Voce digitou : ' + chute + ' >  Digite apenas numeros.');
+                    chute = ' Voce digitou : ' + chute;
+                    alert('Voce digitou : ' + chute + ' >  Digite apenas numeros.');
                 } else {
                     tentativa++;
                 }                            
@@ -402,19 +402,19 @@ function batimentos() {
             let tbody = document.createElement('tbody');
             let imgTabela = document.createElement('img');
                 imgTabela.className = 'imgtabela';
-            let linha1 = prompt('Digite a quantidade de linha');
-            let coluna1 = prompt('Digite a quantidade de coluna');
-            let tamanho = ' Quantidade de linhas : ' + linha1 + '\n' +
-                          ' Quantidade de colunas : ' + coluna1 + '\n \n';       
-            if (isNaN(linha1, coluna1)) {
+            let linhaTabela = prompt('Digite a quantidade de linha');
+            let colunaTabela = prompt('Digite a quantidade de coluna');
+            let tamanho = ' Quantidade de linhas : ' + linhaTabela + '\n' +
+                          ' Quantidade de colunas : ' + colunaTabela + '\n \n';
+            if (isNaN(linhaTabela, colunaTabela)) {
                 alert('ERRO : Digite apenas numeros.');
                 console.error('Nao foi digitado um Numero.');               
-                mostrar.textContent = '\n Não foi digitado um numero: \n' + linha1 + '\n' + coluna1;
+                mostrar.textContent = '\n Não foi digitado um numero: \n' + linhaTabela + '\n' + colunaTabela;
             }  
-            for (let i = 0; i < linha1; i++) {
+            for (let i = 0; i < linhaTabela; i++) {
                 let tr = document.createElement('tr');   // tr => linha da tabela 
                     tr.style = 'border: 1px solid #00FF00';
-                for (let j = 0; j < coluna1; j++) {
+                for (let j = 0; j < colunaTabela; j++) {
                     let td = document.createElement('td');  // td => celula
                     let cellText = document.createTextNode(`linha ${i}, coluna ${j}`);
                     td.appendChild(cellText);
@@ -507,35 +507,40 @@ let buttonMegaSena = document.getElementsByClassName('megaSena');
         let ulNumbers =  document.createElement('ul');
             ulNumbers.setAttribute('class', 'ulNumbers');
         mostrar.insertAdjacentElement('beforeEnd', ulNumbers);      
+        ulNumbers.insertAdjacentHTML('afterBegin', '\n Numeros Sorteados: \n \n');
 
-        function numero_aleatorio() {           // Evitar duplicidade
+        function numero_aleatorio() {
             while (sorteio.length < 6) {
                 let aleatorio = Math.floor(Math.random() * 60 + 1);
-                let listaNumbers = document.createElement('li');
-                    listaNumbers.setAttribute('class', 'liNumbers');
-                    ulNumbers.insertAdjacentElement('afterBegin', listaNumbers);
-                let textList = document.createTextNode(`${sorteio}`);
-                listaNumbers.appendChild(textList);
-    
-    // Método indexOf() retorna o primeiro índice em que o elemento pode ser encontrado no array,
-    // Retorna -1 caso o mesmo não esteja presente, se numeros.indexOf resultar -1 
-    // para o número que acabamos de gerar, ele não está presente no array e deve ser adicionado.             
-                if (sorteio.indexOf(aleatorio) == -1)
+                let listaNumbers = document.createElement('li');            
+                if (sorteio.indexOf(aleatorio) == -1)    // Evitar duplicidade
                     sorteio.push(aleatorio);
-            }                                            
+                for (let element of sorteio) {
+                    console.log(' => ' + sorteio);
+                    let currentNumber = element;                   
+                        listaNumbers.textContent = currentNumber;
+                        listaNumbers.setAttribute('class', 'liNumbers');                                     
+                }
+                ulNumbers.appendChild(listaNumbers);    
+            }           
         }
-        numero_aleatorio();               
+// https://pt.stackoverflow.com/questions/420659/como-varrer-um-array-e-inserir-os-elementos-no-html-com-js 
+// Método indexOf() retorna o primeiro índice em que o elemento pode ser encontrado no array,
+// Retorna -1 caso o mesmo não esteja presente, se numeros.indexOf resultar -1 
+// para o número que acabamos de gerar, ele não está presente no array e deve ser adicionado.
+ 
+        numero_aleatorio();       
         sorteio.sort (function(a, b){
             return a - b;
-        })  
-        console.log('Sorteados Ordenados : ' + sorteio);       
-        ulNumbers.insertAdjacentHTML('afterBegin', '\n Numeros Sorteados: \n \n');
+        })
+        console.log('Sorteados Ordenados : ' + sorteio);    
                 
         // Usuario digita numeros
         let numerosEscolhidos = []       
         for (let i = 0; i < 2; i++) {                        // mudar para 6
+            // let olNumbers = document.createElement('ol');
             let liNumbers = document.createElement('li');
-                liNumbers.setAttribute('class', 'liNumbers');                       
+                liNumbers.setAttribute('class', 'liNumbers');                     
             let num = prompt('Digite 6 numeros ate 60.');
                 numerosEscolhidos.push(num);
             // liNumbers.textContent = numerosEscolhidos;       
@@ -830,3 +835,18 @@ let buttonImc = document.getElementsByClassName('imc');
         codigoGithub.href = 'https://github.com/improgram/casadocodigo/blob/master/Capitulo8/085Topico9.3_IMC.html \n';
     resultado();
     }
+
+
+    /*
+    Sim eu criei alguma coisa diferente de tudo que ja vi.
+    Utilizei Html, Css e JavaScript e GitHub, aprofundando conhecimentos na manipulação do DOM.
+    Incessante buscando:
+        - Reutilização de código o script possui mais de 1000 linhas;
+        - Regras de clean code, identação, diminuir a utilização de variavel global;
+        - Maximizar a performance das páginas;
+        - As buscas no Stackoverflow foi utilizada com ética e absorvendo o significado dos códigos.
+        -  
+
+    Buscar == e substituir por ===
+http://opensource.locaweb.com.br/locawebstyle-v2/manual/praticas-padroes/javascript/
+    */
