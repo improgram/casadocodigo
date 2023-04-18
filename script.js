@@ -553,7 +553,7 @@ let buttonMegaSena = document.getElementsByClassName('megaSena');
         numerosEscolhidos.sort (function(a, b) {
             return a - b;
         });
-        console.log ('Digitados ordenados : ' + numerosEscolhidos);
+        console.log ('%c Digitados ordenados : ' + numerosEscolhidos, 'background: #F2F3 ' 'color: #F0F0');
         ulNumbers.insertAdjacentElement('afterEnd', elementEscolhidos);
         // ulNumbers.insertAdjacentElement('afterEnd', liNumbers);
         elementEscolhidos.insertAdjacentHTML('afterBegin', '\n Numeros Escolhidos: \n' + numerosEscolhidos + '\n');
