@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+    <html Lang="EN">
+        <head>
+            <title>070Topico7.13_Seno</title>
+        </head>
+    <body>
+<h3>Topico7.13_Seno</h3>  
+<canvas id = "tela"	width = "600"	height = "400" ></canvas>
+
+<script>
+function mostra(frase){
+    document.write(frase + '<br>')
+}
+
+    var tela = document.getElementById("tela");
+    var c = tela.getContext("2d");
+    
+    c.fillStyle = "blue";
+    
+    var funcaoSeno = function(x) {
+    	return Math.sin(x/20) * 100 + 200;
+    };
+    
+    var desenhaFuncao = function(funcaoMatematica) {
+    	for(var x =0; x < 600; x = x + 1) {
+        var y = funcaoMatematica(x);
+        mostra("Para x = " + x + ", o y vale " + y);
+        
+        c.beginPath();
+        c.arc(x, 400 - y, 2, 0, 2 * 3.14);
+        c.fill();
+        }
+    };
+    desenhaFuncao(funcaoSeno);
+    
+        </script>
+    </body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+	<html lang="EN">
+		<head>
+			<title>Topico 5.11</title>
+		</head>
+	<body>
+
+<a href='https://developer.mozilla.org/pt-BR/docs/Aprender/
+Getting_started_with_the_web/JavaScript_basico' target="_blank">
+Site Mozilla - Topico 5.11 </a>
+
+<script>
+function mostra (frase) {
+	document.write(frase + '<br>')
+}
+mostra('<br><font color="red">NUMEROS ATE 10 = 5 CHANCES</font>');
+alert('Sao 5 chances para acertar um numero aleatorio ate 10')
+
+mostra('<br><strong>EXERCICIO 1 :</strong>');
+
+var numeropensado = Math.round(Math.random() * 10);
+var tentativa = 1;
+while(tentativa <= 5) {
+	var chute = prompt('DIGITE um numero de 1 a 10 ? ');
+	mostra('Numero digitado : ' + chute);
+	if(isNaN(chute)) {
+        alert('Voce digitou : ' + chute + ' . Digite apenas numeros.')
+		mostra('Voce digitou : ' + chute)    
+    }
+	if(chute ==numeropensado) {
+		alert('Parabens, ACERTOU');
+		mostra('ACERTOU, O numero  : ' + numeropensado + ' : FIM');
+	break;
+	} else {
+	if(chute > numeropensado) {
+		alert('Chute foi maior que o numero pensado ');
+		mostra('Chute foi maior que o numero pensado ');
+		}
+	if(chute < numeropensado) {
+		alert('Chute foi menor que o numero pensado ' );
+		mostra('Chute foi menor que o numero pensado ');
+		}
+	}	
+	tentativa++;
+	if(tentativa > 5) {
+		alert('5 CHANCES ESGOTADAS');
+		mostra('<font color="red">5 CHANCES ESGOTADAS</font>');
+	}
+
+}
+
+mostra('<br><strong>EXERCICIO 2:</strong>');
+mostra('<font color="blue">ATE ACERTAR O NUMERO VAI ATE 6</font><br>');
+alert('Exercicio 2 : Ate acertar o numero aleatorio que vai ate 6')
+var numero2 = Math.round(Math.random() * 6);
+var tentativa2 = 1;
+
+while(tentativa2 = numero2) {
+	var chute2 = prompt('ESCOLHA um numero ate 6 ? ');
+	mostra('Numero digitado : ' + chute2);
+		if(isNaN(chute2)) {
+        alert('Voce digitou : ' + chute2 + ' .Digite apenas numeros.') 
+		mostra('Voce digitou : ' +  chute2) 
+    	}
+		if(chute2 ==numero2) {
+		alert('Parabens ACERTOU');
+	mostra('ACERTOU : O numero foi : ' + numero2 + ' : FIM');
+		break
+	} else {
+		if(chute2 > numero2) {
+		alert('Chute foi maior que o numero pensado ');
+	mostra('Chute foi maior que o numero pensado ');
+	}
+		if(chute2 < numero2) {
+	alert('Chute foi menor que o numero pensado ' );
+	mostra('Chute foi menor que o numero pensado ');
+	}
+    }
+
+	tentativa2++;
+}
+
+mostra('<hr><font color="orange">EXERCICIO 3 : ' +  
+'Nao precisa 1000 possibilidades.</font></hr>');
+
+		</script>
+	</body>	
+</html>

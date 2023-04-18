@@ -1,0 +1,62 @@
+<DOCTYPE html>
+    <html lang="EN">
+        <head>
+            <title>Topico7.5</title>
+            <h3>Canvas Funcao</h3>
+        </head>
+    <body>
+<canvas id="tela" width="600" height="600"></canvas>
+
+<script>
+
+var tabuleiro = function(x, y) {
+    var tela = document.getElementById("tela");
+    var c = tela.getContext("2d");
+    c.fillStyle="gray";
+    c.fillRect(x, y, 50, 50);
+};
+// 4 quadrados na primeira coluna 0
+tabuleiro(0,0);
+tabuleiro(0,100)
+tabuleiro(0,200)
+tabuleiro(0,300)
+// 4 quadrados na segunda coluna 50
+tabuleiro(50,50)
+tabuleiro(50,150)
+tabuleiro(50,250)
+tabuleiro(50,350)
+// 4 Quadrados na terceira coluna 100
+tabuleiro(100,0)
+tabuleiro(100,100)
+tabuleiro(100,200)
+tabuleiro(100,300)
+// 4 Quadrados na quarta coluna 150
+tabuleiro(150,50)
+tabuleiro(150,150)
+tabuleiro(150,250)
+tabuleiro(150,350)
+//4 Quadrados na quinta coluna 200
+tabuleiro(200,0)
+tabuleiro(200,100)
+tabuleiro(200,200)
+tabuleiro(200,300)
+//4 Quadrados na sexta coluna 250
+tabuleiro(250,50)
+tabuleiro(250,150)
+tabuleiro(250,250)
+tabuleiro(250,350)
+//4 Quadrados na setima coluna 300
+tabuleiro(300,0)
+tabuleiro(300,100)
+tabuleiro(300,200)
+tabuleiro(300,300)
+//4 Quadrados na oitava coluna 350
+tabuleiro(350,50)
+tabuleiro(350,150)
+tabuleiro(350,250)
+tabuleiro(350,350)
+
+
+        </script>
+    </body>
+<html>        

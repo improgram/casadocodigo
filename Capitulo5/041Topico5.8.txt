@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+	<html lang="EN">
+		<HEAD>
+			<title>Topico5.8</title>
+		</HEAD>
+	<body>
+
+<a href=
+'https://developer.mozilla.org/pt-BR/docs/Aprender/
+Getting_started_with_the_web/JavaScript_basico'
+	target="_blank">Link Material JavaScript</a></p>
+
+<script>
+function mostra (frase){
+	document.write(frase + '<br>')
+}
+mostra('<hr><strong>Topico 5.8</h3></strong>');
+mostra('Variaveis dentro de parenteses das funcoes.');
+mostra('Sao chamadas de parametros ou argumentos.' + '<br>');
+
+for(var multiplica = 1; multiplica <=10; multiplica++) {
+	mostra('Tabuada do 7 : ' + multiplica * 7);
+}
+mostra('<hr><strong>Agora do 9 :</strong></hr>');
+for(var multipli = 1; multipli <=10; multipli++) {
+	mostra('Tabuada do 9 : ' + multipli * 9);
+}
+
+var numero = parseInt(prompt('Escolha um numero ate 10'))
+mostra("<hr><b>Numero escolhido : </b></hr>" + numero)
+for(var i = 1; i < = 10; i ++){
+	mostra(numero + ' vezes ' + i + ' = ' + numero * i)
+	if(i >= 2){
+	mostra('i mais 1 do For = (' + i + ')<br>')
+	}
+}
+
+		</script>
+	</body>	
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+    <html lang="EN">
+        <head>
+            <title>Exercicio003</title>
+        </head>
+            <body>
+<br>
+<br>
+<strong>Exercicio3 - Topico 1.4</strong>.
+<p>
+o ALERT nao pode comecar com letra A maiuscula
+<p>
+Uma tag mais o seu conteudo forma um elemento HTML,
+por exemplo:<br>
+<strong>Letras em Negrito</strong><br>
+Esta em negrito pois tem a TAG: strong entre o(<.>)
+<p>Ha muitas Tags.<br>
+Nao se preocupe em decora-las<br>
+Voce percebera que com o passar do tempo e a pratica<br>
+Decidir qual TAG devera ser utilizada sera naturalmente.
+<p>
+
+<script>
+alert('Exercicio 3');
+alert('1.4 podemos fazer mais com JavaScript');
+        </script>
+    </body>
+</html>
+
+
+
+

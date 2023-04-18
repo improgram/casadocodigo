@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+    <html lang="EN">
+        <head>
+            <title>Topico 6.1</title>
+        </head>
+    
+    <h2>Topico 6.1</h2>
+    <body>
+<input type="text" id="numero" />
+<input type="submit" id="adivinhar" value="Digite 1"/>
+    
+       <script>
+function mostra (frase) {
+    document.write(frase + "<br>")
+}
+var segredo1 = 1
+var caixaDoNumero = document.getElementById("numero")
+var botaoClicado = function() {
+    if(segredo1 == caixaDoNumero.value) {
+        alert("Voce Digitou 1")
+    }
+     else {
+         alert("voce nao digitou 1")
+     }
+     caixaDoNumero.value = ""
+}
+var botaoAdivinhar = document.getElementById("adivinhar")
+botaoAdivinhar.onclick = botaoClicado
+
+     </script>
+    </body>
+</html>

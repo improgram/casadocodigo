@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+    <html lang="EN">
+        <head>
+            <title>Topico7.2</title>
+        <head>
+    <body>
+<h2>Topico 7.2</h2>
+
+<img src= "CSS_Coordenadas.PNG" width="300" height="200" 
+ alt = "Coordenadas Css">
+<h3>Coordenadas</h3>
+<canvas id="tela" width="600" height="400"></canvas>
+
+<script>
+function mostra(frase) {
+    document.write(frase + '<br>')
+}
+mostra('<h4>Coordenadas da tela </h4>')
+mostra('Os dois primeiros sao a posicao X e Y.')
+mostra('Os outros dois sao a largura e a altura do retangulo.')
+
+var tela = document.getElementById("tela");
+var c = tela.getContext("2d");
+
+c.fillStyle = "green";
+c.fillRect(0, 0, 200, 400);
+
+c.fillStyle = 'red';
+c.fillRect(400, 0, 200, 400);
+
+c.fillStyle = 'gray';
+c.beginPath();
+c.moveTo(300, 200);
+//meio da bandeira que possui o total de Largura=600 e altura=400.
+c.lineTo(200, 400);
+//inferior esquerdo X=200 e Y=400.
+c.lineTo(400, 400);
+//inferior direito X=400 e Y=400.
+c.fill();
+//preenchimento da figura.
+
+c.fillStyle="blue";
+c.beginPath();
+c.arc(300, 140, 50, 0, 2*3.14);
+//X=300, Y=140, Largura=50 e altura=0.
+c.fill();
+
+        </script>
+    </body>        
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+    <html lang="EN">
+        <head>
+            <title>Topico7.6</title>
+        </head>
+    <body>
+<h2>Topico 7.6-Canvas com funcao</h2>
+<h3>Usando while e depois o For :</h3>
+<canvas id="tela" width="500" height="200"></canvas>
+
+<h4>For esta na segunda Linha na altura Y : 70</h4>
+<script>
+function verde (x, y) {
+    var tela = document.getElementById("tela");
+    var c = tela.getContext("2d");
+
+    c.fillStyle="green";
+    c.fillRect(x, y, 50, 50);
+
+    c.strokeStyle="black";
+    c.strokeRect(x, y, 50, 50);
+};
+
+function bolaAzul (x, y) {
+    var tela = document.getElementById("tela");
+    var d = tela.getContext("2d");
+
+    d.fillStyle = "blue";
+    d.beginPath();
+    d.arc(50, 125, 25, 0, 2*3.14)
+// X, Y , raio, Angulo inicial, Angulo final.
+// De 0 ate duas vezes 3.14(Valor de PI=Circuferencia inteira)   
+    d.fill();
+};
+
+var Wtest = 0;
+while(Wtest < 500) {
+    verde(Wtest, 0);
+    Wtest = Wtest + 50;
+};
+
+for(var x = 0; x < 400; x = x + 50) {
+    verde(x, 70);
+    bolaAzul(x, 50);
+};
+
+        </script>
+    </body>
+</html>

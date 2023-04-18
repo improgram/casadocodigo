@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+	<html lang="EN">
+		<head>
+			<title>Topico 7.1-Canvas</title>
+		</head>
+	<body>
+			<h2>Topico 7.1-Canvas</h2>
+	
+<img src= "CSS_Coordenadas.PNG" width="300" height="200" 
+ alt = "Coordenadas Css">
+
+	<h4>
+<a href="https://developer.mozilla.org/pt-BR/docs/Aprender/HTML/Multimedia_and_embedding/Images_in_HTML" 
+	target="_blank">Coordenadas da Tela</a>
+	</h4>
+
+ <canvas id="tela" width="400" height="200"></canvas>
+ <h4>
+	<a href="https://developer.mozilla.org/pt-BR/docs/Web/HTML/Canvas"
+	 target="_blank">Mozilla Developer Canvas
+		</h4>
+
+	<script>
+function mostra(frase) {
+	document.write(frase + '<br>')
+}
+
+var tela = document.getElementById("tela")
+
+var c = tela.getContext("2d")
+c.fillStyle="green"
+c.fillRect(50, 20, 100, 200)
+//Os dois primeiros sao a posicao X,Y.
+//Os outros dois sao a largura e a altura do retangulo.
+
+var d = tela.getContext("2d")
+c.fillStyle="red"
+c.fillRect(240, 20, 100, 200)
+
+
+		</script>
+	</body>	
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+    <html lang="EN">
+        <head>
+            <title>Topico3.4</title>
+        </head>
+    <body>
+
+<script>
+var pulalinha = function() {
+    document.write('<br>');
+};
+var mostra = function (frase) {
+    document.write(frase);
+}
+mostra('<h3>Tópico3.4</h3>')
+var nome1 = prompt('Qual seu nome ? ');
+pulalinha();
+mostra('Qual seu nome ? <br>')
+mostra('Bem vindo, ' + nome1 + '<br>');
+var idade1 = prompt(nome1 + ' Quantos anos voce tem ? ');
+mostra('Quantos anos voce tem ? <br>')
+mostra(nome1 + ' tem ' + idade1 + ' anos de idade');
+
+        </script>
+    </body>
+</html>

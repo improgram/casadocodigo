@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+    <html lang="EN">
+        <head>
+            <title>Topico 6.2</title>
+        </head>
+    <body>
+<h2>Topico 6.2</h2>
+<h3>Exercicio 1 :</h3>
+<input type='text' id='numero' />
+<input type='submit' id='adivinhar' 
+        value='Digite um numero até 10' />
+        
+    <script>
+function mostra (frase) {
+    document.write(frase + '<br>')
+}
+var segredo = Math.round(Math.random() * 10)
+var caixaDoNumero = document.getElementById('numero')
+var botaoClicado = function() {
+    if(segredo == caixaDoNumero.value) {
+        alert('Voce acertou o numero : ' + segredo)
+    }
+    else {
+        alert('Voce nao acertou o numero foi : ' + segredo)
+    }
+    caixaDoNumero.value = ""
+}
+var botaoAdivinhar = document.getElementById('adivinhar')
+botaoAdivinhar.onclick = botaoClicado    
+mostra('<h3><font color="green">Exercicio 2 :</font> </h3>')
+mostra('Foi adicionada a variavel:caixaDoNumero.value=""> ')
+    //Com isso apos executar o campo sera zerado.
+mostra('<h4>Teste Console Navegador OK.</h4>')
+
+        </script>
+    </body>
+</html>

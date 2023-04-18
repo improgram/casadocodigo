@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+    <html lang="EN">
+        <head>
+            <title>Topico 4.6</title>
+        </head>
+    <body>
+
+<script>
+function mostra (frase) {
+    document.write(frase + '<br>')
+}
+mostra('<h2>Topico 4.6</h2>')
+var numeroPensado = Math.round(Math.random() * 10)
+var chute1 = prompt('Chute um numero :')
+mostra('Seu chute foi : ' + chute1 + '<br>')
+if(chute1 == numeroPensado) {
+    mostra('Voce acertou : ' + numeroPensado)
+} else {
+    mostra('Errou o numero.<br>' + ' Correto é : ' + numeroPensado)
+}
+mostra('<h3>Exercicio 1 :</h3>')
+if(chute1 > numeroPensado) {
+    mostra('O chute é maior que o numero pensado.')
+} else {
+    mostra('O chute é menor que o numero pensado.')
+}
+mostra('<h3>Exercicio 2 :</h3>')
+function sorteia(n) {
+    return Math.round(Math.random() * n)
+}
+var numeroPensado2 = sorteia(10)
+mostra('Numero da funçao sorteia: ' + numeroPensado2)
+mostra('<h3>Exercicio 3 :</h3>')
+var letraNumero = prompt('Exercicio 3-Digite uma letra.')
+if(isNaN(letraNumero)) {
+    mostra('Voce digitou a palavra : ' + letraNumero)
+} else {
+    mostra('Voce digitou um Numero : ' + letraNumero)
+}
+
+        </script>
+    </body>    
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+    <html lang="EN">
+        <head>
+            <title>Topico8.4_Exercicio2</title>
+        </head>
+    <body>
+<h3>Topico 8.4 Exercicio 2</h3>
+<h4>Imagem movendo se na pagina.</h4>
+<canvas id="tela" width="600" height="400"></canvas>
+
+<script>
+var tela = document.getElementById("tela");
+var c = tela.getContext("2d");
+
+var imagem = new Image();
+imagem.src = "CSS_Coordenadas.PNG";
+
+function desenhaimagem(x, y){
+    c.drawImage(imagem, x, y);
+}
+
+function limpaTela(){
+	c.clearRect(0, 0, 600, 400);
+}
+
+var x = 1;
+function desenha(){
+	limpaTela();
+	desenhaimagem(x, 100);
+	x = x + 1;
+}
+
+setInterval(desenha,40);
+
+        </script>    
+    </body>
+</html>    

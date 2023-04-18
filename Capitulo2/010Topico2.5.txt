@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+    <html lang="EN">
+        <head>
+    <title>Topico2.5</title>
+</head>
+    <body>
+        
+        <script>
+alert('topico2.5');
+document.write('<h3>Topico 2.5</h3>');
+var I = 38;
+var K = 37;
+var N = 10;
+var P = 10;
+document.write('Idades : 38+37+10+10 <br>');
+document.write('Soma da idade dos 4 : ');
+document.write('<br>');
+document.write(I + K + N + P);
+document.write('<br>');
+document.write('Media de idade dos 4 : <br>');
+document.write((I + K + N + P) / 4);
+document.write('<p>');
+document.write('Dividindo a variavel total por 4' + '<br>');
+var total = I + K + N + P;
+document.write('Var total: I+K+N+P' + '<br>');
+var media = total / 4;
+document.write('Media de idade : ' + media);
+
+        </script>
+    </body>    
+</html>
+

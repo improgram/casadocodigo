@@ -1,0 +1,54 @@
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>Topico9.2</title>
+        <script src="084Topico9.2.js"></script>
+    </head>
+<body>
+    <style>
+        body {
+            font-size:20px;
+            background: #b8bea2}
+    </style>
+<h2><font color="blue">Capitulo 9.2 Links uteis </font></h2>
+<p><a href="http://jquery.com" target="_blank">.jQuery.</a>
+<a href="http://www.melonjs.org" target="_blank">.Desenvolvimento de Jogos melonJS.</a>
+<a href="http://processingjs.org" target="_blank">.Trabalhos em 3D.</a></p>
+    <h3><font color="brown">Calcular Multiplicacao: </font></h3>
+
+<pre> <input type="number" id="numero1" onchange="calcular()" placeholder="Numero1" /></pre>
+<pre> <input type="number" id="numero2" onchange="calcular()" placeholder="Numero2" /></pre>
+
+<strong>Calculo : </strong> <span id = "calculo"> </span>
+<hr>
+
+<pre><input type="submit" value="Ver novamente no Console" onclick="resultado()" /></pre>
+<strong>Resultado :</strong> <span id= "result"> </span>
+
+    </body>
+</html>
+
+
+let numero1;
+let numero2;
+let total;
+
+function calcular() {
+numero1 = Number(document.getElementById("numero1").value);
+numero2 = Number(document.getElementById("numero2").value);
+	total = numero1 * numero2;
+	document.getElementById("calculo").innerHTML = total;
+	console.clear();
+	console.log(typeof total + ' = ' + total);
+	return total
+}
+
+function resultado(){
+document.getElementById("result").innerText = calcular();
+//Utilizando o retorno da funcao Calcular.
+	console.log('Resultado : ' + calcular() )
+}
+
+function redirecionar() {
+	window.location.href = "http://www.github.com";
+}

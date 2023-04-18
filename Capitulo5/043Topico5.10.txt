@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+	<html lang="EN">
+		<head>
+			<title>Topico5.10</title>
+		</head>
+	<body>
+
+<a href='https://developer.mozilla.org/pt-BR/docs/Aprender/
+Getting_started_with_the_web/JavaScript_basico' target="_blank">
+Site Mozilla</a>
+
+<script>
+function mostra (frase) {
+	document.write(frase + '<br>')
+}
+
+mostra('<h2><font color="red">Adivinhar Numero</font></h2>');
+mostra('Sao 5 tentativas : <br>')
+var numeropensado = Math.round(Math.random() * 10);
+var numerodatentativa = 1;
+
+while(numerodatentativa <=5) {
+	var chute = prompt('Chute um numero : ');
+	if(chute == numeropensado) {
+	alert('Voce ACERTOU');
+	mostra('ACERTOU - Pensei no : ' + numeropensado);
+	break;
+	} else {
+	alert('Voce ERROU');
+	mostra('ERROU - Tinha pensado no : ' + numeropensado);
+	}
+numerodatentativa++;
+}
+
+
+		</script>
+	</body>	
+</html>

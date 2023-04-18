@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+	<html lang="EN">
+		<head>
+			<title>Topico2.12</title>
+		</head>
+	<body>
+
+<script>
+alert('Topico2.12');
+document.write('<h1>Topico2.12</h1>');
+document.write('<hr>Tag HR "cria uma linha acima" </hr> <br>');
+document.write('Utilizando a Tag BiG: <big>BIG</big>');
+document.write('<h6>TAG H1 ate Tag H6</h6>');
+document.write('<strong>Tag STRONG</strong> <br>');
+// esta funcao com // ignora a frase nao sera mostrada no navegador.
+// agora vamos colocar no navegador o ano em que nasci:
+document.write('Como base ano de 2012 <br>');
+var ano = 2012;
+var pulalinha = function() {
+	document.write('<br>');
+};
+var mostra = function(frase) {
+	document.write(frase);
+	pulalinha();
+};
+mostra('Eu tenho 25 anos, nasci em :' + (ano - 25));
+pulalinha();
+document.write('Os comentarios podem ajuda-lo a oganizar melhor o codigo');
+pulalinha();
+document.write(' sempre mais importante ter um codigo bem escrito');
+pulalinha();
+document.write('Com nomes de variaveis expressivas');
+pulalinha();
+document.write('Que farao bastante sentido');
+pulalinha();
+document.write('Do que ter de usar muitas linhas de comentarios');
+pulalinha();
+document.write('Ha tambem  opcao de colocar comentarios');
+pulalinha();
+document.write('entre /* e */');
+pulalinha();
+document.write('Dessa forma, tudo que estiver entre');
+pulalinha();
+document.write('os dois identificadores sera ignorado pelo navegador');
+pulalinha();
+document.write('Inclusive se houver quebras de linha');
+/* teste ocultar do navegador*/
+console.log('FRASE OCULTA NO NAVEGADOR');
+
+		</script>
+	</body>	
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+	<html lang="EN">
+		<head>
+			<title>Topico2.10</title>
+		</head>
+	<body>
+
+<script>
+alert('Topico2.10');
+document.write('<h2>Topico2.10</h2>');
+document.write('<p>');
+var pulalinha = function() {
+	document.write('<br>');
+};
+var pulalinha2 = function() {
+	document.write('<br>' + '<hr>');
+};
+document.write('logo abaixo vamos ter nossa segunda funçao(a mostra)');
+pulalinha();
+document.write('que faz uso da <big>pulalinha</big>');
+pulalinha();
+document.write('diferente da anterior, ela recebe um parametro');
+pulalinha();
+document.write('que sera a frase a ser apresentada no navegador');
+pulalinha();
+var mostra = function(frase) {
+	document.write('<big>' + frase + '</big>');
+	pulalinha();
+};
+document.write('lembre-se de colocar o codigo dentro de uma função');
+pulalinha();
+document.write('usando o TAB do seu teclado.');
+pulalinha2();
+document.write('esse é o processo de <strong>identar</strong> o codigo');
+pulalinha();
+document.write('é importante que sua indentaçao esteja correta');
+pulalinha();
+document.write('para facilitar a leitura do programa');
+pulalinha();
+document.write('Após as duas funçoes declaradas, vamos utiliza-las no nosso codigo');
+pulalinha();
+document.write('Para imprimir quantos anos tem cada um dos envolvidos');
+pulalinha2();
+var ano = 2012;
+mostra('Jose tem 25 anos , nasceu em : ' + (ano - 25));
+mostra('Adriano tem 26 anos, nasceu em : ' + (ano - 26));
+mostra('Paulo tem 32 anos, nasceu em : ' + (ano - 32));
+		
+		</script>
+	</body>	
+</html>

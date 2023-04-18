@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+    <html lang="EN">
+        <head>
+            <title>Topico7.3</title>
+        </head>
+    <body>
+<h4>Topico 7.3</h4>
+<img src="CSS_Coordenadas.PNG" width="300" height="200" alt="Coordenadas">
+<h3><font color="brown">Canvas</font></h3>    
+<canvas id="tela" width="400" height="400"></canvas>    
+
+<script>
+    function mostra(frase){
+        document.write(frase + '<br>')
+    }
+mostra('<hr>Canvas figura 4 peças com 3 fileiras</hr>')   
+
+var tela = document.getElementById("tela");
+var c = tela.getContext("2d");
+
+c.fillStyle = "black";
+c.fillRect(0, 0, 400, 400);
+//linha 1 = Y: 1
+c.fillStyle = "silver";
+c.fillRect(1, 1, 50, 50)
+
+c.fillStyle = "silver";
+c.fillRect(100, 1, 50, 50)
+
+c.fillStyle = "silver";
+c.fillRect(200, 1, 50, 50)
+
+c.fillStyke = "silver";
+c.fillRect(300, 1, 50, 50)
+
+//Linha 2 = Y: 50
+c.fillStyle = "silver";
+c.fillRect(50, 50, 50, 50)
+
+c.fillStyle = "silver";
+c.fillRect(150, 50, 50, 50)
+
+c.fillStyle = "silver";
+c.fillRect(250, 50, 50, 50)
+
+c.fillStyle = "silver";
+c.fillRect(350, 50, 49, 50)
+
+//Linha 3 = Y: 100
+c.fillStyle = "silver";
+c.fillRect(1, 100, 50, 50)
+
+c.fillStyle = "silver";
+c.fillRect(100, 100, 50, 50)
+
+c.fillStyle = "silver";
+c.fillRect(200, 100, 50, 50)
+
+c.fillStyle = "silver";
+c.fillRect(300, 100, 50, 50)
+
+//Linha 4 = Y: 150
+c.fillStyle = "silver";
+c.fillRect(50, 150, 50, 50)
+
+c.fillStyle = "silver";
+c.fillRect(150, 150, 50, 50)
+
+c.fillStyle = "silver";
+c.fillRect(250, 150, 50, 50)
+
+c.fillStyle = "silver";
+c.fillRect(350, 150, 49, 50)
+
+//Linha 5 = Y: 200
+c.fillStyle = "silver";
+c.fillRect(1, 200, 50, 50)
+
+c.fillStyle = "silver";
+c.fillRect(100, 200, 50, 50)
+
+c.fillStyle = "silver";
+c.fillRect(200, 200, 50, 50)
+
+c.fillStyle = "silver";
+c.fillRect(300, 200, 50, 50)
+
+//Linha 6 = Y: 250
+c.fillStyle = "silver";
+c.fillRect(50, 250, 50, 50)
+
+c.fillStyle = "silver";
+c.fillRect(150, 250, 50, 50)
+
+c.fillStyle = "silver";
+c.fillRect(250, 250, 50, 50)
+
+c.fillStyle = "silver";
+c.fillRect(350, 250, 49, 50)
+
+//Linha 7 = Y: 300
+c.fillStyle = "silver";
+c.fillRect(1, 300, 50, 50)
+
+c.fillStyle = "silver";
+c.fillRect(100, 300, 50, 50)
+
+c.fillStyle = "silver";
+c.fillRect(200, 300, 50, 50)
+
+c.fillStyle = "silver";
+c.fillRect(300, 300, 50, 50)
+
+//Linha 8 = Y: 350
+c.fillStyle = "silver";
+c.fillRect(50, 350, 50, 49)
+
+c.fillStyle = "silver";
+c.fillRect(150, 350, 50, 49)
+
+c.fillStyle = "silver";
+c.fillRect(250, 350, 50, 49)
+
+c.fillStyle = "silver";
+c.fillRect(350, 350, 49, 49)
+
+
+        </script>
+    </body>
+</html>

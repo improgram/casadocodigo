@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+	<html lang="EN">
+		<head>
+			<title>Topico 5.11_Continuacao</title>
+		</head>
+	<body>
+
+<a href='https://developer.mozilla.org/pt-BR/docs/Aprender/
+Getting_started_with_the_web/JavaScript_basico' target="_blank">
+Site Mozilla</a>
+
+<script>
+function mostra (frase) {
+	document.write(frase + '<br>')
+}
+
+mostra('<h3><font color="carmine">EXERCICIO 4 : Ate acertar.</font></h3>');
+mostra('<font color="green">Sem o Break</font>');
+mostra('<strong>Necessario Utilizar : && que significa: E.</strong>');
+
+var sorteio = Math.round(Math.random() * 5);
+var tentativa = 1;
+
+while(tentativa <= 5 && chute != sorteio) {
+	// utilizado && (e) com != diferente de.
+	var chute = prompt('Sorteio de Numero ate o 5.');
+	mostra('Numero digitado : ' + chute);
+    	if (isNaN(chute)) {
+        	alert('Digite apenas numeros.')
+        	mostra('Voce digitou : ' + chute + '<br>')   
+    }
+        if(chute == sorteio) {
+	        alert('Parabens ACERTOU');
+	    mostra('<h3>Acertou o Numero do sorteio: ' + sorteio + '</h3>');
+			//Sem o Break
+	    }
+	else {
+		if(chute > sorteio) {
+			alert('Chute foi maior que o numero pensado ');
+			mostra('Chute foi maior que o numero pensado' + '<br>');
+		}
+
+		if(chute < sorteio) {
+			alert('Chute foi menor que o numero pensado ' );
+			mostra('Chute foi menor que o numero pensado' + '<br>');
+		}
+	}
+	tentativa++;
+}
+
+		</script>
+	</body>	
+</html>

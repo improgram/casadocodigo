@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+    <html lang="EN">
+       <head>
+           <title>Topico7.8</title>
+       </head>
+<body>
+<h2>Topico7.8</h2>
+<h4>Parabola deveria ser crescente.</h4> 
+<canvas id="tela" width="600" height="400"></canvas>
+
+<script>
+function mostra(frase){
+    document.write(frase + '<br>')
+}
+
+var tela = document.getElementById('tela');
+var c = tela.getContext("2d");
+
+for(var x = 0; x < 600; x = x + 1){
+    var y = x * x;
+    mostra('Para X = ' + x + ', o Y vale ' + y);
+    c.beginPath();
+    c.arc(x, y, 2, 0, 2 * Math.PI);
+    c.fill();
+}
+
+
+        </script>
+    </body>       
+</html> 

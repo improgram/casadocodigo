@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+	<html lang="EN">
+		<head>
+			<title>Topico 2.7</title>
+		</head>
+	<body>
+
+<script>
+	alert('Topico 2.7');
+document.write('<h2>Topico 2.7</h2>');
+document.write('Parar de escrever BR repetido' + '<br>');
+document.write('As variaveis economizam repeticao de linhas de codigo.<br>');
+	var ano = 2012;
+document.write('Como base o ano de 2012.<br>');
+	var pulalinha = function() {
+		document.write('<br>');
+			};
+document.write('Joao tem 25 anos nasceu em : ' + (ano - 25)); 
+	pulalinha();
+document.write('Jose tem 26 anos nasceu em : ' + (ano - 26));
+	pulalinha();
+document.write('Paulo tem 32 anos nasceu em : ' + (ano - 32));
+	pulalinha();
+document.write('Em vez de ter que mudar todos codigos');
+	pulalinha();
+document.write('Podemos colocar esse codigo dentro de uma variavel');
+	pulalinha();
+document.write('que chamamos de <strong>FUNCAO</strong>');
+	pulalinha();
+document.write('Criamos uma funcao que executa isso');
+	pulalinha();
+document.write('E guardamos dentro de uma variavel pulalinha');
+	
+		</script>		
+	</body>	
+</html>

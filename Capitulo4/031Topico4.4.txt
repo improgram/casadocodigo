@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+    <html lang="EN">
+        <head>
+            <title>Topico 4.4</title>
+        </head>
+    <body>
+
+<script>
+function mostra (frase) {
+    document.write(frase + '<br>')
+}
+function pulalinha () {
+    document.write('<br>')
+}
+mostra('<h2>Topico 4.4</h2>')
+var alturaUsuario = prompt('Qual a sua altura ? ')
+mostra('Altura digitado  : ' + alturaUsuario + ' m.<br>')
+var pesoUsuario = prompt('Qual seu peso ? ')
+mostra('Peso digitado : ' + pesoUsuario + ' kg.<br>')
+
+var calculaImc = function(alturaUsuario, pesoUsuario) {
+    var imc = pesoUsuario / (alturaUsuario * alturaUsuario)
+    return imc
+}
+var imcUsuario = (calculaImc(alturaUsuario, pesoUsuario))
+mostra('O IMC do usuario é : ' + imcUsuario + '.<br>')
+if(imcUsuario > 18.5) {
+    if(imcUsuario < 35) {    
+    mostra('Seu IMC está entre o indice min: 18.5 e o indice max: 35')
+} else {
+    mostra('Esta fora dos limites minimo ou maximo.')
+    }
+}
+mostra('<hr><h3>Com a condiçao && (E) Aplicada :</h3></hr>')
+if(imcUsuario >= 18.5 && imcUsuario <= 35) {
+    mostra('Está nos limites: maior que : 18.5 e menor que: 35. <br>');
+} else {
+    mostra('Esta fora dos limites minimo ou maximo.')
+}
+/*
+var peso = parseInt(prompt('Qual o peso?');
+var status = "";
+
+if (peso < 20.7) {
+   status = "Abaixo do peso";
+} else if (peso >= 20.7 && peso < 26.4) {
+   status = "Peso normal";
+} else if (peso >= 26.4 && peso < 27.8) {
+   status = "Pouco acima do peso";
+} else if (peso >= 27.8 && peso < 31.1) {
+   status = "Acima do peso";
+} else {
+   status = "Obeso";
+}
+*/
+        </script>
+    </body>    
+</html>

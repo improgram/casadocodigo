@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+    <html lang="EN">
+        <head>
+            <title>Topico 1.7</title>
+        </head>
+    <body>
+
+<h3>TOPICO 1.7</h3>
+<p>
+<strong>FORUM Desenv.Brasileiros</strong>
+<p>GUJ_com_br
+<p>
+<a href='http://www.guj.com.br'>CLIQUE AQUI</a>
+<p>
+
+<script>
+alert('topico 1.7');
+</script>
+
+
+    </body>
+</html> 
+

@@ -1,0 +1,57 @@
+<!DocType Html>
+    <html lang="EN">
+        <head>
+            <title>Topico 3.6</title>
+        </head>
+    <body>
+
+<script>
+var pulalinha = function () {
+    document.write('<br>');
+};
+var mostra = function (frase) {
+    document.write(frase);
+};
+mostra('<h2>Topico 3.6</h2>');
+var idade = prompt('Quantos anos voce tem? ');
+mostra('Idade digitada : ' + idade + ' anos <br>');
+var dias = idade * 365;
+mostra('Voce viveu : ' + dias + ' dias de vida. <br>');
+var batimentos1 = dias * 24 * 60 * 80;
+mostra('<h3>Calcular batimentos: </h3>');
+mostra('Cada dia tem 24 horas <br>');
+mostra('Cada hora tem 60 minutos <br>');
+mostra('Cada minutos considerar 80 batimentos cardiacos: <br>');
+mostra(dias + ' x 24 horas x 60 Min x 80 batimentos <br>');
+mostra('Seu coração bateu : ' + batimentos1 + ' vezes <br>');
+mostra('<h3>Exercicio 1 : </h3>');
+var calculadiasdevida = function(idade) {
+    dias = idade * 365;
+    return dias;
+};
+var dias2 = calculadiasdevida(idade);
+mostra('Resultado : ' + dias2 + ' dias de vida.<br>');
+mostra('<h3>Exercicio 2 : </h3>');
+var batimentos2 = function(dias2) {
+	return(dias2 * 24 * 60 * 80);
+};
+var calculabatimentos = batimentos2(dias2);
+mostra(calculabatimentos + ' batimentos.<br>');
+mostra('<h3>Exercicio 3 : </h3>');
+var idade2 = 34;
+var dias3 = calculadiasdevida(idade2);
+mostra('34 anos de idade ' + 'x 365 dias = ' + dias3 + '<br>');
+mostra('Agora que temos as 2 funçoes <br>');
+mostra('Podemos fazer a calcula3 Que é igual a : <br>');
+mostra('variavel batimentos2 e com o parametro dias de vida <br>');
+var calcula3 = batimentos2(dias3);
+mostra('Com 34 anos seu Coracao bateu : ' + calcula3 +' vezes.<br>');
+mostra('<h3>DESAFIO : </h3>');
+mostra('Chamada para calculadiasdevida pegar o resultado <br>');
+mostra('E passar para a chamada de calculabatimentos <br>');
+var desafio4 = calculadiasdevida(batimentos2(idade));
+mostra('Resultado : ' + desafio4 + ' Batimentos.');
+
+        </script>
+    </body>    
+</html>       

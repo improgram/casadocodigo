@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+    <html lang="EN">
+        <head>
+            <title>Topico_40_41</title>
+        </head>
+    <body>
+
+<script>
+function mostra (frase) {
+    document.write(frase)
+}
+function pulalinha () {
+    document.write('<br>')
+}
+mostra('<h2>Topico: 40_41</h2>')
+pulalinha()
+var vitoria1 = prompt('CDC tem quantas vitorias ?')
+mostra('O CDC tem : ' + vitoria1 + ' vitorias.<br>')
+mostra('Cada vitoria vale 3 pontos.<br>')
+var empate1 = prompt('CDC tem quantos empates ?')
+mostra('O CDC tem : ' + empate1 + ' empates.<br>')
+mostra('Cada empate vale 1 ponto.<br>')
+var pontos1 = (vitoria1 * 3) + empate1
+mostra('Time CDC tem : ' + pontos1 + ' pontos.(SQN).<br>')
+mostra('Os valores foram concatenados e não somados.<br>')
+mostra('Como acontece com as strings.<br>')
+mostra('Quando digitamos no prompt o JS considera o que .<br>')
+mostra('digitamos como sendo texto, ou seja, uma string.<br>')
+pulalinha()
+var empatescomonumero = parseInt(empate1)
+mostra('Para corrigir foi criado a var com o parseInt : <br>')
+var pontos2 = vitoria1 * 3 + empatescomonumero
+mostra('<h4>Corrigido: ' + pontos2 + ' pontos.</h4>')
+mostra('Codigo Ficou poluido com muitas variaveis.<br>')
+mostra('Outra forma mais limpa: <br>')
+var vitoria2 = 2
+mostra('2 vitorias x 3 = 6 pontos <br>')
+var empate2 = 2
+var pontos3 = vitoria2 * 3 + parseInt(empate2)
+mostra('6 pontos + 2 empates' + ' igual a: ' + pontos3 + '<br>')
+
+        </script>
+    </body>    
+</html>

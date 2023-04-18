@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <title>JavaScript Calculo IMC</title>
+        <meta charset="UTF-8">
+        <meta name="description" content="Calculo IMC">
+        <meta name="keywords" content="Javascript e HTML">
+        <meta name="author" content="Isaac">
+        <meta http-equiv="refresh" content="999"> <!--Refresh em 999 segundos-->
+        <link rel="stylesheet" type="text/css" href="090Topico9.3.css">
+    </head>
+  
+<body>
+    <h1>Calcular IMC com Javascript</h1>
+
+    <div id="form">
+        Nome:<input type="text" id="nome"> 
+        Idade:<input type="number" id="idade" min="1" max="120">
+        Altura (cm):<input type="number" id="altura" min="10" max="300">
+        Peso (kg):<input type="number" id="peso" min="10" max="300" onchange="calcularIMC()">
+            
+        <h2>IMC: <div id="resultadoIMC"></h2></div> 
+    </div>
+    
+    <h4>Desenho com CSS:<br>
+<div class="barra"> Morbida: 40-30(Obesidade) - 29.99-25(Acima) - 24.99-18.50(Normal) - 18.49-17(Abaixo) - 17(Muito abaixo)<br> </div>
+    </h4>
+
+    <div class="canvas">Desenho com Canvas JavaScript<br></div>
+        <canvas id="telaCanvas" width="800" height="30"></canvas>     
+    <div>   
+<input type="button" value="Ver novamente Retorno da Funcao" onclick="resultado()"/>
+    </div>
+
+    <div class = "campos">
+            <div id = "red"> </div>
+            <div id = "orange"> </div>
+            <div id = "green"> </div>
+            <div id = "yellow"> </div>
+    </div>
+
+        <h2>Frequencia cardiaca maxima de acordo com idade:</h2>
+    <div id = 'table'>
+        <table border="1">
+            <tr> <th>Idade:</th> <th>Frequencia Cardiaca(bpm) Normal</th> </tr>
+            <tr> <td>20</td> <td>100 - 170</td> </tr>
+            <tr> <td>30</td> <td>95 - 162</td>  </tr>
+            <tr> <td>40</td> <td>90 - 153</td>  </tr>
+            <tr> <td>50</td> <td>85 - 145</td>  </tr>
+            <tr> <td>60</td> <td>80 - 136</td>  </tr>
+        </table>
+    </div>
+<hr>
+    <div id="clientes">
+        <pre><input type="button" onclick="clientes()" value="Clientes"></pre>
+        <strong>Nome: </strong> <span id='nomeDigitado'> </span>
+        <strong>Idade: </strong> <span id='idadeDigitado'> </span>
+        <strong>Altura:</strong> <span id="alturaDigitado"></span>
+        <strong>Peso: </strong> <span id="pesoDigitado"></span>
+    </div>
+
+      <script src="090Topico9.3.js">
+  </body>
+</html>
+
+
+
+
+
+function calcularIMC() {
+    var altura = document.getElementById("altura").value;
+    var peso   = document.getElementById("peso").value;
+    altura /= 100;
+    imc = (peso / (altura * altura)).toFixed(2);
+    document.getElementById("resultadoIMC").innerHTML = imc ;
+    return Number(imc);
+}
+
+function resultado() {
+    if (imc > 30) {
+        console.log('Considerado Obeso:' + imc);
+    document.getElementById("red").innerHTML = calcularIMC() + ' Considerado Obeso.';
+        //https://javascript.info/modifying-document
+    } else if (imc > 25 && imc < 30 ){
+        console.log('Acima do Peso: ' + imc);
+    document.getElementById("orange").innerHTML = calcularIMC() + ' Acima do Peso.';
+    } else if (imc > 18.50) {
+        console.log("Peso Normal: " + imc);
+    document.getElementById("green").innerHTML = calcularIMC() + ' Peso Normal.';
+    } else if (imc > 17) {
+        console.log("Abaixo do Peso." + imc);
+    document.getElementById("yellow").innerHTML = calcularIMC() + ' Abaixo do Peso.'; 
+    } else {
+        console.log("IMC Muito abaixo de 17: " + imc);
+    document.getElementById("red").innerHTML = calcularIMC() + ' Muito abaixo do Peso.'; 
+    }
+}
+
+var tela = document.getElementById("telaCanvas");
+var c = tela.getContext("2d");
+c.fillStyle = "red";
+c.fillRect(0, 0, 160, 50) //Y:0, X:0
+c.fillStyle = "orange";
+c.fillRect(160, 0, 160, 50) //Y:160, X:0, 160:comprimento e 50:Altura
+c.fillStyle = "green";
+c.fillRect(320, 0, 160, 50) //160+160=320(inicio)
+c.fillStyle = "yellow";
+c.fillRect(480, 0, 160, 50)
+c.fillStyle = "red";
+c.fillRect(640, 0 , 160, 50);
+
+let pessoa = new Object(); 
+    pessoa.nome;
+    pessoa.idade;
+    pessoa.altura;
+    pessoa.peso;
+    pessoa.info = function() {
+        return "Nome: " + this.nome + " Idade: " + this.idade + " Altura: " + this.altura + " Peso: " + this.peso;
+    };
+
+function clientes () {
+    pessoa.nome = document.getElementById("nome").value;
+    document.getElementById('nomeDigitado').innerText = pessoa.nome;
+    
+    pessoa.idade = document.getElementById("idade").value;
+    document.getElementById('idadeDigitado').innerText = pessoa.idade;
+    //console.log('Idade: ' + pessoa["idade"] ); //outra forma de acesso a propriedade
+    
+    pessoa.altura = document.getElementById('altura').value;
+    document.getElementById('alturaDigitado').innerText = pessoa.altura;
+
+    pessoa.peso = document.getElementById('peso').value;
+    document.getElementById('pesoDigitado').innerText = pessoa.peso;
+
+    console.log(pessoa.info());
+}
+
+
+
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body { 
+    font-size: 18px;
+    font-family: sans-serif;
+    background-image: linear-gradient(to right,  rgba(255, 0, 0, 0.575) , rgb(151, 151, 39), rgb(80, 192, 80), rgba(151, 151, 29, 0.705), rgba(255, 0, 0, 0.548) );
+    text-align: center; 
+    position: relative; 
+}
+
+h1 {
+    color: white;
+    text-align: center;
+    background-color: rgb(2, 18, 48);
+    position: sticky;
+    top: 0;
+}
+
+#form {
+    padding: 10px;
+}
+
+h2 {
+    color: rgb(19, 19, 206);
+    text-align: center;
+    padding: 10px;
+}
+
+h3 {
+    color: MediumBlue;
+    padding: 10px;
+}
+
+.barra {
+    width: 100%;
+    height: 40px;
+background-image: linear-gradient(to right, red, yellow, green, yellow, red);
+    border-radius: 8px;
+    transition-duration: 2s;   
+}
+
+.barra:hover { height: 60px; }
+
+.canvas {
+    padding: 10px;  
+}
+
+#red {
+    color: red;
+}
+
+#orange {
+    color: orange;
+}
+
+#green {
+    color: green;
+}
+
+#yellow {
+    color: yellow;
+    background-color: #363636;
+}
+
+.campos {
+    background-color: white;
+    border-radius: 8px;
+    border: 1px solid linen;  
+    width: 50%;
+    position: relative;
+    margin: auto;
+    top: 10px;
+    padding: 10px;
+}
+
+#table {
+    margin: auto;
+    width: 20%;
+}
+
+#clientes {
+    color: brown;
+}
+
+
+
+
+

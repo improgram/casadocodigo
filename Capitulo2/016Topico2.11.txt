@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+	<html lang="EN">
+		<head>
+			<title>Topico2.11</title>
+		</head>	
+	<body>
+
+<script>
+alert('Topico2.11');
+document.write('<big>Topico2.11</big>');
+document.write('<br>' + 'Feito com a tag html: <big>BIG</big>');
+document.write('<hr>Tag html HR</hr>');
+document.write('<h3>Tag html h3</h3>');
+document.write('<strong>Tag html strong</strong>');
+var pulalinha =  function() {
+	document.write('<br>');
+};
+pulalinha();
+pulalinha();
+pulalinha();
+document.write('console.log oculta a frase');
+console.log('teste do console.log');
+console.log('nao aparece na visualizacao,somente no console');
+
+		</script>
+	</body>	
+</html>

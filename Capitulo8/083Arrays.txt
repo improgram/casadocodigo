@@ -1,0 +1,56 @@
+<html>
+    <body>   
+<p>Object.values() retorna um array cujos elementos são os valores 
+das propriedades enumeradas encontradas no objeto.</p>
+<p>A ordem das propriedades é a mesma que a dada pelo laço sobre
+os valores da propriedade do objeto manualmente.</p>
+<hr>
+<h3>Exemplos </h3>
+<pre><input type="submit" value="Ver Obj1" onclick="mostra1()" /></pre>
+Obj1 : <span id="obj1"> </span><br>
+<pre><input type="submit" value="Ver Obj2" onclick="mostra2()" /></pre>
+Obj2 : <span id="obj2"> </span><br>
+<pre><input type="submit" value="Ver Obj3" onclick="mostra3()" /></pre>
+Obj3 : <span id="obj3"> </span><br>
+<pre><input type="submit" value="Ver Obj4" onclick="mostra4()" /></pre>
+Obj4 : <span id="obj4"> </span><br>
+
+<script>
+var obj1 = {foo: "bar", bar: 42};
+
+// array como objeto
+var obj2 = {0: 'a', 1: 'b', 2: 'c'};
+
+// array como objeto com ordenação de chave aleatória
+var obj3 = {100: 'a', 2: 'b', 7: 'c'}; 
+
+// getFoo é a propriedade a qual não é enumerável
+var obj4 = Object.create ({}, {
+    getFoo: {value: function () {return this.foo;}}
+    });
+    obj4.foo = "pix";
+// argumento não-objeto será coagido num objeto 
+
+function mostra1(){
+    document.getElementById("obj1").innerText = Object.values(obj1);
+    console.log("OBJ1 : " + Object.values(obj1)); //['bar', 42]
+}
+
+function mostra2(){
+    document.getElementById("obj2").innerText = Object.values(obj2);
+    console.log("OBJ2 : " + Object.values(obj2)); // ['a', 'b', 'c']
+}
+
+function mostra3(){
+    document.getElementById("obj3").innerText = Object.values(obj3);
+    console.log("OBJ3 : " + Object.values(obj3)); // ['b', 'c', 'a']
+}
+
+function mostra4(){
+    document.getElementById("obj4").innerText = Object.values(obj4);
+    console.log("OBJ4 : " + Object.values(obj4));// ['f', 'o', 'o']
+}
+
+    </script>
+    </body>
+</html>

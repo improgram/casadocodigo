@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+    <html lang="EN">
+    <head>
+        <title>Exercicio 002</title>
+    </head>
+        <body>
+    
+<br>
+<br>
+<strong>G4 roxo:</strong><br>
+353305080572312<br>
+353305080572320<br>
+<br>
+<strong>G4 Nic:</strong><br>
+355667080282434<br>
+355667080282442<br>
+<br>
+<strong>G4 Pi:</strong>
+nao anotei
+<br>
+<br>
+O segredo, sem duvida, esta em praticar.<BR>
+Nao se limite apenas com os exemplos e exercicios do livro.<br>
+Va alem, deixe sua curiosidade guiar a criacao de novos programas<BR>
+
+<script>
+        alert("segundo programa");
+        alert("analisar IMEI");
+        </script>
+    </body>
+</html>

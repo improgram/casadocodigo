@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+    <html lang="EN">
+        <head>
+            <title>Topico 5.12</title>
+        </head>
+    <body>
+<script>
+function mostra (frase) {
+	document.write(frase + '<br>')
+}
+mostra('<strong><font color="red">Topico 5.12</font></strong>')
+mostra('<font color="blue">Exercicio 1: 5 linhas e 5 Colunas</font>')
+
+for(var linha1 = 0; linha1 < 5; linha1 = linha1 + 1) {
+    for(var coluna1 = 0; coluna1 < 5; coluna1 = coluna1 + 1) {
+        document.write(' Coluna. ');
+    }
+    document.write('5 Linhas.<br>')
+}
+
+mostra('<br><font color="purple">Exercicio 2: Escolha quantidade.</font>')
+var tamanho = prompt('Qual tamanho do Quadrado em linhas ? ')
+if (isNaN(tamanho)) {
+    alert('ERRO : Digite apenas numeros.')
+    mostra('Nao foi digitado um Numero.')  
+}
+mostra('Quantidade Digitada : <b>' + tamanho + '</font></b>')
+
+for(var linha2 = 0; linha2 < tamanho; linha2 = linha2 + 1) {
+    for(var coluna2 = 0; coluna2 < tamanho; coluna2 = coluna2 + 1) {
+        document.write(' O ');
+    }
+    document.write('<br>')
+}
+mostra('<br><font color="teal">Exercicio 3: Desafio Coluna crescente.</font>')
+
+for (var linha3 = 0; linha3 < 6; linha3 = linha3 + 1) {
+for (var col3 = 0; col3 < linha3; col3 = col3 + 1) {
+    document.write( ' * ');
+    }
+    document.write('<br>')    
+}
+mostra('Quando mudamos de coluna < 10 para coluna < linha')
+mostra('a variavel coluna so vai andar de 0 ate o valor da linha atual.')
+mostra('ou seja, na linha 3, ele vai de 0 a 2,quando for a linha 4...')
+mostra('...ele vai de 0 a 3, assim por diante. dessa forma, voce cria...')
+mostra('...uma relacao entre quantas colunas devem ser percorridas...') 
+mostra('...e a linha atual.')
+
+mostra('<br><font color="cerulean">Exercicio 4: V de Vinganca</font>')
+for (var linha = 1; linha <= 5; linha++) {
+  for (var coluna = 1; coluna < 10; coluna++) {
+    if(linha == coluna || linha == 10 - coluna)
+    document.write("*");
+    else document.write("_");
+  }
+  document.write("<br>");
+}
+
+        </script>
+    </body>    
+</html>

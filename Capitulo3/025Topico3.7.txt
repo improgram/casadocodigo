@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+    <html lang="EN">
+        <head>
+            <title>Topico3.7</title>
+        </head>
+    <body>
+
+<script>
+
+var pulalinha = function () {
+    document.write('<br>')
+}
+var mostra = function (frase) {
+    document.write(frase)
+}
+
+mostra('<h2>Topico 3.7</h2>')
+
+var primeira = function () {
+    mostra('Mostrando: VARIAVEL_1 <p>')
+    mostra('Variavel_2 vai ser chamada agora: <p>')
+    segunda()
+    //Pulou para funcao segunda
+    mostra('Continuacao da VAR 1 - Depois da VAR 2 <p>')
+}
+
+var segunda = function () {
+    mostra('Mostrando : VARIAVEL_2 <p>')
+    mostra('Variavel_3 vai ser chamada agora: <p>')
+    terceira()
+    //Pulou para funcao terceira
+    mostra('Continuacao da VAR 2 - Depois da VAR 3 <p>')
+}
+pulalinha()
+
+var terceira = function () {
+    mostra('Mostrando: VARIAVEL_3 <p>')
+}
+
+mostra('Variavel_1 vai ser chamada agora: <p>')
+primeira()
+
+        </script>
+    </body>    
+</html>

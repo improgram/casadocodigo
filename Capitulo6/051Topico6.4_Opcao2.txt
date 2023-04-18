@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+    <html lang="EN">
+        <head>
+            <title>Topico6.4_Opçao2</title>
+        </head>
+    <body> 
+<h2>Exercicio 2-Topico 6.4-Opçao2</h2>
+   
+<script>
+function mostra(frase){
+    document.write(frase + '<br>')
+}
+mostra('<strong>Mega-Sena Sorteia 6 numeros até o 60.</strong>')
+
+//sorteio
+var sorteio = []
+    for (var i = 0; i < 6; i++){
+    sorteio[i] = Math.round(Math.random()*60)       
+}
+mostra('<hr>Numeros Sorteados : ' + sorteio + '</hr>')
+sorteio.sort(function(a, b){
+    return a - b;
+})
+mostra('Sorteados Ordenados : ' + sorteio)
+
+//usuario digita numeros
+var array = []
+    for(var i = 0; i < 6; i++){
+    var num = prompt('Digite 6 numeros ate 60.')
+    array.push(num)
+}
+mostra('<hr>Numeros digitados: ' + array + '</hr>')
+array.sort(function(a, b){
+    return a - b;
+})
+mostra('Digitados ordenados : ' + array)
+mostra('<font color="blue"><h3>Resultado:</h3></font>')
+
+//comparativo
+var acerto = 0
+    for(var i = 0; i < 6; i++){
+        for(var j = 0; j < 6; j++){
+            if(array[i] == sorteio[j]){
+                acerto++;
+            mostra('Acertou o numero : ' + array[i])
+            }
+        }
+    }
+    if(acerto > 0){
+        mostra('Quantidade de Acertos: ' + acerto)
+    } else {
+    mostra('Voce Errou Todos numeros.')
+}
+
+        </script>    
+    </body>
+</html>

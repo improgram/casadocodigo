@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+	<html lang="EN">
+		<head>
+			<title>Topico 5.9</title>
+		</head>
+
+	<body>
+
+<a href='https://developer.mozilla.org/pt-BR/docs/Aprender/
+Getting_started_with_the_web/JavaScript_basico' target="_blank"> 
+Link Material de Estudos</a>
+
+<script>
+function mostra (frase) {
+	document.write(frase + '<br>')
+}
+mostra('<h2><font color="red">Media de idades</font></h2>')
+var total = parseInt(prompt('Quantos familiares ?'))
+mostra('Familiares digitado : ' + total + '<br>')
+var somarIdades = 0
+var numero = 1
+while(numero <= total) {
+	var idade = parseInt(prompt('Qual a idade ? '))
+	mostra('Idade digitada : ' + idade + '<br>')
+	somarIdades = somarIdades + idade
+	numero++
+}
+var media = somarIdades / total
+mostra('Calculo da media de idades: ' + media)
+mostra('<b>Arredondado : </b>' + Math.round(media))
+
+		</script>
+	</body>
+</html>

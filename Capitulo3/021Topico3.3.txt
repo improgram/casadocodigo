@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+	<html lang="EN">
+		<head>
+			<title>Topico3.3</title>
+		</head>
+	<body>
+
+<script>
+alert('Topico3.3');
+document.write('<h2>Topico3.3 com a TAG BIG</h2>');
+var pulalinha = function() {
+	document.write('<br>');
+};
+var mostra = function (frase) {
+	document.write(frase);
+	pulalinha();
+};
+pulalinha();
+mostra('Revisao do calcula IMC');
+
+var calculaIMC = function(altura,peso) {
+	var imc = peso / (altura * altura);
+	return imc;
+};
+mostra('O _calculaIMC é uma funcao<p>')
+//podemos utilizar a funçao declarada e seu retorno.
+//Seja para voce ou para seu primo.
+var peso1 = 70;
+var altura1 = 1.75;
+var imc = calculaIMC(altura1, peso1);
+mostra('Meu imc é : ' + imc + '<br>');
+mostra('Estou : ' + (imc - 18.5)
+	+ ' pontos acima do limite da magreza');
+mostra('<hr><h4>EXERCICIO 1</h4></hr>');
+mostra('Estou : ' + (35 - imc)
+	+ ' pontos abaixo da obesidade que é 35.');
+mostra('<h4>EXERCICIO 2</h4>');
+//Mesmo calculo com outra função.
+mostra('Meu IMC é : ' + calculaIMC(altura1, peso1));
+mostra('<h4>EXERCICIO 3</h4>');
+mostra('Arredondando com Math.round.: ' + Math.round(imc));
+document.write('Teste Com outra funçao.: ');
+pulalinha();
+var imc2 = Math.round(calculaIMC(altura1, peso1));
+mostra(imc2);
+
+		</script>
+	</body>	
+</html>

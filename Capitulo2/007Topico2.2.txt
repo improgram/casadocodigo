@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+    <html lang="EN">
+        <head>
+            <title>Topico2.2</title>
+        </head>
+    <body>
+<script>
+alert('Topico 2.2');
+document.write('Minha idade :');
+document.write('<p>');
+document.write(200-170);
+document.write('<p>');
+document.write('Que significa 200-170');
+document.write('<p>');
+document.write('Resultado de 20+20 abaixo:');
+document.write('<p>');
+document.write(20+20);
+document.write('<p>');
+document.write('Usando o + na variavel significa:');
+document.write('<h3>concatenacao</h3>');
+document.write('<p>');
+document.write('Sequencia de caracteres entres aspas chamada de:');
+document.write('<p>');
+document.write('<strong>STRINGS</strong>');
+document.write('<p>');
+document.write('o sinal + alem de somar numeros<p>');
+document.write('concatena strings');
+
+            </script>
+    </body>    
+</html>

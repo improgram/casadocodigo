@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+    <html lang="EN">
+        <head>
+            <title>Topico 5.5</title>
+        </head>
+    <body>
+
+<script>
+function mostra(frase){
+    document.write(frase + '<br>')
+}
+mostra('<h2>Topico 5.5</h2>')
+mostra('<strong>Anos de Olimpiada </strong>')
+var olimpiada = 1896
+var anoLimite = parseInt(prompt('Informe o Ano Limite'))
+mostra('Ate o ano : ' + anoLimite)
+while(olimpiada < anoLimite && olimpiada < 2020){
+    mostra(olimpiada)
+    olimpiada = olimpiada + 4
+}
+if(anoLimite < 1896){
+    mostra('Voce digitou data incorreta: ' + anoLimite)
+    mostra('Olimpiadas iniciou em 1896.')
+}
+
+if(anoLimite > 2020){
+    mostra('Ultima Olimpiada foi em 2016.')
+}
+        </script>
+    </body>
+</html>     

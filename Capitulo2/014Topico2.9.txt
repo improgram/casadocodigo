@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+	<html lang="EN">
+		<head>
+			<title>Topico 2.9</title>
+		</head>
+	<body>
+
+<script>
+alert('Topico2.9');
+document.write('<h2>Topico2.9</h2>' + '<p>');
+var pulalinha = function() {
+	document.write('<br>');
+};
+var mostra = function(frase) {
+	document.write(frase + '<p>');
+};
+mostra('usando funcoes para melhorar o codigo');
+document.write('Essa string que queremos mostrar vai ser passada para a funcao que criamos');
+pulalinha();
+document.write('La dentro sera a nossa variavel frase.');
+pulalinha();
+document.write('Variaveis que sao passadas para funcoes...');
+pulalinha();
+document.write('Sao frequentemente chamadas de parametros ou argumentos');
+pulalinha();
+pulalinha();
+var mostra2 = function(frase) {
+	document.write(frase);
+	pulalinha();
+};
+mostra2('teste do Mostra2');
+		</script>
+	</body>	
+</html>
