@@ -85,8 +85,7 @@ header {
 }
 
 .main {   /* verificados 13/09 */
-    white-space: pre-line; /* 26/10=OK */
-    /*espaços em branco dentro dos elementos são manipulados.*/
+    white-space: pre-line; /* 26/10=OK= espaços em branco dentro dos elementos são manipulados*/
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -394,11 +393,16 @@ footer img {
     }
 }
 
+#footerTwo {
+    justify-content: center;
+    align-content: center;
+}
+
 a {
     color: #fff;
 }
 
-a:visited{
+a:visited {
     color: #ece1de;
     font-weight: 400;
 }
