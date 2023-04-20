@@ -119,7 +119,6 @@ header {
     align-items: center; /* Necessario para a IMG */
     margin: 1% 10% 1% 10%;
     padding: 0.7em 0.7em 0.7em 0.7em;
-    
 }
 
 .buttonResult{
@@ -391,6 +390,10 @@ footer img {
     100% {
         box-shadow: 0 0 0 10px rgba(56, 58, 27, 0.856), 0 0 0 10px rgrgba(83, 88, 52, 0.911)
     }
+}
+
+#TT_FhT11kk1kUBBc9cUjLxDDDzjjUuU1z82bYEdEciIa1jomI3o3 {
+    justify-content: initial;
 }
 
 #footerTwo {
