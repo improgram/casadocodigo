@@ -733,7 +733,6 @@ let buttonPaint = document.getElementsByClassName('paint');
     resultado();
     }
 
-
 // CanvasaAnimacoes:
 let buttonAnimacoes = document.getElementsByClassName('animacoes');
     for (let elementCanvasAnimacoes of buttonAnimacoes) {
@@ -749,7 +748,6 @@ let buttonAnimacoes = document.getElementsByClassName('animacoes');
     resultado();
     }
 
-
 // CODIGO Tiro ao alvo:
 let buttonAlvo = document.getElementsByClassName('tiroAlvo');
     for (let elementTiroAlvo of buttonAlvo) {
@@ -764,7 +762,6 @@ let buttonAlvo = document.getElementsByClassName('tiroAlvo');
         codigoGithub.href = 'https://github.com/improgram/casadocodigo/blob/master/Capitulo8/079Topico8.5_opcao2.html \n';
     resultado();
     }
-
 
 // CODIGO Formulario com Eventos:
 let buttonFormEventos = document.getElementsByClassName('formEventos');
