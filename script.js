@@ -527,16 +527,14 @@ let buttonMegaSena = document.getElementsByClassName('megaSena');
                 }               
                 ulNumbers.appendChild(listaNumbers);
             }
-            console.log('%c Sorteados: ' + sorteio, 'background: #000; color: #FF0');
+            // console.log('%c Sorteados: ' + sorteio, 'background: #000; color: #FF0'); => cria mais um LOOP
             ulNumbers.insertAdjacentHTML('afterBegin', 'Numeros Sorteados: \n \n');
             sorteio.sort (function(a, b){
                 return a - b;
             })       
-            console.log('%c Sorteados Ordenados : ' + sorteio, 'background: #FCFC; color: #F0F');
+            console.log('%c Sorteados Ordenados : ' + sorteio, 'background: #FCFC; color: #0000FF'); // color: #00FFFF'
         }       
-        numero_aleatorio ();   
-          
-                
+        numero_aleatorio ();                      
 // Usuario digita numeros
         let numerosEscolhidos = [];
         let elementEscolhidos = document.createElement('li');
@@ -546,14 +544,14 @@ let buttonMegaSena = document.getElementsByClassName('megaSena');
         for (let i = 0; i < 2; i++) {                 // mudar para 6                                          
             let num = prompt('Digite 6 numeros ate 60.');
                 liNumbers.textContent = num;
-                console.log('Digitado: ' + num);
+                // console.log('Digitado: ' + num);
                 numerosEscolhidos.push(num);
-                console.log('Escolhido: ' + numerosEscolhidos);
+                // console.log('Escolhido: ' + numerosEscolhidos);
         }        
         numerosEscolhidos.sort (function(a, b) {
             return a - b;
         });
-        console.log ('%c Digitados ordenados : ' + numerosEscolhidos, 'background: #F2F3; color: #F0F0');
+        // console.log ('%c Digitados ordenados : ' + numerosEscolhidos, 'background: #0F0F; color: #000');
         ulNumbers.insertAdjacentElement('afterEnd', elementEscolhidos);
         // ulNumbers.insertAdjacentElement('afterEnd', liNumbers);
         elementEscolhidos.insertAdjacentHTML('afterBegin', '\n Numeros Escolhidos: \n' + numerosEscolhidos + '\n');

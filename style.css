@@ -228,7 +228,7 @@ figcaption {
 }
 
 .adivinharNumero {
-    background: linear-gradient(to bottom,
+    background: linear-gradient ( to bottom,
         #1abc42 50%,
         #258dd3 50%
     );
@@ -260,7 +260,7 @@ figcaption {
     font-size: 17px;
     margin: 5px;
     list-style-type: none;
-    /* text-align: center; */
+    padding: 2px;
 }
 
 .liNumbers {
