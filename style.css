@@ -13,7 +13,7 @@ html, body {
     background-size: cover;
 }
 
-header {
+.header {
     position: sticky;   
     position: -webkit-sticky; /* Safari */
     top: 0;  
@@ -80,7 +80,7 @@ header {
     font-size: 14px;
 }
 
-.nav cite{
+.nav cite {
     font-style: normal;
 }
 
@@ -360,18 +360,22 @@ figcaption {
     color:#afe055;
 }
 
-footer {
-    display: flex; /*menu lado a lado */
+.social {
+    display: flex; /* Menu lado a lado */
     justify-content: center;
-    font-variant: small-caps;
 }
 
-footer img {
+.social img {
     border-radius: 30%;
     animation: animate 6s ease-out infinite;
     height: 36px;
     width: 30px;
     margin: 10px;
+}
+
+#footer {
+    display: flex;
+    justify-content: space-between;
 }
 
 @keyframes animate {
@@ -390,15 +394,6 @@ footer img {
     100% {
         box-shadow: 0 0 0 10px rgba(56, 58, 27, 0.856), 0 0 0 10px rgrgba(83, 88, 52, 0.911)
     }
-}
-
-#TT_FhT11kk1kUBBc9cUjLxDDDzjjUuU1z82bYEdEciIa1jomI3o3 {
-    justify-content: initial;
-}
-
-#footerTwo {
-    justify-content: center;
-    align-content: center;
 }
 
 a {
