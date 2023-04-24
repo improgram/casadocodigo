@@ -527,7 +527,7 @@ let buttonMegaSena = document.getElementsByClassName('megaSena');
                 }               
                 ulNumbers.appendChild(listaNumbers);
             }
-            // console.log('%c Sorteados: ' + sorteio, 'background: #000; color: #FF0'); => cria mais um LOOP
+            console.log('%c Sorteados: ' + sorteio, 'background: #000; color: #FF0'); // => criaria mais um LOOP
             ulNumbers.insertAdjacentHTML('afterBegin', 'Numeros Sorteados: \n \n');
             sorteio.sort (function(a, b){
                 return a - b;
@@ -537,9 +537,10 @@ let buttonMegaSena = document.getElementsByClassName('megaSena');
         numero_aleatorio ();                      
 // Usuario digita numeros
         let numerosEscolhidos = [];
-        let elementEscolhidos = document.createElement('li');
+        let elementEscolhidos = document.createElement('ul');
             elementEscolhidos.setAttribute('class', 'ulNumbers');
-            let liNumbers = document.createElement('li');
+        mostrar.insertAdjacentElement('beforeEnd', elementEscolhidos);
+        let liNumbers = document.createElement('li');
             liNumbers.setAttribute('class', 'liNumbers');
         for (let i = 0; i < 2; i++) {                 // mudar para 6                                          
             let num = prompt('Digite 6 numeros ate 60.');
@@ -547,14 +548,16 @@ let buttonMegaSena = document.getElementsByClassName('megaSena');
                 // console.log('Digitado: ' + num);
                 numerosEscolhidos.push(num);
                 // console.log('Escolhido: ' + numerosEscolhidos);
-        }        
-        numerosEscolhidos.sort (function(a, b) {
-            return a - b;
-        });
+        }
+        elementEscolhidos.appendChild(liNumbers);
+        elementEscolhidos.insertAdjacentHTML('afterBegin', '\n Numeros Escolhidos: \n' + numerosEscolhidos + '\n');        
+            numerosEscolhidos.sort (function(a, b) {
+                return a - b;
+            });
         // console.log ('%c Digitados ordenados : ' + numerosEscolhidos, 'background: #0F0F; color: #000');
-        ulNumbers.insertAdjacentElement('afterEnd', elementEscolhidos);
+        // ulNumbers.insertAdjacentElement('afterEnd', elementEscolhidos);
         // ulNumbers.insertAdjacentElement('afterEnd', liNumbers);
-        elementEscolhidos.insertAdjacentHTML('afterBegin', '\n Numeros Escolhidos: \n' + numerosEscolhidos + '\n');
+        elementEscolhidos.insertAdjacentHTML('beforeend', '\n Ordem crescente: \n' + numerosEscolhidos + '\n');
         
 // Comparativo
         for (let i = 0; i < 6; i++) {            
