@@ -251,88 +251,86 @@ function batimentos() {
     }
     function numeroPensado () {                          
             titulo.textContent = 'Adivinhar Numero Pensado \n \n';
-            mostrar.textContent = '\n NÚMEROS DIGITADOS AQUI: \n \n';
-        let buttoncincoTentativas = document.createElement('button');                     // cria botao  
-            buttoncincoTentativas.appendChild(document.createTextNode('5 Tentativas'));   // Adiciona texto ao botao
+            mostrar.textContent = '\n NÚMEROS DIGITADOS AQUI : \n \n';
+        let buttoncincoTentativas = document.createElement('button');                     
+            buttoncincoTentativas.appendChild(document.createTextNode('5 Tentativas'));  
             buttoncincoTentativas.setAttribute('id','buttoncincoTentativas');
             buttoncincoTentativas.className = 'buttonResult';
             titulo.appendChild(buttoncincoTentativas);  
             buttoncincoTentativas.onclick = cincoTentativas;
-        let buttonAteAcertar = document.createElement('button');
-            buttonAteAcertar.appendChild (document.createTextNode('De 1 a 5 '));
-            buttonAteAcertar.setAttribute('id', 'buttonAteAcertar');
-            buttonAteAcertar.className = 'buttonResult';
-            titulo.appendChild(buttonAteAcertar);
-            buttonAteAcertar.onclick = ateAcertar;
+        let buttonZeroAteCinco = document.createElement('button');
+            buttonZeroAteCinco.appendChild (document.createTextNode('De 0 a 5 '));
+            buttonZeroAteCinco.setAttribute('id', 'buttonZeroAteCinco');
+            buttonZeroAteCinco.className = 'buttonResult';
+            titulo.appendChild(buttonZeroAteCinco);
+            buttonZeroAteCinco.onclick = zeroAteCinco;
         let chute;
         let tentativa = 1;
-        let listli = document.createElement('li');              // Cria elemento Li
-            listli.setAttribute('id', 'listli');                // Atributo id adicionado
+        let listli = document.createElement('p');              
+            listli.setAttribute('class', 'combustiveis');                
 
-        function cincoTentativas(){
+        function cincoTentativas() {
             let segredo = Math.round(Math.random() * 9);
             document.getElementById('buttoncincoTentativas').disabled = true;
             document.getElementById('buttoncincoTentativas').className = 'cliques';
-            mostrar.textContent = 'Adivinhar o Numero pensado: \n \n';
-            while(tentativa <= 5) {
-                chute = prompt('DIGITE um numero de 1 a 9' );
-                
+            mostrar.textContent = '';
+            listli.textContent = '';
+            for (tentativa = 0; tentativa <= 5; tentativa++ ) {
+                chute = prompt('DIGITE um numero de 0 a 9' );                
                 if (isNaN(chute)) {
-                    alert('Voce digitou : ' + chute + ' . Digite apenas numeros.');                   
+                    alert('Voce digitou : ' + chute + ' . Digite apenas numeros.');
                 } else if (chute == segredo) {                    
                     buttoncincoTentativas.insertAdjacentText('afterEnd', '\n ACERTOU o NÚMERO é : ' + segredo + '\n \n');
-                    listli.insertAdjacentText('beforeEnd', '\n Acertou o numero é => ' + segredo + '\n \n');
-                    console.warn('%c O numero é => ' + segredo , 'background: #fff; color: #00F');
+                    listli.insertAdjacentText('afterEnd', '\n De 0 a 9 ACERTOU o numero é :    ' + segredo + '\n \n');
+                    console.warn('%c De 0 a 9 : ACERTOU o numero é : ' + segredo , 'background: #fff; color: #00F');
                     alert('Parabens, ACERTOU');               
                     break;
                 } else if (chute > segredo) {
                     alert('Chute foi maior que o numero pensado ');               
                 } else if (chute < segredo) {
                     alert('Chute foi menor que o numero pensado ' );                                        
-                } else
-                    console.log(chute);
-                    tentativa ++;
-                if (tentativa >= 6 ) {
+                } else (tentativa >= 6) 
                     console.group();
-                    console.warn('%c O numero é => ' + segredo , 'background: #fff; color: #00F');
+                    console.warn('%c O numero é :  ' + segredo , 'background: #fff; color: #00F');
                     console.error('%c 5 Chances ESGOTADAS ' , 'background: #FF0000; color: #FFF');
                     console.groupEnd();
-                    buttoncincoTentativas.appendChild(document.createTextNode(' ESGOTADAS. '));
-                    mostrar.insertAdjacentText('beforeEnd', '\n 5 Tentativas Esgotadas ' + '\n \n');
-                }
-                listli.appendChild(document.createTextNode('Você Digitou : ' + chute + '\n'));               
-                mostrar.insertAdjacentElement('beforeEnd', listli);
+                    buttoncincoTentativas.appendChild(document.createTextNode('\n \n ESGOTADAS. '));
+                    listli.insertAdjacentHTML('afterEnd', '<p class="tiroAlvo"> \n \n 5 Tentativas Esgotadas </p>' + '\n \n');
+                    document.getElementById('buttoncincoTentativas').className = 'batimentos';
             }
-        }
+            mostrar.textContent = ' De 0 a 9 Em 5 Tentativas : \n \n';  
+            mostrar.insertAdjacentElement('beforeEnd', listli);
+            listli.appendChild(document.createTextNode('De 0 a 9 Numero Digitado: ' + chute + '\n'));            
+        } // https://www.javascripttutorial.net/javascript-dom/javascript-insertadjacenthtml/
 
-        function ateAcertar() {
-            let deumacinco = Math.round(Math.random() * 5);
-            document.getElementById('buttonAteAcertar').disabled = true;
-            document.getElementById('buttonAteAcertar').className = 'cliques';
-            mostrar.textContent = 'Adivinhar o numero pensado: \n \n';
-            while(chute != deumacinco) {
-                chute = prompt('ESCOLHA um numero de 0 ate 5' );
-                if(chute == deumacinco) {
-                    buttonAteAcertar.insertAdjacentText('afterEnd', '\n ACERTOU o NÚMERO é : ' + deumacinco + '\n \n');
-                    listli.insertAdjacentText('beforeEnd', '\n ACERTOU o NÚMERO é => ' + deumacinco + '\n \n');
-                    console.warn('%c O numero é => ' + deumacinco , 'background: #fff; color: #00F');
+        function zeroAteCinco() {
+            let deZeroaCinco = Math.round(Math.random() * 5);
+            document.getElementById('buttonZeroAteCinco').disabled = true;
+            document.getElementById('buttonZeroAteCinco').className = 'cliques';
+            mostrar.textContent = '';
+            listli.textContent = '';
+            while(chute != deZeroaCinco) {
+                chute = prompt('ESCOLHA um numero de 0 ate 5');
+                if (isNaN(chute)) {
+                    alert('Voce digitou : ' + chute + ' . Digite apenas numeros.'); 
+                } else if(chute == deZeroaCinco) {
+                    buttonZeroAteCinco.insertAdjacentText('afterEnd', '\n ACERTOU o NÚMERO é : ' + deZeroaCinco + '\n \n');
+                    listli.insertAdjacentText('beforeEnd', '\n DE 0 a 5 ACERTOU o NÚMERO é : ' + deZeroaCinco + '\n \n');
+                    console.warn('%c De 0 a 5 : ACERTOU o numero é : ' + deZeroaCinco , 'background: #fff; color: #00F');
                     alert('Parabens, ACERTOU');
                     break;
-                } else if (chute > deumacinco) {
-                    alert('Chute foi maior que o numero pensado ');              
-                } else if (chute < deumacinco) {
-                    alert('Chute foi menor que o numero pensado ' );
-                } else if (isNaN(chute)) {
-                    chute = ' Voce digitou : ' + chute;
-                    alert('Voce digitou : ' + chute + ' >  Digite apenas numeros.');
+                } else if (chute > deZeroaCinco) {
+                    alert('Chute foi maior que o numero pensado');              
+                } else if (chute < deZeroaCinco) {
+                    alert('Chute foi menor que o numero pensado');
                 } else {
                     tentativa++;
-                }                            
-                listli.appendChild(document.createTextNode('Número Digitado : ' + chute + '\n'));
+                }
+                mostrar.textContent = 'De 0 a 5 Numeros Digitados : \n \n';
                 mostrar.insertAdjacentElement('beforeEnd', listli);
+                listli.appendChild(document.createTextNode('De 0 a 5 Numero Digitado : ' + chute + '\n'));
             }
-        }   
-        
+        }       
         codigoGithub.textContent = '';
         codigoGithub.appendChild(document.createTextNode('Abrir o Codigo Numero Pensado no GitHub \n'));
         codigoGithub.href = 'https://github.com/improgram/casadocodigo/blob/master/Capitulo5/044Topico5.11_Exerci1_2_3.html \n';
